@@ -66,6 +66,7 @@ namespace prySistemaDePrestamosDeLibro.Properties {
         internal static System.Drawing.Bitmap coffee {
             get {
                 object obj = ResourceManager.GetObject("coffee", resourceCulture);
+
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
