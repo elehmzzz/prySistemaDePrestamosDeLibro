@@ -52,10 +52,11 @@
             panel1.Controls.Add(label1);
             panel1.Font = new Font("Segoe UI", 22.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             panel1.ForeColor = SystemColors.Control;
-            panel1.Location = new Point(12, 12);
+            panel1.Location = new Point(6, 12);
             panel1.Name = "panel1";
-            panel1.Size = new Size(495, 469);
+            panel1.Size = new Size(501, 469);
             panel1.TabIndex = 0;
+            panel1.UseWaitCursor = true;
             // 
             // label3
             // 
@@ -65,6 +66,7 @@
             label3.Size = new Size(195, 50);
             label3.TabIndex = 2;
             label3.Text = "DE LIBROS";
+            label3.UseWaitCursor = true;
             // 
             // label2
             // 
@@ -74,6 +76,7 @@
             label2.Size = new Size(435, 50);
             label2.TabIndex = 1;
             label2.Text = "SISTEMA DE PRÉSTAMOS";
+            label2.UseWaitCursor = true;
             // 
             // label1
             // 
@@ -83,6 +86,7 @@
             label1.Size = new Size(285, 50);
             label1.TabIndex = 0;
             label1.Text = "BIENVENIDO AL";
+            label1.UseWaitCursor = true;
             // 
             // panel2
             // 
@@ -99,6 +103,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(430, 469);
             panel2.TabIndex = 1;
+            panel2.UseWaitCursor = true;
             // 
             // label7
             // 
@@ -107,6 +112,7 @@
             label7.Size = new Size(410, 65);
             label7.TabIndex = 9;
             label7.Text = "Bienvenido al Sistema de Préstamo de Libros. Inicia sesión con tu usuario y contraseña.";
+            label7.UseWaitCursor = true;
             // 
             // textBox2
             // 
@@ -115,6 +121,7 @@
             textBox2.PasswordChar = '*';
             textBox2.Size = new Size(289, 34);
             textBox2.TabIndex = 8;
+            textBox2.UseWaitCursor = true;
             // 
             // textBox1
             // 
@@ -122,6 +129,7 @@
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(289, 34);
             textBox1.TabIndex = 7;
+            textBox1.UseWaitCursor = true;
             // 
             // button1
             // 
@@ -134,6 +142,7 @@
             button1.TabIndex = 6;
             button1.Text = "Iniciar sesion";
             button1.UseVisualStyleBackColor = false;
+            button1.UseWaitCursor = true;
             // 
             // label6
             // 
@@ -143,6 +152,7 @@
             label6.Size = new Size(114, 28);
             label6.TabIndex = 5;
             label6.Text = "Contraseña:";
+            label6.UseWaitCursor = true;
             // 
             // label5
             // 
@@ -152,6 +162,7 @@
             label5.Size = new Size(83, 28);
             label5.TabIndex = 4;
             label5.Text = "Usuario:";
+            label5.UseWaitCursor = true;
             // 
             // label4
             // 
@@ -162,17 +173,23 @@
             label4.Size = new Size(249, 46);
             label4.TabIndex = 3;
             label4.Text = "Inicio de sesión";
+            label4.UseWaitCursor = true;
             // 
             // FrmInicioSesion
             // 
+            AllowDrop = true;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Window;
             ClientSize = new Size(942, 493);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            MinimizeBox = false;
             Name = "FrmInicioSesion";
+            ShowIcon = false;
             StartPosition = FormStartPosition.CenterParent;
             Text = "Inicio de sesión";
+            UseWaitCursor = true;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel2.ResumeLayout(false);
