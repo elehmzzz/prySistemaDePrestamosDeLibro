@@ -182,7 +182,7 @@
             label3.Size = new Size(98, 28);
             label3.TabIndex = 20;
             label3.Text = "Direccion:";
-            label3.Click += this.label3_Click;
+            label3.Click += label2_Click;
             // 
             // textBox5
             // 
@@ -313,7 +313,6 @@
             Controls.Add(panel2);
             Name = "FrmRSeleccionLector";
             Text = "FrmRPrestamo";
-            Load += this.FrmRSeleccionLector_Load;
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
