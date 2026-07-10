@@ -12,9 +12,12 @@ namespace prySistemaDePrestamosDeLibro.Clases
 {
     public partial class UcRegistroDatos : UserControl
     {
+        private UcRegistroUsuario registroUsuario;
         public UcRegistroDatos()
         {
             InitializeComponent();
         }
+
+
     }
 }
