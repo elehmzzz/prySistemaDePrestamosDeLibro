@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <Folder Include="Guia de estilos\" />
-    <Folder Include="Clases\" />
   </ItemGroup>
 
 </Project>
