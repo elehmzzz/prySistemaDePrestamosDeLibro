@@ -30,6 +30,7 @@
         {
             panel1 = new Panel();
             panel2 = new Panel();
+            label14 = new Label();
             dtpFechaNacimiento = new DateTimePicker();
             btnRegresar = new Button();
             btnEditar = new Button();
@@ -58,7 +59,6 @@
             txtCP = new TextBox();
             cmbEscuela = new ComboBox();
             cmbOcupacion = new ComboBox();
-            label14 = new Label();
             panel2.SuspendLayout();
             SuspendLayout();
             // 
@@ -68,7 +68,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(110, 493);
+            panel1.Size = new Size(110, 648);
             panel1.TabIndex = 0;
             // 
             // panel2
@@ -78,9 +78,20 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(110, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(832, 65);
+            panel2.Size = new Size(1164, 65);
             panel2.TabIndex = 1;
             panel2.Paint += panel2_Paint;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.White;
+            label14.Location = new Point(3, 6);
+            label14.Name = "label14";
+            label14.Size = new Size(345, 54);
+            label14.TabIndex = 1;
+            label14.Text = "Datos Personales";
             // 
             // dtpFechaNacimiento
             // 
@@ -350,23 +361,12 @@
             cmbOcupacion.Size = new Size(215, 28);
             cmbOcupacion.TabIndex = 53;
             // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.ForeColor = Color.White;
-            label14.Location = new Point(3, 6);
-            label14.Name = "label14";
-            label14.Size = new Size(345, 54);
-            label14.TabIndex = 1;
-            label14.Text = "Datos Personales";
-            // 
             // FrmDatosLectores
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
-            ClientSize = new Size(942, 493);
+            ClientSize = new Size(1274, 648);
             Controls.Add(cmbOcupacion);
             Controls.Add(cmbEscuela);
             Controls.Add(txtCP);

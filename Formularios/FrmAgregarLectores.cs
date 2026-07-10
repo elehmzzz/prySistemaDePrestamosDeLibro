@@ -36,5 +36,29 @@ namespace prySistemaDePrestamosDeLibro.Clases
         {
 
         }
+
+        private void InitializeComponent()
+        {
+            SuspendLayout();
+            // 
+            // FrmAgregarLectores
+            // 
+            ClientSize = new Size(1274, 648);
+            Name = "FrmAgregarLectores";
+            Load += FrmAgregarLectores_Load_2;
+            ResumeLayout(false);
+
+
+        }
+
+        private void FrmAgregarLectores_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FrmAgregarLectores_Load_2(object sender, EventArgs e)
+        {
+
+        }
     }
 }

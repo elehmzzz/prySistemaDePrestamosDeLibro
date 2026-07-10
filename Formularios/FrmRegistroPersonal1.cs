@@ -24,5 +24,9 @@ namespace prySistemaDePrestamosDeLibro.Clases
             pnlContenido.Controls.Add(registroDatos);
         }
 
+        private void pnlContenido_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

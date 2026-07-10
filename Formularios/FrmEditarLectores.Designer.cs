@@ -71,7 +71,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(110, 493);
+            panel1.Size = new Size(110, 648);
             panel1.TabIndex = 0;
             // 
             // panel2
@@ -81,7 +81,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(110, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(832, 65);
+            panel2.Size = new Size(1164, 65);
             panel2.TabIndex = 1;
             // 
             // label14
@@ -389,7 +389,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
-            ClientSize = new Size(942, 493);
+            ClientSize = new Size(1274, 648);
             Controls.Add(textBox3);
             Controls.Add(label13);
             Controls.Add(txtApellidoPaterno);
