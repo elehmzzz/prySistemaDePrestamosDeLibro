@@ -10,11 +10,22 @@ using System.Windows.Forms;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
-    public partial class UcRegistroUsuario : UserControl
+    public partial class FrmRegistroPersonal : Form
     {
-        public UcRegistroUsuario()
+
+        public FrmRegistroPersonal()
         {
             InitializeComponent();
+            
         }
+
+        private void frmRegistroPersonal1_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void ucRegistroUsuario1_Load(object sender, EventArgs e)
+        {
+        }
+
     }
 }
