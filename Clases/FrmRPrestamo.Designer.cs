@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            dateTimePicker2 = new DateTimePicker();
+            radioButton3 = new RadioButton();
+            radioButton2 = new RadioButton();
+            radioButton1 = new RadioButton();
             dateTimePicker1 = new DateTimePicker();
             button2 = new Button();
             button1 = new Button();
@@ -44,15 +48,11 @@
             panel1 = new Panel();
             label5 = new Label();
             label6 = new Label();
-            textBox1 = new TextBox();
             label1 = new Label();
             panel3 = new Panel();
             labelRegistrodePrestamos = new Label();
-            button3 = new Button();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
-            radioButton3 = new RadioButton();
-            dateTimePicker2 = new DateTimePicker();
+            Buscador = new ListBox();
+            textBox1 = new TextBox();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -60,11 +60,12 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(236, 223, 204);
+            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(Buscador);
             panel2.Controls.Add(dateTimePicker2);
             panel2.Controls.Add(radioButton3);
             panel2.Controls.Add(radioButton2);
             panel2.Controls.Add(radioButton1);
-            panel2.Controls.Add(button3);
             panel2.Controls.Add(dateTimePicker1);
             panel2.Controls.Add(button2);
             panel2.Controls.Add(button1);
@@ -80,7 +81,6 @@
             panel2.Controls.Add(panel1);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label6);
-            panel2.Controls.Add(textBox1);
             panel2.Controls.Add(label1);
             panel2.Controls.Add(panel3);
             panel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -88,6 +88,47 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1349, 731);
             panel2.TabIndex = 4;
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Format = DateTimePickerFormat.Short;
+            dateTimePicker2.Location = new Point(380, 402);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(215, 34);
+            dateTimePicker2.TabIndex = 36;
+            // 
+            // radioButton3
+            // 
+            radioButton3.AutoSize = true;
+            radioButton3.Location = new Point(1034, 151);
+            radioButton3.Name = "radioButton3";
+            radioButton3.Size = new Size(75, 32);
+            radioButton3.TabIndex = 35;
+            radioButton3.TabStop = true;
+            radioButton3.Text = "ISBN";
+            radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(926, 149);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(83, 32);
+            radioButton2.TabIndex = 34;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Autor";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(807, 149);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(83, 32);
+            radioButton1.TabIndex = 33;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Titulo";
+            radioButton1.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker1
             // 
@@ -150,7 +191,7 @@
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(380, 404);
+            textBox6.Location = new Point(380, 551);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(215, 34);
             textBox6.TabIndex = 22;
@@ -225,13 +266,6 @@
             label6.TabIndex = 5;
             label6.Text = "Libro:";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(420, 147);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(344, 34);
-            textBox1.TabIndex = 7;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -265,55 +299,21 @@
             labelRegistrodePrestamos.TabIndex = 3;
             labelRegistrodePrestamos.Text = "Registro de préstamos";
             // 
-            // button3
+            // Buscador
             // 
-            button3.Location = new Point(380, 146);
-            button3.Name = "button3";
-            button3.Size = new Size(43, 36);
-            button3.TabIndex = 32;
-            button3.Text = "🔍";
-            button3.UseVisualStyleBackColor = true;
+            Buscador.FormattingEnabled = true;
+            Buscador.ItemHeight = 28;
+            Buscador.Location = new Point(380, 186);
+            Buscador.Name = "Buscador";
+            Buscador.Size = new Size(385, 200);
+            Buscador.TabIndex = 38;
             // 
-            // radioButton1
+            // textBox1
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(807, 149);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(83, 32);
-            radioButton1.TabIndex = 33;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Titulo";
-            radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(926, 149);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(83, 32);
-            radioButton2.TabIndex = 34;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Autor";
-            radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            radioButton3.AutoSize = true;
-            radioButton3.Location = new Point(1034, 151);
-            radioButton3.Name = "radioButton3";
-            radioButton3.Size = new Size(75, 32);
-            radioButton3.TabIndex = 35;
-            radioButton3.TabStop = true;
-            radioButton3.Text = "ISBN";
-            radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(380, 548);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(215, 34);
-            dateTimePicker2.TabIndex = 36;
+            textBox1.Location = new Point(380, 146);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(385, 34);
+            textBox1.TabIndex = 39;
             // 
             // FrmRPrestamo
             // 
@@ -349,14 +349,14 @@
         public Panel panel1;
         private Label label5;
         private Label label6;
-        private TextBox textBox1;
         private Label label1;
         public Panel panel3;
         private Label labelRegistrodePrestamos;
         private RadioButton radioButton3;
         private RadioButton radioButton2;
         private RadioButton radioButton1;
-        private Button button3;
         private DateTimePicker dateTimePicker2;
+        private ListBox Buscador;
+        private TextBox textBox1;
     }
 }
