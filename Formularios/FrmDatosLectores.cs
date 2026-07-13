@@ -64,5 +64,15 @@ namespace prySistemaDePrestamosDeLibro.Clases
         {
 
         }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label14_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
