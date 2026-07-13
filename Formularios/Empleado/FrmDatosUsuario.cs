@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace prySistemaDePrestamosDeLibro.Formularios
 {
-    public partial class FrmRegistroUsuario : Form
+    public partial class FrmDatosUsuario : Form
     {
-        public FrmRegistroUsuario()
+        public FrmDatosUsuario()
         {
             InitializeComponent();
         }
