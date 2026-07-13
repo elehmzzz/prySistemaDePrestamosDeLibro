@@ -13,13 +13,13 @@ namespace prySistemaDePrestamosDeLibro.Formularios
 {
     public partial class FrmMenuPrincipal : Form
     {
-        private FrmRegistroDatos ventanaDatos;
-        private FrmRegistroUsuario ventanaUsuario;
+        private FrmDatosPersonales ventanaDatos;
+        private FrmDatosUsuario ventanaUsuario;
         public FrmMenuPrincipal()
         {
             InitializeComponent();
-            ventanaDatos = new FrmRegistroDatos();
-            ventanaUsuario = new FrmRegistroUsuario();
+            ventanaDatos = new FrmDatosPersonales();
+            ventanaUsuario = new FrmDatosUsuario();
             abrirFormulario(ventanaDatos);
         }
 

@@ -34,7 +34,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(942, 493);
+            BackColor = Color.FromArgb(236, 223, 204);
+            ClientSize = new Size(1052, 583);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "FrmPerfilEmpleado";
             Text = "FrmPerfilEmpleado";
             ResumeLayout(false);

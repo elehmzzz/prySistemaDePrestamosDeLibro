@@ -39,7 +39,7 @@
             label7 = new Label();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
-            button1 = new Button();
+            btnIniciarSesion = new Button();
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
@@ -115,7 +115,7 @@
             panel2.Controls.Add(label7);
             panel2.Controls.Add(textBox2);
             panel2.Controls.Add(textBox1);
-            panel2.Controls.Add(button1);
+            panel2.Controls.Add(btnIniciarSesion);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label5);
             panel2.Controls.Add(label4);
@@ -165,18 +165,19 @@
             textBox1.TabIndex = 7;
             textBox1.UseWaitCursor = true;
             // 
-            // button1
+            // btnIniciarSesion
             // 
-            button1.AutoSize = true;
-            button1.BackColor = Color.FromArgb(32, 41, 64);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(53, 404);
-            button1.Name = "button1";
-            button1.Size = new Size(184, 38);
-            button1.TabIndex = 6;
-            button1.Text = "Iniciar sesion";
-            button1.UseVisualStyleBackColor = false;
-            button1.UseWaitCursor = true;
+            btnIniciarSesion.AutoSize = true;
+            btnIniciarSesion.BackColor = Color.FromArgb(32, 41, 64);
+            btnIniciarSesion.ForeColor = Color.White;
+            btnIniciarSesion.Location = new Point(53, 404);
+            btnIniciarSesion.Name = "btnIniciarSesion";
+            btnIniciarSesion.Size = new Size(184, 38);
+            btnIniciarSesion.TabIndex = 6;
+            btnIniciarSesion.Text = "Iniciar sesion";
+            btnIniciarSesion.UseVisualStyleBackColor = false;
+            btnIniciarSesion.UseWaitCursor = true;
+            btnIniciarSesion.Click += btnIniciarSesion_Click;
             // 
             // label6
             // 
@@ -239,7 +240,7 @@
         private Panel panel2;
         private Label label3;
         private Label label2;
-        private Button button1;
+        private Button btnIniciarSesion;
         private Label label6;
         private Label label5;
         private Label label4;

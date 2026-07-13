@@ -1,6 +1,6 @@
 ﻿namespace prySistemaDePrestamosDeLibro.Formularios
 {
-    partial class FrmRegistroUsuario
+    partial class FrmDatosUsuario
     {
         /// <summary>
         /// Required designer variable.
@@ -36,12 +36,14 @@
             textBox1 = new TextBox();
             label6 = new Label();
             textBox4 = new TextBox();
-            btnRegresar = new Button();
-            btnSiguiente = new Button();
             label1 = new Label();
             textBox2 = new TextBox();
+            btnRegresar = new Button();
+            btnSiguiente = new Button();
+            tableLayoutPanel3 = new TableLayoutPanel();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel2
@@ -90,8 +92,6 @@
             tableLayoutPanel1.Controls.Add(textBox1, 1, 0);
             tableLayoutPanel1.Controls.Add(label6, 0, 1);
             tableLayoutPanel1.Controls.Add(textBox4, 1, 1);
-            tableLayoutPanel1.Controls.Add(btnRegresar, 2, 2);
-            tableLayoutPanel1.Controls.Add(btnSiguiente, 3, 2);
             tableLayoutPanel1.Controls.Add(label1, 0, 2);
             tableLayoutPanel1.Controls.Add(textBox2, 1, 2);
             tableLayoutPanel1.Location = new Point(19, 161);
@@ -143,34 +143,6 @@
             textBox4.Size = new Size(238, 34);
             textBox4.TabIndex = 12;
             // 
-            // btnRegresar
-            // 
-            btnRegresar.AutoSize = true;
-            btnRegresar.BackColor = Color.FromArgb(32, 41, 64);
-            btnRegresar.ForeColor = Color.White;
-            btnRegresar.Location = new Point(470, 128);
-            btnRegresar.Margin = new Padding(4);
-            btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new Size(127, 42);
-            btnRegresar.TabIndex = 6;
-            btnRegresar.Text = "Regresar";
-            btnRegresar.UseVisualStyleBackColor = false;
-            btnRegresar.Click += btnRegresar_Click;
-            // 
-            // btnSiguiente
-            // 
-            btnSiguiente.AutoSize = true;
-            btnSiguiente.BackColor = Color.FromArgb(32, 41, 64);
-            btnSiguiente.ForeColor = Color.White;
-            btnSiguiente.Location = new Point(628, 128);
-            btnSiguiente.Margin = new Padding(4);
-            btnSiguiente.Name = "btnSiguiente";
-            btnSiguiente.Size = new Size(127, 42);
-            btnSiguiente.TabIndex = 27;
-            btnSiguiente.Text = "Siguiente";
-            btnSiguiente.UseVisualStyleBackColor = false;
-            btnSiguiente.Click += btnSiguiente_Click;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -189,22 +161,68 @@
             textBox2.Size = new Size(238, 34);
             textBox2.TabIndex = 29;
             // 
-            // FrmRegistroUsuario
+            // btnRegresar
+            // 
+            btnRegresar.AutoSize = true;
+            btnRegresar.BackColor = Color.FromArgb(32, 41, 64);
+            btnRegresar.ForeColor = Color.White;
+            btnRegresar.Location = new Point(4, 4);
+            btnRegresar.Margin = new Padding(4);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(117, 42);
+            btnRegresar.TabIndex = 6;
+            btnRegresar.Text = "Regresar";
+            btnRegresar.UseVisualStyleBackColor = false;
+            btnRegresar.Click += btnRegresar_Click;
+            // 
+            // btnSiguiente
+            // 
+            btnSiguiente.AutoSize = true;
+            btnSiguiente.BackColor = Color.FromArgb(32, 41, 64);
+            btnSiguiente.ForeColor = Color.White;
+            btnSiguiente.Location = new Point(153, 4);
+            btnSiguiente.Margin = new Padding(4);
+            btnSiguiente.Name = "btnSiguiente";
+            btnSiguiente.Size = new Size(117, 42);
+            btnSiguiente.TabIndex = 27;
+            btnSiguiente.Text = "Siguiente";
+            btnSiguiente.UseVisualStyleBackColor = false;
+            btnSiguiente.Click += btnSiguiente_Click;
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.ColumnCount = 2;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.Controls.Add(btnRegresar, 0, 0);
+            tableLayoutPanel3.Controls.Add(btnSiguiente, 1, 0);
+            tableLayoutPanel3.Location = new Point(554, 469);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 1;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.Size = new Size(298, 56);
+            tableLayoutPanel3.TabIndex = 28;
+            // 
+            // FrmDatosUsuario
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1052, 583);
+            Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "FrmRegistroUsuario";
+            Name = "FrmDatosUsuario";
             Text = "FrmRegistroUsuario";
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel3.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -222,5 +240,6 @@
         private Button btnSiguiente;
         private Label label1;
         private TextBox textBox2;
+        private TableLayoutPanel tableLayoutPanel3;
     }
 }

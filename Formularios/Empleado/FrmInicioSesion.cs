@@ -1,4 +1,5 @@
-﻿using System;
+﻿using prySistemaDePrestamosDeLibro.Formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,5 +18,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
             InitializeComponent();
         }
 
+        private void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+            FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal();
+            menuPrincipal.Show();
+            this.Hide();
+        }
     }
 }

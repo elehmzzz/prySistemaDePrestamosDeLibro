@@ -1,6 +1,6 @@
 ﻿namespace prySistemaDePrestamosDeLibro.Formularios
 {
-    partial class FrmRegistroDatos
+    partial class FrmDatosPersonales
     {
         /// <summary>
         /// Required designer variable.
