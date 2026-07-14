@@ -1,4 +1,5 @@
 using prySistemaDePrestamosDeLibro.Clases;
+using prySistemaDePrestamosDeLibro.Formularios;
 
 namespace prySistemaDePrestamosDeLibro
 {
@@ -14,7 +15,7 @@ namespace prySistemaDePrestamosDeLibro
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new FrmDatosLectores());
+            Application.Run(new FrmInicioSesion());
         }
     }
 }

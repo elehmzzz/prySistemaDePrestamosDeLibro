@@ -10,11 +10,21 @@ using System.Windows.Forms;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
-    public partial class UcRegistroUsuario : UserControl
+    public partial class FrmNuevoLibro : Form
     {
-        public UcRegistroUsuario()
+        public FrmNuevoLibro()
         {
             InitializeComponent();
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

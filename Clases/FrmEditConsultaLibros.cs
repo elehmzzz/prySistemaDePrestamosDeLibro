@@ -10,12 +10,16 @@ using System.Windows.Forms;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
-    public partial class FrmInicioSesion : Form
+    public partial class FrmEditConsultaLibros : Form
     {
-        public FrmInicioSesion()
+        public FrmEditConsultaLibros()
         {
             InitializeComponent();
         }
 
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
