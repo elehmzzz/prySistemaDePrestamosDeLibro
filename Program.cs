@@ -1,4 +1,5 @@
 using prySistemaDePrestamosDeLibro.Clases;
+using prySistemaDePrestamosDeLibro.Formularios;
 
 namespace prySistemaDePrestamosDeLibro
 {

@@ -2,20 +2,23 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.DirectoryServices.ActiveDirectory;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace prySistemaDePrestamosDeLibro.Clases
+namespace prySistemaDePrestamosDeLibro.Formularios
 {
-    public partial class FrmInicioSesion : Form
+    public partial class FrmMenuPrincipal : Form
     {
-        public FrmInicioSesion()
+
+        public FrmMenuPrincipal()
         {
             InitializeComponent();
-        }
 
+        }
+        
     }
 }

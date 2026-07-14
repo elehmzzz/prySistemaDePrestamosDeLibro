@@ -10,14 +10,16 @@ using System.Windows.Forms;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
-    public partial class UcRegistroDatos : UserControl
+    public partial class FrmEditConsultaLibros : Form
     {
-        private UcRegistroUsuario registroUsuario;
-        public UcRegistroDatos()
+        public FrmEditConsultaLibros()
         {
             InitializeComponent();
         }
 
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
 
+        }
     }
 }
