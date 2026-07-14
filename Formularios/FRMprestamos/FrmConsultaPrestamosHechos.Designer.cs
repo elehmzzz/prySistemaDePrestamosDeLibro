@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            textBox11 = new TextBox();
+            label13 = new Label();
+            textBox10 = new TextBox();
+            label12 = new Label();
+            textBox8 = new TextBox();
+            label11 = new Label();
+            label8 = new Label();
+            textBox4 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
             textBox9 = new TextBox();
             label10 = new Label();
@@ -49,15 +57,7 @@
             label1 = new Label();
             panel3 = new Panel();
             labelRegistrodePrestamos = new Label();
-            textBox4 = new TextBox();
-            label8 = new Label();
-            label11 = new Label();
-            textBox8 = new TextBox();
             button2 = new Button();
-            label12 = new Label();
-            textBox10 = new TextBox();
-            label13 = new Label();
-            textBox11 = new TextBox();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -98,6 +98,70 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1349, 731);
             panel2.TabIndex = 4;
+            // 
+            // textBox11
+            // 
+            textBox11.Location = new Point(946, 476);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(215, 34);
+            textBox11.TabIndex = 39;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(662, 479);
+            label13.Name = "label13";
+            label13.Size = new Size(156, 28);
+            label13.TabIndex = 38;
+            label13.Text = "Multa Generada:";
+            // 
+            // textBox10
+            // 
+            textBox10.Location = new Point(946, 404);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(215, 34);
+            textBox10.TabIndex = 37;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(662, 407);
+            label12.Name = "label12";
+            label12.Size = new Size(150, 28);
+            label12.TabIndex = 36;
+            label12.Text = "Dias de Retraso:";
+            // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(946, 336);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(215, 34);
+            textBox8.TabIndex = 35;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(662, 339);
+            label11.Name = "label11";
+            label11.Size = new Size(140, 28);
+            label11.TabIndex = 34;
+            label11.Text = "Dias Restantes:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(662, 274);
+            label8.Name = "label8";
+            label8.Size = new Size(255, 28);
+            label8.TabIndex = 33;
+            label8.Text = "Fecha Limite de Devolucion:";
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(946, 271);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(215, 34);
+            textBox4.TabIndex = 32;
             // 
             // dateTimePicker1
             // 
@@ -271,38 +335,6 @@
             labelRegistrodePrestamos.TabIndex = 3;
             labelRegistrodePrestamos.Text = "Información del Prestamo";
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(946, 271);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(215, 34);
-            textBox4.TabIndex = 32;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(662, 274);
-            label8.Name = "label8";
-            label8.Size = new Size(255, 28);
-            label8.TabIndex = 33;
-            label8.Text = "Fecha Limite de Devolucion:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(662, 339);
-            label11.Name = "label11";
-            label11.Size = new Size(140, 28);
-            label11.TabIndex = 34;
-            label11.Text = "Dias Restantes:";
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(946, 336);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(215, 34);
-            textBox8.TabIndex = 35;
-            // 
             // button2
             // 
             button2.AutoSize = true;
@@ -315,45 +347,15 @@
             button2.Text = "Siguiente";
             button2.UseVisualStyleBackColor = false;
             // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(662, 407);
-            label12.Name = "label12";
-            label12.Size = new Size(150, 28);
-            label12.TabIndex = 36;
-            label12.Text = "Dias de Retraso:";
-            // 
-            // textBox10
-            // 
-            textBox10.Location = new Point(946, 404);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(215, 34);
-            textBox10.TabIndex = 37;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(662, 479);
-            label13.Name = "label13";
-            label13.Size = new Size(156, 28);
-            label13.TabIndex = 38;
-            label13.Text = "Multa Generada:";
-            // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(946, 476);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(215, 34);
-            textBox11.TabIndex = 39;
-            // 
-            // FrmConsultaPrestamoHechoVigente
+            // FrmConsultaPrestamosHechos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1274, 648);
             Controls.Add(panel2);
-            Name = "FrmConsultaPrestamoHechoVigente";
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            Name = "FrmConsultaPrestamosHechos";
             Text = "FrmConsultaPrestamoHechoVigente";
             panel2.ResumeLayout(false);
             panel2.PerformLayout();

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            dateTimePicker1 = new DateTimePicker();
+            button2 = new Button();
             button1 = new Button();
             textBox9 = new TextBox();
             label10 = new Label();
@@ -51,8 +53,6 @@
             label1 = new Label();
             panel3 = new Panel();
             labelRegistrodePrestamos = new Label();
-            button2 = new Button();
-            dateTimePicker1 = new DateTimePicker();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -88,6 +88,26 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1349, 731);
             panel2.TabIndex = 3;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(380, 212);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(215, 34);
+            dateTimePicker1.TabIndex = 31;
+            // 
+            // button2
+            // 
+            button2.AutoSize = true;
+            button2.BackColor = Color.FromArgb(32, 41, 64);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(1055, 597);
+            button2.Name = "button2";
+            button2.Size = new Size(184, 38);
+            button2.TabIndex = 30;
+            button2.Text = "Siguiente";
+            button2.UseVisualStyleBackColor = false;
             // 
             // button1
             // 
@@ -285,32 +305,14 @@
             labelRegistrodePrestamos.TabIndex = 3;
             labelRegistrodePrestamos.Text = "Registro de préstamos";
             // 
-            // button2
-            // 
-            button2.AutoSize = true;
-            button2.BackColor = Color.FromArgb(32, 41, 64);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(1055, 597);
-            button2.Name = "button2";
-            button2.Size = new Size(184, 38);
-            button2.TabIndex = 30;
-            button2.Text = "Siguiente";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(380, 212);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(215, 34);
-            dateTimePicker1.TabIndex = 31;
-            // 
             // FrmRSeleccionLector
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1274, 648);
             Controls.Add(panel2);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
             Name = "FrmRSeleccionLector";
             Text = "FrmRPrestamo";
             panel2.ResumeLayout(false);
