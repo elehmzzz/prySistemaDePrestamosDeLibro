@@ -228,7 +228,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(3, 5);
+            label2.Location = new Point(15, 8);
             label2.Name = "label2";
             label2.Size = new Size(125, 54);
             label2.TabIndex = 0;
@@ -262,6 +262,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Name = "FrmMenuPrincipal";
+            StartPosition = FormStartPosition.CenterParent;
             Text = "FrmMenuPrincipal";
             panel1.ResumeLayout(false);
             panel7.ResumeLayout(false);

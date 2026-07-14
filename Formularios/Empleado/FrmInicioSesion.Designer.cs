@@ -35,7 +35,7 @@
             label2 = new Label();
             label1 = new Label();
             panel2 = new Panel();
-            linkLabel1 = new LinkLabel();
+            llbRegistrar = new LinkLabel();
             label7 = new Label();
             textBox2 = new TextBox();
             textBox1 = new TextBox();
@@ -111,7 +111,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(236, 223, 204);
-            panel2.Controls.Add(linkLabel1);
+            panel2.Controls.Add(llbRegistrar);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(textBox2);
             panel2.Controls.Add(textBox1);
@@ -127,17 +127,18 @@
             panel2.TabIndex = 1;
             panel2.UseWaitCursor = true;
             // 
-            // linkLabel1
+            // llbRegistrar
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.LinkColor = Color.FromArgb(32, 41, 64);
-            linkLabel1.Location = new Point(53, 564);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(105, 28);
-            linkLabel1.TabIndex = 10;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Registrate!";
-            linkLabel1.UseWaitCursor = true;
+            llbRegistrar.AutoSize = true;
+            llbRegistrar.LinkColor = Color.FromArgb(32, 41, 64);
+            llbRegistrar.Location = new Point(53, 564);
+            llbRegistrar.Name = "llbRegistrar";
+            llbRegistrar.Size = new Size(105, 28);
+            llbRegistrar.TabIndex = 10;
+            llbRegistrar.TabStop = true;
+            llbRegistrar.Text = "Registrate!";
+            llbRegistrar.UseWaitCursor = true;
+            llbRegistrar.LinkClicked += llbRegistrar_LinkClicked;
             // 
             // label7
             // 
@@ -248,6 +249,6 @@
         private TextBox textBox2;
         private Label label7;
         private PictureBox pictureBox1;
-        private LinkLabel linkLabel1;
+        private LinkLabel llbRegistrar;
     }
 }

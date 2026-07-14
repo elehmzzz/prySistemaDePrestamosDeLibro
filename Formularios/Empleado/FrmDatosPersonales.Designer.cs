@@ -239,10 +239,11 @@
             btnRegresar.Location = new Point(466, 311);
             btnRegresar.Margin = new Padding(6);
             btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new Size(133, 50);
+            btnRegresar.Size = new Size(143, 50);
             btnRegresar.TabIndex = 6;
             btnRegresar.Text = "Regresar";
             btnRegresar.UseVisualStyleBackColor = false;
+            btnRegresar.Click += btnRegresar_Click;
             // 
             // btnSiguiente
             // 
@@ -252,7 +253,7 @@
             btnSiguiente.Location = new Point(622, 311);
             btnSiguiente.Margin = new Padding(6);
             btnSiguiente.Name = "btnSiguiente";
-            btnSiguiente.Size = new Size(143, 50);
+            btnSiguiente.Size = new Size(152, 50);
             btnSiguiente.TabIndex = 27;
             btnSiguiente.Text = "Siguiente";
             btnSiguiente.UseVisualStyleBackColor = false;
@@ -322,17 +323,18 @@
             label11.TabIndex = 38;
             label11.Text = "CP:";
             // 
-            // FrmRegistroDatos
+            // FrmDatosPersonales
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1052, 583);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
-            Name = "FrmRegistroDatos";
+            Name = "FrmDatosPersonales";
             Text = "FrmRegistroDatos";
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();

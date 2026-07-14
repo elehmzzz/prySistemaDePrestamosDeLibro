@@ -24,5 +24,12 @@ namespace prySistemaDePrestamosDeLibro.Clases
             menuPrincipal.Show();
             this.Hide();
         }
+
+        private void llbRegistrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FrmRegistroPersonal registroPersonal = new FrmRegistroPersonal(this);
+            registroPersonal.Show();
+            this.Hide();
+        }
     }
 }

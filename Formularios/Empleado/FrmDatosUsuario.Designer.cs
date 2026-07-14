@@ -33,11 +33,11 @@
             label4 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             label5 = new Label();
-            textBox1 = new TextBox();
+            txtUsuario = new TextBox();
             label6 = new Label();
-            textBox4 = new TextBox();
+            txtContrasenia = new TextBox();
             label1 = new Label();
-            textBox2 = new TextBox();
+            txtConfirmarContrasenia = new TextBox();
             btnRegresar = new Button();
             btnSiguiente = new Button();
             tableLayoutPanel3 = new TableLayoutPanel();
@@ -83,18 +83,16 @@
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 4;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 26.3967476F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 29.73479F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.0414143F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.8270473F));
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 29.05162F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70.94838F));
             tableLayoutPanel1.Controls.Add(label5, 0, 0);
-            tableLayoutPanel1.Controls.Add(textBox1, 1, 0);
+            tableLayoutPanel1.Controls.Add(txtUsuario, 1, 0);
             tableLayoutPanel1.Controls.Add(label6, 0, 1);
-            tableLayoutPanel1.Controls.Add(textBox4, 1, 1);
+            tableLayoutPanel1.Controls.Add(txtContrasenia, 1, 1);
             tableLayoutPanel1.Controls.Add(label1, 0, 2);
-            tableLayoutPanel1.Controls.Add(textBox2, 1, 2);
-            tableLayoutPanel1.Location = new Point(19, 161);
+            tableLayoutPanel1.Controls.Add(txtConfirmarContrasenia, 1, 2);
+            tableLayoutPanel1.Location = new Point(19, 168);
             tableLayoutPanel1.Margin = new Padding(4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 3;
@@ -117,13 +115,13 @@
             label5.TabIndex = 4;
             label5.Text = "Usuario:";
             // 
-            // textBox1
+            // txtUsuario
             // 
-            textBox1.Location = new Point(223, 4);
-            textBox1.Margin = new Padding(4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(238, 34);
-            textBox1.TabIndex = 7;
+            txtUsuario.Location = new Point(246, 4);
+            txtUsuario.Margin = new Padding(4);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(238, 34);
+            txtUsuario.TabIndex = 7;
             // 
             // label6
             // 
@@ -135,13 +133,14 @@
             label6.TabIndex = 5;
             label6.Text = "Contraseña:";
             // 
-            // textBox4
+            // txtContrasenia
             // 
-            textBox4.Location = new Point(223, 66);
-            textBox4.Margin = new Padding(4);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(238, 34);
-            textBox4.TabIndex = 12;
+            txtContrasenia.Location = new Point(246, 66);
+            txtContrasenia.Margin = new Padding(4);
+            txtContrasenia.Name = "txtContrasenia";
+            txtContrasenia.PasswordChar = '*';
+            txtContrasenia.Size = new Size(238, 34);
+            txtContrasenia.TabIndex = 12;
             // 
             // label1
             // 
@@ -153,13 +152,14 @@
             label1.TabIndex = 28;
             label1.Text = "Confirma contraseña:";
             // 
-            // textBox2
+            // txtConfirmarContrasenia
             // 
-            textBox2.Location = new Point(223, 128);
-            textBox2.Margin = new Padding(4);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(238, 34);
-            textBox2.TabIndex = 29;
+            txtConfirmarContrasenia.Location = new Point(246, 128);
+            txtConfirmarContrasenia.Margin = new Padding(4);
+            txtConfirmarContrasenia.Name = "txtConfirmarContrasenia";
+            txtConfirmarContrasenia.PasswordChar = '*';
+            txtConfirmarContrasenia.Size = new Size(238, 34);
+            txtConfirmarContrasenia.TabIndex = 29;
             // 
             // btnRegresar
             // 
@@ -233,13 +233,13 @@
         private Label label4;
         private TableLayoutPanel tableLayoutPanel1;
         private Label label5;
-        private TextBox textBox1;
+        private TextBox txtUsuario;
         private Label label6;
-        private TextBox textBox4;
+        private TextBox txtContrasenia;
         private Button btnRegresar;
         private Button btnSiguiente;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox txtConfirmarContrasenia;
         private TableLayoutPanel tableLayoutPanel3;
     }
 }
