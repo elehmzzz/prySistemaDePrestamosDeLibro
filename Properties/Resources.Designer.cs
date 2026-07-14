@@ -59,16 +59,5 @@ namespace prySistemaDePrestamosDeLibro.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap coffee {
-            get {
-                object obj = ResourceManager.GetObject("coffee", resourceCulture);
-
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }
