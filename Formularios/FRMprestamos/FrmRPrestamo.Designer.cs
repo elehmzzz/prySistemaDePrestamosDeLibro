@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            textBox1 = new TextBox();
+            Buscador = new ListBox();
             dateTimePicker2 = new DateTimePicker();
             radioButton3 = new RadioButton();
             radioButton2 = new RadioButton();
@@ -51,8 +53,6 @@
             label1 = new Label();
             panel3 = new Panel();
             labelRegistrodePrestamos = new Label();
-            Buscador = new ListBox();
-            textBox1 = new TextBox();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             SuspendLayout();
@@ -88,6 +88,23 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1349, 731);
             panel2.TabIndex = 4;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(380, 146);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(385, 34);
+            textBox1.TabIndex = 39;
+            // 
+            // Buscador
+            // 
+            Buscador.FormattingEnabled = true;
+            Buscador.ItemHeight = 28;
+            Buscador.Location = new Point(380, 186);
+            Buscador.Name = "Buscador";
+            Buscador.Size = new Size(385, 200);
+            Buscador.TabIndex = 38;
+            Buscador.SelectedIndexChanged += Buscador_SelectedIndexChanged;
             // 
             // dateTimePicker2
             // 
@@ -298,22 +315,6 @@
             labelRegistrodePrestamos.Size = new Size(355, 46);
             labelRegistrodePrestamos.TabIndex = 3;
             labelRegistrodePrestamos.Text = "Registro de préstamos";
-            // 
-            // Buscador
-            // 
-            Buscador.FormattingEnabled = true;
-            Buscador.ItemHeight = 28;
-            Buscador.Location = new Point(380, 186);
-            Buscador.Name = "Buscador";
-            Buscador.Size = new Size(385, 200);
-            Buscador.TabIndex = 38;
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(380, 146);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(385, 34);
-            textBox1.TabIndex = 39;
             // 
             // FrmRPrestamo
             // 

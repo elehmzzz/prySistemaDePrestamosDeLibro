@@ -36,6 +36,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
         {
 
         }
+
+        private void Buscador_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 
