@@ -32,26 +32,26 @@
             textBox6 = new TextBox();
             button1 = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
-            textBox10 = new TextBox();
-            textBox13 = new TextBox();
-            label2 = new Label();
-            label1 = new Label();
-            label6 = new Label();
-            label3 = new Label();
-            textBox18 = new TextBox();
-            label4 = new Label();
-            textBox17 = new TextBox();
-            textBox16 = new TextBox();
-            label7 = new Label();
-            textBox14 = new TextBox();
-            label8 = new Label();
-            textBox4 = new TextBox();
-            label9 = new Label();
-            label10 = new Label();
-            textBox12 = new TextBox();
             dateTimePicker1 = new DateTimePicker();
-            panel2 = new Panel();
+            textBox12 = new TextBox();
+            label10 = new Label();
+            label9 = new Label();
+            textBox4 = new TextBox();
+            label8 = new Label();
+            textBox14 = new TextBox();
+            label7 = new Label();
+            textBox16 = new TextBox();
+            textBox17 = new TextBox();
+            label4 = new Label();
+            textBox18 = new TextBox();
+            label3 = new Label();
+            label6 = new Label();
+            label1 = new Label();
+            label2 = new Label();
+            textBox13 = new TextBox();
+            textBox10 = new TextBox();
             button2 = new Button();
+            panel2 = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
             label5 = new Label();
             label14 = new Label();
@@ -128,47 +128,100 @@
             tableLayoutPanel1.TabIndex = 41;
             tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
-            // textBox10
+            // dateTimePicker1
             // 
-            textBox10.Location = new Point(740, 79);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(215, 34);
-            textBox10.TabIndex = 35;
+            dateTimePicker1.Format = DateTimePickerFormat.Short;
+            dateTimePicker1.Location = new Point(251, 41);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(204, 34);
+            dateTimePicker1.TabIndex = 31;
             // 
-            // textBox13
+            // textBox12
             // 
-            textBox13.Location = new Point(740, 41);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(215, 34);
-            textBox13.TabIndex = 29;
+            textBox12.Location = new Point(251, 193);
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(204, 34);
+            textBox12.TabIndex = 41;
             // 
-            // label2
+            // label10
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(3, 76);
-            label2.Name = "label2";
-            label2.Size = new Size(60, 28);
-            label2.TabIndex = 16;
-            label2.Text = "Edad:";
-            label2.Click += label2_Click;
+            label10.AutoSize = true;
+            label10.Location = new Point(461, 76);
+            label10.Name = "label10";
+            label10.Size = new Size(79, 28);
+            label10.TabIndex = 28;
+            label10.Text = "Escuela:";
             // 
-            // label1
+            // label9
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(3, 38);
-            label1.Name = "label1";
-            label1.Size = new Size(199, 28);
-            label1.TabIndex = 10;
-            label1.Text = "Fecha de Nacimiento:";
+            label9.AutoSize = true;
+            label9.Location = new Point(461, 38);
+            label9.Name = "label9";
+            label9.Size = new Size(110, 28);
+            label9.TabIndex = 27;
+            label9.Text = "Ocupacion:";
             // 
-            // label6
+            // textBox4
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(3, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(89, 28);
-            label6.TabIndex = 5;
-            label6.Text = "Nombre:";
+            textBox4.Location = new Point(740, 3);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(215, 34);
+            textBox4.TabIndex = 32;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(461, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(90, 28);
+            label8.TabIndex = 25;
+            label8.Text = "Telefono:";
+            // 
+            // textBox14
+            // 
+            textBox14.Location = new Point(251, 3);
+            textBox14.Name = "textBox14";
+            textBox14.Size = new Size(204, 34);
+            textBox14.TabIndex = 7;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(3, 190);
+            label7.Name = "label7";
+            label7.Size = new Size(39, 28);
+            label7.TabIndex = 23;
+            label7.Text = "CP:";
+            // 
+            // textBox16
+            // 
+            textBox16.Location = new Point(251, 79);
+            textBox16.Name = "textBox16";
+            textBox16.Size = new Size(204, 34);
+            textBox16.TabIndex = 19;
+            // 
+            // textBox17
+            // 
+            textBox17.Location = new Point(251, 117);
+            textBox17.Name = "textBox17";
+            textBox17.Size = new Size(204, 34);
+            textBox17.TabIndex = 22;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(3, 152);
+            label4.Name = "label4";
+            label4.Size = new Size(104, 28);
+            label4.TabIndex = 21;
+            label4.Text = "Municipio:";
+            // 
+            // textBox18
+            // 
+            textBox18.Location = new Point(251, 155);
+            textBox18.Name = "textBox18";
+            textBox18.Size = new Size(204, 34);
+            textBox18.TabIndex = 24;
             // 
             // label3
             // 
@@ -180,100 +233,59 @@
             label3.Text = "Direccion:";
             label3.Click += label2_Click;
             // 
-            // textBox18
+            // label6
             // 
-            textBox18.Location = new Point(251, 155);
-            textBox18.Name = "textBox18";
-            textBox18.Size = new Size(204, 34);
-            textBox18.TabIndex = 24;
+            label6.AutoSize = true;
+            label6.Location = new Point(3, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(89, 28);
+            label6.TabIndex = 5;
+            label6.Text = "Nombre:";
             // 
-            // label4
+            // label1
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(3, 152);
-            label4.Name = "label4";
-            label4.Size = new Size(104, 28);
-            label4.TabIndex = 21;
-            label4.Text = "Municipio:";
+            label1.AutoSize = true;
+            label1.Location = new Point(3, 38);
+            label1.Name = "label1";
+            label1.Size = new Size(199, 28);
+            label1.TabIndex = 10;
+            label1.Text = "Fecha de Nacimiento:";
             // 
-            // textBox17
+            // label2
             // 
-            textBox17.Location = new Point(251, 117);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(204, 34);
-            textBox17.TabIndex = 22;
+            label2.AutoSize = true;
+            label2.Location = new Point(3, 76);
+            label2.Name = "label2";
+            label2.Size = new Size(60, 28);
+            label2.TabIndex = 16;
+            label2.Text = "Edad:";
+            label2.Click += label2_Click;
             // 
-            // textBox16
+            // textBox13
             // 
-            textBox16.Location = new Point(251, 79);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(204, 34);
-            textBox16.TabIndex = 19;
+            textBox13.Location = new Point(740, 41);
+            textBox13.Name = "textBox13";
+            textBox13.Size = new Size(215, 34);
+            textBox13.TabIndex = 29;
             // 
-            // label7
+            // textBox10
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(3, 190);
-            label7.Name = "label7";
-            label7.Size = new Size(39, 28);
-            label7.TabIndex = 23;
-            label7.Text = "CP:";
+            textBox10.Location = new Point(740, 79);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(215, 34);
+            textBox10.TabIndex = 35;
             // 
-            // textBox14
+            // button2
             // 
-            textBox14.Location = new Point(251, 3);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(204, 34);
-            textBox14.TabIndex = 7;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(461, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(90, 28);
-            label8.TabIndex = 25;
-            label8.Text = "Telefono:";
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(740, 3);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(215, 34);
-            textBox4.TabIndex = 32;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(461, 38);
-            label9.Name = "label9";
-            label9.Size = new Size(110, 28);
-            label9.TabIndex = 27;
-            label9.Text = "Ocupacion:";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(461, 76);
-            label10.Name = "label10";
-            label10.Size = new Size(79, 28);
-            label10.TabIndex = 28;
-            label10.Text = "Escuela:";
-            // 
-            // textBox12
-            // 
-            textBox12.Location = new Point(251, 193);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(204, 34);
-            textBox12.TabIndex = 41;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(251, 41);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(204, 34);
-            dateTimePicker1.TabIndex = 31;
+            button2.AutoSize = true;
+            button2.BackColor = Color.FromArgb(32, 41, 64);
+            button2.ForeColor = Color.White;
+            button2.Location = new Point(461, 269);
+            button2.Name = "button2";
+            button2.Size = new Size(139, 35);
+            button2.TabIndex = 42;
+            button2.Text = "Salir";
+            button2.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -288,18 +300,6 @@
             panel2.Size = new Size(1034, 553);
             panel2.TabIndex = 3;
             panel2.Paint += panel2_Paint;
-            // 
-            // button2
-            // 
-            button2.AutoSize = true;
-            button2.BackColor = Color.FromArgb(32, 41, 64);
-            button2.ForeColor = Color.White;
-            button2.Location = new Point(461, 269);
-            button2.Name = "button2";
-            button2.Size = new Size(139, 35);
-            button2.TabIndex = 42;
-            button2.Text = "Salir";
-            button2.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel2
             // 

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace prySistemaDePrestamosDeLibro.Clases
+namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
 {
     public partial class FrmAgregarLectores : Form
     {
