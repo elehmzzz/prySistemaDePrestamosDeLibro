@@ -36,13 +36,8 @@ namespace prySistemaDePrestamosDeLibro.Clases
         {
 
         }
+        private void Buscador_SelectedIndexChanged(object sender, EventArgs e)
 
-        private void labelRegistrodePrestamos_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }

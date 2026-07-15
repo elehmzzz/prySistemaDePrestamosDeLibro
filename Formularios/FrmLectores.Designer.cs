@@ -44,10 +44,12 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
             dataGridView1.Location = new Point(15, 158);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1007, 366);
             dataGridView1.TabIndex = 2;
@@ -55,38 +57,38 @@
             // 
             // Column1
             // 
+            Column1.FillWeight = 94.62568F;
             Column1.HeaderText = "ID Lector";
             Column1.MinimumWidth = 6;
             Column1.Name = "Column1";
-            Column1.Width = 125;
             // 
             // Column2
             // 
+            Column2.FillWeight = 100.0257F;
             Column2.HeaderText = "Nombre";
             Column2.MinimumWidth = 6;
             Column2.Name = "Column2";
-            Column2.Width = 125;
             // 
             // Column3
             // 
+            Column3.FillWeight = 102.275726F;
             Column3.HeaderText = "Prestamos Actuales";
             Column3.MinimumWidth = 6;
             Column3.Name = "Column3";
-            Column3.Width = 125;
             // 
             // Column4
             // 
+            Column4.FillWeight = 102.968048F;
             Column4.HeaderText = "Multas";
             Column4.MinimumWidth = 6;
             Column4.Name = "Column4";
-            Column4.Width = 125;
             // 
             // Column5
             // 
+            Column5.FillWeight = 100.104813F;
             Column5.HeaderText = "Ver más..";
             Column5.MinimumWidth = 6;
             Column5.Name = "Column5";
-            Column5.Width = 125;
             // 
             // label1
             // 

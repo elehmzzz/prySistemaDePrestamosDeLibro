@@ -71,5 +71,10 @@ namespace prySistemaDePrestamosDeLibro.Clases
         {
 
         }
+
+        private void txtBuscador_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

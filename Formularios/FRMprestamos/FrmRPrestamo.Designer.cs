@@ -28,6 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
+            panel2 = new Panel();
+            textBox1 = new TextBox();
+            Buscador = new ListBox();
+            dateTimePicker2 = new DateTimePicker();
+            radioButton3 = new RadioButton();
+            radioButton2 = new RadioButton();
+            radioButton1 = new RadioButton();
+            dateTimePicker1 = new DateTimePicker();
+            button2 = new Button();
+            button1 = new Button();
+            label8 = new Label();
+            textBox7 = new TextBox();
+            label7 = new Label();
+            textBox6 = new TextBox();
+            label4 = new Label();
+            label3 = new Label();
+            textBox5 = new TextBox();
+            textBox2 = new TextBox();
+            label2 = new Label();
+            panel1 = new Panel();
+            label5 = new Label();
+            label6 = new Label();
+
             label1 = new Label();
             label6 = new Label();
             label2 = new Label();
@@ -44,15 +67,7 @@
             textBox1 = new TextBox();
             tableLayoutPanel2 = new TableLayoutPanel();
             labelRegistrodePrestamos = new Label();
-            panel2 = new Panel();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            textBox10 = new TextBox();
-            textBox13 = new TextBox();
-            textBox14 = new TextBox();
-            textBox3 = new TextBox();
-            dateTimePicker1 = new DateTimePicker();
-            Buscador = new ListBox();
-            tableLayoutPanel2.SuspendLayout();
+
             panel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -66,7 +81,24 @@
             label1.TabIndex = 10;
             label1.Text = "Nombre del Libro:";
             // 
-            // label6
+            // textBox1
+            // 
+            textBox1.Location = new Point(380, 146);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(385, 34);
+            textBox1.TabIndex = 39;
+            // 
+            // Buscador
+            // 
+            Buscador.FormattingEnabled = true;
+            Buscador.ItemHeight = 28;
+            Buscador.Location = new Point(380, 186);
+            Buscador.Name = "Buscador";
+            Buscador.Size = new Size(385, 200);
+            Buscador.TabIndex = 38;
+            Buscador.SelectedIndexChanged += Buscador_SelectedIndexChanged;
+            // 
+            // dateTimePicker2
             // 
             label6.AutoSize = true;
             label6.Location = new Point(3, 0);
@@ -311,15 +343,6 @@
             dateTimePicker1.TabIndex = 44;
             dateTimePicker1.TabStop = false;
             dateTimePicker1.Value = new DateTime(2026, 7, 10, 7, 49, 49, 0);
-            // 
-            // Buscador
-            // 
-            Buscador.FormattingEnabled = true;
-            Buscador.ItemHeight = 28;
-            Buscador.Location = new Point(207, 50);
-            Buscador.Name = "Buscador";
-            Buscador.Size = new Size(383, 32);
-            Buscador.TabIndex = 38;
             // 
             // FrmRPrestamo
             // 
