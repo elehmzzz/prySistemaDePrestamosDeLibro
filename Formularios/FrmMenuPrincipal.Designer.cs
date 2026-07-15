@@ -32,7 +32,7 @@
             panel4 = new Panel();
             panel7 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            button1 = new Button();
+            btnEmpleado = new Button();
             btnMultas = new Button();
             btnAgregarLectores = new Button();
             btnLectores = new Button();
@@ -40,7 +40,7 @@
             btnHacerPrestamo = new Button();
             btnLibros = new Button();
             panel5 = new Panel();
-            button2 = new Button();
+            btnCerrarSesion = new Button();
             panel2 = new Panel();
             label2 = new Label();
             panel3 = new Panel();
@@ -86,7 +86,7 @@
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(button1, 0, 6);
+            tableLayoutPanel1.Controls.Add(btnEmpleado, 0, 6);
             tableLayoutPanel1.Controls.Add(btnMultas, 0, 5);
             tableLayoutPanel1.Controls.Add(btnAgregarLectores, 0, 4);
             tableLayoutPanel1.Controls.Add(btnLectores, 0, 1);
@@ -108,17 +108,17 @@
             tableLayoutPanel1.Size = new Size(183, 426);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // button1
+            // btnEmpleado
             // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.Font = new Font("Segoe UI", 12F);
-            button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(3, 321);
-            button1.Name = "button1";
-            button1.Size = new Size(177, 47);
-            button1.TabIndex = 8;
-            button1.Text = "Empleado";
-            button1.UseVisualStyleBackColor = true;
+            btnEmpleado.FlatAppearance.BorderSize = 0;
+            btnEmpleado.Font = new Font("Segoe UI", 12F);
+            btnEmpleado.ForeColor = SystemColors.ActiveCaptionText;
+            btnEmpleado.Location = new Point(3, 321);
+            btnEmpleado.Name = "btnEmpleado";
+            btnEmpleado.Size = new Size(177, 47);
+            btnEmpleado.TabIndex = 8;
+            btnEmpleado.Text = "Empleado";
+            btnEmpleado.UseVisualStyleBackColor = true;
             // 
             // btnMultas
             // 
@@ -191,27 +191,28 @@
             btnLibros.TabIndex = 2;
             btnLibros.Text = "Libros";
             btnLibros.UseVisualStyleBackColor = true;
+            btnLibros.Click += btnLibros_Click;
             // 
             // panel5
             // 
-            panel5.Controls.Add(button2);
+            panel5.Controls.Add(btnCerrarSesion);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(0, 0);
             panel5.Name = "panel5";
             panel5.Size = new Size(222, 145);
             panel5.TabIndex = 1;
             // 
-            // button2
+            // btnCerrarSesion
             // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.Font = new Font("Segoe UI", 12F);
-            button2.ForeColor = SystemColors.ActiveCaptionText;
-            button2.Location = new Point(27, 33);
-            button2.Name = "button2";
-            button2.Size = new Size(177, 47);
-            button2.TabIndex = 9;
-            button2.Text = "Cerrar sesión";
-            button2.UseVisualStyleBackColor = true;
+            btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            btnCerrarSesion.Font = new Font("Segoe UI", 12F);
+            btnCerrarSesion.ForeColor = SystemColors.ActiveCaptionText;
+            btnCerrarSesion.Location = new Point(27, 33);
+            btnCerrarSesion.Name = "btnCerrarSesion";
+            btnCerrarSesion.Size = new Size(177, 47);
+            btnCerrarSesion.TabIndex = 9;
+            btnCerrarSesion.Text = "Cerrar sesión";
+            btnCerrarSesion.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -290,8 +291,8 @@
         private Panel panel5;
         private Panel pnlContenido;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button button1;
+        private Button btnEmpleado;
         private Panel panel4;
-        private Button button2;
+        private Button btnCerrarSesion;
     }
 }

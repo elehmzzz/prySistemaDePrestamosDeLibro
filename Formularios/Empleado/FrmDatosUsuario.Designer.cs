@@ -84,8 +84,8 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 29.05162F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 70.94838F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 48.4276733F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 51.5723267F));
             tableLayoutPanel1.Controls.Add(label5, 0, 0);
             tableLayoutPanel1.Controls.Add(txtUsuario, 1, 0);
             tableLayoutPanel1.Controls.Add(label6, 0, 1);
@@ -102,7 +102,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 28F));
-            tableLayoutPanel1.Size = new Size(833, 188);
+            tableLayoutPanel1.Size = new Size(505, 188);
             tableLayoutPanel1.TabIndex = 26;
             // 
             // label5
@@ -117,7 +117,7 @@
             // 
             // txtUsuario
             // 
-            txtUsuario.Location = new Point(246, 4);
+            txtUsuario.Location = new Point(248, 4);
             txtUsuario.Margin = new Padding(4);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(238, 34);
@@ -135,7 +135,7 @@
             // 
             // txtContrasenia
             // 
-            txtContrasenia.Location = new Point(246, 66);
+            txtContrasenia.Location = new Point(248, 66);
             txtContrasenia.Margin = new Padding(4);
             txtContrasenia.Name = "txtContrasenia";
             txtContrasenia.PasswordChar = '*';
@@ -154,7 +154,7 @@
             // 
             // txtConfirmarContrasenia
             // 
-            txtConfirmarContrasenia.Location = new Point(246, 128);
+            txtConfirmarContrasenia.Location = new Point(248, 128);
             txtConfirmarContrasenia.Margin = new Padding(4);
             txtConfirmarContrasenia.Name = "txtConfirmarContrasenia";
             txtConfirmarContrasenia.PasswordChar = '*';
@@ -169,7 +169,7 @@
             btnRegresar.Location = new Point(4, 4);
             btnRegresar.Margin = new Padding(4);
             btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new Size(117, 42);
+            btnRegresar.Size = new Size(140, 45);
             btnRegresar.TabIndex = 6;
             btnRegresar.Text = "Regresar";
             btnRegresar.UseVisualStyleBackColor = false;
@@ -183,7 +183,7 @@
             btnSiguiente.Location = new Point(153, 4);
             btnSiguiente.Margin = new Padding(4);
             btnSiguiente.Name = "btnSiguiente";
-            btnSiguiente.Size = new Size(117, 42);
+            btnSiguiente.Size = new Size(140, 45);
             btnSiguiente.TabIndex = 27;
             btnSiguiente.Text = "Siguiente";
             btnSiguiente.UseVisualStyleBackColor = false;
@@ -196,11 +196,11 @@
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel3.Controls.Add(btnRegresar, 0, 0);
             tableLayoutPanel3.Controls.Add(btnSiguiente, 1, 0);
-            tableLayoutPanel3.Location = new Point(554, 469);
+            tableLayoutPanel3.Location = new Point(470, 433);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel3.Size = new Size(298, 56);
+            tableLayoutPanel3.Size = new Size(298, 62);
             tableLayoutPanel3.TabIndex = 28;
             // 
             // FrmDatosUsuario

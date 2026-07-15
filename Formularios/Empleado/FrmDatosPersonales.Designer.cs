@@ -32,24 +32,24 @@
             label4 = new Label();
             label7 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
-            textBox9 = new TextBox();
-            textBox8 = new TextBox();
-            textBox7 = new TextBox();
+            txtCP = new TextBox();
+            txtMunicipio = new TextBox();
+            txtCiudad = new TextBox();
             label9 = new Label();
             label5 = new Label();
-            textBox1 = new TextBox();
+            txtNombre = new TextBox();
             label6 = new Label();
-            textBox4 = new TextBox();
+            txtApMaterno = new TextBox();
             label1 = new Label();
-            textBox2 = new TextBox();
+            txtApPaterno = new TextBox();
             label2 = new Label();
             btnRegresar = new Button();
             btnSiguiente = new Button();
             label3 = new Label();
             label8 = new Label();
-            textBox3 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
+            txtFechaNac = new TextBox();
+            txtCorreo = new TextBox();
+            txtTelefono = new TextBox();
             label10 = new Label();
             label11 = new Label();
             tableLayoutPanel2.SuspendLayout();
@@ -99,24 +99,24 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 29.73479F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.0414143F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.8270473F));
-            tableLayoutPanel1.Controls.Add(textBox9, 3, 2);
-            tableLayoutPanel1.Controls.Add(textBox8, 3, 1);
-            tableLayoutPanel1.Controls.Add(textBox7, 3, 0);
+            tableLayoutPanel1.Controls.Add(txtCP, 3, 2);
+            tableLayoutPanel1.Controls.Add(txtMunicipio, 3, 1);
+            tableLayoutPanel1.Controls.Add(txtCiudad, 3, 0);
             tableLayoutPanel1.Controls.Add(label9, 2, 0);
             tableLayoutPanel1.Controls.Add(label5, 0, 0);
-            tableLayoutPanel1.Controls.Add(textBox1, 1, 0);
+            tableLayoutPanel1.Controls.Add(txtNombre, 1, 0);
             tableLayoutPanel1.Controls.Add(label6, 0, 1);
-            tableLayoutPanel1.Controls.Add(textBox4, 1, 1);
+            tableLayoutPanel1.Controls.Add(txtApMaterno, 1, 1);
             tableLayoutPanel1.Controls.Add(label1, 0, 2);
-            tableLayoutPanel1.Controls.Add(textBox2, 1, 2);
+            tableLayoutPanel1.Controls.Add(txtApPaterno, 1, 2);
             tableLayoutPanel1.Controls.Add(label2, 0, 3);
             tableLayoutPanel1.Controls.Add(btnRegresar, 2, 5);
             tableLayoutPanel1.Controls.Add(btnSiguiente, 3, 5);
             tableLayoutPanel1.Controls.Add(label3, 0, 4);
             tableLayoutPanel1.Controls.Add(label8, 0, 5);
-            tableLayoutPanel1.Controls.Add(textBox3, 1, 3);
-            tableLayoutPanel1.Controls.Add(textBox5, 1, 4);
-            tableLayoutPanel1.Controls.Add(textBox6, 1, 5);
+            tableLayoutPanel1.Controls.Add(txtFechaNac, 1, 3);
+            tableLayoutPanel1.Controls.Add(txtCorreo, 1, 4);
+            tableLayoutPanel1.Controls.Add(txtTelefono, 1, 5);
             tableLayoutPanel1.Controls.Add(label10, 2, 1);
             tableLayoutPanel1.Controls.Add(label11, 2, 2);
             tableLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -133,29 +133,29 @@
             tableLayoutPanel1.Size = new Size(821, 367);
             tableLayoutPanel1.TabIndex = 27;
             // 
-            // textBox9
+            // txtCP
             // 
-            textBox9.Location = new Point(622, 128);
-            textBox9.Margin = new Padding(6);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(193, 34);
-            textBox9.TabIndex = 41;
+            txtCP.Location = new Point(622, 128);
+            txtCP.Margin = new Padding(6);
+            txtCP.Name = "txtCP";
+            txtCP.Size = new Size(193, 34);
+            txtCP.TabIndex = 41;
             // 
-            // textBox8
+            // txtMunicipio
             // 
-            textBox8.Location = new Point(622, 67);
-            textBox8.Margin = new Padding(6);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(193, 34);
-            textBox8.TabIndex = 40;
+            txtMunicipio.Location = new Point(622, 67);
+            txtMunicipio.Margin = new Padding(6);
+            txtMunicipio.Name = "txtMunicipio";
+            txtMunicipio.Size = new Size(193, 34);
+            txtMunicipio.TabIndex = 40;
             // 
-            // textBox7
+            // txtCiudad
             // 
-            textBox7.Location = new Point(622, 6);
-            textBox7.Margin = new Padding(6);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(193, 34);
-            textBox7.TabIndex = 39;
+            txtCiudad.Location = new Point(622, 6);
+            txtCiudad.Margin = new Padding(6);
+            txtCiudad.Name = "txtCiudad";
+            txtCiudad.Size = new Size(193, 34);
+            txtCiudad.TabIndex = 39;
             // 
             // label9
             // 
@@ -177,13 +177,13 @@
             label5.TabIndex = 4;
             label5.Text = "Nombre:";
             // 
-            // textBox1
+            // txtNombre
             // 
-            textBox1.Location = new Point(222, 6);
-            textBox1.Margin = new Padding(6);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(232, 34);
-            textBox1.TabIndex = 7;
+            txtNombre.Location = new Point(222, 6);
+            txtNombre.Margin = new Padding(6);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(232, 34);
+            txtNombre.TabIndex = 7;
             // 
             // label6
             // 
@@ -195,13 +195,13 @@
             label6.TabIndex = 5;
             label6.Text = "Apellido materno:";
             // 
-            // textBox4
+            // txtApMaterno
             // 
-            textBox4.Location = new Point(222, 67);
-            textBox4.Margin = new Padding(6);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(232, 34);
-            textBox4.TabIndex = 12;
+            txtApMaterno.Location = new Point(222, 67);
+            txtApMaterno.Margin = new Padding(6);
+            txtApMaterno.Name = "txtApMaterno";
+            txtApMaterno.Size = new Size(232, 34);
+            txtApMaterno.TabIndex = 12;
             // 
             // label1
             // 
@@ -213,13 +213,13 @@
             label1.TabIndex = 28;
             label1.Text = "Apellido paterno:";
             // 
-            // textBox2
+            // txtApPaterno
             // 
-            textBox2.Location = new Point(222, 128);
-            textBox2.Margin = new Padding(6);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(232, 34);
-            textBox2.TabIndex = 29;
+            txtApPaterno.Location = new Point(222, 128);
+            txtApPaterno.Margin = new Padding(6);
+            txtApPaterno.Name = "txtApPaterno";
+            txtApPaterno.Size = new Size(232, 34);
+            txtApPaterno.TabIndex = 29;
             // 
             // label2
             // 
@@ -239,7 +239,7 @@
             btnRegresar.Location = new Point(466, 311);
             btnRegresar.Margin = new Padding(6);
             btnRegresar.Name = "btnRegresar";
-            btnRegresar.Size = new Size(143, 50);
+            btnRegresar.Size = new Size(140, 45);
             btnRegresar.TabIndex = 6;
             btnRegresar.Text = "Regresar";
             btnRegresar.UseVisualStyleBackColor = false;
@@ -253,7 +253,7 @@
             btnSiguiente.Location = new Point(622, 311);
             btnSiguiente.Margin = new Padding(6);
             btnSiguiente.Name = "btnSiguiente";
-            btnSiguiente.Size = new Size(152, 50);
+            btnSiguiente.Size = new Size(140, 45);
             btnSiguiente.TabIndex = 27;
             btnSiguiente.Text = "Siguiente";
             btnSiguiente.UseVisualStyleBackColor = false;
@@ -279,29 +279,29 @@
             label8.TabIndex = 32;
             label8.Text = "Teléfono:";
             // 
-            // textBox3
+            // txtFechaNac
             // 
-            textBox3.Location = new Point(222, 189);
-            textBox3.Margin = new Padding(6);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(232, 34);
-            textBox3.TabIndex = 33;
+            txtFechaNac.Location = new Point(222, 189);
+            txtFechaNac.Margin = new Padding(6);
+            txtFechaNac.Name = "txtFechaNac";
+            txtFechaNac.Size = new Size(232, 34);
+            txtFechaNac.TabIndex = 33;
             // 
-            // textBox5
+            // txtCorreo
             // 
-            textBox5.Location = new Point(222, 250);
-            textBox5.Margin = new Padding(6);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(232, 34);
-            textBox5.TabIndex = 34;
+            txtCorreo.Location = new Point(222, 250);
+            txtCorreo.Margin = new Padding(6);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(232, 34);
+            txtCorreo.TabIndex = 34;
             // 
-            // textBox6
+            // txtTelefono
             // 
-            textBox6.Location = new Point(222, 311);
-            textBox6.Margin = new Padding(6);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(232, 34);
-            textBox6.TabIndex = 35;
+            txtTelefono.Location = new Point(222, 311);
+            txtTelefono.Margin = new Padding(6);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(232, 34);
+            txtTelefono.TabIndex = 35;
             // 
             // label10
             // 
@@ -349,24 +349,24 @@
         private Label label4;
         private Label label7;
         private TableLayoutPanel tableLayoutPanel1;
-        private TextBox textBox9;
-        private TextBox textBox8;
-        private TextBox textBox7;
+        private TextBox txtCP;
+        private TextBox txtMunicipio;
+        private TextBox txtCiudad;
         private Label label9;
         private Label label5;
-        private TextBox textBox1;
+        private TextBox txtNombre;
         private Label label6;
-        private TextBox textBox4;
+        private TextBox txtApMaterno;
         private Label label1;
-        private TextBox textBox2;
+        private TextBox txtApPaterno;
         private Label label2;
         private Button btnRegresar;
         private Button btnSiguiente;
         private Label label3;
         private Label label8;
-        private TextBox textBox3;
-        private TextBox textBox5;
-        private TextBox textBox6;
+        private TextBox txtFechaNac;
+        private TextBox txtCorreo;
+        private TextBox txtTelefono;
         private Label label10;
         private Label label11;
     }

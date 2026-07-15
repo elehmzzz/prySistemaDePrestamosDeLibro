@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Formularios\FrmAgregarLectores.resx">
+    <EmbeddedResource Update="Formularios\Lectores\FrmAgregarLectores.resx">
       <Generator></Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Properties\Resources.resx">
