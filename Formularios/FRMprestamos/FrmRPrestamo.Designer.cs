@@ -39,16 +39,10 @@
             button2 = new Button();
             button1 = new Button();
             label8 = new Label();
-            textBox7 = new TextBox();
             label7 = new Label();
-            textBox6 = new TextBox();
             label4 = new Label();
             label3 = new Label();
-            textBox5 = new TextBox();
-            textBox2 = new TextBox();
             label2 = new Label();
-            panel1 = new Panel();
-            label5 = new Label();
             label6 = new Label();
 
             label1 = new Label();
@@ -250,7 +244,6 @@
             labelRegistrodePrestamos.Size = new Size(355, 46);
             labelRegistrodePrestamos.TabIndex = 3;
             labelRegistrodePrestamos.Text = "Registro de préstamos";
-            labelRegistrodePrestamos.Click += labelRegistrodePrestamos_Click;
             // 
             // panel2
             // 
@@ -262,7 +255,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1267, 717);
             panel2.TabIndex = 4;
-            panel2.Paint += panel2_Paint;
             // 
             // tableLayoutPanel1
             // 

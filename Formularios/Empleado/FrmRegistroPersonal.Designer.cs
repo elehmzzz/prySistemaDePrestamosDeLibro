@@ -67,7 +67,6 @@
             pnlContenido.Name = "pnlContenido";
             pnlContenido.Size = new Size(1164, 648);
             pnlContenido.TabIndex = 4;
-            pnlContenido.Paint += pnlContenido_Paint;
             // 
             // frmRegistroPersonal1
             // 
