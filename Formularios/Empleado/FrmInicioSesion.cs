@@ -20,7 +20,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal();
+            FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(this);
             menuPrincipal.Show();
             this.Hide();
         }
