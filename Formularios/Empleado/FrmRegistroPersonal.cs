@@ -1,4 +1,5 @@
 ﻿using prySistemaDePrestamosDeLibro.Formularios;
+using prySistemaDePrestamosDeLibro.Formularios.FRMprestamos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

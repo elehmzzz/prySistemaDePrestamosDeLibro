@@ -32,17 +32,15 @@
             panel4 = new Panel();
             panel7 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
-            button1 = new Button();
-            btnMultas = new Button();
-            btnAgregarLectores = new Button();
             btnLectores = new Button();
-            btnAgregarLibros = new Button();
-            btnHacerPrestamo = new Button();
+            btnPrestamos = new Button();
             btnLibros = new Button();
+            btnMultas = new Button();
+            btnEmpleado = new Button();
             panel5 = new Panel();
-            button2 = new Button();
+            btnCerrarSesion = new Button();
             panel2 = new Panel();
-            label2 = new Label();
+            lblTituloModulo = new Label();
             panel3 = new Panel();
             pnlContenido = new Panel();
             panel1.SuspendLayout();
@@ -86,20 +84,15 @@
             // 
             tableLayoutPanel1.ColumnCount = 1;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.Controls.Add(button1, 0, 6);
-            tableLayoutPanel1.Controls.Add(btnMultas, 0, 5);
-            tableLayoutPanel1.Controls.Add(btnAgregarLectores, 0, 4);
             tableLayoutPanel1.Controls.Add(btnLectores, 0, 1);
-            tableLayoutPanel1.Controls.Add(btnAgregarLibros, 0, 3);
-            tableLayoutPanel1.Controls.Add(btnHacerPrestamo, 0, 2);
+            tableLayoutPanel1.Controls.Add(btnPrestamos, 0, 2);
             tableLayoutPanel1.Controls.Add(btnLibros, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnMultas, 0, 3);
+            tableLayoutPanel1.Controls.Add(btnEmpleado, 0, 4);
             tableLayoutPanel1.ForeColor = Color.FromArgb(32, 41, 64);
-            tableLayoutPanel1.Location = new Point(27, 20);
+            tableLayoutPanel1.Location = new Point(27, 6);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 8;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
+            tableLayoutPanel1.RowCount = 5;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 12.5F));
@@ -108,77 +101,31 @@
             tableLayoutPanel1.Size = new Size(183, 426);
             tableLayoutPanel1.TabIndex = 0;
             // 
-            // button1
-            // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.Font = new Font("Segoe UI", 12F);
-            button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(3, 321);
-            button1.Name = "button1";
-            button1.Size = new Size(177, 47);
-            button1.TabIndex = 8;
-            button1.Text = "Empleado";
-            button1.UseVisualStyleBackColor = true;
-            // 
-            // btnMultas
-            // 
-            btnMultas.FlatAppearance.BorderSize = 0;
-            btnMultas.Font = new Font("Segoe UI", 12F);
-            btnMultas.ForeColor = SystemColors.ActiveCaptionText;
-            btnMultas.Location = new Point(3, 268);
-            btnMultas.Name = "btnMultas";
-            btnMultas.Size = new Size(177, 47);
-            btnMultas.TabIndex = 7;
-            btnMultas.Text = "Multas";
-            btnMultas.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregarLectores
-            // 
-            btnAgregarLectores.FlatAppearance.BorderSize = 0;
-            btnAgregarLectores.Font = new Font("Segoe UI", 12F);
-            btnAgregarLectores.ForeColor = SystemColors.ActiveCaptionText;
-            btnAgregarLectores.Location = new Point(3, 215);
-            btnAgregarLectores.Name = "btnAgregarLectores";
-            btnAgregarLectores.Size = new Size(177, 47);
-            btnAgregarLectores.TabIndex = 6;
-            btnAgregarLectores.Text = "Agregar Lectores";
-            btnAgregarLectores.UseVisualStyleBackColor = true;
-            // 
             // btnLectores
             // 
             btnLectores.FlatAppearance.BorderSize = 0;
             btnLectores.Font = new Font("Segoe UI", 12F);
             btnLectores.ForeColor = SystemColors.ActiveCaptionText;
-            btnLectores.Location = new Point(3, 56);
+            btnLectores.Location = new Point(3, 88);
             btnLectores.Name = "btnLectores";
             btnLectores.Size = new Size(177, 47);
             btnLectores.TabIndex = 3;
             btnLectores.Text = "Lectores";
             btnLectores.UseVisualStyleBackColor = true;
+            btnLectores.Click += btnLectores_Click;
             // 
-            // btnAgregarLibros
+            // btnPrestamos
             // 
-            btnAgregarLibros.FlatAppearance.BorderSize = 0;
-            btnAgregarLibros.Font = new Font("Segoe UI", 12F);
-            btnAgregarLibros.ForeColor = SystemColors.ActiveCaptionText;
-            btnAgregarLibros.Location = new Point(3, 162);
-            btnAgregarLibros.Name = "btnAgregarLibros";
-            btnAgregarLibros.Size = new Size(177, 47);
-            btnAgregarLibros.TabIndex = 5;
-            btnAgregarLibros.Text = "Agregar Libros";
-            btnAgregarLibros.UseVisualStyleBackColor = true;
-            // 
-            // btnHacerPrestamo
-            // 
-            btnHacerPrestamo.FlatAppearance.BorderSize = 0;
-            btnHacerPrestamo.Font = new Font("Segoe UI", 12F);
-            btnHacerPrestamo.ForeColor = SystemColors.ActiveCaptionText;
-            btnHacerPrestamo.Location = new Point(3, 109);
-            btnHacerPrestamo.Name = "btnHacerPrestamo";
-            btnHacerPrestamo.Size = new Size(177, 47);
-            btnHacerPrestamo.TabIndex = 4;
-            btnHacerPrestamo.Text = "Hacer Prestamo";
-            btnHacerPrestamo.UseVisualStyleBackColor = true;
+            btnPrestamos.FlatAppearance.BorderSize = 0;
+            btnPrestamos.Font = new Font("Segoe UI", 12F);
+            btnPrestamos.ForeColor = SystemColors.ActiveCaptionText;
+            btnPrestamos.Location = new Point(3, 173);
+            btnPrestamos.Name = "btnPrestamos";
+            btnPrestamos.Size = new Size(177, 47);
+            btnPrestamos.TabIndex = 4;
+            btnPrestamos.Text = "Préstamos";
+            btnPrestamos.UseVisualStyleBackColor = true;
+            btnPrestamos.Click += btnPrestamos_Click;
             // 
             // btnLibros
             // 
@@ -191,48 +138,76 @@
             btnLibros.TabIndex = 2;
             btnLibros.Text = "Libros";
             btnLibros.UseVisualStyleBackColor = true;
+            btnLibros.Click += btnLibros_Click;
+            // 
+            // btnMultas
+            // 
+            btnMultas.FlatAppearance.BorderSize = 0;
+            btnMultas.Font = new Font("Segoe UI", 12F);
+            btnMultas.ForeColor = SystemColors.ActiveCaptionText;
+            btnMultas.Location = new Point(3, 258);
+            btnMultas.Name = "btnMultas";
+            btnMultas.Size = new Size(177, 47);
+            btnMultas.TabIndex = 7;
+            btnMultas.Text = "Multas";
+            btnMultas.UseVisualStyleBackColor = true;
+            btnMultas.Click += btnMultas_Click;
+            // 
+            // btnEmpleado
+            // 
+            btnEmpleado.FlatAppearance.BorderSize = 0;
+            btnEmpleado.Font = new Font("Segoe UI", 12F);
+            btnEmpleado.ForeColor = SystemColors.ActiveCaptionText;
+            btnEmpleado.Location = new Point(3, 343);
+            btnEmpleado.Name = "btnEmpleado";
+            btnEmpleado.Size = new Size(177, 47);
+            btnEmpleado.TabIndex = 8;
+            btnEmpleado.Text = "Empleado";
+            btnEmpleado.UseVisualStyleBackColor = true;
+            btnEmpleado.Click += btnEmpleado_Click;
             // 
             // panel5
             // 
-            panel5.Controls.Add(button2);
+            panel5.Controls.Add(btnCerrarSesion);
             panel5.Dock = DockStyle.Top;
             panel5.Location = new Point(0, 0);
             panel5.Name = "panel5";
             panel5.Size = new Size(222, 145);
             panel5.TabIndex = 1;
             // 
-            // button2
+            // btnCerrarSesion
             // 
-            button2.FlatAppearance.BorderSize = 0;
-            button2.Font = new Font("Segoe UI", 12F);
-            button2.ForeColor = SystemColors.ActiveCaptionText;
-            button2.Location = new Point(27, 33);
-            button2.Name = "button2";
-            button2.Size = new Size(177, 47);
-            button2.TabIndex = 9;
-            button2.Text = "Cerrar sesión";
-            button2.UseVisualStyleBackColor = true;
+            btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            btnCerrarSesion.Font = new Font("Segoe UI", 12F);
+            btnCerrarSesion.ForeColor = SystemColors.ActiveCaptionText;
+            btnCerrarSesion.Location = new Point(27, 33);
+            btnCerrarSesion.Name = "btnCerrarSesion";
+            btnCerrarSesion.Size = new Size(177, 47);
+            btnCerrarSesion.TabIndex = 9;
+            btnCerrarSesion.Text = "Cerrar sesión";
+            btnCerrarSesion.UseVisualStyleBackColor = true;
+            btnCerrarSesion.Click += btnCerrarSesion_Click;
             // 
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(32, 41, 64);
-            panel2.Controls.Add(label2);
+            panel2.Controls.Add(lblTituloModulo);
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(222, 0);
             panel2.Name = "panel2";
             panel2.Size = new Size(1052, 65);
             panel2.TabIndex = 6;
             // 
-            // label2
+            // lblTituloModulo
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label2.ForeColor = Color.White;
-            label2.Location = new Point(15, 8);
-            label2.Name = "label2";
-            label2.Size = new Size(125, 54);
-            label2.TabIndex = 0;
-            label2.Text = "titulo";
+            lblTituloModulo.AutoSize = true;
+            lblTituloModulo.Font = new Font("Segoe UI", 24F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTituloModulo.ForeColor = Color.White;
+            lblTituloModulo.Location = new Point(15, 8);
+            lblTituloModulo.Name = "lblTituloModulo";
+            lblTituloModulo.Size = new Size(125, 54);
+            lblTituloModulo.TabIndex = 0;
+            lblTituloModulo.Text = "titulo";
             // 
             // panel3
             // 
@@ -278,20 +253,18 @@
 
         private Panel panel1;
         private Button btnMultas;
-        private Button btnAgregarLectores;
-        private Button btnAgregarLibros;
-        private Button btnHacerPrestamo;
+        private Button btnPrestamos;
         private Button btnLectores;
         private Button btnLibros;
         private Panel panel2;
-        private Label label2;
+        private Label lblTituloModulo;
         private Panel panel3;
         private Panel panel7;
         private Panel panel5;
         private Panel pnlContenido;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button button1;
+        private Button btnEmpleado;
         private Panel panel4;
-        private Button button2;
+        private Button btnCerrarSesion;
     }
 }
