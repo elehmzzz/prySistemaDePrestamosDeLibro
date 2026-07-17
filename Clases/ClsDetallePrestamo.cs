@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
-    internal class ClsEmpleado
+    internal class ClsDetallePrestamo
     {
-
+        private int IdDetalle;
+        private int IdPrestamo;
+        private int IdEjemplar;
     }
 }
