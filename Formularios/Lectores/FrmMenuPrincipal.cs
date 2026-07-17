@@ -19,6 +19,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         private FrmPerfilEmpleado ventanaEmpleado;
         private FrmLectores ventanaLectores;
         private FrmPrestamosHechos ventanaPrestamos;
+        private FrmConsultaLibros ventanaLibros;
 
         public FrmMenuPrincipal(FrmInicioSesion ventanaInicioSesion)
         {
@@ -30,11 +31,15 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             this.Close();
-            ventanaInicioSesion.Show();
+            ventanaInicioSesion.Show(); 
         }
         private void btnLibros_Click(object sender, EventArgs e)
         {
             lblTituloModulo.Text = "Libros";
+            if (ventanaLibros == null) { 
+                ventanaLibros = new FrmConsultaLibros();
+            }
+            mostrarContenido(ventanaLibros);
         }
         private void btnLectores_Click(object sender, EventArgs e)
         {
@@ -79,5 +84,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             pnlContenido.Controls.Add(ventana);
             ventana.Show();
         }
+
+
     }
 }

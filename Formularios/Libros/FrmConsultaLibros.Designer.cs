@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel2 = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
             label10 = new Label();
             label1 = new Label();
@@ -51,22 +50,9 @@
             label3 = new Label();
             label9 = new Label();
             label2 = new Label();
-            panel2.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel2
-            // 
-            panel2.BackColor = SystemColors.Control;
-            panel2.Controls.Add(tableLayoutPanel2);
-            panel2.Controls.Add(tableLayoutPanel1);
-            panel2.Font = new Font("Segoe UI", 9F);
-            panel2.Location = new Point(-2, -3);
-            panel2.Margin = new Padding(3, 4, 3, 4);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1174, 715);
-            panel2.TabIndex = 1;
             // 
             // tableLayoutPanel2
             // 
@@ -75,7 +61,7 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.Controls.Add(label10, 1, 0);
             tableLayoutPanel2.Controls.Add(label1, 0, 0);
-            tableLayoutPanel2.Location = new Point(33, 47);
+            tableLayoutPanel2.Location = new Point(12, 13);
             tableLayoutPanel2.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
@@ -108,7 +94,7 @@
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 4;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40.0419273F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40.04193F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 59.9580727F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 224F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 169F));
@@ -131,18 +117,18 @@
             tableLayoutPanel1.Controls.Add(label9, 2, 0);
             tableLayoutPanel1.Controls.Add(label2, 0, 0);
             tableLayoutPanel1.Font = new Font("Segoe UI", 12F);
-            tableLayoutPanel1.Location = new Point(33, 175);
+            tableLayoutPanel1.Location = new Point(12, 101);
             tableLayoutPanel1.Margin = new Padding(3, 4, 3, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 7;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 55F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 64F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 69F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 69F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 67F));
-            tableLayoutPanel1.Size = new Size(938, 489);
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2857141F));
+            tableLayoutPanel1.Size = new Size(938, 409);
             tableLayoutPanel1.TabIndex = 18;
             // 
             // textBoxid
@@ -155,7 +141,7 @@
             // 
             // textBoxTitulo
             // 
-            textBoxTitulo.Location = new Point(221, 86);
+            textBoxTitulo.Location = new Point(221, 62);
             textBoxTitulo.Margin = new Padding(3, 4, 3, 4);
             textBoxTitulo.Name = "textBoxTitulo";
             textBoxTitulo.Size = new Size(265, 34);
@@ -164,7 +150,7 @@
             // dateTimePicker1
             // 
             dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(547, 86);
+            dateTimePicker1.Location = new Point(547, 62);
             dateTimePicker1.Margin = new Padding(3, 4, 3, 4);
             dateTimePicker1.Name = "dateTimePicker1";
             dateTimePicker1.Size = new Size(217, 34);
@@ -172,7 +158,7 @@
             // 
             // textBoxAutor
             // 
-            textBoxAutor.Location = new Point(221, 168);
+            textBoxAutor.Location = new Point(221, 120);
             textBoxAutor.Margin = new Padding(3, 4, 3, 4);
             textBoxAutor.Name = "textBoxAutor";
             textBoxAutor.Size = new Size(265, 34);
@@ -182,7 +168,7 @@
             // 
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F);
-            label8.Location = new Point(3, 421);
+            label8.Location = new Point(3, 348);
             label8.Name = "label8";
             label8.Size = new Size(118, 56);
             label8.TabIndex = 16;
@@ -193,17 +179,17 @@
             editar.BackColor = Color.FromArgb(32, 41, 64);
             editar.Font = new Font("Segoe UI", 12F);
             editar.ForeColor = Color.White;
-            editar.Location = new Point(771, 425);
+            editar.Location = new Point(771, 352);
             editar.Margin = new Padding(3, 4, 3, 4);
             editar.Name = "editar";
-            editar.Size = new Size(152, 59);
+            editar.Size = new Size(152, 53);
             editar.TabIndex = 1;
             editar.Text = "Editar Datos";
             editar.UseVisualStyleBackColor = false;
             // 
             // textBoxISBN
             // 
-            textBoxISBN.Location = new Point(221, 223);
+            textBoxISBN.Location = new Point(221, 178);
             textBoxISBN.Margin = new Padding(3, 4, 3, 4);
             textBoxISBN.Name = "textBoxISBN";
             textBoxISBN.Size = new Size(265, 34);
@@ -214,10 +200,10 @@
             salir.BackColor = Color.FromArgb(32, 41, 64);
             salir.Font = new Font("Segoe UI", 12F);
             salir.ForeColor = Color.White;
-            salir.Location = new Point(547, 425);
+            salir.Location = new Point(547, 352);
             salir.Margin = new Padding(3, 4, 3, 4);
             salir.Name = "salir";
-            salir.Size = new Size(152, 59);
+            salir.Size = new Size(152, 53);
             salir.TabIndex = 0;
             salir.Text = "Salir";
             salir.UseVisualStyleBackColor = false;
@@ -226,7 +212,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F);
-            label7.Location = new Point(3, 352);
+            label7.Location = new Point(3, 290);
             label7.Name = "label7";
             label7.Size = new Size(175, 28);
             label7.TabIndex = 15;
@@ -234,7 +220,7 @@
             // 
             // textBoxCategoria
             // 
-            textBoxCategoria.Location = new Point(221, 287);
+            textBoxCategoria.Location = new Point(221, 236);
             textBoxCategoria.Margin = new Padding(3, 4, 3, 4);
             textBoxCategoria.Name = "textBoxCategoria";
             textBoxCategoria.Size = new Size(265, 34);
@@ -244,7 +230,7 @@
             // 
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F);
-            label6.Location = new Point(3, 283);
+            label6.Location = new Point(3, 232);
             label6.Name = "label6";
             label6.Size = new Size(101, 28);
             label6.TabIndex = 14;
@@ -253,7 +239,7 @@
             // 
             // textBoxETotal
             // 
-            textBoxETotal.Location = new Point(221, 356);
+            textBoxETotal.Location = new Point(221, 294);
             textBoxETotal.Margin = new Padding(3, 4, 3, 4);
             textBoxETotal.Name = "textBoxETotal";
             textBoxETotal.Size = new Size(265, 34);
@@ -263,7 +249,7 @@
             // 
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F);
-            label5.Location = new Point(3, 219);
+            label5.Location = new Point(3, 174);
             label5.Name = "label5";
             label5.Size = new Size(58, 28);
             label5.TabIndex = 13;
@@ -271,7 +257,7 @@
             // 
             // textBoxEDispo
             // 
-            textBoxEDispo.Location = new Point(221, 425);
+            textBoxEDispo.Location = new Point(221, 352);
             textBoxEDispo.Margin = new Padding(3, 4, 3, 4);
             textBoxEDispo.Name = "textBoxEDispo";
             textBoxEDispo.Size = new Size(265, 34);
@@ -281,7 +267,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(3, 164);
+            label4.Location = new Point(3, 116);
             label4.Name = "label4";
             label4.Size = new Size(66, 28);
             label4.TabIndex = 12;
@@ -291,7 +277,7 @@
             // 
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(3, 82);
+            label3.Location = new Point(3, 58);
             label3.Name = "label3";
             label3.Size = new Size(66, 28);
             label3.TabIndex = 11;
@@ -321,14 +307,15 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1184, 725);
-            Controls.Add(panel2);
+            BackColor = Color.FromArgb(236, 223, 204);
+            ClientSize = new Size(1052, 583);
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(tableLayoutPanel2);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "FrmConsultaLibros";
             Text = "FrmEditConsultaLibros";
-            panel2.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
@@ -337,7 +324,6 @@
         }
 
         #endregion
-        private Panel panel2;
         private DateTimePicker dateTimePicker1;
         private Button editar;
         private Button salir;
