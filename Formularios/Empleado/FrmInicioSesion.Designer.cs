@@ -37,8 +37,8 @@
             panel2 = new Panel();
             llbRegistrar = new LinkLabel();
             label7 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtContrasenia = new TextBox();
+            txtUsuario = new TextBox();
             btnIniciarSesion = new Button();
             label6 = new Label();
             label5 = new Label();
@@ -113,8 +113,8 @@
             panel2.BackColor = Color.FromArgb(236, 223, 204);
             panel2.Controls.Add(llbRegistrar);
             panel2.Controls.Add(label7);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(txtContrasenia);
+            panel2.Controls.Add(txtUsuario);
             panel2.Controls.Add(btnIniciarSesion);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label5);
@@ -149,22 +149,22 @@
             label7.Text = "Bienvenido al Sistema de Préstamo de Libros. Inicia sesión con tu usuario y contraseña.";
             label7.UseWaitCursor = true;
             // 
-            // textBox2
+            // txtContrasenia
             // 
-            textBox2.Location = new Point(53, 350);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(289, 34);
-            textBox2.TabIndex = 8;
-            textBox2.UseWaitCursor = true;
+            txtContrasenia.Location = new Point(53, 350);
+            txtContrasenia.Name = "txtContrasenia";
+            txtContrasenia.PasswordChar = '*';
+            txtContrasenia.Size = new Size(289, 34);
+            txtContrasenia.TabIndex = 8;
+            txtContrasenia.UseWaitCursor = true;
             // 
-            // textBox1
+            // txtUsuario
             // 
-            textBox1.Location = new Point(53, 261);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(289, 34);
-            textBox1.TabIndex = 7;
-            textBox1.UseWaitCursor = true;
+            txtUsuario.Location = new Point(53, 261);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(289, 34);
+            txtUsuario.TabIndex = 7;
+            txtUsuario.UseWaitCursor = true;
             // 
             // btnIniciarSesion
             // 
@@ -245,8 +245,8 @@
         private Label label6;
         private Label label5;
         private Label label4;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtUsuario;
+        private TextBox txtContrasenia;
         private Label label7;
         private PictureBox pictureBox1;
         private LinkLabel llbRegistrar;

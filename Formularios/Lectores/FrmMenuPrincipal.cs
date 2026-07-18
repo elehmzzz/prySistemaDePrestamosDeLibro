@@ -19,7 +19,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         private FrmPerfilEmpleado ventanaEmpleado;
         private FrmLectores ventanaLectores;
         private FrmPrestamosHechos ventanaPrestamos;
-        private FrmConsultaLibros ventanaLibros;
+        private FrmLibros ventanaLibros;
 
         public FrmMenuPrincipal(FrmInicioSesion ventanaInicioSesion)
         {
@@ -37,7 +37,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         {
             lblTituloModulo.Text = "Libros";
             if (ventanaLibros == null) { 
-                ventanaLibros = new FrmConsultaLibros();
+                ventanaLibros = new FrmLibros();
             }
             mostrarContenido(ventanaLibros);
         }

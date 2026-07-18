@@ -42,14 +42,19 @@
             textBox5 = new TextBox();
             textBox6 = new TextBox();
             btnEditar = new Button();
+            label4 = new Label();
+            radioButton1 = new RadioButton();
+            radioButton2 = new RadioButton();
+            tableLayoutPanel2 = new TableLayoutPanel();
             tableLayoutPanel1.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 39.4958F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60.5042F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
             tableLayoutPanel1.Controls.Add(label5, 0, 0);
             tableLayoutPanel1.Controls.Add(textBox1, 1, 0);
             tableLayoutPanel1.Controls.Add(label6, 0, 1);
@@ -67,13 +72,13 @@
             tableLayoutPanel1.Margin = new Padding(8);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 6;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6666718F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.Size = new Size(595, 369);
+            tableLayoutPanel1.Size = new Size(528, 369);
             tableLayoutPanel1.TabIndex = 28;
             // 
             // label5
@@ -88,10 +93,10 @@
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(243, 8);
+            textBox1.Location = new Point(219, 8);
             textBox1.Margin = new Padding(8);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(344, 34);
+            textBox1.Size = new Size(301, 34);
             textBox1.TabIndex = 7;
             // 
             // label6
@@ -106,10 +111,10 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(243, 69);
+            textBox4.Location = new Point(219, 69);
             textBox4.Margin = new Padding(8);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(318, 34);
+            textBox4.Size = new Size(301, 34);
             textBox4.TabIndex = 12;
             // 
             // label1
@@ -124,10 +129,10 @@
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(243, 130);
+            textBox2.Location = new Point(219, 130);
             textBox2.Margin = new Padding(8);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(318, 34);
+            textBox2.Size = new Size(301, 34);
             textBox2.TabIndex = 29;
             // 
             // label2
@@ -162,26 +167,26 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(243, 191);
+            textBox3.Location = new Point(219, 191);
             textBox3.Margin = new Padding(8);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(318, 34);
+            textBox3.Size = new Size(301, 34);
             textBox3.TabIndex = 33;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(243, 252);
+            textBox5.Location = new Point(219, 252);
             textBox5.Margin = new Padding(8);
             textBox5.Name = "textBox5";
-            textBox5.Size = new Size(318, 34);
+            textBox5.Size = new Size(301, 34);
             textBox5.TabIndex = 34;
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(243, 313);
+            textBox6.Location = new Point(219, 313);
             textBox6.Margin = new Padding(8);
             textBox6.Name = "textBox6";
-            textBox6.Size = new Size(318, 34);
+            textBox6.Size = new Size(301, 34);
             textBox6.TabIndex = 35;
             // 
             // btnEditar
@@ -197,12 +202,62 @@
             btnEditar.Text = "Editar datos";
             btnEditar.UseVisualStyleBackColor = false;
             // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(8, 0);
+            label4.Margin = new Padding(8, 0, 8, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(139, 28);
+            label4.TabIndex = 36;
+            label4.Text = "Alto contraste:";
+            // 
+            // radioButton1
+            // 
+            radioButton1.AutoSize = true;
+            radioButton1.Location = new Point(3, 107);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new Size(89, 32);
+            radioButton1.TabIndex = 37;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Activo";
+            radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new Point(3, 55);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new Size(140, 32);
+            radioButton2.TabIndex = 38;
+            radioButton2.TabStop = true;
+            radioButton2.Text = "Desactivado";
+            radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 2;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel2.Controls.Add(label4, 0, 0);
+            tableLayoutPanel2.Controls.Add(radioButton2, 0, 1);
+            tableLayoutPanel2.Controls.Add(radioButton1, 0, 2);
+            tableLayoutPanel2.Location = new Point(614, 25);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 3;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel2.Size = new Size(350, 156);
+            tableLayoutPanel2.TabIndex = 39;
+            // 
             // FrmPerfilEmpleado
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1052, 583);
+            Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(btnEditar);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -212,6 +267,8 @@
             Text = "FrmPerfilEmpleado";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -232,5 +289,9 @@
         private TextBox textBox5;
         private TextBox textBox6;
         private Button btnEditar;
+        private Label label4;
+        private RadioButton radioButton1;
+        private RadioButton radioButton2;
+        private TableLayoutPanel tableLayoutPanel2;
     }
 }
