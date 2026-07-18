@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
-    public partial class FrmConsultaLibros : Form
+    public partial class FrmRegistroLibro : Form
     {
-        public FrmConsultaLibros()
+        public FrmRegistroLibro()
         {
             InitializeComponent();
         }
@@ -22,7 +22,12 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
         {
 
         }

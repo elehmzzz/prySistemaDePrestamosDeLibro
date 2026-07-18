@@ -1,4 +1,5 @@
-﻿using System;
+﻿using prySistemaDePrestamosDeLibro.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,21 +13,24 @@ namespace prySistemaDePrestamosDeLibro.Formularios
 {
     public partial class FrmDatosUsuario : Form
     {
-        public FrmDatosUsuario()
+        private FrmRegistroPersonal registroPersonal;
+        public FrmDatosUsuario(FrmRegistroPersonal registroPersonal)
         {
             InitializeComponent();
+            this.registroPersonal = registroPersonal;
         }
+
 
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
-
+            registroPersonal.abrirInicioSesion();
+            registroPersonal.Close();
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            FrmMenuPrincipal menu = this.ParentForm as FrmMenuPrincipal;
-            if (menu != null)
-                menu.mostrarFormularioDatos();
+            registroPersonal.mostrarPanelDatos();
         }
+
     }
 }

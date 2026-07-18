@@ -35,10 +35,10 @@
             label2 = new Label();
             label1 = new Label();
             panel2 = new Panel();
-            linkLabel1 = new LinkLabel();
+            llbRegistrar = new LinkLabel();
             label7 = new Label();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtContrasenia = new TextBox();
+            txtUsuario = new TextBox();
             btnIniciarSesion = new Button();
             label6 = new Label();
             label5 = new Label();
@@ -111,10 +111,10 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(236, 223, 204);
-            panel2.Controls.Add(linkLabel1);
+            panel2.Controls.Add(llbRegistrar);
             panel2.Controls.Add(label7);
-            panel2.Controls.Add(textBox2);
-            panel2.Controls.Add(textBox1);
+            panel2.Controls.Add(txtContrasenia);
+            panel2.Controls.Add(txtUsuario);
             panel2.Controls.Add(btnIniciarSesion);
             panel2.Controls.Add(label6);
             panel2.Controls.Add(label5);
@@ -127,17 +127,18 @@
             panel2.TabIndex = 1;
             panel2.UseWaitCursor = true;
             // 
-            // linkLabel1
+            // llbRegistrar
             // 
-            linkLabel1.AutoSize = true;
-            linkLabel1.LinkColor = Color.FromArgb(32, 41, 64);
-            linkLabel1.Location = new Point(53, 564);
-            linkLabel1.Name = "linkLabel1";
-            linkLabel1.Size = new Size(105, 28);
-            linkLabel1.TabIndex = 10;
-            linkLabel1.TabStop = true;
-            linkLabel1.Text = "Registrate!";
-            linkLabel1.UseWaitCursor = true;
+            llbRegistrar.AutoSize = true;
+            llbRegistrar.LinkColor = Color.FromArgb(32, 41, 64);
+            llbRegistrar.Location = new Point(53, 564);
+            llbRegistrar.Name = "llbRegistrar";
+            llbRegistrar.Size = new Size(105, 28);
+            llbRegistrar.TabIndex = 10;
+            llbRegistrar.TabStop = true;
+            llbRegistrar.Text = "Registrate!";
+            llbRegistrar.UseWaitCursor = true;
+            llbRegistrar.LinkClicked += llbRegistrar_LinkClicked;
             // 
             // label7
             // 
@@ -148,22 +149,22 @@
             label7.Text = "Bienvenido al Sistema de Préstamo de Libros. Inicia sesión con tu usuario y contraseña.";
             label7.UseWaitCursor = true;
             // 
-            // textBox2
+            // txtContrasenia
             // 
-            textBox2.Location = new Point(53, 350);
-            textBox2.Name = "textBox2";
-            textBox2.PasswordChar = '*';
-            textBox2.Size = new Size(289, 34);
-            textBox2.TabIndex = 8;
-            textBox2.UseWaitCursor = true;
+            txtContrasenia.Location = new Point(53, 350);
+            txtContrasenia.Name = "txtContrasenia";
+            txtContrasenia.PasswordChar = '*';
+            txtContrasenia.Size = new Size(289, 34);
+            txtContrasenia.TabIndex = 8;
+            txtContrasenia.UseWaitCursor = true;
             // 
-            // textBox1
+            // txtUsuario
             // 
-            textBox1.Location = new Point(53, 261);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(289, 34);
-            textBox1.TabIndex = 7;
-            textBox1.UseWaitCursor = true;
+            txtUsuario.Location = new Point(53, 261);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(289, 34);
+            txtUsuario.TabIndex = 7;
+            txtUsuario.UseWaitCursor = true;
             // 
             // btnIniciarSesion
             // 
@@ -244,10 +245,10 @@
         private Label label6;
         private Label label5;
         private Label label4;
-        private TextBox textBox1;
-        private TextBox textBox2;
+        private TextBox txtUsuario;
+        private TextBox txtContrasenia;
         private Label label7;
         private PictureBox pictureBox1;
-        private LinkLabel linkLabel1;
+        private LinkLabel llbRegistrar;
     }
 }

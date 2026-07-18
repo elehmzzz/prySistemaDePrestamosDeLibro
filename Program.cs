@@ -16,6 +16,7 @@ namespace prySistemaDePrestamosDeLibro
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new FrmInicioSesion());
+            //cuando terminen de editar dejen el formulario FrmInicioSesion como new FrmInicioSesion()
         }
     }
 }
