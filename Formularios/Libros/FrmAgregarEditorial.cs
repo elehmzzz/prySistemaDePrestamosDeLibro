@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace prySistemaDePrestamosDeLibro.Clases
+namespace prySistemaDePrestamosDeLibro.Formularios.Libros
 {
-    public partial class FrmEditConsultaLibros : Form
+    public partial class FrmAgregarEditorial : Form
     {
-        public FrmEditConsultaLibros()
+        public FrmAgregarEditorial()
         {
             InitializeComponent();
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

@@ -51,7 +51,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1007, 366);
+            dataGridView1.Size = new Size(1025, 215);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_2;
             // 
@@ -108,7 +108,7 @@
             txtBuscador.Name = "txtBuscador";
             txtBuscador.Size = new Size(316, 27);
             txtBuscador.TabIndex = 1;
-            txtBuscador.Text = "Busar...";
+            txtBuscador.Text = "Buscar...";
             // 
             // rbAlfabetico
             // 
@@ -130,7 +130,7 @@
             tableLayoutPanel1.Controls.Add(txtBuscador, 0, 0);
             tableLayoutPanel1.Controls.Add(label1, 1, 0);
             tableLayoutPanel1.Controls.Add(rbAlfabetico, 1, 1);
-            tableLayoutPanel1.Location = new Point(12, 12);
+            tableLayoutPanel1.Location = new Point(15, 12);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -143,7 +143,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
-            ClientSize = new Size(1034, 536);
+            ClientSize = new Size(1052, 583);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(dataGridView1);
             FormBorderStyle = FormBorderStyle.None;

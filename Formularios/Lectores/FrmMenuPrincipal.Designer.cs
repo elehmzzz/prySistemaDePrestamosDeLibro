@@ -232,13 +232,16 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1274, 648);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
+            MaximizeBox = false;
             Name = "FrmMenuPrincipal";
-            StartPosition = FormStartPosition.CenterParent;
-            Text = "FrmMenuPrincipal";
+            ShowIcon = false;
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Sistema de Préstamos de Libros";
             panel1.ResumeLayout(false);
             panel7.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);

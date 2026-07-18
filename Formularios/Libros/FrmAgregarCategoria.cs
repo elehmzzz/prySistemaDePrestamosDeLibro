@@ -8,21 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace prySistemaDePrestamosDeLibro.Clases
+namespace prySistemaDePrestamosDeLibro.Formularios.Libros
 {
-    public partial class FrmConsultaLibros : Form
+    public partial class FrmAgregarCategoria : Form
     {
-        public FrmConsultaLibros()
+        public FrmAgregarCategoria()
         {
             InitializeComponent();
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
