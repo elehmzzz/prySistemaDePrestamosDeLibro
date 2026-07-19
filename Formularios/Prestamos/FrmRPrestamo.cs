@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
-    public partial class FrmConsultaLibros : Form
+    public partial class FrmRPrestamo : Form
     {
-        public FrmConsultaLibros()
+        public FrmRPrestamo()
         {
             InitializeComponent();
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void FrmRPrestamo_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
 
         }
@@ -26,5 +31,16 @@ namespace prySistemaDePrestamosDeLibro.Clases
         {
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void Buscador_SelectedIndexChanged(object sender, EventArgs e)
+
+        {
+
+        }
     }
 }
+

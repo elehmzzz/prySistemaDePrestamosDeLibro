@@ -8,21 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace prySistemaDePrestamosDeLibro.Clases
+namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
 {
-    public partial class FrmNuevoLibro : Form
+    public partial class FrmPrestamosHechos : Form
     {
-        public FrmNuevoLibro()
+        public FrmPrestamosHechos()
         {
             InitializeComponent();
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
 
         }
