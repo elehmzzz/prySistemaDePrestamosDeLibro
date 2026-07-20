@@ -12,14 +12,23 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
 {
     public partial class FrmCategorias : Form
     {
-        public FrmCategorias()
+        private FrmMenuPrincipal ventanaPrincipal;
+        private FrmAgregarCategoria ventanaAgregarCategoria;
+        public FrmCategorias(FrmMenuPrincipal ventana)
         {
             InitializeComponent();
+            ventanaPrincipal = ventana;
         }
 
-        private void FrmCategorias_Load(object sender, EventArgs e)
+        private void btnRegresar_Click(object sender, EventArgs e)
         {
+            ventanaPrincipal.mostrarModuloLibros();
+        }
 
+        private void btnAgregarCategoria_Click(object sender, EventArgs e)
+        {
+            ventanaAgregarCategoria = new FrmAgregarCategoria();
+            ventanaAgregarCategoria.Show();
         }
     }
 }

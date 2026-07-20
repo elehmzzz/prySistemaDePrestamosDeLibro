@@ -34,7 +34,7 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             txtCP = new TextBox();
             txtMunicipio = new TextBox();
-            txtCiudad = new TextBox();
+            txtLocalidad = new TextBox();
             label9 = new Label();
             label5 = new Label();
             txtNombre = new TextBox();
@@ -101,7 +101,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.80268F));
             tableLayoutPanel1.Controls.Add(txtCP, 3, 2);
             tableLayoutPanel1.Controls.Add(txtMunicipio, 3, 1);
-            tableLayoutPanel1.Controls.Add(txtCiudad, 3, 0);
+            tableLayoutPanel1.Controls.Add(txtLocalidad, 3, 0);
             tableLayoutPanel1.Controls.Add(label9, 2, 0);
             tableLayoutPanel1.Controls.Add(label5, 0, 0);
             tableLayoutPanel1.Controls.Add(txtNombre, 1, 0);
@@ -149,13 +149,13 @@
             txtMunicipio.Size = new Size(183, 34);
             txtMunicipio.TabIndex = 40;
             // 
-            // txtCiudad
+            // txtLocalidad
             // 
-            txtCiudad.Location = new Point(701, 6);
-            txtCiudad.Margin = new Padding(6);
-            txtCiudad.Name = "txtCiudad";
-            txtCiudad.Size = new Size(183, 34);
-            txtCiudad.TabIndex = 39;
+            txtLocalidad.Location = new Point(701, 6);
+            txtLocalidad.Margin = new Padding(6);
+            txtLocalidad.Name = "txtLocalidad";
+            txtLocalidad.Size = new Size(183, 34);
+            txtLocalidad.TabIndex = 39;
             // 
             // label9
             // 
@@ -163,9 +163,9 @@
             label9.Location = new Point(528, 0);
             label9.Margin = new Padding(6, 0, 6, 0);
             label9.Name = "label9";
-            label9.Size = new Size(78, 28);
+            label9.Size = new Size(100, 28);
             label9.TabIndex = 36;
-            label9.Text = "Ciudad:";
+            label9.Text = "Localidad:";
             // 
             // label5
             // 
@@ -358,7 +358,7 @@
         private Label label6;
         private TextBox txtCorreo;
         private Label label1;
-        private TextBox txtCiudad;
+        private TextBox txtLocalidad;
         private Label label2;
         private Button btnRegresar;
         private Button btnSiguiente;

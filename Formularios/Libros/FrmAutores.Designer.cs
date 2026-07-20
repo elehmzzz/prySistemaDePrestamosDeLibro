@@ -46,9 +46,10 @@
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             tableLayoutPanel2 = new TableLayoutPanel();
-            button2 = new Button();
-            button3 = new Button();
+            btnGuardar = new Button();
+            btnEliminar = new Button();
             tableLayoutPanel3 = new TableLayoutPanel();
+            btnRegresar = new Button();
             tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel2.SuspendLayout();
@@ -190,7 +191,6 @@
             label6.Size = new Size(113, 28);
             label6.TabIndex = 34;
             label6.Text = "Apellido M:";
-            label6.Click += label6_Click;
             // 
             // textBox1
             // 
@@ -234,34 +234,34 @@
             tableLayoutPanel2.Size = new Size(708, 95);
             tableLayoutPanel2.TabIndex = 38;
             // 
-            // button2
+            // btnGuardar
             // 
-            button2.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button2.AutoSize = true;
-            button2.Location = new Point(27, 50);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 38);
-            button2.TabIndex = 38;
-            button2.Text = "Guardar";
-            button2.UseVisualStyleBackColor = true;
+            btnGuardar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnGuardar.AutoSize = true;
+            btnGuardar.Location = new Point(27, 50);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(94, 38);
+            btnGuardar.TabIndex = 38;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnEliminar
             // 
-            button3.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            button3.AutoSize = true;
-            button3.Location = new Point(27, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(94, 38);
-            button3.TabIndex = 39;
-            button3.Text = "Eliminar";
-            button3.UseVisualStyleBackColor = true;
+            btnEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnEliminar.AutoSize = true;
+            btnEliminar.Location = new Point(27, 3);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(94, 38);
+            btnEliminar.TabIndex = 39;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
             // 
             tableLayoutPanel3.ColumnCount = 1;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Controls.Add(button3, 0, 0);
-            tableLayoutPanel3.Controls.Add(button2, 0, 1);
+            tableLayoutPanel3.Controls.Add(btnEliminar, 0, 0);
+            tableLayoutPanel3.Controls.Add(btnGuardar, 0, 1);
             tableLayoutPanel3.Location = new Point(780, 446);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 2;
@@ -270,12 +270,26 @@
             tableLayoutPanel3.Size = new Size(124, 95);
             tableLayoutPanel3.TabIndex = 39;
             // 
+            // btnRegresar
+            // 
+            btnRegresar.AutoSize = true;
+            btnRegresar.BackColor = Color.FromArgb(32, 41, 64);
+            btnRegresar.ForeColor = SystemColors.Control;
+            btnRegresar.Location = new Point(931, 18);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(109, 38);
+            btnRegresar.TabIndex = 40;
+            btnRegresar.Text = "Regresar";
+            btnRegresar.UseVisualStyleBackColor = false;
+            btnRegresar.Click += btnRegresar_Click;
+            // 
             // FrmAutores
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1052, 583);
+            Controls.Add(btnRegresar);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(label3);
@@ -318,8 +332,9 @@
         private TextBox textBox2;
         private TextBox textBox3;
         private TableLayoutPanel tableLayoutPanel2;
-        private Button button2;
-        private Button button3;
+        private Button btnGuardar;
+        private Button btnEliminar;
         private TableLayoutPanel tableLayoutPanel3;
+        private Button btnRegresar;
     }
 }
