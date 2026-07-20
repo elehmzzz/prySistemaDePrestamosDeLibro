@@ -31,14 +31,14 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             txtDiasTolerancia = new TextBox();
             label14 = new Label();
-            btnEditarDatos = new Button();
             label6 = new Label();
             txtBloqueoMaximo = new TextBox();
             label5 = new Label();
             txtBloqueoPorRetraso = new TextBox();
+            label1 = new Label();
+            btnEditarDatos = new Button();
             tableLayoutPanel2 = new TableLayoutPanel();
             label4 = new Label();
-            label1 = new Label();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
@@ -79,6 +79,7 @@
             txtDiasTolerancia.Name = "txtDiasTolerancia";
             txtDiasTolerancia.Size = new Size(232, 34);
             txtDiasTolerancia.TabIndex = 84;
+            txtDiasTolerancia.TextChanged += txtDiasTolerancia_TextChanged;
             // 
             // label14
             // 
@@ -89,19 +90,6 @@
             label14.Size = new Size(171, 28);
             label14.TabIndex = 83;
             label14.Text = "Días de tolerancia:";
-            // 
-            // btnEditarDatos
-            // 
-            btnEditarDatos.AutoSize = true;
-            btnEditarDatos.BackColor = Color.FromArgb(32, 41, 64);
-            btnEditarDatos.ForeColor = Color.White;
-            btnEditarDatos.Location = new Point(848, 474);
-            btnEditarDatos.Margin = new Padding(6);
-            btnEditarDatos.Name = "btnEditarDatos";
-            btnEditarDatos.Size = new Size(129, 38);
-            btnEditarDatos.TabIndex = 27;
-            btnEditarDatos.Text = "Editar Datos";
-            btnEditarDatos.UseVisualStyleBackColor = false;
             // 
             // label6
             // 
@@ -139,6 +127,30 @@
             txtBloqueoPorRetraso.Size = new Size(232, 34);
             txtBloqueoPorRetraso.TabIndex = 7;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            tableLayoutPanel1.SetColumnSpan(label1, 2);
+            label1.Location = new Point(466, 52);
+            label1.Margin = new Padding(6, 0, 6, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(314, 28);
+            label1.TabIndex = 85;
+            label1.Text = "días de bloqueo por día de retraso";
+            // 
+            // btnEditarDatos
+            // 
+            btnEditarDatos.AutoSize = true;
+            btnEditarDatos.BackColor = Color.FromArgb(32, 41, 64);
+            btnEditarDatos.ForeColor = Color.White;
+            btnEditarDatos.Location = new Point(848, 474);
+            btnEditarDatos.Margin = new Padding(6);
+            btnEditarDatos.Name = "btnEditarDatos";
+            btnEditarDatos.Size = new Size(129, 38);
+            btnEditarDatos.TabIndex = 27;
+            btnEditarDatos.Text = "Editar Datos";
+            btnEditarDatos.UseVisualStyleBackColor = false;
+            // 
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.ColumnCount = 1;
@@ -164,17 +176,6 @@
             label4.Size = new Size(317, 46);
             label4.TabIndex = 3;
             label4.Text = "Multa para Lectores";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            tableLayoutPanel1.SetColumnSpan(label1, 2);
-            label1.Location = new Point(466, 52);
-            label1.Margin = new Padding(6, 0, 6, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(314, 28);
-            label1.TabIndex = 85;
-            label1.Text = "días de bloqueo por día de retraso";
             // 
             // FrmMultas
             // 
