@@ -38,6 +38,7 @@
             txtBuscador = new TextBox();
             rbAlfabetico = new RadioButton();
             tableLayoutPanel1 = new TableLayoutPanel();
+            label4 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -47,7 +48,7 @@
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
-            dataGridView1.Location = new Point(15, 158);
+            dataGridView1.Location = new Point(15, 228);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
@@ -94,7 +95,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(325, 0);
+            label1.Location = new Point(384, 0);
             label1.Name = "label1";
             label1.Size = new Size(155, 28);
             label1.TabIndex = 3;
@@ -114,7 +115,7 @@
             // 
             rbAlfabetico.AutoSize = true;
             rbAlfabetico.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rbAlfabetico.Location = new Point(325, 58);
+            rbAlfabetico.Location = new Point(384, 58);
             rbAlfabetico.Name = "rbAlfabetico";
             rbAlfabetico.Size = new Size(122, 32);
             rbAlfabetico.TabIndex = 6;
@@ -130,13 +131,24 @@
             tableLayoutPanel1.Controls.Add(txtBuscador, 0, 0);
             tableLayoutPanel1.Controls.Add(label1, 1, 0);
             tableLayoutPanel1.Controls.Add(rbAlfabetico, 1, 1);
-            tableLayoutPanel1.Location = new Point(15, 12);
+            tableLayoutPanel1.Location = new Point(12, 91);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(644, 110);
+            tableLayoutPanel1.Size = new Size(762, 110);
             tableLayoutPanel1.TabIndex = 7;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(12, 20);
+            label4.Margin = new Padding(6, 0, 6, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(324, 46);
+            label4.TabIndex = 8;
+            label4.Text = "Consulta de lectores";
             // 
             // FrmLectores
             // 
@@ -144,6 +156,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1052, 583);
+            Controls.Add(label4);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(dataGridView1);
             FormBorderStyle = FormBorderStyle.None;
@@ -155,6 +168,7 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -168,5 +182,6 @@
         private TextBox txtBuscador;
         private RadioButton rbAlfabetico;
         private TableLayoutPanel tableLayoutPanel1;
+        private Label label4;
     }
 }

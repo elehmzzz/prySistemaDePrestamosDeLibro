@@ -54,8 +54,9 @@
             label9 = new Label();
             textBox5 = new TextBox();
             textBox6 = new TextBox();
-            button1 = new Button();
             button2 = new Button();
+            button1 = new Button();
+            btnRegresar = new Button();
             tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -67,12 +68,12 @@
             tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Controls.Add(label8, 0, 0);
-            tableLayoutPanel2.Location = new Point(14, 18);
+            tableLayoutPanel2.Location = new Point(13, 15);
             tableLayoutPanel2.Margin = new Padding(4, 6, 4, 6);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Size = new Size(241, 48);
+            tableLayoutPanel2.Size = new Size(323, 48);
             tableLayoutPanel2.TabIndex = 18;
             // 
             // label8
@@ -83,10 +84,9 @@
             label8.Location = new Point(4, 0);
             label8.Margin = new Padding(4, 0, 4, 0);
             label8.Name = "label8";
-            label8.Size = new Size(110, 46);
+            label8.Size = new Size(289, 46);
             label8.TabIndex = 0;
-            label8.Text = "Libros";
-            label8.Click += label8_Click;
+            label8.Text = "Registro de Libros";
             // 
             // dataGridView1
             // 
@@ -94,7 +94,7 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
             dataGridView1.Location = new Point(13, 158);
-            dataGridView1.Margin = new Padding(4, 4, 4, 4);
+            dataGridView1.Margin = new Padding(4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
@@ -145,7 +145,7 @@
             tableLayoutPanel1.Controls.Add(btnAgregarLibro, 2, 0);
             tableLayoutPanel1.Controls.Add(label2, 0, 0);
             tableLayoutPanel1.Location = new Point(18, 86);
-            tableLayoutPanel1.Margin = new Padding(4, 4, 4, 4);
+            tableLayoutPanel1.Margin = new Padding(4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -159,7 +159,7 @@
             txtBuscador.BorderStyle = BorderStyle.None;
             txtBuscador.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtBuscador.Location = new Point(188, 12);
-            txtBuscador.Margin = new Padding(4, 4, 4, 4);
+            txtBuscador.Margin = new Padding(4);
             txtBuscador.Name = "txtBuscador";
             txtBuscador.PlaceholderText = "Buscar";
             txtBuscador.Size = new Size(391, 27);
@@ -170,7 +170,7 @@
             btnAgregarLibro.Anchor = AnchorStyles.Left;
             btnAgregarLibro.AutoSize = true;
             btnAgregarLibro.Location = new Point(587, 4);
-            btnAgregarLibro.Margin = new Padding(4, 4, 4, 4);
+            btnAgregarLibro.Margin = new Padding(4);
             btnAgregarLibro.Name = "btnAgregarLibro";
             btnAgregarLibro.Size = new Size(144, 43);
             btnAgregarLibro.TabIndex = 24;
@@ -329,18 +329,6 @@
             textBox6.Size = new Size(100, 34);
             textBox6.TabIndex = 42;
             // 
-            // button1
-            // 
-            button1.Anchor = AnchorStyles.Left;
-            button1.AutoSize = true;
-            button1.Location = new Point(839, 94);
-            button1.Margin = new Padding(4);
-            button1.Name = "button1";
-            button1.Size = new Size(144, 38);
-            button1.TabIndex = 43;
-            button1.Text = "Guardar";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // button2
             // 
             button2.Anchor = AnchorStyles.Left;
@@ -353,12 +341,38 @@
             button2.Text = "Eliminar";
             button2.UseVisualStyleBackColor = true;
             // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.Left;
+            button1.AutoSize = true;
+            button1.Location = new Point(839, 94);
+            button1.Margin = new Padding(4);
+            button1.Name = "button1";
+            button1.Size = new Size(144, 38);
+            button1.TabIndex = 43;
+            button1.Text = "Guardar";
+            button1.UseVisualStyleBackColor = true;
+            // 
+            // btnRegresar
+            // 
+            btnRegresar.AutoSize = true;
+            btnRegresar.BackColor = Color.FromArgb(32, 41, 64);
+            btnRegresar.ForeColor = SystemColors.Control;
+            btnRegresar.Location = new Point(916, 25);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(109, 38);
+            btnRegresar.TabIndex = 38;
+            btnRegresar.Text = "Regresar";
+            btnRegresar.UseVisualStyleBackColor = false;
+            btnRegresar.Click += btnRegresar_Click;
+            // 
             // FrmRegistroLibro
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1052, 583);
+            Controls.Add(btnRegresar);
             Controls.Add(tableLayoutPanel3);
             Controls.Add(label3);
             Controls.Add(tableLayoutPanel1);
@@ -410,5 +424,6 @@
         private TextBox textBox6;
         private Button button2;
         private Button button1;
+        private Button btnRegresar;
     }
 }

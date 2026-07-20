@@ -41,6 +41,7 @@
             txtcategoriaSeleccioanda = new TextBox();
             button2 = new Button();
             button3 = new Button();
+            btnRegresar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -80,6 +81,7 @@
             btnAgregarCategoria.TabIndex = 24;
             btnAgregarCategoria.Text = "Agregar categoria";
             btnAgregarCategoria.UseVisualStyleBackColor = true;
+            btnAgregarCategoria.Click += btnAgregarCategoria_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -176,12 +178,26 @@
             button3.Text = "Borrar";
             button3.UseVisualStyleBackColor = true;
             // 
+            // btnRegresar
+            // 
+            btnRegresar.AutoSize = true;
+            btnRegresar.BackColor = Color.FromArgb(32, 41, 64);
+            btnRegresar.ForeColor = SystemColors.Control;
+            btnRegresar.Location = new Point(909, 26);
+            btnRegresar.Name = "btnRegresar";
+            btnRegresar.Size = new Size(109, 38);
+            btnRegresar.TabIndex = 39;
+            btnRegresar.Text = "Regresar";
+            btnRegresar.UseVisualStyleBackColor = false;
+            btnRegresar.Click += btnRegresar_Click;
+            // 
             // FrmCategorias
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1052, 583);
+            Controls.Add(btnRegresar);
             Controls.Add(button3);
             Controls.Add(button2);
             Controls.Add(txtcategoriaSeleccioanda);
@@ -195,7 +211,6 @@
             Margin = new Padding(4);
             Name = "FrmCategorias";
             Text = "FrmCategorias";
-            Load += FrmCategorias_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
@@ -218,5 +233,6 @@
         private TextBox txtcategoriaSeleccioanda;
         private Button button2;
         private Button button3;
+        private Button btnRegresar;
     }
 }
