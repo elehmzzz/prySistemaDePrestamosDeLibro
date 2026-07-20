@@ -62,7 +62,7 @@
             label2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(14, 18);
             label2.Name = "label2";
-            label2.Size = new Size(137, 46);
+            label2.Size = new Size(108, 37);
             label2.TabIndex = 28;
             label2.Text = "Autores";
             // 
@@ -87,10 +87,10 @@
             txtBuscador.Anchor = AnchorStyles.Left;
             txtBuscador.BorderStyle = BorderStyle.None;
             txtBuscador.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBuscador.Location = new Point(179, 12);
+            txtBuscador.Location = new Point(179, 14);
             txtBuscador.Name = "txtBuscador";
             txtBuscador.PlaceholderText = "Buscar";
-            txtBuscador.Size = new Size(316, 27);
+            txtBuscador.Size = new Size(316, 22);
             txtBuscador.TabIndex = 26;
             // 
             // btnAgregarAutor
@@ -102,14 +102,15 @@
             btnAgregarAutor.TabIndex = 24;
             btnAgregarAutor.Text = "Agregar autor";
             btnAgregarAutor.UseVisualStyleBackColor = true;
+            btnAgregarAutor.Click += btnAgregarAutor_Click;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Left;
             label1.AutoSize = true;
-            label1.Location = new Point(3, 11);
+            label1.Location = new Point(3, 15);
             label1.Name = "label1";
-            label1.Size = new Size(144, 28);
+            label1.Size = new Size(116, 21);
             label1.TabIndex = 25;
             label1.Text = "Buscar el autor:";
             // 
@@ -157,7 +158,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(20, 403);
             label3.Name = "label3";
-            label3.Size = new Size(237, 28);
+            label3.Size = new Size(187, 21);
             label3.TabIndex = 31;
             label3.Text = "Editar autor seleccionado:";
             // 
@@ -165,9 +166,9 @@
             // 
             label4.Anchor = AnchorStyles.Left;
             label4.AutoSize = true;
-            label4.Location = new Point(3, 9);
+            label4.Location = new Point(3, 13);
             label4.Name = "label4";
-            label4.Size = new Size(109, 28);
+            label4.Size = new Size(88, 21);
             label4.TabIndex = 32;
             label4.Text = "Nombre(s):";
             // 
@@ -175,9 +176,9 @@
             // 
             label5.Anchor = AnchorStyles.Left;
             label5.AutoSize = true;
-            label5.Location = new Point(3, 57);
+            label5.Location = new Point(3, 60);
             label5.Name = "label5";
-            label5.Size = new Size(106, 28);
+            label5.Size = new Size(83, 21);
             label5.TabIndex = 33;
             label5.Text = "Apellido P:";
             // 
@@ -185,32 +186,32 @@
             // 
             label6.Anchor = AnchorStyles.Left;
             label6.AutoSize = true;
-            label6.Location = new Point(369, 57);
+            label6.Location = new Point(348, 60);
             label6.Name = "label6";
-            label6.Size = new Size(113, 28);
+            label6.Size = new Size(88, 21);
             label6.TabIndex = 34;
             label6.Text = "Apellido M:";
             label6.Click += label6_Click;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(118, 3);
+            textBox1.Location = new Point(97, 3);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(245, 34);
+            textBox1.Size = new Size(245, 29);
             textBox1.TabIndex = 35;
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(118, 50);
+            textBox2.Location = new Point(97, 50);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(199, 34);
+            textBox2.Size = new Size(199, 29);
             textBox2.TabIndex = 36;
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(488, 50);
+            textBox3.Location = new Point(442, 50);
             textBox3.Name = "textBox3";
-            textBox3.Size = new Size(194, 34);
+            textBox3.Size = new Size(194, 29);
             textBox3.TabIndex = 37;
             // 
             // tableLayoutPanel2
@@ -272,7 +273,7 @@
             // 
             // FrmAutores
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1052, 583);

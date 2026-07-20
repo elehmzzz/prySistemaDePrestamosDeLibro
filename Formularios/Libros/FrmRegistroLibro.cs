@@ -31,5 +31,10 @@ namespace prySistemaDePrestamosDeLibro.Clases
         {
 
         }
+
+        private void btnAgregarLibro_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
