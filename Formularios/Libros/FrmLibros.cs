@@ -1,4 +1,6 @@
-﻿using System;
+﻿using prySistemaDePrestamosDeLibro.Formularios;
+using prySistemaDePrestamosDeLibro.Formularios.Libros;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,17 +14,32 @@ namespace prySistemaDePrestamosDeLibro.Clases
 {
     public partial class FrmLibros : Form
     {
-        public FrmLibros()
+        private FrmMenuPrincipal ventanaPrincipal;
+        private FrmRegistroLibro apartadoLibros;
+        private FrmCategorias apartadoCategorias;
+        private FrmAutores apartadoAutores;
+        public FrmLibros(FrmMenuPrincipal ventana)
         {
             InitializeComponent();
+            ventanaPrincipal = ventana;
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void btnAgregar_Click(object sender, EventArgs e)
         {
-
+            ventanaPrincipal.mostrarApartadoLibro();
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            ventanaPrincipal.mostrarApartadoCategorias();
+        }
+
+        private void btnAutores_Click(object sender, EventArgs e)
+        {
+            ventanaPrincipal.mostrarApartadoAutores();
+        }
+
+        private void Editoriales_Click(object sender, EventArgs e)
         {
 
         }

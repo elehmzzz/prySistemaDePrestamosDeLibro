@@ -12,14 +12,16 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
 {
     public partial class FrmAutores : Form
     {
-        public FrmAutores()
+        private FrmMenuPrincipal ventanaPrincipal;
+        public FrmAutores(FrmMenuPrincipal ventana)
         {
             InitializeComponent();
+            ventanaPrincipal = ventana;
         }
 
-        private void label6_Click(object sender, EventArgs e)
+        private void btnRegresar_Click(object sender, EventArgs e)
         {
-
+            ventanaPrincipal.mostrarModuloLibros();
         }
 
         private void btnAgregarAutor_Click(object sender, EventArgs e)

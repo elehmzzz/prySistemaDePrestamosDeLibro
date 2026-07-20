@@ -138,6 +138,7 @@
             btnAgregar.TabIndex = 23;
             btnAgregar.Text = "Agregar";
             btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregar_Click;
             // 
             // btnCategorias
             // 
@@ -150,6 +151,7 @@
             btnCategorias.TabIndex = 26;
             btnCategorias.Text = "Categorias";
             btnCategorias.UseVisualStyleBackColor = false;
+            btnCategorias.Click += btnCategorias_Click;
             // 
             // btnAutores
             // 
@@ -162,6 +164,7 @@
             btnAutores.TabIndex = 27;
             btnAutores.Text = "Autores";
             btnAutores.UseVisualStyleBackColor = false;
+            btnAutores.Click += btnAutores_Click;
             // 
             // Editoriales
             // 
@@ -174,6 +177,7 @@
             Editoriales.TabIndex = 28;
             Editoriales.Text = "Editoriales";
             Editoriales.UseVisualStyleBackColor = false;
+            Editoriales.Click += Editoriales_Click;
             // 
             // tableLayoutPanel1
             // 

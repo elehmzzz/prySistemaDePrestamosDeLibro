@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            txtNuevaCategoria = new TextBox();
+            tableLayoutPanel2 = new TableLayoutPanel();
             label1 = new Label();
+            txtNuevaCategoria = new TextBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             button1 = new Button();
             button2 = new Button();
-            tableLayoutPanel2 = new TableLayoutPanel();
             panel1.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -51,12 +51,19 @@
             panel1.Size = new Size(427, 160);
             panel1.TabIndex = 0;
             // 
-            // txtNuevaCategoria
+            // tableLayoutPanel2
             // 
-            txtNuevaCategoria.Location = new Point(124, 3);
-            txtNuevaCategoria.Name = "txtNuevaCategoria";
-            txtNuevaCategoria.Size = new Size(208, 34);
-            txtNuevaCategoria.TabIndex = 2;
+            tableLayoutPanel2.ColumnCount = 2;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30.0275478F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 69.97245F));
+            tableLayoutPanel2.Controls.Add(label1, 0, 0);
+            tableLayoutPanel2.Controls.Add(txtNuevaCategoria, 1, 0);
+            tableLayoutPanel2.Location = new Point(12, 12);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel2.Size = new Size(403, 54);
+            tableLayoutPanel2.TabIndex = 3;
             // 
             // label1
             // 
@@ -66,6 +73,13 @@
             label1.Size = new Size(89, 28);
             label1.TabIndex = 1;
             label1.Text = "Nombre:";
+            // 
+            // txtNuevaCategoria
+            // 
+            txtNuevaCategoria.Location = new Point(124, 3);
+            txtNuevaCategoria.Name = "txtNuevaCategoria";
+            txtNuevaCategoria.Size = new Size(208, 34);
+            txtNuevaCategoria.TabIndex = 2;
             // 
             // tableLayoutPanel1
             // 
@@ -102,36 +116,23 @@
             button2.Text = "Guardar";
             button2.UseVisualStyleBackColor = true;
             // 
-            // tableLayoutPanel2
-            // 
-            tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30.0275478F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 69.97245F));
-            tableLayoutPanel2.Controls.Add(label1, 0, 0);
-            tableLayoutPanel2.Controls.Add(txtNuevaCategoria, 1, 0);
-            tableLayoutPanel2.Location = new Point(12, 12);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Size = new Size(403, 54);
-            tableLayoutPanel2.TabIndex = 3;
-            // 
             // FrmAgregarCategoria
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(427, 160);
             Controls.Add(panel1);
-            FormBorderStyle = FormBorderStyle.None;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmAgregarCategoria";
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Agregar Categoria";
             panel1.ResumeLayout(false);
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 

@@ -30,7 +30,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             DateOnly fechaNacimiento = DateOnly.FromDateTime(dtpFechaNac.Value);
             string correo = txtCorreo.Text.Trim();
             string telefono = txtTelefono.Text.Trim();
-            string ciudad = txtCiudad.Text.Trim();
+            string ciudad = txtLocalidad.Text.Trim();
             string municipio = txtMunicipio.Text.Trim();
             string CP = txtCP.Text.Trim();
 
@@ -45,6 +45,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
                 return;
             }
 
+
             registroPersonal.mostrarPanelUsuario();
         }
 
@@ -53,6 +54,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             registroPersonal.abrirInicioSesion();
             registroPersonal.Close();
         }
+
         //funcion que comprueba algun campo vacio y devuelve un valor booleano
         private bool comprobarCamposVacios(string[] campos) {
             return campos.Any(string.IsNullOrWhiteSpace);
