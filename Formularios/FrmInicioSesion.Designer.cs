@@ -63,6 +63,7 @@
             panel1.Size = new Size(721, 648);
             panel1.TabIndex = 0;
             panel1.UseWaitCursor = true;
+            panel1.Paint += panel1_Paint;
             // 
             // pictureBox1
             // 
