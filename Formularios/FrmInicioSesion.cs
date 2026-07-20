@@ -48,7 +48,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
                 if (reader.Read())
                 {
-                    //entra cuando el uusuario coincide
+                    //entra cuando el uusuario coincide - Aqui no se ocupa Ñ 
                     string contraseniaAlmacenada = BCrypt.Net.BCrypt.HashPassword(reader["Contrasenia"].ToString());
                     Boolean verifica = BCrypt.Net.BCrypt.Verify(contrasenia, contraseniaAlmacenada);
                     if (verifica)
@@ -100,6 +100,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FrmInicioSesion_Load(object sender, EventArgs e)
         {
 
         }
