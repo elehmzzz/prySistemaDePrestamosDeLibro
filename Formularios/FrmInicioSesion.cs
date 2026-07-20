@@ -35,7 +35,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
             MySqlConnection conn = conexion.ObtenerConexion();
 
             //
-            try 
+            try
             {
                 //entra cuando el usuario coindice
                 string consultaUsuario = "select * from bibliotecario where Nombre_Usuario = @nombre";
@@ -45,11 +45,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 comando.Parameters.AddWithValue("@nombre", usuario);
                 //se ejecuta la consulta y se obtiene el resultado
                 MySqlDataReader reader = comando.ExecuteReader();
-                
+
                 if (reader.Read())
                 {
                     //entra cuando el uusuario coincide
-                    string contraseniaAlmacenada = BCrypt.Net.BCrypt.HashPassword(reader["Contraseña"].ToString());
+                    string contraseniaAlmacenada = BCrypt.Net.BCrypt.HashPassword(reader["Contrasenia"].ToString());
                     Boolean verifica = BCrypt.Net.BCrypt.Verify(contrasenia, contraseniaAlmacenada);
                     if (verifica)
                     {
@@ -61,7 +61,8 @@ namespace prySistemaDePrestamosDeLibro.Clases
                         txtContrasenia.Clear();
                         txtUsuario.Focus();
                     }
-                    else {
+                    else
+                    {
                         //cuando el usuario es correcto pero la contraseña es incorrecta
                         conn.Close();
                         MessageBox.Show("La contraseña es incorrecta\nintente de nuevo");
@@ -69,7 +70,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
                         txtContrasenia.Focus();
                     }
                 }
-                else 
+                else
                 {
                     //ejecuta cuando el usuario no coincide
                     MessageBox.Show("Usuario incorrecto\nIntente de nuevo");
@@ -96,6 +97,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
             txtContrasenia.Clear();
             txtUsuario.Clear();
             txtUsuario.Focus();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
