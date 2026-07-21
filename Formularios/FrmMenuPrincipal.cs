@@ -101,6 +101,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
                 apartadoAutores = new FrmAutores(this);
             }
             mostrarContenido(apartadoAutores);
+            apartadoAutores.CargarAutores();
         }
         //muestra el modulo de lectores
         public void mostrarModuloLectores() {

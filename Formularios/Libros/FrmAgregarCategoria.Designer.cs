@@ -33,7 +33,7 @@
             label1 = new Label();
             txtNuevaCategoria = new TextBox();
             tableLayoutPanel1 = new TableLayoutPanel();
-            button1 = new Button();
+            btnCerrar = new Button();
             button2 = new Button();
             panel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -86,7 +86,7 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Controls.Add(button1, 0, 0);
+            tableLayoutPanel1.Controls.Add(btnCerrar, 0, 0);
             tableLayoutPanel1.Controls.Add(button2, 1, 0);
             tableLayoutPanel1.Location = new Point(210, 95);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -96,15 +96,16 @@
             tableLayoutPanel1.TabIndex = 0;
             tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
-            // button1
+            // btnCerrar
             // 
-            button1.AutoSize = true;
-            button1.Location = new Point(3, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(96, 38);
-            button1.TabIndex = 0;
-            button1.Text = "Cancelar";
-            button1.UseVisualStyleBackColor = true;
+            btnCerrar.AutoSize = true;
+            btnCerrar.Location = new Point(3, 3);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(96, 38);
+            btnCerrar.TabIndex = 0;
+            btnCerrar.Text = "Cancelar";
+            btnCerrar.UseVisualStyleBackColor = true;
+            btnCerrar.Click += btnCerrar_Click;
             // 
             // button2
             // 
@@ -143,7 +144,7 @@
         private TextBox txtNuevaCategoria;
         private Label label1;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button button1;
+        private Button btnCerrar;
         private Button button2;
         private TableLayoutPanel tableLayoutPanel2;
     }
