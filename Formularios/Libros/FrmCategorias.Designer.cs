@@ -60,6 +60,7 @@
             // 
             // Column1
             // 
+            Column1.DataPropertyName = "id";
             Column1.FillWeight = 94.62568F;
             Column1.HeaderText = "id";
             Column1.MinimumWidth = 3;
@@ -67,6 +68,7 @@
             // 
             // Column2
             // 
+            Column2.DataPropertyName = "nombre";
             Column2.FillWeight = 100.0257F;
             Column2.HeaderText = "Categoria";
             Column2.MinimumWidth = 6;
@@ -177,6 +179,7 @@
             button3.TabIndex = 32;
             button3.Text = "Borrar";
             button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // btnRegresar
             // 
@@ -211,6 +214,7 @@
             Margin = new Padding(4);
             Name = "FrmCategorias";
             Text = "FrmCategorias";
+            Load += FrmCategorias_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
