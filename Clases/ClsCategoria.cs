@@ -72,6 +72,26 @@ namespace prySistemaDePrestamosDeLibro.Clases
             }
         }
 
+        public bool ActualizarCategoria()
+        {
+            ClsConexion conexion = new ClsConexion();
+            MySqlConnection con = conexion.ObtenerConexion();
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("UPDATE categoria set nombre_categoria=@nombre WHERE id_categoria=@id" , con);
+                cmd.Parameters.AddWithValue("@nombre", Nombre);
+                cmd.Parameters.AddWithValue("@id", IdCategoria);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+                return false;
+            }
+        }
+
         public bool BorrarCategoria()
         {
             ClsConexion conexion = new ClsConexion();

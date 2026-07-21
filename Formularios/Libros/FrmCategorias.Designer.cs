@@ -39,8 +39,8 @@
             label3 = new Label();
             label4 = new Label();
             txtcategoriaSeleccioanda = new TextBox();
-            button2 = new Button();
-            button3 = new Button();
+            btnGuardar = new Button();
+            btnEliminar = new Button();
             btnRegresar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -160,26 +160,27 @@
             txtcategoriaSeleccioanda.Size = new Size(371, 34);
             txtcategoriaSeleccioanda.TabIndex = 30;
             // 
-            // button2
+            // btnGuardar
             // 
-            button2.AutoSize = true;
-            button2.Location = new Point(669, 482);
-            button2.Name = "button2";
-            button2.Size = new Size(129, 38);
-            button2.TabIndex = 31;
-            button2.Text = "Guardar";
-            button2.UseVisualStyleBackColor = true;
+            btnGuardar.AutoSize = true;
+            btnGuardar.Location = new Point(669, 482);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(129, 38);
+            btnGuardar.TabIndex = 31;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
-            // button3
+            // btnEliminar
             // 
-            button3.AutoSize = true;
-            button3.Location = new Point(825, 482);
-            button3.Name = "button3";
-            button3.Size = new Size(129, 38);
-            button3.TabIndex = 32;
-            button3.Text = "Borrar";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            btnEliminar.AutoSize = true;
+            btnEliminar.Location = new Point(825, 482);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(129, 38);
+            btnEliminar.TabIndex = 32;
+            btnEliminar.Text = "Borrar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnRegresar
             // 
@@ -201,8 +202,8 @@
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1052, 583);
             Controls.Add(btnRegresar);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnGuardar);
             Controls.Add(txtcategoriaSeleccioanda);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -236,7 +237,8 @@
         private Label label4;
         private TextBox txtcategoriaSeleccioanda;
         private Button button2;
-        private Button button3;
+        private Button btnEliminar;
         private Button btnRegresar;
+        private Button btnGuardar;
     }
 }

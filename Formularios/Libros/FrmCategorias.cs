@@ -68,7 +68,26 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
             CargarCategorias();
         }
 
-        private void button3_Click(object sender, EventArgs e)
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            if (txtcategoriaSeleccioanda.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese el nombre de la categoría");
+                txtcategoriaSeleccioanda.Text = objCategoria.getNombre();
+                return;
+            }
+
+            objCategoria.setNombre(txtcategoriaSeleccioanda.Text.Trim());
+
+            if (objCategoria.ActualizarCategoria())
+            {
+                MessageBox.Show("Categoria actualizada");
+                CargarCategorias();
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (objCategoria.getIdCategoria() > 0)
             {
