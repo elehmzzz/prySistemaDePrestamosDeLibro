@@ -108,9 +108,10 @@
             txtBuscador.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtBuscador.Location = new Point(3, 3);
             txtBuscador.Name = "txtBuscador";
+            txtBuscador.PlaceholderText = "Buscar";
             txtBuscador.Size = new Size(316, 27);
             txtBuscador.TabIndex = 1;
-            txtBuscador.Text = "Buscar...";
+            txtBuscador.TextChanged += txtBuscador_TextChanged_1;
             // 
             // rbAlfabetico
             // 

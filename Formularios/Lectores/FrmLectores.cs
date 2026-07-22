@@ -7,16 +7,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using prySistemaDePrestamosDeLibro.Formularios.Lectores;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
     public partial class FrmLectores : Form
     {
+        private ClsLectores objLector;
         public FrmLectores()
         {
             InitializeComponent();
+            objLector = new ClsLectores();
         }
-
+        public void CargarLectores()
+        {
+            DataTable dt = objLector.ObtenerLectores();
+            dataGridView1.DataSource = dt;
+        }
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
@@ -29,7 +36,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
         private void FrmLectores_Load(object sender, EventArgs e)
         {
-
+            CargarLectores();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -74,14 +81,25 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
         private void txtBuscador_TextChanged(object sender, EventArgs e)
         {
+            string filtro = txtBuscador.Text.Trim();
 
+            if (dataGridView1.DataSource is DataTable dt)
+            {
+                dt.DefaultView.RowFilter = string.IsNullOrEmpty(filtro)
+                    ? ""
+                    : string.Format("Nombres LIKE '%{0}%' OR Apellido_Paterno LIKE '%{0}%'", filtro);
+            }
         }
 
         private void btnAgregarLector_Click(object sender, EventArgs e)
         {
             FrmAgregarLectores ventanaAgregar = new FrmAgregarLectores();
             ventanaAgregar.ShowDialog();
-            CargarLectores();
+        }
+
+        private void txtBuscador_TextChanged_1(object sender, EventArgs e)
+        {
+
         }
     }
 }
