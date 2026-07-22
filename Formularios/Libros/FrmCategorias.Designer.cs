@@ -39,7 +39,7 @@
             label3 = new Label();
             label4 = new Label();
             txtcategoriaSeleccioanda = new TextBox();
-            btnGuardar = new Button();
+            btnActualizar = new Button();
             btnEliminar = new Button();
             btnRegresar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -78,13 +78,14 @@
             // btnAgregarCategoria
             // 
             btnAgregarCategoria.Anchor = AnchorStyles.Left;
+            btnAgregarCategoria.BackColor = Color.FromArgb(32, 41, 64);
+            btnAgregarCategoria.ForeColor = SystemColors.Control;
             btnAgregarCategoria.Location = new Point(559, 3);
             btnAgregarCategoria.Name = "btnAgregarCategoria";
             btnAgregarCategoria.Size = new Size(221, 44);
             btnAgregarCategoria.TabIndex = 24;
             btnAgregarCategoria.Text = "Agregar categoria";
-            btnAgregarCategoria.UseVisualStyleBackColor = true;
-            btnAgregarCategoria.Click += btnAgregarCategoria_Click;
+            btnAgregarCategoria.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel1
             // 
@@ -107,19 +108,19 @@
             txtBuscador.Anchor = AnchorStyles.Left;
             txtBuscador.BorderStyle = BorderStyle.None;
             txtBuscador.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBuscador.Location = new Point(203, 12);
+            txtBuscador.Location = new Point(203, 14);
             txtBuscador.Name = "txtBuscador";
-            txtBuscador.Size = new Size(316, 27);
+            txtBuscador.PlaceholderText = "Buscar...";
+            txtBuscador.Size = new Size(316, 22);
             txtBuscador.TabIndex = 26;
-            txtBuscador.Text = "Buscar...";
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Left;
             label1.AutoSize = true;
-            label1.Location = new Point(3, 11);
+            label1.Location = new Point(3, 15);
             label1.Name = "label1";
-            label1.Size = new Size(179, 28);
+            label1.Size = new Size(143, 21);
             label1.TabIndex = 25;
             label1.Text = "Buscar la categoría:";
             // 
@@ -130,7 +131,7 @@
             label2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(14, 18);
             label2.Name = "label2";
-            label2.Size = new Size(179, 46);
+            label2.Size = new Size(144, 37);
             label2.TabIndex = 27;
             label2.Text = "Categorías";
             // 
@@ -140,7 +141,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(18, 425);
             label3.Name = "label3";
-            label3.Size = new Size(266, 28);
+            label3.Size = new Size(210, 21);
             label3.TabIndex = 28;
             label3.Text = "Editar categoría seleccionada";
             // 
@@ -150,7 +151,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(18, 482);
             label4.Name = "label4";
-            label4.Size = new Size(89, 28);
+            label4.Size = new Size(71, 21);
             label4.TabIndex = 29;
             label4.Text = "Nombre:";
             // 
@@ -158,30 +159,33 @@
             // 
             txtcategoriaSeleccioanda.Location = new Point(134, 484);
             txtcategoriaSeleccioanda.Name = "txtcategoriaSeleccioanda";
-            txtcategoriaSeleccioanda.Size = new Size(371, 34);
+            txtcategoriaSeleccioanda.Size = new Size(371, 29);
             txtcategoriaSeleccioanda.TabIndex = 30;
             // 
-            // btnGuardar
+            // btnActualizar
             // 
-            btnGuardar.AutoSize = true;
-            btnGuardar.Location = new Point(669, 482);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(129, 38);
-            btnGuardar.TabIndex = 31;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
+            btnActualizar.AutoSize = true;
+            btnActualizar.BackColor = Color.FromArgb(32, 41, 64);
+            btnActualizar.ForeColor = SystemColors.Control;
+            btnActualizar.Location = new Point(669, 482);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(129, 38);
+            btnActualizar.TabIndex = 31;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click;
             // 
             // btnEliminar
             // 
             btnEliminar.AutoSize = true;
+            btnEliminar.BackColor = Color.FromArgb(32, 41, 64);
+            btnEliminar.ForeColor = SystemColors.Control;
             btnEliminar.Location = new Point(825, 482);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(129, 38);
             btnEliminar.TabIndex = 32;
-            btnEliminar.Text = "Borrar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnRegresar
             // 
@@ -198,13 +202,13 @@
             // 
             // FrmCategorias
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1052, 583);
             Controls.Add(btnRegresar);
             Controls.Add(btnEliminar);
-            Controls.Add(btnGuardar);
+            Controls.Add(btnActualizar);
             Controls.Add(txtcategoriaSeleccioanda);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -237,9 +241,10 @@
         private Label label3;
         private Label label4;
         private TextBox txtcategoriaSeleccioanda;
-        private Button button2;
-        private Button btnEliminar;
+        private Button buttonActualizar;
+        private Button button3;
         private Button btnRegresar;
-        private Button btnGuardar;
+        private Button btnEliminar;
+        private Button btnActualizar;
     }
 }

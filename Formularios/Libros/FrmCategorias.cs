@@ -61,7 +61,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
             ventanaPrincipal.mostrarModuloLibros();
         }
 
-        private void btnAgregarCategoria_Click(object sender, EventArgs e)
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
             ventanaAgregarCategoria = new FrmAgregarCategoria(this);
             ventanaAgregarCategoria.ShowDialog();

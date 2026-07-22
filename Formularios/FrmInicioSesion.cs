@@ -54,12 +54,27 @@ namespace prySistemaDePrestamosDeLibro.Clases
                     if (verifica)
                     {
                         //si el usuario y contraseña es correcta
+                        string NombreCompleto=
+                            reader["Nombre"].ToString()+" "+
+                            reader["Apellido_Paterno"].ToString()+" "+
+                            reader["Apellido_Materno"].ToString();
+
+                        string UsuarioEmpleado = reader["Nombre_Usuario"].ToString();
+                        string Correo = reader["Correo"].ToString();
+                        string Telefono = reader["Telefono"].ToString();
+
                         this.Hide();
-                        FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(this);
+                        FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(
+                            this,
+                            NombreCompleto,
+                            UsuarioEmpleado,
+                            Correo,
+                            Telefono);
                         menuPrincipal.Show();
                         txtUsuario.Clear();
                         txtContrasenia.Clear();
                         txtUsuario.Focus();
+                        
                     }
                     else
                     {

@@ -25,5 +25,10 @@ namespace prySistemaDePrestamosDeLibro.Clases
             this.Close();
             ventanaPrincipal.mostrarModuloLibros();
         }
+
+        private void btnAgregarLibro_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
