@@ -39,7 +39,7 @@
             label3 = new Label();
             label4 = new Label();
             txtcategoriaSeleccioanda = new TextBox();
-            button2 = new Button();
+            buttonActualizar = new Button();
             button3 = new Button();
             btnRegresar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -104,9 +104,9 @@
             txtBuscador.Anchor = AnchorStyles.Left;
             txtBuscador.BorderStyle = BorderStyle.None;
             txtBuscador.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBuscador.Location = new Point(203, 12);
+            txtBuscador.Location = new Point(203, 14);
             txtBuscador.Name = "txtBuscador";
-            txtBuscador.Size = new Size(316, 27);
+            txtBuscador.Size = new Size(316, 22);
             txtBuscador.TabIndex = 26;
             txtBuscador.Text = "Buscar...";
             // 
@@ -114,9 +114,9 @@
             // 
             label1.Anchor = AnchorStyles.Left;
             label1.AutoSize = true;
-            label1.Location = new Point(3, 11);
+            label1.Location = new Point(3, 15);
             label1.Name = "label1";
-            label1.Size = new Size(179, 28);
+            label1.Size = new Size(143, 21);
             label1.TabIndex = 25;
             label1.Text = "Buscar la categoría:";
             // 
@@ -127,7 +127,7 @@
             label2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(14, 18);
             label2.Name = "label2";
-            label2.Size = new Size(179, 46);
+            label2.Size = new Size(144, 37);
             label2.TabIndex = 27;
             label2.Text = "Categorías";
             // 
@@ -137,7 +137,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(18, 425);
             label3.Name = "label3";
-            label3.Size = new Size(266, 28);
+            label3.Size = new Size(210, 21);
             label3.TabIndex = 28;
             label3.Text = "Editar categoría seleccionada";
             // 
@@ -147,7 +147,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(18, 482);
             label4.Name = "label4";
-            label4.Size = new Size(89, 28);
+            label4.Size = new Size(71, 21);
             label4.TabIndex = 29;
             label4.Text = "Nombre:";
             // 
@@ -155,18 +155,18 @@
             // 
             txtcategoriaSeleccioanda.Location = new Point(134, 484);
             txtcategoriaSeleccioanda.Name = "txtcategoriaSeleccioanda";
-            txtcategoriaSeleccioanda.Size = new Size(371, 34);
+            txtcategoriaSeleccioanda.Size = new Size(371, 29);
             txtcategoriaSeleccioanda.TabIndex = 30;
             // 
-            // button2
+            // buttonActualizar
             // 
-            button2.AutoSize = true;
-            button2.Location = new Point(669, 482);
-            button2.Name = "button2";
-            button2.Size = new Size(129, 38);
-            button2.TabIndex = 31;
-            button2.Text = "Guardar";
-            button2.UseVisualStyleBackColor = true;
+            buttonActualizar.AutoSize = true;
+            buttonActualizar.Location = new Point(669, 482);
+            buttonActualizar.Name = "buttonActualizar";
+            buttonActualizar.Size = new Size(129, 38);
+            buttonActualizar.TabIndex = 31;
+            buttonActualizar.Text = "Actualizar";
+            buttonActualizar.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
@@ -193,13 +193,13 @@
             // 
             // FrmCategorias
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1052, 583);
             Controls.Add(btnRegresar);
             Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(buttonActualizar);
             Controls.Add(txtcategoriaSeleccioanda);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -231,7 +231,7 @@
         private Label label3;
         private Label label4;
         private TextBox txtcategoriaSeleccioanda;
-        private Button button2;
+        private Button buttonActualizar;
         private Button button3;
         private Button btnRegresar;
     }

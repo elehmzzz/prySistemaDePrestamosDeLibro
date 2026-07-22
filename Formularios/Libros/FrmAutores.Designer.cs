@@ -239,9 +239,9 @@
             // 
             btnGuardar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnGuardar.AutoSize = true;
-            btnGuardar.Location = new Point(27, 50);
+            btnGuardar.Location = new Point(124, 3);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(94, 38);
+            btnGuardar.Size = new Size(96, 38);
             btnGuardar.TabIndex = 38;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
@@ -250,25 +250,26 @@
             // 
             btnEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnEliminar.AutoSize = true;
-            btnEliminar.Location = new Point(27, 3);
+            btnEliminar.Location = new Point(5, 3);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(94, 38);
+            btnEliminar.Size = new Size(102, 38);
             btnEliminar.TabIndex = 39;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;
             // 
             // tableLayoutPanel3
             // 
-            tableLayoutPanel3.ColumnCount = 1;
+            tableLayoutPanel3.ColumnCount = 2;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 113F));
+            tableLayoutPanel3.Controls.Add(btnGuardar, 1, 0);
             tableLayoutPanel3.Controls.Add(btnEliminar, 0, 0);
-            tableLayoutPanel3.Controls.Add(btnGuardar, 0, 1);
-            tableLayoutPanel3.Location = new Point(780, 446);
+            tableLayoutPanel3.Location = new Point(755, 490);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 2;
+            tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel3.Size = new Size(124, 95);
+            tableLayoutPanel3.Size = new Size(223, 51);
             tableLayoutPanel3.TabIndex = 39;
             // 
             // btnRegresar
