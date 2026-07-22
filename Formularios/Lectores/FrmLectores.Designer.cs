@@ -39,6 +39,7 @@
             rbAlfabetico = new RadioButton();
             tableLayoutPanel1 = new TableLayoutPanel();
             label4 = new Label();
+            btnAgregarLector = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -52,7 +53,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1025, 215);
+            dataGridView1.Size = new Size(1025, 343);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_2;
             // 
@@ -150,12 +151,27 @@
             label4.TabIndex = 8;
             label4.Text = "Consulta de lectores";
             // 
+            // btnAgregarLector
+            // 
+            btnAgregarLector.Anchor = AnchorStyles.Left;
+            btnAgregarLector.BackColor = Color.FromArgb(32, 41, 64);
+            btnAgregarLector.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            btnAgregarLector.ForeColor = SystemColors.Control;
+            btnAgregarLector.Location = new Point(780, 94);
+            btnAgregarLector.Name = "btnAgregarLector";
+            btnAgregarLector.Size = new Size(159, 44);
+            btnAgregarLector.TabIndex = 25;
+            btnAgregarLector.Text = "Agregar Lector";
+            btnAgregarLector.UseVisualStyleBackColor = false;
+            btnAgregarLector.Click += btnAgregarLector_Click;
+            // 
             // FrmLectores
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1052, 583);
+            Controls.Add(btnAgregarLector);
             Controls.Add(label4);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(dataGridView1);
@@ -183,5 +199,6 @@
         private RadioButton rbAlfabetico;
         private TableLayoutPanel tableLayoutPanel1;
         private Label label4;
+        private Button btnAgregarLector;
     }
 }

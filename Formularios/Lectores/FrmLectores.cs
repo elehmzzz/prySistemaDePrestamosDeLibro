@@ -76,5 +76,12 @@ namespace prySistemaDePrestamosDeLibro.Clases
         {
 
         }
+
+        private void btnAgregarLector_Click(object sender, EventArgs e)
+        {
+            FrmAgregarLectores ventanaAgregar = new FrmAgregarLectores();
+            ventanaAgregar.ShowDialog();
+            CargarLectores();
+        }
     }
 }
