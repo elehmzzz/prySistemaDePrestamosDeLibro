@@ -16,5 +16,10 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Multas
         {
             InitializeComponent();
         }
+
+        private void txtDiasTolerancia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
