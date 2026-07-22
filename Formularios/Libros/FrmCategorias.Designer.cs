@@ -39,8 +39,8 @@
             label3 = new Label();
             label4 = new Label();
             txtcategoriaSeleccioanda = new TextBox();
-            buttonActualizar = new Button();
-            button3 = new Button();
+            btnActualizar = new Button();
+            btnEliminar = new Button();
             btnRegresar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
@@ -75,13 +75,14 @@
             // btnAgregarCategoria
             // 
             btnAgregarCategoria.Anchor = AnchorStyles.Left;
+            btnAgregarCategoria.BackColor = Color.FromArgb(32, 41, 64);
+            btnAgregarCategoria.ForeColor = SystemColors.Control;
             btnAgregarCategoria.Location = new Point(559, 3);
             btnAgregarCategoria.Name = "btnAgregarCategoria";
             btnAgregarCategoria.Size = new Size(221, 44);
             btnAgregarCategoria.TabIndex = 24;
             btnAgregarCategoria.Text = "Agregar categoria";
-            btnAgregarCategoria.UseVisualStyleBackColor = true;
-            btnAgregarCategoria.Click += btnAgregarCategoria_Click;
+            btnAgregarCategoria.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel1
             // 
@@ -106,9 +107,9 @@
             txtBuscador.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtBuscador.Location = new Point(203, 14);
             txtBuscador.Name = "txtBuscador";
+            txtBuscador.PlaceholderText = "Buscar...";
             txtBuscador.Size = new Size(316, 22);
             txtBuscador.TabIndex = 26;
-            txtBuscador.Text = "Buscar...";
             // 
             // label1
             // 
@@ -158,25 +159,30 @@
             txtcategoriaSeleccioanda.Size = new Size(371, 29);
             txtcategoriaSeleccioanda.TabIndex = 30;
             // 
-            // buttonActualizar
+            // btnActualizar
             // 
-            buttonActualizar.AutoSize = true;
-            buttonActualizar.Location = new Point(669, 482);
-            buttonActualizar.Name = "buttonActualizar";
-            buttonActualizar.Size = new Size(129, 38);
-            buttonActualizar.TabIndex = 31;
-            buttonActualizar.Text = "Actualizar";
-            buttonActualizar.UseVisualStyleBackColor = true;
+            btnActualizar.AutoSize = true;
+            btnActualizar.BackColor = Color.FromArgb(32, 41, 64);
+            btnActualizar.ForeColor = SystemColors.Control;
+            btnActualizar.Location = new Point(669, 482);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(129, 38);
+            btnActualizar.TabIndex = 31;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click;
             // 
-            // button3
+            // btnEliminar
             // 
-            button3.AutoSize = true;
-            button3.Location = new Point(825, 482);
-            button3.Name = "button3";
-            button3.Size = new Size(129, 38);
-            button3.TabIndex = 32;
-            button3.Text = "Borrar";
-            button3.UseVisualStyleBackColor = true;
+            btnEliminar.AutoSize = true;
+            btnEliminar.BackColor = Color.FromArgb(32, 41, 64);
+            btnEliminar.ForeColor = SystemColors.Control;
+            btnEliminar.Location = new Point(825, 482);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(129, 38);
+            btnEliminar.TabIndex = 32;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnRegresar
             // 
@@ -198,8 +204,8 @@
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1052, 583);
             Controls.Add(btnRegresar);
-            Controls.Add(button3);
-            Controls.Add(buttonActualizar);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnActualizar);
             Controls.Add(txtcategoriaSeleccioanda);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -234,5 +240,7 @@
         private Button buttonActualizar;
         private Button button3;
         private Button btnRegresar;
+        private Button btnEliminar;
+        private Button btnActualizar;
     }
 }

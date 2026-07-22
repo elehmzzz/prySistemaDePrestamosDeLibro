@@ -46,7 +46,7 @@
             textBox2 = new TextBox();
             textBox3 = new TextBox();
             tableLayoutPanel2 = new TableLayoutPanel();
-            btnGuardar = new Button();
+            btnActualizar = new Button();
             btnEliminar = new Button();
             tableLayoutPanel3 = new TableLayoutPanel();
             btnRegresar = new Button();
@@ -97,13 +97,14 @@
             // btnAgregarAutor
             // 
             btnAgregarAutor.Anchor = AnchorStyles.Left;
+            btnAgregarAutor.BackColor = Color.FromArgb(32, 41, 64);
+            btnAgregarAutor.ForeColor = SystemColors.Control;
             btnAgregarAutor.Location = new Point(559, 3);
             btnAgregarAutor.Name = "btnAgregarAutor";
             btnAgregarAutor.Size = new Size(148, 44);
             btnAgregarAutor.TabIndex = 24;
             btnAgregarAutor.Text = "Agregar autor";
-            btnAgregarAutor.UseVisualStyleBackColor = true;
-            btnAgregarAutor.Click += btnAgregarAutor_Click;
+            btnAgregarAutor.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -235,34 +236,39 @@
             tableLayoutPanel2.Size = new Size(708, 95);
             tableLayoutPanel2.TabIndex = 38;
             // 
-            // btnGuardar
+            // btnActualizar
             // 
-            btnGuardar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnGuardar.AutoSize = true;
-            btnGuardar.Location = new Point(124, 3);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(96, 38);
-            btnGuardar.TabIndex = 38;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
+            btnActualizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnActualizar.AutoSize = true;
+            btnActualizar.BackColor = Color.FromArgb(32, 41, 64);
+            btnActualizar.ForeColor = SystemColors.Control;
+            btnActualizar.Location = new Point(124, 3);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(96, 38);
+            btnActualizar.TabIndex = 38;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click;
             // 
             // btnEliminar
             // 
             btnEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnEliminar.AutoSize = true;
+            btnEliminar.BackColor = Color.FromArgb(32, 41, 64);
+            btnEliminar.ForeColor = SystemColors.Control;
             btnEliminar.Location = new Point(5, 3);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(102, 38);
             btnEliminar.TabIndex = 39;
             btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel3
             // 
             tableLayoutPanel3.ColumnCount = 2;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 113F));
-            tableLayoutPanel3.Controls.Add(btnGuardar, 1, 0);
+            tableLayoutPanel3.Controls.Add(btnActualizar, 1, 0);
             tableLayoutPanel3.Controls.Add(btnEliminar, 0, 0);
             tableLayoutPanel3.Location = new Point(755, 490);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -338,5 +344,6 @@
         private Button btnEliminar;
         private TableLayoutPanel tableLayoutPanel3;
         private Button btnRegresar;
+        private Button btnActualizar;
     }
 }

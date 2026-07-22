@@ -24,11 +24,10 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
             ventanaPrincipal.mostrarModuloLibros();
         }
 
-        private void btnAgregarAutor_Click(object sender, EventArgs e)
+        private void btnActualizar_Click(object sender, EventArgs e)
         {
             FrmAgregarAutor formulario = new FrmAgregarAutor();
             formulario.ShowDialog();
-
         }
     }
 }

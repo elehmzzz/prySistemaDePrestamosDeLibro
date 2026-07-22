@@ -52,9 +52,9 @@
             textBox2 = new TextBox();
             textBox1 = new TextBox();
             label3 = new Label();
-            comboBoxCategoria = new ComboBox();
-            comboBoxAutor = new ComboBox();
-            comboBoxEjemplares = new ComboBox();
+            textBoxAutor = new TextBox();
+            textBox3 = new TextBox();
+            textBox5 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
@@ -68,9 +68,10 @@
             txtBuscador.Location = new Point(3, 3);
             txtBuscador.Margin = new Padding(3, 2, 3, 2);
             txtBuscador.Name = "txtBuscador";
+            txtBuscador.PlaceholderText = "Buscar...";
             txtBuscador.Size = new Size(276, 22);
             txtBuscador.TabIndex = 20;
-            txtBuscador.Text = "Buscar...";
+            txtBuscador.TextChanged += txtBuscador_TextChanged;
             // 
             // comboBox1
             // 
@@ -283,9 +284,9 @@
             tableLayoutPanel2.Controls.Add(label4, 0, 0);
             tableLayoutPanel2.Controls.Add(textBox1, 1, 0);
             tableLayoutPanel2.Controls.Add(label3, 0, 2);
-            tableLayoutPanel2.Controls.Add(comboBoxCategoria, 3, 0);
-            tableLayoutPanel2.Controls.Add(comboBoxAutor, 1, 2);
-            tableLayoutPanel2.Controls.Add(comboBoxEjemplares, 3, 2);
+            tableLayoutPanel2.Controls.Add(textBoxAutor, 1, 2);
+            tableLayoutPanel2.Controls.Add(textBox3, 3, 0);
+            tableLayoutPanel2.Controls.Add(textBox5, 3, 2);
             tableLayoutPanel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tableLayoutPanel2.Location = new Point(8, 308);
             tableLayoutPanel2.Margin = new Padding(3, 2, 3, 2);
@@ -299,22 +300,25 @@
             // 
             // textBox4
             // 
+            textBox4.Enabled = false;
             textBox4.Location = new Point(510, 36);
             textBox4.Margin = new Padding(3, 2, 3, 2);
             textBox4.Name = "textBox4";
-            textBox4.Size = new Size(88, 29);
+            textBox4.Size = new Size(121, 29);
             textBox4.TabIndex = 39;
             // 
             // textBox2
             // 
+            textBox2.Enabled = false;
             textBox2.Location = new Point(78, 36);
             textBox2.Margin = new Padding(3, 2, 3, 2);
             textBox2.Name = "textBox2";
-            textBox2.Size = new Size(206, 29);
+            textBox2.Size = new Size(179, 29);
             textBox2.TabIndex = 37;
             // 
             // textBox1
             // 
+            textBox1.Enabled = false;
             textBox1.Location = new Point(78, 2);
             textBox1.Margin = new Padding(3, 2, 3, 2);
             textBox1.Name = "textBox1";
@@ -331,29 +335,29 @@
             label3.TabIndex = 40;
             label3.Text = "Autor:";
             // 
-            // comboBoxCategoria
+            // textBoxAutor
             // 
-            comboBoxCategoria.FormattingEnabled = true;
-            comboBoxCategoria.Location = new Point(510, 3);
-            comboBoxCategoria.Name = "comboBoxCategoria";
-            comboBoxCategoria.Size = new Size(121, 29);
-            comboBoxCategoria.TabIndex = 41;
+            textBoxAutor.Enabled = false;
+            textBoxAutor.Location = new Point(78, 71);
+            textBoxAutor.Name = "textBoxAutor";
+            textBoxAutor.Size = new Size(179, 29);
+            textBoxAutor.TabIndex = 44;
             // 
-            // comboBoxAutor
+            // textBox3
             // 
-            comboBoxAutor.FormattingEnabled = true;
-            comboBoxAutor.Location = new Point(78, 71);
-            comboBoxAutor.Name = "comboBoxAutor";
-            comboBoxAutor.Size = new Size(179, 29);
-            comboBoxAutor.TabIndex = 42;
+            textBox3.Enabled = false;
+            textBox3.Location = new Point(510, 3);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(171, 29);
+            textBox3.TabIndex = 45;
             // 
-            // comboBoxEjemplares
+            // textBox5
             // 
-            comboBoxEjemplares.FormattingEnabled = true;
-            comboBoxEjemplares.Location = new Point(510, 71);
-            comboBoxEjemplares.Name = "comboBoxEjemplares";
-            comboBoxEjemplares.Size = new Size(121, 29);
-            comboBoxEjemplares.TabIndex = 43;
+            textBox5.Enabled = false;
+            textBox5.Location = new Point(510, 71);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(121, 29);
+            textBox5.TabIndex = 46;
             // 
             // FrmLibros
             // 
@@ -405,8 +409,8 @@
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
-        private ComboBox comboBoxCategoria;
-        private ComboBox comboBoxAutor;
-        private ComboBox comboBoxEjemplares;
+        private TextBox textBoxAutor;
+        private TextBox textBox3;
+        private TextBox textBox5;
     }
 }
