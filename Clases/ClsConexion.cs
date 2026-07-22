@@ -13,7 +13,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
         public ClsConexion()
         {
-            cadena = "Server=127.0.0.1; Database=bd_biblioteca; Uid=root; Pwd=; Port=3306";
+            cadena = "Server=127.0.0.1; Database=bd_biblioteca; Uid=root; Pwd=root; Port=3306";
         }
 
         public MySqlConnection ObtenerConexion()

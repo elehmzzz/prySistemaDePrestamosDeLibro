@@ -111,6 +111,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
                 apartadoCategorias = new FrmCategorias(this);
             }
             mostrarContenido(apartadoCategorias);
+            apartadoCategorias.CargarCategorias();
         }
         //mostrar apartado autores
         public void mostrarApartadoAutores()
@@ -120,6 +121,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
                 apartadoAutores = new FrmAutores(this);
             }
             mostrarContenido(apartadoAutores);
+            apartadoAutores.CargarAutores();
         }
         //muestra el modulo de lectores
         public void mostrarModuloLectores()

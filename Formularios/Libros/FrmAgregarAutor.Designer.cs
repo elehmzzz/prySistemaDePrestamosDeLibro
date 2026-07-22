@@ -28,27 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            txtNuevaCategoria = new TextBox();
+            txtNombre = new TextBox();
             label1 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            txtAMaterno = new TextBox();
+            txtAPaterno = new TextBox();
             label2 = new Label();
             label3 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
-            button1 = new Button();
-            button2 = new Button();
+            btnCerrar = new Button();
+            btnGuardar = new Button();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
-            // txtNuevaCategoria
+            // txtNombre
             // 
-            txtNuevaCategoria.Location = new Point(194, 4);
-            txtNuevaCategoria.Margin = new Padding(4);
-            txtNuevaCategoria.Name = "txtNuevaCategoria";
-            txtNuevaCategoria.Size = new Size(185, 34);
-            txtNuevaCategoria.TabIndex = 4;
+            txtNombre.Location = new Point(194, 4);
+            txtNombre.Margin = new Padding(4);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(185, 34);
+            txtNombre.TabIndex = 4;
             // 
             // label1
             // 
@@ -65,11 +65,11 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 47.1464F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 52.8536F));
-            tableLayoutPanel1.Controls.Add(textBox2, 1, 2);
-            tableLayoutPanel1.Controls.Add(textBox1, 1, 1);
+            tableLayoutPanel1.Controls.Add(txtAMaterno, 1, 2);
+            tableLayoutPanel1.Controls.Add(txtAPaterno, 1, 1);
             tableLayoutPanel1.Controls.Add(label2, 0, 1);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Controls.Add(txtNuevaCategoria, 1, 0);
+            tableLayoutPanel1.Controls.Add(txtNombre, 1, 0);
             tableLayoutPanel1.Controls.Add(label3, 0, 2);
             tableLayoutPanel1.Location = new Point(12, 12);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -80,21 +80,21 @@
             tableLayoutPanel1.Size = new Size(403, 188);
             tableLayoutPanel1.TabIndex = 5;
             // 
-            // textBox2
+            // txtAMaterno
             // 
-            textBox2.Location = new Point(194, 128);
-            textBox2.Margin = new Padding(4);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(185, 34);
-            textBox2.TabIndex = 8;
+            txtAMaterno.Location = new Point(194, 128);
+            txtAMaterno.Margin = new Padding(4);
+            txtAMaterno.Name = "txtAMaterno";
+            txtAMaterno.Size = new Size(185, 34);
+            txtAMaterno.TabIndex = 8;
             // 
-            // textBox1
+            // txtAPaterno
             // 
-            textBox1.Location = new Point(194, 66);
-            textBox1.Margin = new Padding(4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(185, 34);
-            textBox1.TabIndex = 7;
+            txtAPaterno.Location = new Point(194, 66);
+            txtAPaterno.Margin = new Padding(4);
+            txtAPaterno.Name = "txtAPaterno";
+            txtAPaterno.Size = new Size(185, 34);
+            txtAPaterno.TabIndex = 7;
             // 
             // label2
             // 
@@ -121,8 +121,8 @@
             tableLayoutPanel2.ColumnCount = 2;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Controls.Add(button1, 0, 0);
-            tableLayoutPanel2.Controls.Add(button2, 1, 0);
+            tableLayoutPanel2.Controls.Add(btnCerrar, 0, 0);
+            tableLayoutPanel2.Controls.Add(btnGuardar, 1, 0);
             tableLayoutPanel2.Location = new Point(209, 234);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
@@ -130,25 +130,27 @@
             tableLayoutPanel2.Size = new Size(217, 63);
             tableLayoutPanel2.TabIndex = 6;
             // 
-            // button1
+            // btnCerrar
             // 
-            button1.AutoSize = true;
-            button1.Location = new Point(3, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(96, 38);
-            button1.TabIndex = 0;
-            button1.Text = "Cancelar";
-            button1.UseVisualStyleBackColor = true;
+            btnCerrar.AutoSize = true;
+            btnCerrar.Location = new Point(3, 3);
+            btnCerrar.Name = "btnCerrar";
+            btnCerrar.Size = new Size(96, 38);
+            btnCerrar.TabIndex = 0;
+            btnCerrar.Text = "Cancelar";
+            btnCerrar.UseVisualStyleBackColor = true;
+            btnCerrar.Click += btnCerrar_Click;
             // 
-            // button2
+            // btnGuardar
             // 
-            button2.AutoSize = true;
-            button2.Location = new Point(111, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 38);
-            button2.TabIndex = 1;
-            button2.Text = "Guardar";
-            button2.UseVisualStyleBackColor = true;
+            btnGuardar.AutoSize = true;
+            btnGuardar.Location = new Point(111, 3);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(94, 38);
+            btnGuardar.TabIndex = 1;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // FrmAgregarAutor
             // 
@@ -181,7 +183,11 @@
         private Label label2;
         private Label label3;
         private TableLayoutPanel tableLayoutPanel2;
-        private Button button1;
+        private Button btnCerrar;
         private Button button2;
+        private Button btnGuardar;
+        private TextBox txtNombre;
+        private TextBox txtAMaterno;
+        private TextBox txtAPaterno;
     }
 }
