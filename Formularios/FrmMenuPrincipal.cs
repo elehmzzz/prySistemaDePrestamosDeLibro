@@ -1,5 +1,6 @@
 ﻿using prySistemaDePrestamosDeLibro.Clases;
 using prySistemaDePrestamosDeLibro.Formularios.FRMprestamos;
+using prySistemaDePrestamosDeLibro.Formularios.Lectores;
 using prySistemaDePrestamosDeLibro.Formularios.Libros;
 using prySistemaDePrestamosDeLibro.Formularios.Multas;
 using System;
@@ -20,7 +21,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         private FrmInicioSesion ventanaInicioSesion;
         private FrmPerfilEmpleado moduloEmpleado;
         private FrmLectores moduloLectores;
-        private FrmAgregarLectores apartadoAgregarLectores;
+        private FrmAgregarLectores2 apartadoAgregarLectores;
         private FrmPrestamosHechos moduloPrestamos;
         private FrmMultas moduloMultas;
         private FrmLibros moduloLibros;
@@ -150,7 +151,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         public void mostrarApartadoAgregarLectores()
         {
             if (apartadoAgregarLectores == null) {
-                apartadoAgregarLectores = new FrmAgregarLectores();
+                apartadoAgregarLectores = new FrmAgregarLectores2();
             }
             mostrarContenido(apartadoAgregarLectores);
 

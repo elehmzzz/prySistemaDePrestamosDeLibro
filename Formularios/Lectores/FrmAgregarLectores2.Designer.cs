@@ -1,48 +1,36 @@
-﻿using MySql.Data.MySqlClient;
-using prySistemaDePrestamosDeLibro.Clases;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using prySistemaDePrestamosDeLibro.Clases;
-
-namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
+﻿namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
 {
-    public partial class FrmAgregarLectores : Form
+    partial class FrmAgregarLectores2
     {
-        public FrmAgregarLectores()
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
         {
-            InitializeComponent();
-            dtpFechaNac.ValueChanged += dtpFechaNac_ValueChanged;
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
         }
 
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
+        #region Windows Form Designer generated code
 
-        }
-
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void FrmAgregarLectores_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtCalle_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
         private void InitializeComponent()
         {
+            tableLayoutPanel2 = new TableLayoutPanel();
+            label4 = new Label();
+            label7 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             txtMunicipio = new TextBox();
             label8 = new Label();
@@ -68,12 +56,45 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             txtCP = new TextBox();
             label9 = new Label();
             txtColonia = new TextBox();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            label4 = new Label();
-            label7 = new Label();
-            tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
+            // 
+            // tableLayoutPanel2
+            // 
+            tableLayoutPanel2.ColumnCount = 1;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Controls.Add(label4, 0, 0);
+            tableLayoutPanel2.Controls.Add(label7, 0, 1);
+            tableLayoutPanel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tableLayoutPanel2.Location = new Point(15, 15);
+            tableLayoutPanel2.Margin = new Padding(6);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 2;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle());
+            tableLayoutPanel2.RowStyles.Add(new RowStyle());
+            tableLayoutPanel2.Size = new Size(644, 110);
+            tableLayoutPanel2.TabIndex = 29;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label4.Location = new Point(6, 0);
+            label4.Margin = new Padding(6, 0, 6, 0);
+            label4.Name = "label4";
+            label4.Size = new Size(293, 46);
+            label4.TabIndex = 3;
+            label4.Text = "Registro de Lector";
+            // 
+            // label7
+            // 
+            label7.Location = new Point(6, 46);
+            label7.Margin = new Padding(6, 0, 6, 0);
+            label7.Name = "label7";
+            label7.Size = new Size(632, 78);
+            label7.TabIndex = 9;
+            label7.Text = "Ingresa tus datos personales y da click en siguiente.";
             // 
             // tableLayoutPanel1
             // 
@@ -84,7 +105,6 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.8270473F));
             tableLayoutPanel1.Controls.Add(txtMunicipio, 1, 5);
             tableLayoutPanel1.Controls.Add(label8, 0, 5);
-            tableLayoutPanel1.Controls.Add(label5, 0, 0);
             tableLayoutPanel1.Controls.Add(txtNombre, 1, 0);
             tableLayoutPanel1.Controls.Add(label6, 0, 1);
             tableLayoutPanel1.Controls.Add(txtApellidoPat, 1, 1);
@@ -106,6 +126,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             tableLayoutPanel1.Controls.Add(txtCP, 3, 1);
             tableLayoutPanel1.Controls.Add(label9, 2, 0);
             tableLayoutPanel1.Controls.Add(txtColonia, 3, 0);
+            tableLayoutPanel1.Controls.Add(label5, 0, 0);
             tableLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tableLayoutPanel1.Location = new Point(15, 158);
             tableLayoutPanel1.Margin = new Padding(6);
@@ -118,8 +139,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             tableLayoutPanel1.Size = new Size(821, 367);
-            tableLayoutPanel1.TabIndex = 29;
-            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
+            tableLayoutPanel1.TabIndex = 30;
             // 
             // txtMunicipio
             // 
@@ -225,7 +245,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             btnGuardar.Location = new Point(622, 311);
             btnGuardar.Margin = new Padding(6);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(104, 38);
+            btnGuardar.Size = new Size(93, 38);
             btnGuardar.TabIndex = 27;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
@@ -257,7 +277,6 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             dtpFechaNac.Name = "dtpFechaNac";
             dtpFechaNac.Size = new Size(232, 34);
             dtpFechaNac.TabIndex = 42;
-            dtpFechaNac.ValueChanged += dtpFechaNac_ValueChanged;
             // 
             // label12
             // 
@@ -277,7 +296,6 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             cmbEscuela.Name = "cmbEscuela";
             cmbEscuela.Size = new Size(193, 36);
             cmbEscuela.TabIndex = 81;
-            cmbEscuela.SelectedIndexChanged += cmbEscuela_SelectedIndexChanged;
             // 
             // label13
             // 
@@ -352,76 +370,33 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             txtColonia.Size = new Size(193, 34);
             txtColonia.TabIndex = 39;
             // 
-            // tableLayoutPanel2
+            // FrmAgregarLectores2
             // 
-            tableLayoutPanel2.ColumnCount = 1;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Controls.Add(label4, 0, 0);
-            tableLayoutPanel2.Controls.Add(label7, 0, 1);
-            tableLayoutPanel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel2.Location = new Point(15, 15);
-            tableLayoutPanel2.Margin = new Padding(6);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 2;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle());
-            tableLayoutPanel2.RowStyles.Add(new RowStyle());
-            tableLayoutPanel2.Size = new Size(644, 110);
-            tableLayoutPanel2.TabIndex = 28;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(6, 0);
-            label4.Margin = new Padding(6, 0, 6, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(293, 46);
-            label4.TabIndex = 3;
-            label4.Text = "Registro de Lector";
-            // 
-            // label7
-            // 
-            label7.Location = new Point(6, 46);
-            label7.Margin = new Padding(6, 0, 6, 0);
-            label7.Name = "label7";
-            label7.Size = new Size(632, 78);
-            label7.TabIndex = 9;
-            label7.Text = "Ingresa tus datos personales y da click en siguiente.";
-            // 
-            // FrmAgregarLectores
-            // 
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1052, 583);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
             FormBorderStyle = FormBorderStyle.None;
-            Name = "FrmAgregarLectores";
+            Name = "FrmAgregarLectores2";
             StartPosition = FormStartPosition.Manual;
-            Load += FrmAgregarLectores_Load_2;
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
+            Text = "FrmAgregarLectores2";
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
-
-
         }
 
-        private void FrmAgregarLectores_Load_1(object sender, EventArgs e)
-        {
+        #endregion
 
-        }
-
-        private void FrmAgregarLectores_Load_2(object sender, EventArgs e)
-        {
-
-        }
+        private TableLayoutPanel tableLayoutPanel2;
+        private Label label4;
+        private Label label7;
         private TableLayoutPanel tableLayoutPanel1;
-        private TextBox txtTelefono;
-        private TextBox txtCP;
-        private TextBox txtColonia;
-        private Label label9;
-        private Label label5;
+        private TextBox txtMunicipio;
+        private Label label8;
         private TextBox txtNombre;
         private Label label6;
         private TextBox txtApellidoPat;
@@ -432,83 +407,17 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
         private Button btnGuardar;
         private Label label3;
         private TextBox txtEdad;
-        private Label label10;
-        private Label label11;
-        private TableLayoutPanel tableLayoutPanel2;
-        private Label label4;
-        private Label label7;
-        private Label label12;
-        private Label label13;
-        private ComboBox cmbEscuela;
-        private ComboBox cmbOcupacion;
-
-        private void cmbEscuela_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            // Validación básica de campos obligatorios
-            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
-                string.IsNullOrWhiteSpace(txtApellidoPat.Text) ||
-                string.IsNullOrWhiteSpace(txtApellidoMat.Text))
-            {
-                MessageBox.Show("Por favor completa los campos obligatorios.", "Datos incompletos",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
-
-            ClsLectores lector = new ClsLectores();
-            lector.setNombres(txtNombre.Text.Trim());
-            lector.setApellidoPaterno(txtApellidoPat.Text.Trim());
-            lector.setApellidoMaterno(txtApellidoMat.Text.Trim());
-            lector.setTelefono(txtTelefono.Text.Trim());
-            lector.setMunicipio(txtMunicipio.Text.Trim());
-            lector.setColonia(txtColonia.Text.Trim());
-            lector.setCP(txtCP.Text.Trim());
-            lector.setFechaNacimiento(dtpFechaNac.Value.Date);
-            lector.setEdad(Convert.ToInt32(txtEdad.Text));
-
-            bool guardado = lector.GuardarLector();
-
-            if (guardado)
-            {
-                MessageBox.Show("Lector guardado correctamente.", "Éxito",
-                    MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                this.DialogResult = DialogResult.OK;
-                this.Close();
-            }
-        }
         private DateTimePicker dtpFechaNac;
-
-        private void dtpFechaNac_ValueChanged(object sender, EventArgs e)
-        {
-            DateTime fechaNacimiento = dtpFechaNac.Value.Date;
-            DateTime hoy = DateTime.Today;
-
-            int edad = hoy.Year - fechaNacimiento.Year;
-
-            // Ajusta si aún no ha cumplido años este año
-            if (fechaNacimiento.Date > hoy.AddYears(-edad))
-            {
-                edad--;
-            }
-
-            txtEdad.Text = edad.ToString();
-        }
-        private Label label8;
-        private TextBox txtMunicipio;
+        private Label label12;
+        private ComboBox cmbEscuela;
+        private Label label13;
+        private ComboBox cmbOcupacion;
+        private Label label11;
+        private TextBox txtTelefono;
+        private Label label10;
+        private TextBox txtCP;
+        private Label label9;
+        private TextBox txtColonia;
+        private Label label5;
     }
 }
