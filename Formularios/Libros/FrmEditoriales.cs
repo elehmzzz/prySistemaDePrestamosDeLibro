@@ -62,5 +62,10 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
             ventanaAgregarEditorial = new FrmAgregarEditorial(this, objEditorial);
             ventanaAgregarEditorial.ShowDialog();
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            ventanaPrincipal.mostrarModuloLibros();
+        }
     }
 }

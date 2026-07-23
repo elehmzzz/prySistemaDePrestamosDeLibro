@@ -142,6 +142,7 @@
             btnRegresar.TabIndex = 40;
             btnRegresar.Text = "Regresar";
             btnRegresar.UseVisualStyleBackColor = false;
+            btnRegresar.Click += btnRegresar_Click;
             // 
             // FrmEditoriales
             // 
@@ -157,6 +158,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "FrmEditoriales";
+            StartPosition = FormStartPosition.Manual;
             Text = "FrmEditoriales";
             Load += FrmEditoriales_Load;
             tableLayoutPanel1.ResumeLayout(false);
