@@ -28,7 +28,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
             dataGridView1.DataSource = clsLectores.ObtenerLectores();
 
             if (dataGridView1.Columns["Id_Lector"] != null)
+            {
                 dataGridView1.Columns["Id_Lector"].HeaderText = "ID Lector";
+                dataGridView1.Columns["Id_Lector"].Visible = false;
+            }
+                
 
             if (dataGridView1.Columns["Nombres"] != null)
                 dataGridView1.Columns["Nombres"].HeaderText = "Nombre";

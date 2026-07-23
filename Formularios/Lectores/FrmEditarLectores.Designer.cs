@@ -405,6 +405,7 @@
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "FrmEditarLectores";
+            StartPosition = FormStartPosition.Manual;
             Text = "FrmEditarLectores";
             Load += FrmEditarLectores_Load;
             tableLayoutPanel1.ResumeLayout(false);
