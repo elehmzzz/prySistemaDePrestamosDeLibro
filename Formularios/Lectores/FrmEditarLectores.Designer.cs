@@ -29,22 +29,12 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
+            txtColonia = new TextBox();
+            label15 = new Label();
             txtIdLector = new TextBox();
             label14 = new Label();
-            cmbOcupacion = new ComboBox();
-            textBox9 = new TextBox();
-            textBox8 = new TextBox();
-            txtMunicipio = new TextBox();
-            label9 = new Label();
-            label10 = new Label();
-            label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            cmbEscuela = new ComboBox();
             btnRegresar = new Button();
             btnGuardar = new Button();
-            label8 = new Label();
-            txtDireccion = new TextBox();
             label3 = new Label();
             txtEdad = new TextBox();
             label2 = new Label();
@@ -55,6 +45,16 @@
             txtApellidoPaterno = new TextBox();
             label5 = new Label();
             txtNombre = new TextBox();
+            label9 = new Label();
+            txtMunicipio = new TextBox();
+            label10 = new Label();
+            txtCP = new TextBox();
+            label11 = new Label();
+            txtTelefono = new TextBox();
+            label12 = new Label();
+            label13 = new Label();
+            cmbEscuela = new ComboBox();
+            cmbOcupacion = new ComboBox();
             tableLayoutPanel2 = new TableLayoutPanel();
             label4 = new Label();
             label7 = new Label();
@@ -69,22 +69,12 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 29.73479F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.0414143F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.8270473F));
+            tableLayoutPanel1.Controls.Add(txtColonia, 3, 0);
+            tableLayoutPanel1.Controls.Add(label15, 2, 0);
             tableLayoutPanel1.Controls.Add(txtIdLector, 1, 0);
             tableLayoutPanel1.Controls.Add(label14, 0, 0);
-            tableLayoutPanel1.Controls.Add(cmbOcupacion, 3, 4);
-            tableLayoutPanel1.Controls.Add(textBox9, 3, 2);
-            tableLayoutPanel1.Controls.Add(textBox8, 3, 1);
-            tableLayoutPanel1.Controls.Add(txtMunicipio, 3, 0);
-            tableLayoutPanel1.Controls.Add(label9, 2, 0);
-            tableLayoutPanel1.Controls.Add(label10, 2, 1);
-            tableLayoutPanel1.Controls.Add(label11, 2, 2);
-            tableLayoutPanel1.Controls.Add(label12, 2, 3);
-            tableLayoutPanel1.Controls.Add(label13, 2, 4);
-            tableLayoutPanel1.Controls.Add(cmbEscuela, 3, 3);
             tableLayoutPanel1.Controls.Add(btnRegresar, 2, 6);
             tableLayoutPanel1.Controls.Add(btnGuardar, 3, 6);
-            tableLayoutPanel1.Controls.Add(label8, 0, 6);
-            tableLayoutPanel1.Controls.Add(txtDireccion, 1, 6);
             tableLayoutPanel1.Controls.Add(label3, 0, 5);
             tableLayoutPanel1.Controls.Add(txtEdad, 1, 5);
             tableLayoutPanel1.Controls.Add(label2, 0, 4);
@@ -95,8 +85,18 @@
             tableLayoutPanel1.Controls.Add(txtApellidoPaterno, 1, 2);
             tableLayoutPanel1.Controls.Add(label5, 0, 1);
             tableLayoutPanel1.Controls.Add(txtNombre, 1, 1);
+            tableLayoutPanel1.Controls.Add(label9, 0, 6);
+            tableLayoutPanel1.Controls.Add(txtMunicipio, 1, 6);
+            tableLayoutPanel1.Controls.Add(label10, 2, 1);
+            tableLayoutPanel1.Controls.Add(txtCP, 3, 1);
+            tableLayoutPanel1.Controls.Add(label11, 2, 2);
+            tableLayoutPanel1.Controls.Add(txtTelefono, 3, 2);
+            tableLayoutPanel1.Controls.Add(label12, 2, 3);
+            tableLayoutPanel1.Controls.Add(label13, 2, 4);
+            tableLayoutPanel1.Controls.Add(cmbEscuela, 3, 3);
+            tableLayoutPanel1.Controls.Add(cmbOcupacion, 3, 4);
             tableLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel1.Location = new Point(15, 158);
+            tableLayoutPanel1.Location = new Point(15, 154);
             tableLayoutPanel1.Margin = new Padding(6);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 7;
@@ -110,11 +110,30 @@
             tableLayoutPanel1.Size = new Size(821, 367);
             tableLayoutPanel1.TabIndex = 31;
             // 
+            // txtColonia
+            // 
+            txtColonia.Location = new Point(622, 6);
+            txtColonia.Margin = new Padding(6);
+            txtColonia.Name = "txtColonia";
+            txtColonia.Size = new Size(193, 34);
+            txtColonia.TabIndex = 86;
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(466, 0);
+            label15.Margin = new Padding(6, 0, 6, 0);
+            label15.Name = "label15";
+            label15.Size = new Size(83, 28);
+            label15.TabIndex = 85;
+            label15.Text = "Colonia:";
+            // 
             // txtIdLector
             // 
             txtIdLector.Location = new Point(222, 6);
             txtIdLector.Margin = new Padding(6);
             txtIdLector.Name = "txtIdLector";
+            txtIdLector.ReadOnly = true;
             txtIdLector.Size = new Size(232, 34);
             txtIdLector.TabIndex = 84;
             // 
@@ -128,98 +147,6 @@
             label14.TabIndex = 83;
             label14.Text = "Id Lector:";
             // 
-            // cmbOcupacion
-            // 
-            cmbOcupacion.FormattingEnabled = true;
-            cmbOcupacion.Items.AddRange(new object[] { "Alumno", "Maestro", "Profesionista" });
-            cmbOcupacion.Location = new Point(619, 211);
-            cmbOcupacion.Name = "cmbOcupacion";
-            cmbOcupacion.Size = new Size(199, 36);
-            cmbOcupacion.TabIndex = 82;
-            // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(622, 110);
-            textBox9.Margin = new Padding(6);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(193, 34);
-            textBox9.TabIndex = 41;
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(622, 58);
-            textBox8.Margin = new Padding(6);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(193, 34);
-            textBox8.TabIndex = 40;
-            // 
-            // txtMunicipio
-            // 
-            txtMunicipio.Location = new Point(622, 6);
-            txtMunicipio.Margin = new Padding(6);
-            txtMunicipio.Name = "txtMunicipio";
-            txtMunicipio.Size = new Size(193, 34);
-            txtMunicipio.TabIndex = 39;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(466, 0);
-            label9.Margin = new Padding(6, 0, 6, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(104, 28);
-            label9.TabIndex = 36;
-            label9.Text = "Municipio:";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(466, 52);
-            label10.Margin = new Padding(6, 0, 6, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(43, 28);
-            label10.TabIndex = 37;
-            label10.Text = "C.P:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(466, 104);
-            label11.Margin = new Padding(6, 0, 6, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(90, 28);
-            label11.TabIndex = 38;
-            label11.Text = "Telefono:";
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(466, 156);
-            label12.Margin = new Padding(6, 0, 6, 0);
-            label12.Name = "label12";
-            label12.Size = new Size(79, 28);
-            label12.TabIndex = 39;
-            label12.Text = "Escuela:";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(466, 208);
-            label13.Margin = new Padding(6, 0, 6, 0);
-            label13.Name = "label13";
-            label13.Size = new Size(110, 28);
-            label13.TabIndex = 43;
-            label13.Text = "Ocupación:";
-            // 
-            // cmbEscuela
-            // 
-            cmbEscuela.FormattingEnabled = true;
-            cmbEscuela.Items.AddRange(new object[] { "UTHH", "UAECH", "CBTA", "CECYT" });
-            cmbEscuela.Location = new Point(619, 159);
-            cmbEscuela.Name = "cmbEscuela";
-            cmbEscuela.Size = new Size(199, 36);
-            cmbEscuela.TabIndex = 81;
-            // 
             // btnRegresar
             // 
             btnRegresar.AutoSize = true;
@@ -232,6 +159,7 @@
             btnRegresar.TabIndex = 6;
             btnRegresar.Text = "Regresar";
             btnRegresar.UseVisualStyleBackColor = false;
+            btnRegresar.Click += btnRegresar_Click;
             // 
             // btnGuardar
             // 
@@ -245,24 +173,7 @@
             btnGuardar.TabIndex = 27;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(6, 312);
-            label8.Margin = new Padding(6, 0, 6, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(98, 28);
-            label8.TabIndex = 32;
-            label8.Text = "Dirección:";
-            // 
-            // txtDireccion
-            // 
-            txtDireccion.Location = new Point(222, 318);
-            txtDireccion.Margin = new Padding(6);
-            txtDireccion.Name = "txtDireccion";
-            txtDireccion.Size = new Size(232, 34);
-            txtDireccion.TabIndex = 35;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // label3
             // 
@@ -355,6 +266,98 @@
             txtNombre.Size = new Size(232, 34);
             txtNombre.TabIndex = 7;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(6, 312);
+            label9.Margin = new Padding(6, 0, 6, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(104, 28);
+            label9.TabIndex = 36;
+            label9.Text = "Municipio:";
+            // 
+            // txtMunicipio
+            // 
+            txtMunicipio.Location = new Point(222, 318);
+            txtMunicipio.Margin = new Padding(6);
+            txtMunicipio.Name = "txtMunicipio";
+            txtMunicipio.Size = new Size(193, 34);
+            txtMunicipio.TabIndex = 39;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(466, 52);
+            label10.Margin = new Padding(6, 0, 6, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(43, 28);
+            label10.TabIndex = 37;
+            label10.Text = "C.P:";
+            // 
+            // txtCP
+            // 
+            txtCP.Location = new Point(622, 58);
+            txtCP.Margin = new Padding(6);
+            txtCP.Name = "txtCP";
+            txtCP.Size = new Size(193, 34);
+            txtCP.TabIndex = 40;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(466, 104);
+            label11.Margin = new Padding(6, 0, 6, 0);
+            label11.Name = "label11";
+            label11.Size = new Size(90, 28);
+            label11.TabIndex = 38;
+            label11.Text = "Telefono:";
+            // 
+            // txtTelefono
+            // 
+            txtTelefono.Location = new Point(622, 110);
+            txtTelefono.Margin = new Padding(6);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(193, 34);
+            txtTelefono.TabIndex = 41;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(466, 156);
+            label12.Margin = new Padding(6, 0, 6, 0);
+            label12.Name = "label12";
+            label12.Size = new Size(79, 28);
+            label12.TabIndex = 39;
+            label12.Text = "Escuela:";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(466, 208);
+            label13.Margin = new Padding(6, 0, 6, 0);
+            label13.Name = "label13";
+            label13.Size = new Size(110, 28);
+            label13.TabIndex = 43;
+            label13.Text = "Ocupación:";
+            // 
+            // cmbEscuela
+            // 
+            cmbEscuela.FormattingEnabled = true;
+            cmbEscuela.Items.AddRange(new object[] { "UTHH", "UAECH", "CBTA", "CECYT" });
+            cmbEscuela.Location = new Point(619, 159);
+            cmbEscuela.Name = "cmbEscuela";
+            cmbEscuela.Size = new Size(199, 36);
+            cmbEscuela.TabIndex = 81;
+            // 
+            // cmbOcupacion
+            // 
+            cmbOcupacion.FormattingEnabled = true;
+            cmbOcupacion.Items.AddRange(new object[] { "Alumno", "Maestro", "Profesionista" });
+            cmbOcupacion.Location = new Point(619, 211);
+            cmbOcupacion.Name = "cmbOcupacion";
+            cmbOcupacion.Size = new Size(199, 36);
+            cmbOcupacion.TabIndex = 82;
+            // 
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.ColumnCount = 1;
@@ -415,8 +418,8 @@
 
         private TableLayoutPanel tableLayoutPanel1;
         private ComboBox cmbOcupacion;
-        private TextBox textBox9;
-        private TextBox textBox8;
+        private TextBox txtTelefono;
+        private TextBox txtCP;
         private TextBox txtMunicipio;
         private Label label9;
         private Label label5;
@@ -429,9 +432,7 @@
         private Button btnRegresar;
         private Button btnGuardar;
         private Label label3;
-        private Label label8;
         private TextBox txtEdad;
-        private TextBox txtDireccion;
         private Label label10;
         private Label label11;
         private DateTimePicker dtpFechaNacimiento;
@@ -443,5 +444,7 @@
         private Label label7;
         private TextBox txtIdLector;
         private Label label14;
+        private TextBox txtColonia;
+        private Label label15;
     }
 }
