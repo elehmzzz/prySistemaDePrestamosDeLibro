@@ -15,11 +15,10 @@ namespace prySistemaDePrestamosDeLibro.Formularios
     public partial class FrmDatosPersonales : Form
     {
         private FrmRegistroPersonal registroPersonal;
-        //construcor que recibe el formulario RegistroPersonal
-        public FrmDatosPersonales(FrmRegistroPersonal registroPersonal)
+        public FrmDatosPersonales(FrmRegistroPersonal padre)
         {
             InitializeComponent();
-            this.registroPersonal = registroPersonal;
+            registroPersonal = padre;
         }
 
         private void btnSiguiente_Click(object sender, EventArgs e)
@@ -30,22 +29,19 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             DateOnly fechaNacimiento = DateOnly.FromDateTime(dtpFechaNac.Value);
             string correo = txtCorreo.Text.Trim();
             string telefono = txtTelefono.Text.Trim();
-            string ciudad = txtLocalidad.Text.Trim();
-            string municipio = txtMunicipio.Text.Trim();
-            string CP = txtCP.Text.Trim();
+
 
             //arreglo para guardar campos y comprobar si estan vacios
             string[] campos = {
-                nombre, apellidoPat, apellidoMat, correo, telefono, ciudad, municipio, CP
+                nombre, apellidoPat, apellidoMat, telefono,correo
             };
             //comprueba si hay campos vacios
             if (comprobarCamposVacios(campos))
             {
-                MessageBox.Show("Porfavor llena todo los campos!");
+                MessageBox.Show("Porfavor llena todo los campos");
                 return;
             }
-
-
+            registroPersonal.guardarDatosPersonales(campos[0], campos[1], campos[2], campos[3], campos[4]);
             registroPersonal.mostrarPanelUsuario();
         }
 
@@ -57,7 +53,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
 
         //funcion que comprueba algun campo vacio y devuelve un valor booleano
         private bool comprobarCamposVacios(string[] campos) {
-            return campos.Any(string.IsNullOrWhiteSpace);
+            return campos.Any(string.IsNullOrWhiteSpace);//devuelve un valor true o false
         }
     }
 }

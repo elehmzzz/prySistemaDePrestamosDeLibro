@@ -15,9 +15,15 @@ namespace prySistemaDePrestamosDeLibro.Clases
 {
     public partial class FrmInicioSesion : Form
     {
+
         public FrmInicioSesion()
         {
             InitializeComponent();
+            
+        }
+        private void FrmInicioSesion_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
@@ -85,8 +91,6 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
                 return;
             }
-
-
         }
 
         private void llbRegistrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -97,16 +101,6 @@ namespace prySistemaDePrestamosDeLibro.Clases
             txtContrasenia.Clear();
             txtUsuario.Clear();
             txtUsuario.Focus();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void FrmInicioSesion_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }
