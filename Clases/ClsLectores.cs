@@ -18,6 +18,8 @@ namespace prySistemaDePrestamosDeLibro.Clases
         private string Municipio = "";
         private string Colonia = "";
         private string CP = "";
+        private DateTime Fecha_Nacimiento;
+        private int Edad;
 
         public int getIdLector()
         {
@@ -99,6 +101,26 @@ namespace prySistemaDePrestamosDeLibro.Clases
             CP = cp;
         }
 
+        public DateTime getFechaNacimiento()
+        {
+            return Fecha_Nacimiento;
+        }
+
+        public void setFechaNacimiento(DateTime fechaNacimiento)
+        {
+            Fecha_Nacimiento = fechaNacimiento;
+        }
+
+        public int getEdad()
+        {
+            return Edad;
+        }
+
+        public void setEdad(int edad)
+        {
+            Edad = edad;
+        }
+
 
         public DataTable ObtenerLectores()
         {
@@ -108,7 +130,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
             try
             {
-                MySqlCommand cmd = new MySqlCommand("SELECT Id_Lector, Nombres, Apellido_Paterno, Apellido_Materno, Telefono, Municipio, Colonia, CP FROM lector", con);
+                MySqlCommand cmd = new MySqlCommand("SELECT Id_Lector, Nombres, Apellido_Paterno, Apellido_Materno, Telefono, Municipio, Colonia, CP, Fecha_Nacimiento, Edad FROM lector", con);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 adapter.Fill(dt);
                 con.Close();
@@ -128,7 +150,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
             MySqlConnection con = conexion.ObtenerConexion();
             try
             {
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO lector (Nombres, Apellido_Paterno, Apellido_Materno, Telefono, Municipio, Colonia, CP) VALUES (@nombres, @aPaterno, @aMaterno, @telefono, @municipio, @colonia, @cp)", con);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO lector (Nombres, Apellido_Paterno, Apellido_Materno, Telefono, Municipio, Colonia, CP, Fecha_Nacimiento, Edad) VALUES (@nombres, @aPaterno, @aMaterno, @telefono, @municipio, @colonia, @cp, @fechaNacimiento, @edad)", con);
                 cmd.Parameters.AddWithValue("@nombres", Nombres);
                 cmd.Parameters.AddWithValue("@aPaterno", Apellido_Paterno);
                 cmd.Parameters.AddWithValue("@aMaterno", Apellido_Materno);
@@ -136,6 +158,8 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 cmd.Parameters.AddWithValue("@municipio", Municipio);
                 cmd.Parameters.AddWithValue("@colonia", Colonia);
                 cmd.Parameters.AddWithValue("@cp", CP);
+                cmd.Parameters.AddWithValue("@fechaNacimiento", Fecha_Nacimiento.Date);
+                cmd.Parameters.AddWithValue("@edad", Edad);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -155,7 +179,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
             MySqlConnection con = conexion.ObtenerConexion();
             try
             {
-                MySqlCommand cmd = new MySqlCommand("UPDATE lector SET Nombres=@nombres, Apellido_Paterno=@aPaterno, Apellido_Materno=@aMaterno, Telefono=@telefono, Municipio=@municipio, Colonia=@colonia, CP=@cp WHERE Id_Lector=@id", con);
+                MySqlCommand cmd = new MySqlCommand("UPDATE lector SET Nombres=@nombres, Apellido_Paterno=@aPaterno, Apellido_Materno=@aMaterno, Telefono=@telefono, Municipio=@municipio, Colonia=@colonia, CP=@cp, Fecha_Nacimiento=@fechaNacimiento, Edad=@edad WHERE Id_Lector=@id", con);
                 cmd.Parameters.AddWithValue("@nombres", Nombres);
                 cmd.Parameters.AddWithValue("@aPaterno", Apellido_Paterno);
                 cmd.Parameters.AddWithValue("@aMaterno", Apellido_Materno);
@@ -163,6 +187,8 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 cmd.Parameters.AddWithValue("@municipio", Municipio);
                 cmd.Parameters.AddWithValue("@colonia", Colonia);
                 cmd.Parameters.AddWithValue("@cp", CP);
+                cmd.Parameters.AddWithValue("@fechaNacimiento", Fecha_Nacimiento.Date);
+                cmd.Parameters.AddWithValue("@edad", Edad);
                 cmd.Parameters.AddWithValue("@id", IdLector);
 
                 cmd.ExecuteNonQuery();
@@ -196,6 +222,30 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 return false;
             }
 
+        }
+        public DataRow ObtenerLectorPorId(int id)
+        {
+            DataTable dt = new DataTable();
+            ClsConexion conexion = new ClsConexion();
+            MySqlConnection con = conexion.ObtenerConexion();
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(
+                    "SELECT Id_Lector, Nombres, Apellido_Paterno, Apellido_Materno, Telefono, Municipio, Colonia, CP, Fecha_Nacimiento, Edad FROM lector WHERE Id_Lector = @id",
+                    con);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener el lector: " + ex.Message);
+            }
+
+            return dt.Rows.Count > 0 ? dt.Rows[0] : null;
         }
     }
 }
