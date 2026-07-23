@@ -46,7 +46,7 @@
             txtAPaterno = new TextBox();
             txtAMaterno = new TextBox();
             tableLayoutPanel2 = new TableLayoutPanel();
-            btnGuardar = new Button();
+            btnActualizar = new Button();
             btnEliminar = new Button();
             tableLayoutPanel3 = new TableLayoutPanel();
             btnRegresar = new Button();
@@ -63,7 +63,7 @@
             label2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
             label2.Location = new Point(14, 18);
             label2.Name = "label2";
-            label2.Size = new Size(137, 46);
+            label2.Size = new Size(108, 37);
             label2.TabIndex = 28;
             label2.Text = "Autores";
             // 
@@ -88,30 +88,31 @@
             txtBuscador.Anchor = AnchorStyles.Left;
             txtBuscador.BorderStyle = BorderStyle.None;
             txtBuscador.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBuscador.Location = new Point(179, 12);
+            txtBuscador.Location = new Point(179, 14);
             txtBuscador.Name = "txtBuscador";
             txtBuscador.PlaceholderText = "Buscar";
-            txtBuscador.Size = new Size(316, 27);
+            txtBuscador.Size = new Size(316, 22);
             txtBuscador.TabIndex = 26;
             // 
             // btnAgregarAutor
             // 
             btnAgregarAutor.Anchor = AnchorStyles.Left;
+            btnAgregarAutor.BackColor = Color.FromArgb(32, 41, 64);
+            btnAgregarAutor.ForeColor = SystemColors.Control;
             btnAgregarAutor.Location = new Point(559, 3);
             btnAgregarAutor.Name = "btnAgregarAutor";
             btnAgregarAutor.Size = new Size(148, 44);
             btnAgregarAutor.TabIndex = 24;
             btnAgregarAutor.Text = "Agregar autor";
-            btnAgregarAutor.UseVisualStyleBackColor = true;
-            btnAgregarAutor.Click += btnAgregarAutor_Click;
+            btnAgregarAutor.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Left;
             label1.AutoSize = true;
-            label1.Location = new Point(3, 11);
+            label1.Location = new Point(3, 15);
             label1.Name = "label1";
-            label1.Size = new Size(144, 28);
+            label1.Size = new Size(116, 21);
             label1.TabIndex = 25;
             label1.Text = "Buscar el autor:";
             // 
@@ -162,7 +163,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(20, 403);
             label3.Name = "label3";
-            label3.Size = new Size(237, 28);
+            label3.Size = new Size(187, 21);
             label3.TabIndex = 31;
             label3.Text = "Editar autor seleccionado:";
             // 
@@ -170,9 +171,9 @@
             // 
             label4.Anchor = AnchorStyles.Left;
             label4.AutoSize = true;
-            label4.Location = new Point(3, 9);
+            label4.Location = new Point(3, 13);
             label4.Name = "label4";
-            label4.Size = new Size(109, 28);
+            label4.Size = new Size(88, 21);
             label4.TabIndex = 32;
             label4.Text = "Nombre(s):";
             // 
@@ -180,9 +181,9 @@
             // 
             label5.Anchor = AnchorStyles.Left;
             label5.AutoSize = true;
-            label5.Location = new Point(3, 57);
+            label5.Location = new Point(3, 60);
             label5.Name = "label5";
-            label5.Size = new Size(106, 28);
+            label5.Size = new Size(83, 21);
             label5.TabIndex = 33;
             label5.Text = "Apellido P:";
             // 
@@ -190,9 +191,9 @@
             // 
             label6.Anchor = AnchorStyles.Left;
             label6.AutoSize = true;
-            label6.Location = new Point(369, 57);
+            label6.Location = new Point(348, 60);
             label6.Name = "label6";
-            label6.Size = new Size(113, 28);
+            label6.Size = new Size(88, 21);
             label6.TabIndex = 34;
             label6.Text = "Apellido M:";
             // 
@@ -238,42 +239,46 @@
             tableLayoutPanel2.Size = new Size(708, 95);
             tableLayoutPanel2.TabIndex = 38;
             // 
-            // btnGuardar
+            // btnActualizar
             // 
-            btnGuardar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
-            btnGuardar.AutoSize = true;
-            btnGuardar.Location = new Point(27, 50);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(94, 38);
-            btnGuardar.TabIndex = 38;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
+            btnActualizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnActualizar.AutoSize = true;
+            btnActualizar.BackColor = Color.FromArgb(32, 41, 64);
+            btnActualizar.ForeColor = SystemColors.Control;
+            btnActualizar.Location = new Point(124, 3);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(96, 38);
+            btnActualizar.TabIndex = 38;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click;
             // 
             // btnEliminar
             // 
             btnEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnEliminar.AutoSize = true;
-            btnEliminar.Location = new Point(27, 3);
+            btnEliminar.BackColor = Color.FromArgb(32, 41, 64);
+            btnEliminar.ForeColor = SystemColors.Control;
+            btnEliminar.Location = new Point(5, 3);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(94, 38);
+            btnEliminar.Size = new Size(102, 38);
             btnEliminar.TabIndex = 39;
             btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
+            btnEliminar.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel3
             // 
-            tableLayoutPanel3.ColumnCount = 1;
+            tableLayoutPanel3.ColumnCount = 2;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 113F));
+            tableLayoutPanel3.Controls.Add(btnActualizar, 1, 0);
             tableLayoutPanel3.Controls.Add(btnEliminar, 0, 0);
-            tableLayoutPanel3.Controls.Add(btnGuardar, 0, 1);
-            tableLayoutPanel3.Location = new Point(780, 446);
+            tableLayoutPanel3.Location = new Point(755, 490);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 2;
+            tableLayoutPanel3.RowCount = 1;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel3.Size = new Size(124, 95);
+            tableLayoutPanel3.Size = new Size(223, 51);
             tableLayoutPanel3.TabIndex = 39;
             // 
             // btnRegresar
@@ -291,7 +296,7 @@
             // 
             // FrmAutores
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1052, 583);
@@ -343,6 +348,7 @@
         private Button btnEliminar;
         private TableLayoutPanel tableLayoutPanel3;
         private Button btnRegresar;
+        private Button btnActualizar;
         private DataGridViewTextBoxColumn id;
         private DataGridViewTextBoxColumn Nombre;
         private DataGridViewTextBoxColumn aPaterno;

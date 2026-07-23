@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using prySistemaDePrestamosDeLibro.Clases;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using prySistemaDePrestamosDeLibro.Clases;
 
 namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
 {
@@ -15,6 +18,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
         public FrmAgregarLectores()
         {
             InitializeComponent();
+            dtpFechaNac.ValueChanged += dtpFechaNac_ValueChanged;
         }
 
         private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
@@ -48,23 +52,25 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             txtApellidoMat = new TextBox();
             label2 = new Label();
             btnRegresar = new Button();
-            btnSiguiente = new Button();
+            btnGuardar = new Button();
             label3 = new Label();
             txtEdad = new TextBox();
             dtpFechaNac = new DateTimePicker();
             label9 = new Label();
-            txtLocalidad = new TextBox();
+            txtColonia = new TextBox();
             label10 = new Label();
             txtCP = new TextBox();
             label11 = new Label();
             txtTelefono = new TextBox();
             label12 = new Label();
-            cmbEscuela = new ComboBox();
             label13 = new Label();
+            cmbEscuela = new ComboBox();
             cmbOcupacion = new ComboBox();
             tableLayoutPanel2 = new TableLayoutPanel();
             label4 = new Label();
             label7 = new Label();
+            label8 = new Label();
+            txtMunicipio = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
@@ -76,6 +82,8 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 29.73479F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.0414143F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.8270473F));
+            tableLayoutPanel1.Controls.Add(txtMunicipio, 1, 5);
+            tableLayoutPanel1.Controls.Add(label8, 0, 5);
             tableLayoutPanel1.Controls.Add(label5, 0, 0);
             tableLayoutPanel1.Controls.Add(txtNombre, 1, 0);
             tableLayoutPanel1.Controls.Add(label6, 0, 1);
@@ -84,20 +92,20 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             tableLayoutPanel1.Controls.Add(txtApellidoMat, 1, 2);
             tableLayoutPanel1.Controls.Add(label2, 0, 3);
             tableLayoutPanel1.Controls.Add(btnRegresar, 2, 5);
-            tableLayoutPanel1.Controls.Add(btnSiguiente, 3, 5);
+            tableLayoutPanel1.Controls.Add(btnGuardar, 3, 5);
             tableLayoutPanel1.Controls.Add(label3, 0, 4);
             tableLayoutPanel1.Controls.Add(txtEdad, 1, 4);
             tableLayoutPanel1.Controls.Add(dtpFechaNac, 1, 3);
-            tableLayoutPanel1.Controls.Add(label9, 0, 5);
-            tableLayoutPanel1.Controls.Add(txtLocalidad, 1, 5);
-            tableLayoutPanel1.Controls.Add(label10, 2, 0);
-            tableLayoutPanel1.Controls.Add(txtCP, 3, 0);
-            tableLayoutPanel1.Controls.Add(label11, 2, 1);
-            tableLayoutPanel1.Controls.Add(txtTelefono, 3, 1);
-            tableLayoutPanel1.Controls.Add(label12, 2, 3);
-            tableLayoutPanel1.Controls.Add(label13, 2, 2);
-            tableLayoutPanel1.Controls.Add(cmbEscuela, 3, 3);
-            tableLayoutPanel1.Controls.Add(cmbOcupacion, 3, 2);
+            tableLayoutPanel1.Controls.Add(label12, 2, 4);
+            tableLayoutPanel1.Controls.Add(cmbEscuela, 3, 4);
+            tableLayoutPanel1.Controls.Add(label13, 2, 3);
+            tableLayoutPanel1.Controls.Add(cmbOcupacion, 3, 3);
+            tableLayoutPanel1.Controls.Add(label11, 2, 2);
+            tableLayoutPanel1.Controls.Add(txtTelefono, 3, 2);
+            tableLayoutPanel1.Controls.Add(label10, 2, 1);
+            tableLayoutPanel1.Controls.Add(txtCP, 3, 1);
+            tableLayoutPanel1.Controls.Add(label9, 2, 0);
+            tableLayoutPanel1.Controls.Add(txtColonia, 3, 0);
             tableLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tableLayoutPanel1.Location = new Point(15, 158);
             tableLayoutPanel1.Margin = new Padding(6);
@@ -189,19 +197,21 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             btnRegresar.TabIndex = 6;
             btnRegresar.Text = "Regresar";
             btnRegresar.UseVisualStyleBackColor = false;
+            btnRegresar.Click += btnRegresar_Click;
             // 
-            // btnSiguiente
+            // btnGuardar
             // 
-            btnSiguiente.AutoSize = true;
-            btnSiguiente.BackColor = Color.FromArgb(32, 41, 64);
-            btnSiguiente.ForeColor = Color.White;
-            btnSiguiente.Location = new Point(622, 311);
-            btnSiguiente.Margin = new Padding(6);
-            btnSiguiente.Name = "btnSiguiente";
-            btnSiguiente.Size = new Size(104, 38);
-            btnSiguiente.TabIndex = 27;
-            btnSiguiente.Text = "Siguiente";
-            btnSiguiente.UseVisualStyleBackColor = false;
+            btnGuardar.AutoSize = true;
+            btnGuardar.BackColor = Color.FromArgb(32, 41, 64);
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Location = new Point(622, 311);
+            btnGuardar.Margin = new Padding(6);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(104, 38);
+            btnGuardar.TabIndex = 27;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // label3
             // 
@@ -229,29 +239,30 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             dtpFechaNac.Name = "dtpFechaNac";
             dtpFechaNac.Size = new Size(232, 34);
             dtpFechaNac.TabIndex = 42;
+            dtpFechaNac.ValueChanged += dtpFechaNac_ValueChanged;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(6, 305);
+            label9.Location = new Point(466, 0);
             label9.Margin = new Padding(6, 0, 6, 0);
             label9.Name = "label9";
-            label9.Size = new Size(100, 28);
+            label9.Size = new Size(79, 28);
             label9.TabIndex = 36;
-            label9.Text = "Localidad:";
+            label9.Text = "Colonia";
             // 
-            // txtLocalidad
+            // txtColonia
             // 
-            txtLocalidad.Location = new Point(222, 311);
-            txtLocalidad.Margin = new Padding(6);
-            txtLocalidad.Name = "txtLocalidad";
-            txtLocalidad.Size = new Size(229, 34);
-            txtLocalidad.TabIndex = 39;
+            txtColonia.Location = new Point(622, 6);
+            txtColonia.Margin = new Padding(6);
+            txtColonia.Name = "txtColonia";
+            txtColonia.Size = new Size(193, 34);
+            txtColonia.TabIndex = 39;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(466, 0);
+            label10.Location = new Point(466, 61);
             label10.Margin = new Padding(6, 0, 6, 0);
             label10.Name = "label10";
             label10.Size = new Size(43, 28);
@@ -260,7 +271,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             // 
             // txtCP
             // 
-            txtCP.Location = new Point(622, 6);
+            txtCP.Location = new Point(622, 67);
             txtCP.Margin = new Padding(6);
             txtCP.Name = "txtCP";
             txtCP.Size = new Size(193, 34);
@@ -269,7 +280,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(466, 61);
+            label11.Location = new Point(466, 122);
             label11.Margin = new Padding(6, 0, 6, 0);
             label11.Name = "label11";
             label11.Size = new Size(90, 28);
@@ -278,7 +289,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(622, 67);
+            txtTelefono.Location = new Point(622, 128);
             txtTelefono.Margin = new Padding(6);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(193, 34);
@@ -287,38 +298,38 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(466, 183);
+            label12.Location = new Point(466, 244);
             label12.Margin = new Padding(6, 0, 6, 0);
             label12.Name = "label12";
             label12.Size = new Size(79, 28);
             label12.TabIndex = 39;
             label12.Text = "Escuela:";
             // 
-            // cmbEscuela
-            // 
-            cmbEscuela.FormattingEnabled = true;
-            cmbEscuela.Items.AddRange(new object[] { "UTHH", "UAECH", "CBTA", "CECYT" });
-            cmbEscuela.Location = new Point(619, 186);
-            cmbEscuela.Name = "cmbEscuela";
-            cmbEscuela.Size = new Size(193, 36);
-            cmbEscuela.TabIndex = 81;
-            cmbEscuela.SelectedIndexChanged += cmbEscuela_SelectedIndexChanged;
-            // 
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(466, 122);
+            label13.Location = new Point(466, 183);
             label13.Margin = new Padding(6, 0, 6, 0);
             label13.Name = "label13";
             label13.Size = new Size(110, 28);
             label13.TabIndex = 43;
             label13.Text = "Ocupación:";
             // 
+            // cmbEscuela
+            // 
+            cmbEscuela.FormattingEnabled = true;
+            cmbEscuela.Items.AddRange(new object[] { "UTHH", "UAECH", "CBTA", "CECYT" });
+            cmbEscuela.Location = new Point(619, 247);
+            cmbEscuela.Name = "cmbEscuela";
+            cmbEscuela.Size = new Size(193, 36);
+            cmbEscuela.TabIndex = 81;
+            cmbEscuela.SelectedIndexChanged += cmbEscuela_SelectedIndexChanged;
+            // 
             // cmbOcupacion
             // 
             cmbOcupacion.FormattingEnabled = true;
             cmbOcupacion.Items.AddRange(new object[] { "Alumno", "Maestro", "Profesionista" });
-            cmbOcupacion.Location = new Point(619, 125);
+            cmbOcupacion.Location = new Point(619, 186);
             cmbOcupacion.Name = "cmbOcupacion";
             cmbOcupacion.Size = new Size(199, 36);
             cmbOcupacion.TabIndex = 82;
@@ -359,6 +370,24 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             label7.TabIndex = 9;
             label7.Text = "Ingresa tus datos personales y da click en siguiente.";
             // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(6, 305);
+            label8.Margin = new Padding(6, 0, 6, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(100, 28);
+            label8.TabIndex = 83;
+            label8.Text = "Municipio";
+            // 
+            // txtMunicipio
+            // 
+            txtMunicipio.Location = new Point(222, 311);
+            txtMunicipio.Margin = new Padding(6);
+            txtMunicipio.Name = "txtMunicipio";
+            txtMunicipio.Size = new Size(229, 34);
+            txtMunicipio.TabIndex = 84;
+            // 
             // FrmAgregarLectores
             // 
             BackColor = Color.FromArgb(236, 223, 204);
@@ -389,7 +418,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
         private TableLayoutPanel tableLayoutPanel1;
         private TextBox txtTelefono;
         private TextBox txtCP;
-        private TextBox txtLocalidad;
+        private TextBox txtColonia;
         private Label label9;
         private Label label5;
         private TextBox txtNombre;
@@ -399,7 +428,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
         private TextBox txtApellidoMat;
         private Label label2;
         private Button btnRegresar;
-        private Button btnSiguiente;
+        private Button btnGuardar;
         private Label label3;
         private TextBox txtEdad;
         private Label label10;
@@ -407,7 +436,6 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
         private TableLayoutPanel tableLayoutPanel2;
         private Label label4;
         private Label label7;
-        private DateTimePicker dtpFechaNac;
         private Label label12;
         private Label label13;
         private ComboBox cmbEscuela;
@@ -422,5 +450,64 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
         {
 
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            // Validación básica de campos obligatorios
+            if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
+                string.IsNullOrWhiteSpace(txtApellidoPat.Text) ||
+                string.IsNullOrWhiteSpace(txtApellidoMat.Text))
+            {
+                MessageBox.Show("Por favor completa los campos obligatorios.", "Datos incompletos",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            ClsLectores lector = new ClsLectores();
+            lector.setNombres(txtNombre.Text.Trim());
+            lector.setApellidoPaterno(txtApellidoPat.Text.Trim());
+            lector.setApellidoMaterno(txtApellidoMat.Text.Trim());
+            lector.setTelefono(txtTelefono.Text.Trim());
+            lector.setMunicipio(txtMunicipio.Text.Trim());
+            lector.setColonia(txtColonia.Text.Trim());
+            lector.setCP(txtCP.Text.Trim());
+            lector.setFechaNacimiento(dtpFechaNac.Value.Date);
+            lector.setEdad(Convert.ToInt32(txtEdad.Text));
+
+            bool guardado = lector.GuardarLector();
+
+            if (guardado)
+            {
+                MessageBox.Show("Lector guardado correctamente.", "Éxito",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.DialogResult = DialogResult.OK;
+                this.Close();
+            }
+        }
+        private DateTimePicker dtpFechaNac;
+
+        private void dtpFechaNac_ValueChanged(object sender, EventArgs e)
+        {
+            DateTime fechaNacimiento = dtpFechaNac.Value.Date;
+            DateTime hoy = DateTime.Today;
+
+            int edad = hoy.Year - fechaNacimiento.Year;
+
+            // Ajusta si aún no ha cumplido años este año
+            if (fechaNacimiento.Date > hoy.AddYears(-edad))
+            {
+                edad--;
+            }
+
+            txtEdad.Text = edad.ToString();
+        }
+        private Label label8;
+        private TextBox txtMunicipio;
     }
 }

@@ -15,9 +15,15 @@ namespace prySistemaDePrestamosDeLibro.Clases
 {
     public partial class FrmInicioSesion : Form
     {
+
         public FrmInicioSesion()
         {
             InitializeComponent();
+            
+        }
+        private void FrmInicioSesion_Load(object sender, EventArgs e)
+        {
+
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
@@ -54,12 +60,27 @@ namespace prySistemaDePrestamosDeLibro.Clases
                     if (verifica)
                     {
                         //si el usuario y contraseña es correcta
+                        string NombreCompleto=
+                            reader["Nombre"].ToString()+" "+
+                            reader["Apellido_Paterno"].ToString()+" "+
+                            reader["Apellido_Materno"].ToString();
+
+                        string UsuarioEmpleado = reader["Nombre_Usuario"].ToString();
+                        string Correo = reader["Correo"].ToString();
+                        string Telefono = reader["Telefono"].ToString();
+
                         this.Hide();
-                        FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(this);
+                        FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(
+                            this,
+                            NombreCompleto,
+                            UsuarioEmpleado,
+                            Correo,
+                            Telefono);
                         menuPrincipal.Show();
                         txtUsuario.Clear();
                         txtContrasenia.Clear();
                         txtUsuario.Focus();
+                        
                     }
                     else
                     {
@@ -85,8 +106,6 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
                 return;
             }
-
-
         }
 
         private void llbRegistrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -97,16 +116,6 @@ namespace prySistemaDePrestamosDeLibro.Clases
             txtContrasenia.Clear();
             txtUsuario.Clear();
             txtUsuario.Focus();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void FrmInicioSesion_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

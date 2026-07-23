@@ -39,7 +39,7 @@
             label3 = new Label();
             label4 = new Label();
             txtcategoriaSeleccioanda = new TextBox();
-            btnGuardar = new Button();
+            btnActualizar = new Button();
             btnEliminar = new Button();
             btnRegresar = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -78,12 +78,14 @@
             // btnAgregarCategoria
             // 
             btnAgregarCategoria.Anchor = AnchorStyles.Left;
+            btnAgregarCategoria.BackColor = Color.FromArgb(32, 41, 64);
+            btnAgregarCategoria.ForeColor = SystemColors.Control;
             btnAgregarCategoria.Location = new Point(559, 3);
             btnAgregarCategoria.Name = "btnAgregarCategoria";
             btnAgregarCategoria.Size = new Size(221, 44);
             btnAgregarCategoria.TabIndex = 24;
             btnAgregarCategoria.Text = "Agregar categoria";
-            btnAgregarCategoria.UseVisualStyleBackColor = true;
+            btnAgregarCategoria.UseVisualStyleBackColor = false;
             btnAgregarCategoria.Click += btnAgregarCategoria_Click;
             // 
             // tableLayoutPanel1
@@ -109,9 +111,9 @@
             txtBuscador.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             txtBuscador.Location = new Point(203, 12);
             txtBuscador.Name = "txtBuscador";
+            txtBuscador.PlaceholderText = "Buscar...";
             txtBuscador.Size = new Size(316, 27);
             txtBuscador.TabIndex = 26;
-            txtBuscador.Text = "Buscar...";
             // 
             // label1
             // 
@@ -161,27 +163,30 @@
             txtcategoriaSeleccioanda.Size = new Size(371, 34);
             txtcategoriaSeleccioanda.TabIndex = 30;
             // 
-            // btnGuardar
+            // btnActualizar
             // 
-            btnGuardar.AutoSize = true;
-            btnGuardar.Location = new Point(669, 482);
-            btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(129, 38);
-            btnGuardar.TabIndex = 31;
-            btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
-            btnGuardar.Click += btnGuardar_Click;
+            btnActualizar.AutoSize = true;
+            btnActualizar.BackColor = Color.FromArgb(32, 41, 64);
+            btnActualizar.ForeColor = SystemColors.Control;
+            btnActualizar.Location = new Point(669, 482);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(129, 38);
+            btnActualizar.TabIndex = 31;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = false;
+            btnActualizar.Click += btnActualizar_Click;
             // 
             // btnEliminar
             // 
             btnEliminar.AutoSize = true;
+            btnEliminar.BackColor = Color.FromArgb(32, 41, 64);
+            btnEliminar.ForeColor = SystemColors.Control;
             btnEliminar.Location = new Point(825, 482);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(129, 38);
             btnEliminar.TabIndex = 32;
-            btnEliminar.Text = "Borrar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
             // 
             // btnRegresar
             // 
@@ -204,7 +209,7 @@
             ClientSize = new Size(1052, 583);
             Controls.Add(btnRegresar);
             Controls.Add(btnEliminar);
-            Controls.Add(btnGuardar);
+            Controls.Add(btnActualizar);
             Controls.Add(txtcategoriaSeleccioanda);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -237,9 +242,10 @@
         private Label label3;
         private Label label4;
         private TextBox txtcategoriaSeleccioanda;
-        private Button button2;
-        private Button btnEliminar;
+        private Button buttonActualizar;
+        private Button button3;
         private Button btnRegresar;
-        private Button btnGuardar;
+        private Button btnEliminar;
+        private Button btnActualizar;
     }
 }
