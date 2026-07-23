@@ -48,7 +48,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(384, 0);
+            label1.Location = new Point(407, 0);
             label1.Name = "label1";
             label1.Size = new Size(155, 28);
             label1.TabIndex = 3;
@@ -67,27 +67,28 @@
             // 
             // tableLayoutPanel1
             // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnCount = 3;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 69.6551743F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30.3448277F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 181F));
             tableLayoutPanel1.Controls.Add(txtBuscador, 0, 0);
             tableLayoutPanel1.Controls.Add(label1, 1, 0);
-            tableLayoutPanel1.Controls.Add(chkAlfabetico, 1, 1);
-            tableLayoutPanel1.Location = new Point(12, 91);
+            tableLayoutPanel1.Controls.Add(chkAlfabetico, 2, 0);
+            tableLayoutPanel1.Location = new Point(11, 141);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(762, 110);
+            tableLayoutPanel1.Size = new Size(762, 66);
             tableLayoutPanel1.TabIndex = 7;
             // 
             // chkAlfabetico
             // 
             chkAlfabetico.AutoSize = true;
             chkAlfabetico.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            chkAlfabetico.Location = new Point(384, 58);
+            chkAlfabetico.Location = new Point(583, 3);
             chkAlfabetico.Name = "chkAlfabetico";
-            chkAlfabetico.Size = new Size(123, 32);
+            chkAlfabetico.Size = new Size(123, 27);
             chkAlfabetico.TabIndex = 4;
             chkAlfabetico.Text = "Alfabetico";
             chkAlfabetico.UseVisualStyleBackColor = true;
@@ -97,7 +98,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label4.Location = new Point(12, 20);
+            label4.Location = new Point(11, 75);
             label4.Margin = new Padding(6, 0, 6, 0);
             label4.Name = "label4";
             label4.Size = new Size(324, 46);
@@ -118,7 +119,7 @@
             tableLayoutPanel2.Controls.Add(btnEditarLectores, 1, 0);
             tableLayoutPanel2.Controls.Add(btnDatosLectores, 2, 0);
             tableLayoutPanel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel2.Location = new Point(15, 518);
+            tableLayoutPanel2.Location = new Point(11, 10);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
@@ -181,11 +182,11 @@
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(15, 228);
+            dataGridView1.Location = new Point(11, 228);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersVisible = false;
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1025, 284);
+            dataGridView1.Size = new Size(1029, 343);
             dataGridView1.TabIndex = 2;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick_2;
             // 
@@ -222,8 +223,8 @@
         private Button btnAgregarLectores;
         private Button btnDatosLectores;
         private Button btnEditarLectores;
-        private Button Editoriales;
         private DataGridView dataGridView1;
         private CheckBox chkAlfabetico;
+        private Button Editoriales;
     }
 }
