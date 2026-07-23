@@ -44,6 +44,8 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
+            txtMunicipio = new TextBox();
+            label8 = new Label();
             label5 = new Label();
             txtNombre = new TextBox();
             label6 = new Label();
@@ -56,21 +58,19 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             label3 = new Label();
             txtEdad = new TextBox();
             dtpFechaNac = new DateTimePicker();
-            label9 = new Label();
-            txtColonia = new TextBox();
-            label10 = new Label();
-            txtCP = new TextBox();
+            label12 = new Label();
+            cmbEscuela = new ComboBox();
+            label13 = new Label();
+            cmbOcupacion = new ComboBox();
             label11 = new Label();
             txtTelefono = new TextBox();
-            label12 = new Label();
-            label13 = new Label();
-            cmbEscuela = new ComboBox();
-            cmbOcupacion = new ComboBox();
+            label10 = new Label();
+            txtCP = new TextBox();
+            label9 = new Label();
+            txtColonia = new TextBox();
             tableLayoutPanel2 = new TableLayoutPanel();
             label4 = new Label();
             label7 = new Label();
-            label8 = new Label();
-            txtMunicipio = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
@@ -120,6 +120,24 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             tableLayoutPanel1.Size = new Size(821, 367);
             tableLayoutPanel1.TabIndex = 29;
             tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
+            // 
+            // txtMunicipio
+            // 
+            txtMunicipio.Location = new Point(222, 311);
+            txtMunicipio.Margin = new Padding(6);
+            txtMunicipio.Name = "txtMunicipio";
+            txtMunicipio.Size = new Size(229, 34);
+            txtMunicipio.TabIndex = 84;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(6, 305);
+            label8.Margin = new Padding(6, 0, 6, 0);
+            label8.Name = "label8";
+            label8.Size = new Size(100, 28);
+            label8.TabIndex = 83;
+            label8.Text = "Municipio";
             // 
             // label5
             // 
@@ -241,41 +259,44 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             dtpFechaNac.TabIndex = 42;
             dtpFechaNac.ValueChanged += dtpFechaNac_ValueChanged;
             // 
-            // label9
+            // label12
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(466, 0);
-            label9.Margin = new Padding(6, 0, 6, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(79, 28);
-            label9.TabIndex = 36;
-            label9.Text = "Colonia";
+            label12.AutoSize = true;
+            label12.Location = new Point(466, 244);
+            label12.Margin = new Padding(6, 0, 6, 0);
+            label12.Name = "label12";
+            label12.Size = new Size(79, 28);
+            label12.TabIndex = 39;
+            label12.Text = "Escuela:";
             // 
-            // txtColonia
+            // cmbEscuela
             // 
-            txtColonia.Location = new Point(622, 6);
-            txtColonia.Margin = new Padding(6);
-            txtColonia.Name = "txtColonia";
-            txtColonia.Size = new Size(193, 34);
-            txtColonia.TabIndex = 39;
+            cmbEscuela.FormattingEnabled = true;
+            cmbEscuela.Items.AddRange(new object[] { "UTHH", "UAECH", "CBTA", "CECYT" });
+            cmbEscuela.Location = new Point(619, 247);
+            cmbEscuela.Name = "cmbEscuela";
+            cmbEscuela.Size = new Size(193, 36);
+            cmbEscuela.TabIndex = 81;
+            cmbEscuela.SelectedIndexChanged += cmbEscuela_SelectedIndexChanged;
             // 
-            // label10
+            // label13
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(466, 61);
-            label10.Margin = new Padding(6, 0, 6, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(43, 28);
-            label10.TabIndex = 37;
-            label10.Text = "C.P:";
+            label13.AutoSize = true;
+            label13.Location = new Point(466, 183);
+            label13.Margin = new Padding(6, 0, 6, 0);
+            label13.Name = "label13";
+            label13.Size = new Size(110, 28);
+            label13.TabIndex = 43;
+            label13.Text = "Ocupación:";
             // 
-            // txtCP
+            // cmbOcupacion
             // 
-            txtCP.Location = new Point(622, 67);
-            txtCP.Margin = new Padding(6);
-            txtCP.Name = "txtCP";
-            txtCP.Size = new Size(193, 34);
-            txtCP.TabIndex = 40;
+            cmbOcupacion.FormattingEnabled = true;
+            cmbOcupacion.Items.AddRange(new object[] { "Alumno", "Maestro", "Profesionista" });
+            cmbOcupacion.Location = new Point(619, 186);
+            cmbOcupacion.Name = "cmbOcupacion";
+            cmbOcupacion.Size = new Size(199, 36);
+            cmbOcupacion.TabIndex = 82;
             // 
             // label11
             // 
@@ -295,44 +316,41 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             txtTelefono.Size = new Size(193, 34);
             txtTelefono.TabIndex = 41;
             // 
-            // label12
+            // label10
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(466, 244);
-            label12.Margin = new Padding(6, 0, 6, 0);
-            label12.Name = "label12";
-            label12.Size = new Size(79, 28);
-            label12.TabIndex = 39;
-            label12.Text = "Escuela:";
+            label10.AutoSize = true;
+            label10.Location = new Point(466, 61);
+            label10.Margin = new Padding(6, 0, 6, 0);
+            label10.Name = "label10";
+            label10.Size = new Size(43, 28);
+            label10.TabIndex = 37;
+            label10.Text = "C.P:";
             // 
-            // label13
+            // txtCP
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(466, 183);
-            label13.Margin = new Padding(6, 0, 6, 0);
-            label13.Name = "label13";
-            label13.Size = new Size(110, 28);
-            label13.TabIndex = 43;
-            label13.Text = "Ocupación:";
+            txtCP.Location = new Point(622, 67);
+            txtCP.Margin = new Padding(6);
+            txtCP.Name = "txtCP";
+            txtCP.Size = new Size(193, 34);
+            txtCP.TabIndex = 40;
             // 
-            // cmbEscuela
+            // label9
             // 
-            cmbEscuela.FormattingEnabled = true;
-            cmbEscuela.Items.AddRange(new object[] { "UTHH", "UAECH", "CBTA", "CECYT" });
-            cmbEscuela.Location = new Point(619, 247);
-            cmbEscuela.Name = "cmbEscuela";
-            cmbEscuela.Size = new Size(193, 36);
-            cmbEscuela.TabIndex = 81;
-            cmbEscuela.SelectedIndexChanged += cmbEscuela_SelectedIndexChanged;
+            label9.AutoSize = true;
+            label9.Location = new Point(466, 0);
+            label9.Margin = new Padding(6, 0, 6, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(79, 28);
+            label9.TabIndex = 36;
+            label9.Text = "Colonia";
             // 
-            // cmbOcupacion
+            // txtColonia
             // 
-            cmbOcupacion.FormattingEnabled = true;
-            cmbOcupacion.Items.AddRange(new object[] { "Alumno", "Maestro", "Profesionista" });
-            cmbOcupacion.Location = new Point(619, 186);
-            cmbOcupacion.Name = "cmbOcupacion";
-            cmbOcupacion.Size = new Size(199, 36);
-            cmbOcupacion.TabIndex = 82;
+            txtColonia.Location = new Point(622, 6);
+            txtColonia.Margin = new Padding(6);
+            txtColonia.Name = "txtColonia";
+            txtColonia.Size = new Size(193, 34);
+            txtColonia.TabIndex = 39;
             // 
             // tableLayoutPanel2
             // 
@@ -370,24 +388,6 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             label7.TabIndex = 9;
             label7.Text = "Ingresa tus datos personales y da click en siguiente.";
             // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(6, 305);
-            label8.Margin = new Padding(6, 0, 6, 0);
-            label8.Name = "label8";
-            label8.Size = new Size(100, 28);
-            label8.TabIndex = 83;
-            label8.Text = "Municipio";
-            // 
-            // txtMunicipio
-            // 
-            txtMunicipio.Location = new Point(222, 311);
-            txtMunicipio.Margin = new Padding(6);
-            txtMunicipio.Name = "txtMunicipio";
-            txtMunicipio.Size = new Size(229, 34);
-            txtMunicipio.TabIndex = 84;
-            // 
             // FrmAgregarLectores
             // 
             BackColor = Color.FromArgb(236, 223, 204);
@@ -396,6 +396,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
             Controls.Add(tableLayoutPanel2);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmAgregarLectores";
+            StartPosition = FormStartPosition.CenterScreen;
             Load += FrmAgregarLectores_Load_2;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();

@@ -209,7 +209,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(921, 49);
             panel2.TabIndex = 6;
-            panel2.Paint += panel2_Paint;
             // 
             // lblTituloModulo
             // 
@@ -242,7 +241,6 @@
             pnlContenido.Name = "pnlContenido";
             pnlContenido.Size = new Size(921, 437);
             pnlContenido.TabIndex = 9;
-            pnlContenido.Paint += pnlContenido_Paint;
             // 
             // FrmMenuPrincipal
             // 
@@ -259,7 +257,6 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sistema de Préstamos de Libros";
-            Load += FrmMenuPrincipal_Load;
             panel1.ResumeLayout(false);
             panel7.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);

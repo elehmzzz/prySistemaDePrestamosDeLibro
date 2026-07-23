@@ -20,6 +20,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         private FrmInicioSesion ventanaInicioSesion;
         private FrmPerfilEmpleado moduloEmpleado;
         private FrmLectores moduloLectores;
+        private FrmAgregarLectores apartadoAgregarLectores;
         private FrmPrestamosHechos moduloPrestamos;
         private FrmMultas moduloMultas;
         private FrmLibros moduloLibros;
@@ -104,6 +105,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             }
             mostrarContenido(apartadoLibros);
         }
+
         //muestra el apartado de categorias del modulo libros
         public void mostrarApartadoCategorias()
         {
@@ -144,6 +146,16 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             }
             mostrarContenido(moduloLectores);
         }
+        //
+        public void mostrarApartadoAgregarLectores()
+        {
+            if (apartadoAgregarLectores == null) {
+                apartadoAgregarLectores = new FrmAgregarLectores();
+            }
+            mostrarContenido(apartadoAgregarLectores);
+
+        }
+
         //muestra el modulo de prestamos
         public void mostrarModuloPrestamos()
         {
@@ -180,19 +192,5 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             mostrarContenido(moduloEmpleado);
         }
 
-        private void pnlContenido_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void FrmMenuPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

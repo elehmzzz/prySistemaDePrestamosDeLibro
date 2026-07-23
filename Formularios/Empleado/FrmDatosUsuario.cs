@@ -42,7 +42,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             else {
                 MessageBox.Show("Registro realizado con exito");
             }
-                registroPersonal.abrirInicioSesion();
+            registroPersonal.abrirInicioSesion();
             registroPersonal.Close();
         }
         private void btnRegresar_Click(object sender, EventArgs e)
