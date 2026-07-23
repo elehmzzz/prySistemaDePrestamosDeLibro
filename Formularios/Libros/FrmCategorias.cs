@@ -111,5 +111,10 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
         {
 
         }
+
+        private void btnAgregarCategoria_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

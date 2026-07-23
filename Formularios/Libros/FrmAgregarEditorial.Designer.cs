@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            label1 = new Label();
-            txtNuevaCategoria = new TextBox();
+            lblEditorial = new Label();
+            txtEditorial = new TextBox();
             tableLayoutPanel2 = new TableLayoutPanel();
-            button1 = new Button();
-            button2 = new Button();
+            btnCancelar = new Button();
+            btnGuardar = new Button();
+            btnEliminar = new Button();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
@@ -43,8 +44,8 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.9946957F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 74.0053F));
-            tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Controls.Add(txtNuevaCategoria, 1, 0);
+            tableLayoutPanel1.Controls.Add(lblEditorial, 0, 0);
+            tableLayoutPanel1.Controls.Add(txtEditorial, 1, 0);
             tableLayoutPanel1.Location = new Point(12, 12);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
@@ -52,71 +53,87 @@
             tableLayoutPanel1.Size = new Size(403, 59);
             tableLayoutPanel1.TabIndex = 6;
             // 
-            // label1
+            // lblEditorial
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(4, 0);
-            label1.Margin = new Padding(4, 0, 4, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(89, 28);
-            label1.TabIndex = 3;
-            label1.Text = "Editorial:";
+            lblEditorial.AutoSize = true;
+            lblEditorial.Location = new Point(4, 0);
+            lblEditorial.Margin = new Padding(4, 0, 4, 0);
+            lblEditorial.Name = "lblEditorial";
+            lblEditorial.Size = new Size(68, 20);
+            lblEditorial.TabIndex = 3;
+            lblEditorial.Text = "Editorial:";
             // 
-            // txtNuevaCategoria
+            // txtEditorial
             // 
-            txtNuevaCategoria.Location = new Point(108, 4);
-            txtNuevaCategoria.Margin = new Padding(4);
-            txtNuevaCategoria.Name = "txtNuevaCategoria";
-            txtNuevaCategoria.Size = new Size(283, 34);
-            txtNuevaCategoria.TabIndex = 4;
+            txtEditorial.Location = new Point(108, 4);
+            txtEditorial.Margin = new Padding(4);
+            txtEditorial.Name = "txtEditorial";
+            txtEditorial.Size = new Size(283, 27);
+            txtEditorial.TabIndex = 4;
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.ColumnCount = 2;
+            tableLayoutPanel2.ColumnCount = 3;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Controls.Add(button1, 0, 0);
-            tableLayoutPanel2.Controls.Add(button2, 1, 0);
-            tableLayoutPanel2.Location = new Point(198, 98);
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 83F));
+            tableLayoutPanel2.Controls.Add(btnCancelar, 0, 0);
+            tableLayoutPanel2.Controls.Add(btnGuardar, 1, 0);
+            tableLayoutPanel2.Controls.Add(btnEliminar, 2, 0);
+            tableLayoutPanel2.Location = new Point(156, 90);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 1;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Size = new Size(217, 63);
+            tableLayoutPanel2.Size = new Size(259, 66);
             tableLayoutPanel2.TabIndex = 7;
             // 
-            // button1
+            // btnCancelar
             // 
-            button1.AutoSize = true;
-            button1.Location = new Point(3, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(96, 38);
-            button1.TabIndex = 0;
-            button1.Text = "Cancelar";
-            button1.UseVisualStyleBackColor = true;
+            btnCancelar.AutoSize = true;
+            btnCancelar.Location = new Point(3, 3);
+            btnCancelar.Name = "btnCancelar";
+            btnCancelar.Size = new Size(76, 38);
+            btnCancelar.TabIndex = 0;
+            btnCancelar.Text = "Cancelar";
+            btnCancelar.UseVisualStyleBackColor = true;
+            btnCancelar.Click += btnCancelar_Click;
             // 
-            // button2
+            // btnGuardar
             // 
-            button2.AutoSize = true;
-            button2.Location = new Point(111, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 38);
-            button2.TabIndex = 1;
-            button2.Text = "Guardar";
-            button2.UseVisualStyleBackColor = true;
+            btnGuardar.AutoSize = true;
+            btnGuardar.Location = new Point(91, 3);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(72, 38);
+            btnGuardar.TabIndex = 1;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Location = new Point(179, 3);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(72, 38);
+            btnEliminar.TabIndex = 8;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = true;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // FrmAgregarEditorial
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
-            AutoScaleMode = AutoScaleMode.Font;
+            AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(236, 223, 204);
-            ClientSize = new Size(427, 160);
+            ClientSize = new Size(439, 168);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
-            Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(4, 4, 4, 4);
+            Font = new Font("Segoe UI", 9F);
+            Margin = new Padding(4);
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmAgregarEditorial";
-            Text = "FrmAgregarEditorial";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Agregar Editorial ";
+            Load += FrmAgregarEditorial_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
@@ -127,10 +144,12 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private Label label1;
-        private TextBox txtNuevaCategoria;
+        private Label lblEditorial;
+        private TextBox txtEditorial;
         private TableLayoutPanel tableLayoutPanel2;
-        private Button button1;
+        private Button btnCancelar;
         private Button button2;
+        private Button btnGuardar;
+        private Button btnEliminar;
     }
 }

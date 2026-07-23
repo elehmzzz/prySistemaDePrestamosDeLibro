@@ -25,6 +25,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         private FrmLibros moduloLibros;
         private FrmRegistroLibro apartadoLibros;
         private FrmCategorias apartadoCategorias;
+        private FrmEditoriales apartadoEditoriales;
         private FrmAutores apartadoAutores;
         private string NombreCompleto;
         private string Usuario;
@@ -122,6 +123,16 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             }
             mostrarContenido(apartadoAutores);
             apartadoAutores.CargarAutores();
+        }
+
+        public void mostrarApartadoEditoriales()
+        {
+            if (apartadoEditoriales == null || apartadoEditoriales.IsDisposed)
+            {
+                apartadoEditoriales = new FrmEditoriales(this);
+            }
+            mostrarContenido(apartadoEditoriales);
+            //apartadoAutores.CargarAutores();
         }
         //muestra el modulo de lectores
         public void mostrarModuloLectores()
