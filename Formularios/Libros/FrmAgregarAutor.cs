@@ -15,6 +15,11 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
     {
         private FrmAutores formularioPadre;
         ClsAutor objAutor;
+
+        public FrmAgregarAutor()
+        {
+        }
+
         public FrmAgregarAutor(FrmAutores padre)
         {
             InitializeComponent();
