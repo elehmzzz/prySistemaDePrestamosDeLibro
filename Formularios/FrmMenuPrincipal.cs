@@ -1,5 +1,6 @@
 ﻿using prySistemaDePrestamosDeLibro.Clases;
 using prySistemaDePrestamosDeLibro.Formularios.FRMprestamos;
+using prySistemaDePrestamosDeLibro.Formularios.Lectores;
 using prySistemaDePrestamosDeLibro.Formularios.Libros;
 using prySistemaDePrestamosDeLibro.Formularios.Multas;
 using System;
@@ -20,11 +21,13 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         private FrmInicioSesion ventanaInicioSesion;
         private FrmPerfilEmpleado moduloEmpleado;
         private FrmLectores moduloLectores;
+        private FrmAgregarLectores2 apartadoAgregarLectores;
         private FrmPrestamosHechos moduloPrestamos;
         private FrmMultas moduloMultas;
         private FrmLibros moduloLibros;
         private FrmRegistroLibro apartadoLibros;
         private FrmCategorias apartadoCategorias;
+        private FrmEditoriales apartadoEditoriales;
         private FrmAutores apartadoAutores;
         private string NombreCompleto;
         private string Usuario;
@@ -103,6 +106,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             }
             mostrarContenido(apartadoLibros);
         }
+
         //muestra el apartado de categorias del modulo libros
         public void mostrarApartadoCategorias()
         {
@@ -123,6 +127,16 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             mostrarContenido(apartadoAutores);
             apartadoAutores.CargarAutores();
         }
+
+        public void mostrarApartadoEditoriales()
+        {
+            if (apartadoEditoriales == null || apartadoEditoriales.IsDisposed)
+            {
+                apartadoEditoriales = new FrmEditoriales(this);
+            }
+            mostrarContenido(apartadoEditoriales);
+            //apartadoAutores.CargarAutores();
+        }
         //muestra el modulo de lectores
         public void mostrarModuloLectores()
         {
@@ -133,6 +147,16 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             }
             mostrarContenido(moduloLectores);
         }
+        //
+        public void mostrarApartadoAgregarLectores()
+        {
+            if (apartadoAgregarLectores == null) {
+                apartadoAgregarLectores = new FrmAgregarLectores2();
+            }
+            mostrarContenido(apartadoAgregarLectores);
+
+        }
+
         //muestra el modulo de prestamos
         public void mostrarModuloPrestamos()
         {
@@ -169,19 +193,5 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             mostrarContenido(moduloEmpleado);
         }
 
-        private void pnlContenido_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void FrmMenuPrincipal_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

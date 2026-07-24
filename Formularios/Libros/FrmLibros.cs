@@ -41,7 +41,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
         private void Editoriales_Click(object sender, EventArgs e)
         {
-
+            ventanaPrincipal.mostrarApartadoEditoriales();
         }
 
         private void txtBuscador_TextChanged(object sender, EventArgs e)
