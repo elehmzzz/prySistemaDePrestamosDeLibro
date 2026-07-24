@@ -86,6 +86,7 @@
             // 
             // textBox1
             // 
+            textBox1.Enabled = false;
             textBox1.Location = new Point(219, 8);
             textBox1.Margin = new Padding(8);
             textBox1.Name = "textBox1";
@@ -105,6 +106,7 @@
             // 
             // textBox4
             // 
+            textBox4.Enabled = false;
             textBox4.Location = new Point(219, 69);
             textBox4.Margin = new Padding(8);
             textBox4.Name = "textBox4";
@@ -123,6 +125,7 @@
             // 
             // textBox2
             // 
+            textBox2.Enabled = false;
             textBox2.Location = new Point(219, 130);
             textBox2.Margin = new Padding(8);
             textBox2.Name = "textBox2";
@@ -141,6 +144,7 @@
             // 
             // textBox3
             // 
+            textBox3.Enabled = false;
             textBox3.Location = new Point(219, 191);
             textBox3.Margin = new Padding(8);
             textBox3.Name = "textBox3";

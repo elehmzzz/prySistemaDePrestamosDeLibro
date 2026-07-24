@@ -37,6 +37,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
             //
             try
             {
+                
                 //entra cuando el usuario coindice
                 string consultaUsuario = "select * from bibliotecario where Nombre_Usuario = @nombre";
                 //se crea el comando para ejecutar la consulta
