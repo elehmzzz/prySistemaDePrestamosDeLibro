@@ -51,10 +51,6 @@
             txtCP = new TextBox();
             label11 = new Label();
             txtTelefono = new TextBox();
-            label12 = new Label();
-            label13 = new Label();
-            cmbEscuela = new ComboBox();
-            cmbOcupacion = new ComboBox();
             tableLayoutPanel2 = new TableLayoutPanel();
             label4 = new Label();
             label7 = new Label();
@@ -91,10 +87,6 @@
             tableLayoutPanel1.Controls.Add(txtCP, 3, 1);
             tableLayoutPanel1.Controls.Add(label11, 2, 2);
             tableLayoutPanel1.Controls.Add(txtTelefono, 3, 2);
-            tableLayoutPanel1.Controls.Add(label12, 2, 3);
-            tableLayoutPanel1.Controls.Add(label13, 2, 4);
-            tableLayoutPanel1.Controls.Add(cmbEscuela, 3, 3);
-            tableLayoutPanel1.Controls.Add(cmbOcupacion, 3, 4);
             tableLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tableLayoutPanel1.Location = new Point(15, 154);
             tableLayoutPanel1.Margin = new Padding(6);
@@ -107,12 +99,13 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.285306F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2853088F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 14.2881632F));
-            tableLayoutPanel1.Size = new Size(821, 367);
+            tableLayoutPanel1.Size = new Size(850, 410);
             tableLayoutPanel1.TabIndex = 31;
+           
             // 
             // txtColonia
             // 
-            txtColonia.Location = new Point(622, 6);
+            txtColonia.Location = new Point(643, 6);
             txtColonia.Margin = new Padding(6);
             txtColonia.Name = "txtColonia";
             txtColonia.Size = new Size(193, 34);
@@ -121,7 +114,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(466, 0);
+            label15.Location = new Point(482, 0);
             label15.Margin = new Padding(6, 0, 6, 0);
             label15.Name = "label15";
             label15.Size = new Size(83, 28);
@@ -130,7 +123,7 @@
             // 
             // txtIdLector
             // 
-            txtIdLector.Location = new Point(222, 6);
+            txtIdLector.Location = new Point(230, 6);
             txtIdLector.Margin = new Padding(6);
             txtIdLector.Name = "txtIdLector";
             txtIdLector.ReadOnly = true;
@@ -152,7 +145,7 @@
             btnRegresar.AutoSize = true;
             btnRegresar.BackColor = Color.FromArgb(32, 41, 64);
             btnRegresar.ForeColor = Color.White;
-            btnRegresar.Location = new Point(466, 318);
+            btnRegresar.Location = new Point(482, 354);
             btnRegresar.Margin = new Padding(6);
             btnRegresar.Name = "btnRegresar";
             btnRegresar.Size = new Size(97, 38);
@@ -166,7 +159,7 @@
             btnGuardar.AutoSize = true;
             btnGuardar.BackColor = Color.FromArgb(32, 41, 64);
             btnGuardar.ForeColor = Color.White;
-            btnGuardar.Location = new Point(622, 318);
+            btnGuardar.Location = new Point(643, 354);
             btnGuardar.Margin = new Padding(6);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(104, 38);
@@ -178,7 +171,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 260);
+            label3.Location = new Point(6, 290);
             label3.Margin = new Padding(6, 0, 6, 0);
             label3.Name = "label3";
             label3.Size = new Size(60, 28);
@@ -187,7 +180,8 @@
             // 
             // txtEdad
             // 
-            txtEdad.Location = new Point(222, 266);
+            txtEdad.Enabled = false;
+            txtEdad.Location = new Point(230, 296);
             txtEdad.Margin = new Padding(6);
             txtEdad.Name = "txtEdad";
             txtEdad.Size = new Size(232, 34);
@@ -196,7 +190,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(6, 208);
+            label2.Location = new Point(6, 232);
             label2.Margin = new Padding(6, 0, 6, 0);
             label2.Name = "label2";
             label2.Size = new Size(195, 28);
@@ -207,14 +201,14 @@
             // 
             dtpFechaNacimiento.Font = new Font("Segoe UI", 12F);
             dtpFechaNacimiento.Format = DateTimePickerFormat.Short;
-            dtpFechaNacimiento.Location = new Point(219, 211);
+            dtpFechaNacimiento.Location = new Point(227, 235);
             dtpFechaNacimiento.Name = "dtpFechaNacimiento";
             dtpFechaNacimiento.Size = new Size(232, 34);
             dtpFechaNacimiento.TabIndex = 42;
             // 
             // txtApellidoMaterno
             // 
-            txtApellidoMaterno.Location = new Point(222, 162);
+            txtApellidoMaterno.Location = new Point(230, 180);
             txtApellidoMaterno.Margin = new Padding(6);
             txtApellidoMaterno.Name = "txtApellidoMaterno";
             txtApellidoMaterno.Size = new Size(232, 34);
@@ -223,7 +217,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(6, 156);
+            label1.Location = new Point(6, 174);
             label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
             label1.Size = new Size(169, 28);
@@ -233,7 +227,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(6, 104);
+            label6.Location = new Point(6, 116);
             label6.Margin = new Padding(6, 0, 6, 0);
             label6.Name = "label6";
             label6.Size = new Size(171, 28);
@@ -242,7 +236,7 @@
             // 
             // txtApellidoPaterno
             // 
-            txtApellidoPaterno.Location = new Point(222, 110);
+            txtApellidoPaterno.Location = new Point(230, 122);
             txtApellidoPaterno.Margin = new Padding(6);
             txtApellidoPaterno.Name = "txtApellidoPaterno";
             txtApellidoPaterno.Size = new Size(232, 34);
@@ -251,7 +245,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(6, 52);
+            label5.Location = new Point(6, 58);
             label5.Margin = new Padding(6, 0, 6, 0);
             label5.Name = "label5";
             label5.Size = new Size(97, 28);
@@ -260,7 +254,7 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(222, 58);
+            txtNombre.Location = new Point(230, 64);
             txtNombre.Margin = new Padding(6);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(232, 34);
@@ -269,7 +263,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(6, 312);
+            label9.Location = new Point(6, 348);
             label9.Margin = new Padding(6, 0, 6, 0);
             label9.Name = "label9";
             label9.Size = new Size(104, 28);
@@ -278,7 +272,7 @@
             // 
             // txtMunicipio
             // 
-            txtMunicipio.Location = new Point(222, 318);
+            txtMunicipio.Location = new Point(230, 354);
             txtMunicipio.Margin = new Padding(6);
             txtMunicipio.Name = "txtMunicipio";
             txtMunicipio.Size = new Size(193, 34);
@@ -287,7 +281,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(466, 52);
+            label10.Location = new Point(482, 58);
             label10.Margin = new Padding(6, 0, 6, 0);
             label10.Name = "label10";
             label10.Size = new Size(43, 28);
@@ -296,7 +290,7 @@
             // 
             // txtCP
             // 
-            txtCP.Location = new Point(622, 58);
+            txtCP.Location = new Point(643, 64);
             txtCP.Margin = new Padding(6);
             txtCP.Name = "txtCP";
             txtCP.Size = new Size(193, 34);
@@ -305,7 +299,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(466, 104);
+            label11.Location = new Point(482, 116);
             label11.Margin = new Padding(6, 0, 6, 0);
             label11.Name = "label11";
             label11.Size = new Size(90, 28);
@@ -314,49 +308,11 @@
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(622, 110);
+            txtTelefono.Location = new Point(643, 122);
             txtTelefono.Margin = new Padding(6);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(193, 34);
             txtTelefono.TabIndex = 41;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(466, 156);
-            label12.Margin = new Padding(6, 0, 6, 0);
-            label12.Name = "label12";
-            label12.Size = new Size(79, 28);
-            label12.TabIndex = 39;
-            label12.Text = "Escuela:";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(466, 208);
-            label13.Margin = new Padding(6, 0, 6, 0);
-            label13.Name = "label13";
-            label13.Size = new Size(110, 28);
-            label13.TabIndex = 43;
-            label13.Text = "Ocupación:";
-            // 
-            // cmbEscuela
-            // 
-            cmbEscuela.FormattingEnabled = true;
-            cmbEscuela.Items.AddRange(new object[] { "UTHH", "UAECH", "CBTA", "CECYT" });
-            cmbEscuela.Location = new Point(619, 159);
-            cmbEscuela.Name = "cmbEscuela";
-            cmbEscuela.Size = new Size(199, 36);
-            cmbEscuela.TabIndex = 81;
-            // 
-            // cmbOcupacion
-            // 
-            cmbOcupacion.FormattingEnabled = true;
-            cmbOcupacion.Items.AddRange(new object[] { "Alumno", "Maestro", "Profesionista" });
-            cmbOcupacion.Location = new Point(619, 211);
-            cmbOcupacion.Name = "cmbOcupacion";
-            cmbOcupacion.Size = new Size(199, 36);
-            cmbOcupacion.TabIndex = 82;
             // 
             // tableLayoutPanel2
             // 
@@ -399,7 +355,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
-            ClientSize = new Size(1034, 536);
+            ClientSize = new Size(1052, 583);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
             FormBorderStyle = FormBorderStyle.None;
@@ -418,7 +374,6 @@
         #endregion
 
         private TableLayoutPanel tableLayoutPanel1;
-        private ComboBox cmbOcupacion;
         private TextBox txtTelefono;
         private TextBox txtCP;
         private TextBox txtMunicipio;
@@ -437,9 +392,6 @@
         private Label label10;
         private Label label11;
         private DateTimePicker dtpFechaNacimiento;
-        private Label label12;
-        private Label label13;
-        private ComboBox cmbEscuela;
         private TableLayoutPanel tableLayoutPanel2;
         private Label label4;
         private Label label7;

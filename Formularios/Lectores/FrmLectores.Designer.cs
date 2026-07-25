@@ -35,9 +35,7 @@
             label4 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             btnAgregarLectores = new Button();
-            Editoriales = new Button();
             btnEditarLectores = new Button();
-            btnDatosLectores = new Button();
             dataGridView1 = new DataGridView();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -115,9 +113,7 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666679F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666679F));
             tableLayoutPanel2.Controls.Add(btnAgregarLectores, 0, 0);
-            tableLayoutPanel2.Controls.Add(Editoriales, 3, 0);
             tableLayoutPanel2.Controls.Add(btnEditarLectores, 1, 0);
-            tableLayoutPanel2.Controls.Add(btnDatosLectores, 2, 0);
             tableLayoutPanel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tableLayoutPanel2.Location = new Point(11, 10);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -141,18 +137,6 @@
             btnAgregarLectores.UseVisualStyleBackColor = false;
             btnAgregarLectores.Click += btnAgregarLectores_Click;
             // 
-            // Editoriales
-            // 
-            Editoriales.AutoSize = true;
-            Editoriales.BackColor = Color.FromArgb(32, 41, 64);
-            Editoriales.ForeColor = SystemColors.Control;
-            Editoriales.Location = new Point(618, 3);
-            Editoriales.Name = "Editoriales";
-            Editoriales.Size = new Size(113, 47);
-            Editoriales.TabIndex = 28;
-            Editoriales.Text = "Editoriales";
-            Editoriales.UseVisualStyleBackColor = false;
-            // 
             // btnEditarLectores
             // 
             btnEditarLectores.AutoSize = true;
@@ -166,18 +150,6 @@
             btnEditarLectores.UseVisualStyleBackColor = false;
             btnEditarLectores.Click += btnEditarLectores_Click;
             // 
-            // btnDatosLectores
-            // 
-            btnDatosLectores.AutoSize = true;
-            btnDatosLectores.BackColor = Color.FromArgb(32, 41, 64);
-            btnDatosLectores.ForeColor = SystemColors.Control;
-            btnDatosLectores.Location = new Point(413, 3);
-            btnDatosLectores.Name = "btnDatosLectores";
-            btnDatosLectores.Size = new Size(164, 47);
-            btnDatosLectores.TabIndex = 26;
-            btnDatosLectores.Text = "Datos del Lector";
-            btnDatosLectores.UseVisualStyleBackColor = false;
-            // 
             // dataGridView1
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
@@ -188,7 +160,6 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1029, 343);
             dataGridView1.TabIndex = 2;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick_2;
             // 
             // FrmLectores
             // 
@@ -204,7 +175,6 @@
             MaximizeBox = false;
             Name = "FrmLectores";
             Text = "FrmLectores";
-            Load += FrmLectores_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
@@ -221,10 +191,8 @@
         private Label label4;
         private TableLayoutPanel tableLayoutPanel2;
         private Button btnAgregarLectores;
-        private Button btnDatosLectores;
         private Button btnEditarLectores;
         private DataGridView dataGridView1;
         private CheckBox chkAlfabetico;
-        private Button Editoriales;
     }
 }

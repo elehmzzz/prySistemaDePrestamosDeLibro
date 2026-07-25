@@ -22,6 +22,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         private FrmPerfilEmpleado moduloEmpleado;
         private FrmLectores moduloLectores;
         private FrmAgregarLectores2 apartadoAgregarLectores;
+        private FrmEditarLectores apartadoEditarLector;
         private FrmPrestamosHechos moduloPrestamos;
         private FrmMultas moduloMultas;
         private FrmLibros moduloLibros;
@@ -34,24 +35,22 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         private string Correo;
         private string Telefono;
 
-        public FrmMenuPrincipal(
-            FrmInicioSesion ventanaInicioSesion,
-            string NombreCompleto,
-            string Usuario,
-            String Correo,
-            string Telefono)
+        public FrmMenuPrincipal()
         {
             InitializeComponent();
+            mostrarModuloLibros();
+
+        }
+        //construtor que recibe parametros
+        public FrmMenuPrincipal(FrmInicioSesion ventanaInicioSesion,string NombreCompleto,string Usuario, String Correo,string Telefono)
+        {
+            InitializeComponent();
+            mostrarModuloLibros();
             this.ventanaInicioSesion = ventanaInicioSesion;
             this.NombreCompleto = NombreCompleto;
             this.Usuario = Usuario;
             this.Correo = Correo;
             this.Telefono = Telefono;
-
-            lblTituloModulo.Text = "Libros";
-            moduloLibros = new FrmLibros(this);
-            mostrarContenido(moduloLibros);
-
         }
         //cerrar sesion
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -95,6 +94,9 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         public void mostrarModuloLibros()
         {
             lblTituloModulo.Text = "Libros";
+            if (moduloLibros == null || moduloLibros.IsDisposed) {
+                moduloLibros = new FrmLibros(this);
+            }
             mostrarContenido(moduloLibros);
         }
         //muestra el apartado para agregar un libro del modulo libros
@@ -143,18 +145,26 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             lblTituloModulo.Text = "Lectores";
             if (moduloLectores == null)
             {
-                moduloLectores = new FrmLectores();
+                moduloLectores = new FrmLectores(this);
             }
             mostrarContenido(moduloLectores);
         }
         //
         public void mostrarApartadoAgregarLectores()
         {
-            if (apartadoAgregarLectores == null) {
-                apartadoAgregarLectores = new FrmAgregarLectores2();
+            if (apartadoAgregarLectores == null)
+            {
+                apartadoAgregarLectores = new FrmAgregarLectores2(this);
             }
             mostrarContenido(apartadoAgregarLectores);
-
+        }
+        public void mostrarApartadoEditarLector()
+        {
+            if (apartadoEditarLector == null)
+            {
+                apartadoEditarLector = new FrmEditarLectores(this);
+            }
+            mostrarContenido(apartadoEditarLector);
         }
 
         //muestra el modulo de prestamos
@@ -193,5 +203,9 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             mostrarContenido(moduloEmpleado);
         }
 
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

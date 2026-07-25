@@ -34,7 +34,6 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             txtMunicipio = new TextBox();
             label8 = new Label();
-            label5 = new Label();
             txtNombre = new TextBox();
             label6 = new Label();
             txtApellidoPat = new TextBox();
@@ -46,16 +45,13 @@
             label3 = new Label();
             txtEdad = new TextBox();
             dtpFechaNac = new DateTimePicker();
-            label12 = new Label();
-            cmbEscuela = new ComboBox();
-            label13 = new Label();
-            cmbOcupacion = new ComboBox();
             label11 = new Label();
             txtTelefono = new TextBox();
             label10 = new Label();
             txtCP = new TextBox();
             label9 = new Label();
             txtColonia = new TextBox();
+            label5 = new Label();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -116,10 +112,6 @@
             tableLayoutPanel1.Controls.Add(label3, 0, 4);
             tableLayoutPanel1.Controls.Add(txtEdad, 1, 4);
             tableLayoutPanel1.Controls.Add(dtpFechaNac, 1, 3);
-            tableLayoutPanel1.Controls.Add(label12, 2, 4);
-            tableLayoutPanel1.Controls.Add(cmbEscuela, 3, 4);
-            tableLayoutPanel1.Controls.Add(label13, 2, 3);
-            tableLayoutPanel1.Controls.Add(cmbOcupacion, 3, 3);
             tableLayoutPanel1.Controls.Add(label11, 2, 2);
             tableLayoutPanel1.Controls.Add(txtTelefono, 3, 2);
             tableLayoutPanel1.Controls.Add(label10, 2, 1);
@@ -158,16 +150,6 @@
             label8.Size = new Size(100, 28);
             label8.TabIndex = 83;
             label8.Text = "Municipio";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(6, 0);
-            label5.Margin = new Padding(6, 0, 6, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(89, 28);
-            label5.TabIndex = 4;
-            label5.Text = "Nombre:";
             // 
             // txtNombre
             // 
@@ -263,6 +245,7 @@
             // 
             // txtEdad
             // 
+            txtEdad.Enabled = false;
             txtEdad.Location = new Point(222, 250);
             txtEdad.Margin = new Padding(6);
             txtEdad.Name = "txtEdad";
@@ -277,44 +260,7 @@
             dtpFechaNac.Name = "dtpFechaNac";
             dtpFechaNac.Size = new Size(232, 34);
             dtpFechaNac.TabIndex = 42;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(466, 244);
-            label12.Margin = new Padding(6, 0, 6, 0);
-            label12.Name = "label12";
-            label12.Size = new Size(79, 28);
-            label12.TabIndex = 39;
-            label12.Text = "Escuela:";
-            // 
-            // cmbEscuela
-            // 
-            cmbEscuela.FormattingEnabled = true;
-            cmbEscuela.Items.AddRange(new object[] { "UTHH", "UAECH", "CBTA", "CECYT" });
-            cmbEscuela.Location = new Point(619, 247);
-            cmbEscuela.Name = "cmbEscuela";
-            cmbEscuela.Size = new Size(193, 36);
-            cmbEscuela.TabIndex = 81;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(466, 183);
-            label13.Margin = new Padding(6, 0, 6, 0);
-            label13.Name = "label13";
-            label13.Size = new Size(110, 28);
-            label13.TabIndex = 43;
-            label13.Text = "Ocupación:";
-            // 
-            // cmbOcupacion
-            // 
-            cmbOcupacion.FormattingEnabled = true;
-            cmbOcupacion.Items.AddRange(new object[] { "Alumno", "Maestro", "Profesionista" });
-            cmbOcupacion.Location = new Point(619, 186);
-            cmbOcupacion.Name = "cmbOcupacion";
-            cmbOcupacion.Size = new Size(199, 36);
-            cmbOcupacion.TabIndex = 82;
+            dtpFechaNac.ValueChanged += dtpFechaNac_ValueChanged;
             // 
             // label11
             // 
@@ -370,6 +316,16 @@
             txtColonia.Size = new Size(193, 34);
             txtColonia.TabIndex = 39;
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(6, 0);
+            label5.Margin = new Padding(6, 0, 6, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(89, 28);
+            label5.TabIndex = 4;
+            label5.Text = "Nombre:";
+            // 
             // FrmAgregarLectores2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -408,10 +364,6 @@
         private Label label3;
         private TextBox txtEdad;
         private DateTimePicker dtpFechaNac;
-        private Label label12;
-        private ComboBox cmbEscuela;
-        private Label label13;
-        private ComboBox cmbOcupacion;
         private Label label11;
         private TextBox txtTelefono;
         private Label label10;

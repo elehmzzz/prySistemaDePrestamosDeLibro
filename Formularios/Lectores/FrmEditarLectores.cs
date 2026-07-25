@@ -1,4 +1,5 @@
-﻿using System;
+﻿using prySistemaDePrestamosDeLibro.Formularios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,15 +14,23 @@ namespace prySistemaDePrestamosDeLibro.Clases
     public partial class FrmEditarLectores : Form
     {
         private int idLectorSeleccionado;
+        private FrmMenuPrincipal ventanaPrincipal;
 
         public FrmEditarLectores(int idLector)
         {
+
             InitializeComponent();
             idLectorSeleccionado = idLector;
+        }
+        public FrmEditarLectores(FrmMenuPrincipal padre)
+        {
+            InitializeComponent();
+            ventanaPrincipal = padre;
         }
 
         private void FrmEditarLectores_Load(object sender, EventArgs e)
         {
+            idLectorSeleccionado = 1;
             CargarDatosLector();
         }
 
@@ -40,25 +49,12 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 txtMunicipio.Text = fila["Municipio"].ToString();
                 txtColonia.Text = fila["Colonia"].ToString();
                 txtCP.Text = fila["CP"].ToString();
+                dtpFechaNacimiento.Value = Convert.ToDateTime(fila["Fecha_Nacimiento"]);
                 txtEdad.Text = fila["Edad"] != DBNull.Value ? fila["Edad"].ToString() : "";
                 dtpFechaNacimiento.ValueChanged += dtpFechaNacimiento_ValueChanged;
             }
-            else
-            {
-                MessageBox.Show("No se encontró el lector seleccionado.", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-                this.Close();
-            }
-        }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
         }
-
-        private void label5_Click_1(object sender, EventArgs e)
-        {
-        }
-
         private void dtpFechaNacimiento_ValueChanged(object sender, EventArgs e)
         {
             DateTime fechaNacimiento = dtpFechaNacimiento.Value;
@@ -81,8 +77,8 @@ namespace prySistemaDePrestamosDeLibro.Clases
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
-        string.IsNullOrWhiteSpace(txtApellidoPaterno.Text) ||
-        string.IsNullOrWhiteSpace(txtApellidoMaterno.Text))
+            string.IsNullOrWhiteSpace(txtApellidoPaterno.Text) ||
+            string.IsNullOrWhiteSpace(txtApellidoMaterno.Text))
             {
                 MessageBox.Show("Por favor completa los campos obligatorios.", "Datos incompletos",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -107,15 +103,14 @@ namespace prySistemaDePrestamosDeLibro.Clases
             {
                 MessageBox.Show("Lector actualizado correctamente.", "Éxito",
                     MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                this.DialogResult = DialogResult.OK;
-                this.Close();
             }
+            ventanaPrincipal.mostrarModuloLectores();
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            ventanaPrincipal.mostrarModuloLectores();
         }
+
     }
 }
