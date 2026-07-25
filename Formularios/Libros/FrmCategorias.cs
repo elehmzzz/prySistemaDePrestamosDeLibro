@@ -63,21 +63,6 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            ventanaAgregarCategoria = new FrmAgregarCategoria(this);
-            ventanaAgregarCategoria.ShowDialog();
-            CargarCategorias();
-        }
-
-
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            if (txtcategoriaSeleccioanda.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingrese el nombre de la categoría");
-                txtcategoriaSeleccioanda.Text = objCategoria.getNombre();
-                return;
-            }
-
             objCategoria.setNombre(txtcategoriaSeleccioanda.Text.Trim());
 
             if (objCategoria.ActualizarCategoria())
@@ -107,13 +92,18 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
             }
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
         private void btnAgregarCategoria_Click(object sender, EventArgs e)
         {
+            ventanaAgregarCategoria = new FrmAgregarCategoria(this);
+            ventanaAgregarCategoria.ShowDialog();
+
+            CargarCategorias(); 
+            if (txtcategoriaSeleccioanda.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese el nombre de la categoría");
+                txtcategoriaSeleccioanda.Text = objCategoria.getNombre();
+                return;
+            }
 
         }
     }

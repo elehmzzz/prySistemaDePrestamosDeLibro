@@ -15,9 +15,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
     public partial class FrmLibros : Form
     {
         private FrmMenuPrincipal ventanaPrincipal;
-        private FrmRegistroLibro apartadoLibros;
-        private FrmCategorias apartadoCategorias;
-        private FrmAutores apartadoAutores;
+
         public FrmLibros(FrmMenuPrincipal ventana)
         {
             InitializeComponent();
