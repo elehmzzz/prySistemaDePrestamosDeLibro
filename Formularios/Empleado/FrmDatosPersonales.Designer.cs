@@ -32,10 +32,6 @@
             label4 = new Label();
             label7 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
-            txtCP = new TextBox();
-            txtMunicipio = new TextBox();
-            txtLocalidad = new TextBox();
-            label9 = new Label();
             label5 = new Label();
             txtNombre = new TextBox();
             label6 = new Label();
@@ -49,8 +45,6 @@
             label8 = new Label();
             txtCorreo = new TextBox();
             txtTelefono = new TextBox();
-            label10 = new Label();
-            label11 = new Label();
             dtpFechaNac = new DateTimePicker();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -99,10 +93,6 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 32.5213165F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.4884281F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.80268F));
-            tableLayoutPanel1.Controls.Add(txtCP, 3, 2);
-            tableLayoutPanel1.Controls.Add(txtMunicipio, 3, 1);
-            tableLayoutPanel1.Controls.Add(txtLocalidad, 3, 0);
-            tableLayoutPanel1.Controls.Add(label9, 2, 0);
             tableLayoutPanel1.Controls.Add(label5, 0, 0);
             tableLayoutPanel1.Controls.Add(txtNombre, 1, 0);
             tableLayoutPanel1.Controls.Add(label6, 0, 1);
@@ -116,8 +106,6 @@
             tableLayoutPanel1.Controls.Add(label8, 0, 5);
             tableLayoutPanel1.Controls.Add(txtCorreo, 1, 4);
             tableLayoutPanel1.Controls.Add(txtTelefono, 1, 5);
-            tableLayoutPanel1.Controls.Add(label10, 2, 1);
-            tableLayoutPanel1.Controls.Add(label11, 2, 2);
             tableLayoutPanel1.Controls.Add(dtpFechaNac, 1, 3);
             tableLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tableLayoutPanel1.Location = new Point(19, 161);
@@ -132,40 +120,6 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             tableLayoutPanel1.Size = new Size(890, 367);
             tableLayoutPanel1.TabIndex = 27;
-            // 
-            // txtCP
-            // 
-            txtCP.Location = new Point(701, 128);
-            txtCP.Margin = new Padding(6);
-            txtCP.Name = "txtCP";
-            txtCP.Size = new Size(183, 34);
-            txtCP.TabIndex = 41;
-            // 
-            // txtMunicipio
-            // 
-            txtMunicipio.Location = new Point(701, 67);
-            txtMunicipio.Margin = new Padding(6);
-            txtMunicipio.Name = "txtMunicipio";
-            txtMunicipio.Size = new Size(183, 34);
-            txtMunicipio.TabIndex = 40;
-            // 
-            // txtLocalidad
-            // 
-            txtLocalidad.Location = new Point(701, 6);
-            txtLocalidad.Margin = new Padding(6);
-            txtLocalidad.Name = "txtLocalidad";
-            txtLocalidad.Size = new Size(183, 34);
-            txtLocalidad.TabIndex = 39;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(528, 0);
-            label9.Margin = new Padding(6, 0, 6, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(100, 28);
-            label9.TabIndex = 36;
-            label9.Text = "Localidad:";
             // 
             // label5
             // 
@@ -295,26 +249,6 @@
             txtTelefono.Size = new Size(232, 34);
             txtTelefono.TabIndex = 35;
             // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(528, 61);
-            label10.Margin = new Padding(6, 0, 6, 0);
-            label10.Name = "label10";
-            label10.Size = new Size(104, 28);
-            label10.TabIndex = 37;
-            label10.Text = "Municipio:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(528, 122);
-            label11.Margin = new Padding(6, 0, 6, 0);
-            label11.Name = "label11";
-            label11.Size = new Size(39, 28);
-            label11.TabIndex = 38;
-            label11.Text = "CP:";
-            // 
             // dtpFechaNac
             // 
             dtpFechaNac.Format = DateTimePickerFormat.Short;
@@ -349,26 +283,20 @@
         private Label label4;
         private Label label7;
         private TableLayoutPanel tableLayoutPanel1;
-        private TextBox txtMunicipio;
         private TextBox txtNombre;
         private TextBox txtApellidoPat;
-        private Label label9;
         private Label label5;
         private TextBox txtApellidoMat;
         private Label label6;
         private TextBox txtCorreo;
         private Label label1;
-        private TextBox txtLocalidad;
         private Label label2;
         private Button btnRegresar;
         private Button btnSiguiente;
         private Label label3;
         private Label label8;
-        private TextBox txtCP;
         private TextBox textBox5;
         private TextBox txtTelefono;
-        private Label label10;
-        private Label label11;
         private DateTimePicker dtpFechaNac;
     }
 }

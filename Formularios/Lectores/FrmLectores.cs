@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using prySistemaDePrestamosDeLibro.Formularios.Lectores;
 using prySistemaDePrestamosDeLibro.Clases;
+using prySistemaDePrestamosDeLibro.Formularios;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
@@ -16,10 +17,13 @@ namespace prySistemaDePrestamosDeLibro.Clases
     {
 
         private ClsLectores objLector;
-        public FrmLectores()
+        private FrmMenuPrincipal ventanaPrincipal;
+        public FrmLectores(FrmMenuPrincipal padre)
         {
             InitializeComponent();
             objLector = new ClsLectores();
+            ventanaPrincipal = padre;
+            CargarLectores();
         }
         public void CargarLectores()
         {
@@ -28,7 +32,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
             dataGridView1.DataSource = clsLectores.ObtenerLectores();
 
             if (dataGridView1.Columns["Id_Lector"] != null)
+            {
                 dataGridView1.Columns["Id_Lector"].HeaderText = "ID Lector";
+                dataGridView1.Columns["Id_Lector"].Visible = false;
+            }
+
 
             if (dataGridView1.Columns["Nombres"] != null)
                 dataGridView1.Columns["Nombres"].HeaderText = "Nombre";
@@ -41,49 +49,12 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
             if (dataGridView1.Columns["Fecha_Nacimiento"] != null)
                 dataGridView1.Columns["Fecha_Nacimiento"].HeaderText = "Fecha de Nacimiento";
-        }
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
 
         }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void FrmLectores_Load(object sender, EventArgs e)
-        {
-            CargarLectores();
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
-
-        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick_2(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint_1(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnAgregarLector_Click(object sender, EventArgs e)
         {
-            FrmAgregarLectores ventanaAgregar = new FrmAgregarLectores();
-            ventanaAgregar.ShowDialog();
+            //FrmAgregarLectores ventanaAgregar = new FrmAgregarLectores();
+            
         }
 
         private void txtBuscador_TextChanged_1(object sender, EventArgs e)
@@ -111,11 +82,8 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
         private void btnAgregarLectores_Click(object sender, EventArgs e)
         {
-            FrmAgregarLectores frmAgregar = new FrmAgregarLectores();
-            if (frmAgregar.ShowDialog() == DialogResult.OK)
-            {
-                CargarLectores(); // O el método que uses para llenar el DataGridView
-            }
+            //FrmAgregarLectores frmAgregar = new FrmAgregarLectores();
+            ventanaPrincipal.mostrarApartadoAgregarLectores();
         }
 
         private void chkAlfabetico_CheckedChanged(object sender, EventArgs e)
@@ -142,7 +110,9 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
         private void btnEditarLectores_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.CurrentRow == null)
+            ventanaPrincipal.mostrarApartadoEditarLector();
+
+            /*if (dataGridView1.CurrentRow == null)
             {
                 MessageBox.Show("Selecciona un lector de la tabla para editar.", "Aviso",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -151,11 +121,12 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
             int idLector = Convert.ToInt32(dataGridView1.CurrentRow.Cells["Id_Lector"].Value);
 
-            FrmEditarLectores frmEditar = new FrmEditarLectores(idLector);
+            FrmEditarLectores frmEditar = new FrmEditarLectores(idLector, ventanaPrincipal);
             if (frmEditar.ShowDialog() == DialogResult.OK)
             {
                 CargarLectores();
             }
+            */
         }
     }
 }

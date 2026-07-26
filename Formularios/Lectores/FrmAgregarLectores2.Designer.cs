@@ -1,6 +1,6 @@
-﻿namespace prySistemaDePrestamosDeLibro.Clases
+﻿namespace prySistemaDePrestamosDeLibro.Formularios.Lectores
 {
-    partial class FrmDatosLectores
+    partial class FrmAgregarLectores2
     {
         /// <summary>
         /// Required designer variable.
@@ -34,7 +34,6 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             txtMunicipio = new TextBox();
             label8 = new Label();
-            label5 = new Label();
             txtNombre = new TextBox();
             label6 = new Label();
             txtApellidoPat = new TextBox();
@@ -42,7 +41,7 @@
             txtApellidoMat = new TextBox();
             label2 = new Label();
             btnRegresar = new Button();
-            btnEliminar = new Button();
+            btnGuardar = new Button();
             label3 = new Label();
             txtEdad = new TextBox();
             dtpFechaNac = new DateTimePicker();
@@ -52,6 +51,7 @@
             txtCP = new TextBox();
             label9 = new Label();
             txtColonia = new TextBox();
+            label5 = new Label();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -70,7 +70,7 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.Size = new Size(644, 110);
-            tableLayoutPanel2.TabIndex = 30;
+            tableLayoutPanel2.TabIndex = 29;
             // 
             // label4
             // 
@@ -79,10 +79,9 @@
             label4.Location = new Point(6, 0);
             label4.Margin = new Padding(6, 0, 6, 0);
             label4.Name = "label4";
-            label4.Size = new Size(241, 46);
+            label4.Size = new Size(293, 46);
             label4.TabIndex = 3;
-            label4.Text = "Eliminar Lector";
-            label4.Click += label4_Click;
+            label4.Text = "Registro de Lector";
             // 
             // label7
             // 
@@ -90,7 +89,8 @@
             label7.Margin = new Padding(6, 0, 6, 0);
             label7.Name = "label7";
             label7.Size = new Size(632, 78);
-            label7.TabIndex = 10;
+            label7.TabIndex = 9;
+            label7.Text = "Ingresa tus datos personales y da click en siguiente.";
             // 
             // tableLayoutPanel1
             // 
@@ -101,7 +101,6 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.8270473F));
             tableLayoutPanel1.Controls.Add(txtMunicipio, 1, 5);
             tableLayoutPanel1.Controls.Add(label8, 0, 5);
-            tableLayoutPanel1.Controls.Add(label5, 0, 0);
             tableLayoutPanel1.Controls.Add(txtNombre, 1, 0);
             tableLayoutPanel1.Controls.Add(label6, 0, 1);
             tableLayoutPanel1.Controls.Add(txtApellidoPat, 1, 1);
@@ -109,7 +108,7 @@
             tableLayoutPanel1.Controls.Add(txtApellidoMat, 1, 2);
             tableLayoutPanel1.Controls.Add(label2, 0, 3);
             tableLayoutPanel1.Controls.Add(btnRegresar, 2, 5);
-            tableLayoutPanel1.Controls.Add(btnEliminar, 3, 5);
+            tableLayoutPanel1.Controls.Add(btnGuardar, 3, 5);
             tableLayoutPanel1.Controls.Add(label3, 0, 4);
             tableLayoutPanel1.Controls.Add(txtEdad, 1, 4);
             tableLayoutPanel1.Controls.Add(dtpFechaNac, 1, 3);
@@ -119,6 +118,7 @@
             tableLayoutPanel1.Controls.Add(txtCP, 3, 1);
             tableLayoutPanel1.Controls.Add(label9, 2, 0);
             tableLayoutPanel1.Controls.Add(txtColonia, 3, 0);
+            tableLayoutPanel1.Controls.Add(label5, 0, 0);
             tableLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tableLayoutPanel1.Location = new Point(15, 158);
             tableLayoutPanel1.Margin = new Padding(6);
@@ -130,12 +130,12 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 16.666666F));
-            tableLayoutPanel1.Size = new Size(850, 410);
-            tableLayoutPanel1.TabIndex = 31;
+            tableLayoutPanel1.Size = new Size(821, 367);
+            tableLayoutPanel1.TabIndex = 30;
             // 
             // txtMunicipio
             // 
-            txtMunicipio.Location = new Point(230, 346);
+            txtMunicipio.Location = new Point(222, 311);
             txtMunicipio.Margin = new Padding(6);
             txtMunicipio.Name = "txtMunicipio";
             txtMunicipio.Size = new Size(229, 34);
@@ -144,26 +144,16 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(6, 340);
+            label8.Location = new Point(6, 305);
             label8.Margin = new Padding(6, 0, 6, 0);
             label8.Name = "label8";
             label8.Size = new Size(100, 28);
             label8.TabIndex = 83;
             label8.Text = "Municipio";
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(6, 0);
-            label5.Margin = new Padding(6, 0, 6, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(89, 28);
-            label5.TabIndex = 4;
-            label5.Text = "Nombre:";
-            // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(230, 6);
+            txtNombre.Location = new Point(222, 6);
             txtNombre.Margin = new Padding(6);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(232, 34);
@@ -172,7 +162,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(6, 68);
+            label6.Location = new Point(6, 61);
             label6.Margin = new Padding(6, 0, 6, 0);
             label6.Name = "label6";
             label6.Size = new Size(171, 28);
@@ -181,7 +171,7 @@
             // 
             // txtApellidoPat
             // 
-            txtApellidoPat.Location = new Point(230, 74);
+            txtApellidoPat.Location = new Point(222, 67);
             txtApellidoPat.Margin = new Padding(6);
             txtApellidoPat.Name = "txtApellidoPat";
             txtApellidoPat.Size = new Size(232, 34);
@@ -190,7 +180,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(6, 136);
+            label1.Location = new Point(6, 122);
             label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
             label1.Size = new Size(169, 28);
@@ -199,7 +189,7 @@
             // 
             // txtApellidoMat
             // 
-            txtApellidoMat.Location = new Point(230, 142);
+            txtApellidoMat.Location = new Point(222, 128);
             txtApellidoMat.Margin = new Padding(6);
             txtApellidoMat.Name = "txtApellidoMat";
             txtApellidoMat.Size = new Size(232, 34);
@@ -208,7 +198,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(6, 204);
+            label2.Location = new Point(6, 183);
             label2.Margin = new Padding(6, 0, 6, 0);
             label2.Name = "label2";
             label2.Size = new Size(195, 28);
@@ -220,31 +210,33 @@
             btnRegresar.AutoSize = true;
             btnRegresar.BackColor = Color.FromArgb(32, 41, 64);
             btnRegresar.ForeColor = Color.White;
-            btnRegresar.Location = new Point(482, 346);
+            btnRegresar.Location = new Point(466, 311);
             btnRegresar.Margin = new Padding(6);
             btnRegresar.Name = "btnRegresar";
             btnRegresar.Size = new Size(97, 38);
             btnRegresar.TabIndex = 6;
             btnRegresar.Text = "Regresar";
             btnRegresar.UseVisualStyleBackColor = false;
+            btnRegresar.Click += btnRegresar_Click;
             // 
-            // btnEliminar
+            // btnGuardar
             // 
-            btnEliminar.AutoSize = true;
-            btnEliminar.BackColor = Color.FromArgb(32, 41, 64);
-            btnEliminar.ForeColor = Color.White;
-            btnEliminar.Location = new Point(643, 346);
-            btnEliminar.Margin = new Padding(6);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(151, 38);
-            btnEliminar.TabIndex = 27;
-            btnEliminar.Text = "Eliminar Lector";
-            btnEliminar.UseVisualStyleBackColor = false;
+            btnGuardar.AutoSize = true;
+            btnGuardar.BackColor = Color.FromArgb(32, 41, 64);
+            btnGuardar.ForeColor = Color.White;
+            btnGuardar.Location = new Point(622, 311);
+            btnGuardar.Margin = new Padding(6);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(93, 38);
+            btnGuardar.TabIndex = 27;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = false;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(6, 272);
+            label3.Location = new Point(6, 244);
             label3.Margin = new Padding(6, 0, 6, 0);
             label3.Name = "label3";
             label3.Size = new Size(60, 28);
@@ -254,7 +246,7 @@
             // txtEdad
             // 
             txtEdad.Enabled = false;
-            txtEdad.Location = new Point(230, 278);
+            txtEdad.Location = new Point(222, 250);
             txtEdad.Margin = new Padding(6);
             txtEdad.Name = "txtEdad";
             txtEdad.Size = new Size(109, 34);
@@ -264,15 +256,16 @@
             // 
             dtpFechaNac.Font = new Font("Segoe UI", 12F);
             dtpFechaNac.Format = DateTimePickerFormat.Short;
-            dtpFechaNac.Location = new Point(227, 207);
+            dtpFechaNac.Location = new Point(219, 186);
             dtpFechaNac.Name = "dtpFechaNac";
             dtpFechaNac.Size = new Size(232, 34);
             dtpFechaNac.TabIndex = 42;
+            dtpFechaNac.ValueChanged += dtpFechaNac_ValueChanged;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(482, 136);
+            label11.Location = new Point(466, 122);
             label11.Margin = new Padding(6, 0, 6, 0);
             label11.Name = "label11";
             label11.Size = new Size(90, 28);
@@ -281,7 +274,7 @@
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(643, 142);
+            txtTelefono.Location = new Point(622, 128);
             txtTelefono.Margin = new Padding(6);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(193, 34);
@@ -290,7 +283,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(482, 68);
+            label10.Location = new Point(466, 61);
             label10.Margin = new Padding(6, 0, 6, 0);
             label10.Name = "label10";
             label10.Size = new Size(43, 28);
@@ -299,7 +292,7 @@
             // 
             // txtCP
             // 
-            txtCP.Location = new Point(643, 74);
+            txtCP.Location = new Point(622, 67);
             txtCP.Margin = new Padding(6);
             txtCP.Name = "txtCP";
             txtCP.Size = new Size(193, 34);
@@ -308,7 +301,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(482, 0);
+            label9.Location = new Point(466, 0);
             label9.Margin = new Padding(6, 0, 6, 0);
             label9.Name = "label9";
             label9.Size = new Size(79, 28);
@@ -317,13 +310,23 @@
             // 
             // txtColonia
             // 
-            txtColonia.Location = new Point(643, 6);
+            txtColonia.Location = new Point(622, 6);
             txtColonia.Margin = new Padding(6);
             txtColonia.Name = "txtColonia";
             txtColonia.Size = new Size(193, 34);
             txtColonia.TabIndex = 39;
             // 
-            // FrmDatosLectores
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(6, 0);
+            label5.Margin = new Padding(6, 0, 6, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(89, 28);
+            label5.TabIndex = 4;
+            label5.Text = "Nombre:";
+            // 
+            // FrmAgregarLectores2
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -332,10 +335,9 @@
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
             FormBorderStyle = FormBorderStyle.None;
-            MaximizeBox = false;
-            Name = "FrmDatosLectores";
-            Text = "FrmDatosLectores";
-            Load += FrmDatosLectores_Load;
+            Name = "FrmAgregarLectores2";
+            StartPosition = FormStartPosition.Manual;
+            Text = "FrmAgregarLectores2";
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
@@ -344,13 +346,13 @@
         }
 
         #endregion
+
         private TableLayoutPanel tableLayoutPanel2;
         private Label label4;
         private Label label7;
         private TableLayoutPanel tableLayoutPanel1;
         private TextBox txtMunicipio;
         private Label label8;
-        private Label label5;
         private TextBox txtNombre;
         private Label label6;
         private TextBox txtApellidoPat;
@@ -358,7 +360,7 @@
         private TextBox txtApellidoMat;
         private Label label2;
         private Button btnRegresar;
-        private Button btnEliminar;
+        private Button btnGuardar;
         private Label label3;
         private TextBox txtEdad;
         private DateTimePicker dtpFechaNac;
@@ -368,5 +370,6 @@
         private TextBox txtCP;
         private Label label9;
         private TextBox txtColonia;
+        private Label label5;
     }
 }
