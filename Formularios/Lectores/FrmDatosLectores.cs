@@ -34,7 +34,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
         private void dtpFechaNacimiento_ValueChanged(object sender, EventArgs e)
         {
-            DateTime fechaNacimiento = dtpFechaNacimiento.Value;
+            DateTime fechaNacimiento = dtpFechaNac.Value;
             DateTime fechaActual = DateTime.Today;
 
             // Calcular la diferencia en años

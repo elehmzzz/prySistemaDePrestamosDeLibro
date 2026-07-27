@@ -1,5 +1,6 @@
 using prySistemaDePrestamosDeLibro.Clases;
 using prySistemaDePrestamosDeLibro.Formularios;
+using prySistemaDePrestamosDeLibro.Formularios.FRMprestamos;
 
 namespace prySistemaDePrestamosDeLibro
 {
@@ -15,6 +16,7 @@ namespace prySistemaDePrestamosDeLibro
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+
             Application.Run(new FrmInicioSesion());
             //cuando terminen de editar dejen el formulario FrmInicioSesion como new FrmInicioSesion()
         }

@@ -1,6 +1,6 @@
 ﻿namespace prySistemaDePrestamosDeLibro.Clases
 {
-    partial class FrmRSeleccionLector
+    partial class FrmHacerprestamo
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,15 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            label5 = new Label();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            button1 = new Button();
+            button2 = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
-            label1 = new Label();
+            textBox2 = new TextBox();
+            cmbLectores = new ComboBox();
+            btnAgregarPrestamo = new Button();
             dateTimePicker1 = new DateTimePicker();
             textBox12 = new TextBox();
-            textBox4 = new TextBox();
-            label8 = new Label();
             label7 = new Label();
             textBox16 = new TextBox();
             textBox17 = new TextBox();
@@ -46,24 +47,23 @@
             label2 = new Label();
             label6 = new Label();
             label9 = new Label();
+            label8 = new Label();
+            textBox4 = new TextBox();
             label10 = new Label();
             label11 = new Label();
             label12 = new Label();
             label13 = new Label();
-            btnAgregarPrestamo = new Button();
-            textBox2 = new TextBox();
+            label1 = new Label();
             textBox3 = new TextBox();
             textBox5 = new TextBox();
             textBox6 = new TextBox();
             textBox7 = new TextBox();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            button1 = new Button();
-            comboBox1 = new ComboBox();
-            button2 = new Button();
+            tableLayoutPanel2 = new TableLayoutPanel();
+            label5 = new Label();
             panel2.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -79,32 +79,47 @@
             panel2.TabIndex = 3;
             panel2.Paint += panel2_Paint;
             // 
-            // tableLayoutPanel2
+            // tableLayoutPanel3
             // 
-            tableLayoutPanel2.ColumnCount = 1;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel2.Controls.Add(label5, 0, 0);
-            tableLayoutPanel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel2.Location = new Point(46, 31);
-            tableLayoutPanel2.Margin = new Padding(6);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle());
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Size = new Size(644, 53);
-            tableLayoutPanel2.TabIndex = 42;
-            tableLayoutPanel2.Paint += tableLayoutPanel2_Paint;
+            tableLayoutPanel3.ColumnCount = 2;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.60241F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.39759F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.Controls.Add(button1, 1, 0);
+            tableLayoutPanel3.Controls.Add(button2, 0, 0);
+            tableLayoutPanel3.Location = new Point(556, 488);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 1;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            tableLayoutPanel3.Size = new Size(472, 45);
+            tableLayoutPanel3.TabIndex = 44;
             // 
-            // label5
+            // button1
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label5.Location = new Point(6, 0);
-            label5.Margin = new Padding(6, 0, 6, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(406, 46);
-            label5.TabIndex = 3;
-            label5.Text = "Informacion del prestamo";
+            button1.AutoSize = true;
+            button1.BackColor = Color.FromArgb(32, 41, 64);
+            button1.BackgroundImageLayout = ImageLayout.None;
+            button1.ForeColor = SystemColors.Control;
+            button1.Location = new Point(241, 3);
+            button1.Name = "button1";
+            button1.Size = new Size(181, 38);
+            button1.TabIndex = 23;
+            button1.Text = "Agregar prestamo";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.AutoSize = true;
+            button2.BackColor = Color.FromArgb(32, 41, 64);
+            button2.BackgroundImageLayout = ImageLayout.None;
+            button2.ForeColor = SystemColors.Control;
+            button2.Location = new Point(3, 3);
+            button2.Name = "button2";
+            button2.Size = new Size(181, 38);
+            button2.TabIndex = 24;
+            button2.Text = "cancelar prestamo";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -116,7 +131,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.7964773F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.5264187F));
             tableLayoutPanel1.Controls.Add(textBox2, 4, 0);
-            tableLayoutPanel1.Controls.Add(comboBox1, 1, 0);
+            tableLayoutPanel1.Controls.Add(cmbLectores, 1, 0);
             tableLayoutPanel1.Controls.Add(btnAgregarPrestamo, 2, 0);
             tableLayoutPanel1.Controls.Add(dateTimePicker1, 1, 1);
             tableLayoutPanel1.Controls.Add(textBox12, 1, 5);
@@ -156,14 +171,35 @@
             tableLayoutPanel1.TabIndex = 43;
             tableLayoutPanel1.Paint += tableLayoutPanel1_Paint_1;
             // 
-            // label1
+            // textBox2
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(664, 156);
-            label1.Name = "label1";
-            label1.Size = new Size(99, 56);
-            label1.TabIndex = 47;
-            label1.Text = "Fecha de prestamo:";
+            textBox2.Location = new Point(804, 3);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(214, 34);
+            textBox2.TabIndex = 50;
+            // 
+            // cmbLectores
+            // 
+            cmbLectores.FormattingEnabled = true;
+            cmbLectores.Items.AddRange(new object[] { "Vigentes", "Vencidos" });
+            cmbLectores.Location = new Point(237, 3);
+            cmbLectores.Name = "cmbLectores";
+            cmbLectores.Size = new Size(214, 36);
+            cmbLectores.TabIndex = 22;
+            cmbLectores.Text = "Organizar";
+            // 
+            // btnAgregarPrestamo
+            // 
+            btnAgregarPrestamo.AutoSize = true;
+            btnAgregarPrestamo.BackColor = Color.FromArgb(32, 41, 64);
+            btnAgregarPrestamo.BackgroundImageLayout = ImageLayout.None;
+            btnAgregarPrestamo.ForeColor = SystemColors.Control;
+            btnAgregarPrestamo.Location = new Point(505, 3);
+            btnAgregarPrestamo.Name = "btnAgregarPrestamo";
+            btnAgregarPrestamo.Size = new Size(148, 38);
+            btnAgregarPrestamo.TabIndex = 49;
+            btnAgregarPrestamo.Text = "Agregar lector";
+            btnAgregarPrestamo.UseVisualStyleBackColor = false;
             // 
             // dateTimePicker1
             // 
@@ -180,28 +216,12 @@
             textBox12.Size = new Size(214, 34);
             textBox12.TabIndex = 41;
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(237, 331);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(214, 34);
-            textBox4.TabIndex = 32;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(3, 328);
-            label8.Name = "label8";
-            label8.Size = new Size(71, 21);
-            label8.TabIndex = 25;
-            label8.Text = "Telefono:";
-            // 
             // label7
             // 
             label7.AutoSize = true;
             label7.Location = new Point(3, 279);
             label7.Name = "label7";
-            label7.Size = new Size(32, 21);
+            label7.Size = new Size(39, 28);
             label7.TabIndex = 23;
             label7.Text = "CP:";
             // 
@@ -224,7 +244,7 @@
             label4.AutoSize = true;
             label4.Location = new Point(3, 222);
             label4.Name = "label4";
-            label4.Size = new Size(82, 21);
+            label4.Size = new Size(104, 28);
             label4.TabIndex = 21;
             label4.Text = "Municipio:";
             // 
@@ -240,7 +260,7 @@
             label3.AutoSize = true;
             label3.Location = new Point(3, 156);
             label3.Name = "label3";
-            label3.Size = new Size(78, 21);
+            label3.Size = new Size(98, 28);
             label3.TabIndex = 20;
             label3.Text = "Direccion:";
             // 
@@ -270,6 +290,22 @@
             label9.Size = new Size(89, 28);
             label9.TabIndex = 5;
             label9.Text = "Nombre:";
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(3, 328);
+            label8.Name = "label8";
+            label8.Size = new Size(90, 28);
+            label8.TabIndex = 25;
+            label8.Text = "Telefono:";
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(237, 331);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(214, 34);
+            textBox4.TabIndex = 32;
             // 
             // label10
             // 
@@ -307,25 +343,14 @@
             label13.TabIndex = 48;
             label13.Text = "Fecha de devolucion:";
             // 
-            // btnAgregarPrestamo
+            // label1
             // 
-            btnAgregarPrestamo.AutoSize = true;
-            btnAgregarPrestamo.BackColor = Color.FromArgb(32, 41, 64);
-            btnAgregarPrestamo.BackgroundImageLayout = ImageLayout.None;
-            btnAgregarPrestamo.ForeColor = SystemColors.Control;
-            btnAgregarPrestamo.Location = new Point(505, 3);
-            btnAgregarPrestamo.Name = "btnAgregarPrestamo";
-            btnAgregarPrestamo.Size = new Size(148, 38);
-            btnAgregarPrestamo.TabIndex = 49;
-            btnAgregarPrestamo.Text = "Agregar lector";
-            btnAgregarPrestamo.UseVisualStyleBackColor = false;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(804, 3);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(214, 34);
-            textBox2.TabIndex = 50;
+            label1.AutoSize = true;
+            label1.Location = new Point(664, 156);
+            label1.Name = "label1";
+            label1.Size = new Size(99, 56);
+            label1.TabIndex = 47;
+            label1.Text = "Fecha de prestamo:";
             // 
             // textBox3
             // 
@@ -355,75 +380,50 @@
             textBox7.Size = new Size(214, 34);
             textBox7.TabIndex = 54;
             // 
-            // tableLayoutPanel3
+            // tableLayoutPanel2
             // 
-            tableLayoutPanel3.ColumnCount = 2;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.60241F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.39759F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.Controls.Add(button1, 1, 0);
-            tableLayoutPanel3.Controls.Add(button2, 0, 0);
-            tableLayoutPanel3.Location = new Point(561, 493);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 1;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(467, 40);
-            tableLayoutPanel3.TabIndex = 44;
+            tableLayoutPanel2.ColumnCount = 1;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel2.Controls.Add(label5, 0, 0);
+            tableLayoutPanel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tableLayoutPanel2.Location = new Point(46, 31);
+            tableLayoutPanel2.Margin = new Padding(6);
+            tableLayoutPanel2.Name = "tableLayoutPanel2";
+            tableLayoutPanel2.RowCount = 1;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle());
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel2.Size = new Size(644, 53);
+            tableLayoutPanel2.TabIndex = 42;
+            tableLayoutPanel2.Paint += tableLayoutPanel2_Paint;
             // 
-            // button1
+            // label5
             // 
-            button1.AutoSize = true;
-            button1.BackColor = Color.FromArgb(32, 41, 64);
-            button1.BackgroundImageLayout = ImageLayout.None;
-            button1.ForeColor = SystemColors.Control;
-            button1.Location = new Point(239, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(180, 34);
-            button1.TabIndex = 23;
-            button1.Text = "Agregar Prestamo";
-            button1.UseVisualStyleBackColor = false;
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label5.Location = new Point(6, 0);
+            label5.Margin = new Padding(6, 0, 6, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(406, 46);
+            label5.TabIndex = 3;
+            label5.Text = "Informacion del prestamo";
             // 
-            // comboBox1
+            // FrmHacerprestamo
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Vigentes", "Vencidos" });
-            comboBox1.Location = new Point(237, 3);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(214, 36);
-            comboBox1.TabIndex = 22;
-            comboBox1.Text = "Organizar";
-            // 
-            // button2
-            // 
-            button2.AutoSize = true;
-            button2.BackColor = Color.FromArgb(32, 41, 64);
-            button2.BackgroundImageLayout = ImageLayout.None;
-            button2.ForeColor = SystemColors.Control;
-            button2.Location = new Point(3, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(180, 34);
-            button2.TabIndex = 24;
-            button2.Text = "Agregar Prestamo";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // FrmRSeleccionLector
-            // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(905, 402);
+            ClientSize = new Size(1034, 536);
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
-            Name = "FrmRSeleccionLector";
+            Name = "FrmHacerprestamo";
             Text = "FrmRPrestamo";
             panel2.ResumeLayout(false);
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel2.PerformLayout();
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
             tableLayoutPanel3.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -459,6 +459,6 @@
         private TableLayoutPanel tableLayoutPanel3;
         private Button button1;
         private Button button2;
-        private ComboBox comboBox1;
+        private ComboBox cmbLectores;
     }
 }

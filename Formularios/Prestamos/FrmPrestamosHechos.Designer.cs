@@ -28,132 +28,106 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            rbAlfabetico = new RadioButton();
-            label1 = new Label();
-            txtBuscador = new TextBox();
-            radioButton1 = new RadioButton();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Estadi = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewLinkColumn();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            tableLayoutPanel1.SuspendLayout();
+            contenedorBusquedayAgrPrestamo = new TableLayoutPanel();
+            cmbxbuscarprestamo = new ComboBox();
+            btnAgregarPrestamo = new Button();
+            comboBoxFiltro = new ComboBox();
+            dGVPrestamos = new DataGridView();
+            btnDatosLectores = new Button();
+            textBoxnamelector = new TextBox();
+            contenedorBusquedayAgrPrestamo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dGVPrestamos).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // contenedorBusquedayAgrPrestamo
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.DisplayedHeaders;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Estadi, Column5 });
-            dataGridView1.Location = new Point(12, 143);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1007, 366);
-            dataGridView1.TabIndex = 8;
+            contenedorBusquedayAgrPrestamo.ColumnCount = 3;
+            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 53.5014F));
+            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.5294113F));
+            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.9691868F));
+            contenedorBusquedayAgrPrestamo.Controls.Add(cmbxbuscarprestamo, 0, 0);
+            contenedorBusquedayAgrPrestamo.Controls.Add(btnAgregarPrestamo, 2, 0);
+            contenedorBusquedayAgrPrestamo.Controls.Add(comboBoxFiltro, 1, 0);
+            contenedorBusquedayAgrPrestamo.Location = new Point(23, 33);
+            contenedorBusquedayAgrPrestamo.Name = "contenedorBusquedayAgrPrestamo";
+            contenedorBusquedayAgrPrestamo.RowCount = 1;
+            contenedorBusquedayAgrPrestamo.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            contenedorBusquedayAgrPrestamo.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            contenedorBusquedayAgrPrestamo.Size = new Size(714, 40);
+            contenedorBusquedayAgrPrestamo.TabIndex = 9;
+            contenedorBusquedayAgrPrestamo.Paint += tableLayoutPanel1_Paint;
             // 
-            // rbAlfabetico
+            // cmbxbuscarprestamo
             // 
-            rbAlfabetico.AutoSize = true;
-            rbAlfabetico.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            rbAlfabetico.Location = new Point(241, 58);
-            rbAlfabetico.Name = "rbAlfabetico";
-            rbAlfabetico.Size = new Size(100, 32);
-            rbAlfabetico.TabIndex = 6;
-            rbAlfabetico.TabStop = true;
-            rbAlfabetico.Text = "Vigente";
-            rbAlfabetico.UseVisualStyleBackColor = true;
+            cmbxbuscarprestamo.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbxbuscarprestamo.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cmbxbuscarprestamo.ForeColor = Color.Gray;
+            cmbxbuscarprestamo.FormattingEnabled = true;
+            cmbxbuscarprestamo.Location = new Point(3, 3);
+            cmbxbuscarprestamo.Name = "cmbxbuscarprestamo";
+            cmbxbuscarprestamo.Size = new Size(376, 28);
+            cmbxbuscarprestamo.TabIndex = 24;
+            cmbxbuscarprestamo.Text = "busca a tu lector y sus prestamos";
+            cmbxbuscarprestamo.SelectedIndexChanged += cmbxbuscarprestamo_SelectedIndexChanged;
+            cmbxbuscarprestamo.TextChanged += cmbxbuscarprestamo_TextChanged;
             // 
-            // label1
+            // btnAgregarPrestamo
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 12F);
-            label1.Location = new Point(241, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(155, 28);
-            label1.TabIndex = 3;
-            label1.Text = "Organizado por:";
+            btnAgregarPrestamo.AutoSize = true;
+            btnAgregarPrestamo.BackColor = Color.FromArgb(32, 41, 64);
+            btnAgregarPrestamo.BackgroundImageLayout = ImageLayout.None;
+            btnAgregarPrestamo.ForeColor = SystemColors.Control;
+            btnAgregarPrestamo.Location = new Point(553, 3);
+            btnAgregarPrestamo.Name = "btnAgregarPrestamo";
+            btnAgregarPrestamo.Size = new Size(139, 30);
+            btnAgregarPrestamo.TabIndex = 23;
+            btnAgregarPrestamo.Text = "Agregar Prestamo";
+            btnAgregarPrestamo.UseVisualStyleBackColor = false;
+            btnAgregarPrestamo.Click += btnAgregarPrestamo_Click;
             // 
-            // txtBuscador
+            // comboBoxFiltro
             // 
-            txtBuscador.BorderStyle = BorderStyle.None;
-            txtBuscador.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBuscador.Location = new Point(3, 3);
-            txtBuscador.Name = "txtBuscador";
-            txtBuscador.Size = new Size(232, 27);
-            txtBuscador.TabIndex = 1;
-            txtBuscador.Text = "Busar...";
+            comboBoxFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
+            comboBoxFiltro.FormattingEnabled = true;
+            comboBoxFiltro.Items.AddRange(new object[] { "Todos", "Vigentes", "Vencidos" });
+            comboBoxFiltro.Location = new Point(385, 3);
+            comboBoxFiltro.Name = "comboBoxFiltro";
+            comboBoxFiltro.Size = new Size(140, 28);
+            comboBoxFiltro.TabIndex = 22;
+            comboBoxFiltro.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
-            // radioButton1
+            // dGVPrestamos
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            radioButton1.Location = new Point(479, 58);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(103, 32);
-            radioButton1.TabIndex = 10;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Vencido";
-            radioButton1.UseVisualStyleBackColor = true;
+            dGVPrestamos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dGVPrestamos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dGVPrestamos.Location = new Point(23, 79);
+            dGVPrestamos.Name = "dGVPrestamos";
+            dGVPrestamos.RowHeadersVisible = false;
+            dGVPrestamos.RowHeadersWidth = 51;
+            dGVPrestamos.Size = new Size(987, 361);
+            dGVPrestamos.TabIndex = 31;
+            dGVPrestamos.CellContentClick += dGVPrestamos_CellContentClick;
             // 
-            // tableLayoutPanel1
+            // btnDatosLectores
             // 
-            tableLayoutPanel1.ColumnCount = 3;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333321F));
-            tableLayoutPanel1.Controls.Add(radioButton1, 2, 1);
-            tableLayoutPanel1.Controls.Add(label1, 1, 0);
-            tableLayoutPanel1.Controls.Add(rbAlfabetico, 1, 1);
-            tableLayoutPanel1.Controls.Add(txtBuscador, 0, 0);
-            tableLayoutPanel1.Location = new Point(70, 27);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel1.Size = new Size(714, 110);
-            tableLayoutPanel1.TabIndex = 9;
-            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
+            btnDatosLectores.AutoSize = true;
+            btnDatosLectores.BackColor = Color.FromArgb(32, 41, 64);
+            btnDatosLectores.ForeColor = SystemColors.Control;
+            btnDatosLectores.Location = new Point(846, 467);
+            btnDatosLectores.Name = "btnDatosLectores";
+            btnDatosLectores.Size = new Size(164, 47);
+            btnDatosLectores.TabIndex = 32;
+            btnDatosLectores.Text = "Datos del prestamo";
+            btnDatosLectores.UseVisualStyleBackColor = false;
             // 
-            // Column1
+            // textBoxnamelector
             // 
-            Column1.HeaderText = "ID Prestamo";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.HeaderText = "Lector";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Libro";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.HeaderText = "Fecha Limite";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            // 
-            // Estadi
-            // 
-            Estadi.HeaderText = "Estado";
-            Estadi.MinimumWidth = 6;
-            Estadi.Name = "Estadi";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Ver más..";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
+            textBoxnamelector.Enabled = false;
+            textBoxnamelector.Location = new Point(23, 467);
+            textBoxnamelector.Name = "textBoxnamelector";
+            textBoxnamelector.Size = new Size(469, 27);
+            textBoxnamelector.TabIndex = 59;
+            textBoxnamelector.TextChanged += textBoxnamelector_TextChanged;
             // 
             // FrmPrestamosHechos
             // 
@@ -161,30 +135,30 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1034, 536);
-            Controls.Add(tableLayoutPanel1);
-            Controls.Add(dataGridView1);
+            Controls.Add(textBoxnamelector);
+            Controls.Add(btnDatosLectores);
+            Controls.Add(dGVPrestamos);
+            Controls.Add(contenedorBusquedayAgrPrestamo);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "FrmPrestamosHechos";
             Text = "FrmPrestamosHechos";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
+            Load += FrmPrestamosHechos_Load_1;
+            contenedorBusquedayAgrPrestamo.ResumeLayout(false);
+            contenedorBusquedayAgrPrestamo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dGVPrestamos).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-        private DataGridView dataGridView1;
-        private RadioButton rbAlfabetico;
-        private Label label1;
-        private TextBox txtBuscador;
-        private RadioButton radioButton1;
+        private TableLayoutPanel contenedorBusquedayAgrPrestamo;
+        private Button btnAgregarPrestamo;
+        private ComboBox comboBoxFiltro;
+        private Button btnDatosLectores;
+        private TextBox textBoxnamelector;
+        private ComboBox cmbxbuscarprestamo;
+        private DataGridView dGVPrestamos;
         private TableLayoutPanel tableLayoutPanel1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Estadi;
-        private DataGridViewLinkColumn Column5;
     }
 }

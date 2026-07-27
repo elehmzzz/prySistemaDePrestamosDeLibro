@@ -1,4 +1,5 @@
-﻿using System;
+﻿using prySistemaDePrestamosDeLibro.Formularios.FRMprestamos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,9 @@ using System.Windows.Forms;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
-    public partial class FrmRSeleccionLector : Form
+    public partial class FrmHacerprestamo : Form
     {
-        public FrmRSeleccionLector()
+        public FrmHacerprestamo()
         {
             InitializeComponent();
         }
@@ -65,6 +66,13 @@ namespace prySistemaDePrestamosDeLibro.Clases
         private void tableLayoutPanel1_Paint_1(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            FrmPrestamosHechos frm = new FrmPrestamosHechos();
+            frm.Show();
+            this.Close();
         }
     }
 }
