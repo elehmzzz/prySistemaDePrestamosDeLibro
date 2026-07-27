@@ -12,16 +12,40 @@ using System.Windows.Forms;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
+   
     public partial class FrmLibros : Form
     {
         private FrmMenuPrincipal ventanaPrincipal;
         private FrmRegistroLibro apartadoLibros;
         private FrmCategorias apartadoCategorias;
         private FrmAutores apartadoAutores;
-        public FrmLibros(FrmMenuPrincipal ventana)
+        private ClsLibros objLibro;
+        public FrmLibros(FrmMenuPrincipal ventanaPrincipal)
         {
             InitializeComponent();
-            ventanaPrincipal = ventana;
+            this.ventanaPrincipal = ventanaPrincipal;
+            objLibro = new ClsLibros();
+        }
+        public FrmLibros()
+        {
+            InitializeComponent();
+            objLibro=new ClsLibros();
+        }
+        public void CargarLibros()
+        {
+            ClsLibros clsLibros = new ClsLibros();
+            DataTable dt = clsLibros.ObtenerLibros();
+
+            
+
+            dataGridView1.AutoGenerateColumns = true;
+            dataGridView1.DataSource = dt;
+        }
+        private void FrmLibro_Load(object sender, EventArgs e)
+        {
+
+            
+            CargarLibros();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -48,5 +72,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
         {
 
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
+       

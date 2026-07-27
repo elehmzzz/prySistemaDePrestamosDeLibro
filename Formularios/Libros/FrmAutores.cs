@@ -137,5 +137,10 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
                 CargarAutores();
             }
         }
+
+        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

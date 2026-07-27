@@ -33,6 +33,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         private string Usuario;
         private string Correo;
         private string Telefono;
+        
 
         public FrmMenuPrincipal(
             FrmInicioSesion ventanaInicioSesion,
