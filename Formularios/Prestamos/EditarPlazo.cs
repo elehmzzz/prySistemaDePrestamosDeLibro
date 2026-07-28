@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
-    public partial class FrmRSeleccionLector : Form
+    public partial class EditarPlazo : Form
     {
-        public FrmRSeleccionLector()
+        public EditarPlazo()
         {
             InitializeComponent();
         }

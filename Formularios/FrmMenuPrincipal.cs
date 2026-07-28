@@ -32,8 +32,6 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         private FrmAutores apartadoAutores;
         private ClsBibliotecario objBibliotecario;
 
-
-
         //construtor que recibe parametros
         public FrmMenuPrincipal(FrmInicioSesion ventanaInicioSesion, ClsBibliotecario obj)
         {
@@ -188,6 +186,5 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             }
             mostrarContenido(moduloEmpleado);
         }
-
     }
 }
