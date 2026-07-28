@@ -49,7 +49,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
             // AJUSTAR VISUAL
             dGVPrestamos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            // CAMBIAR NOMBRES (como tu compañero)
+            // CAMBIAR NOMBRES
             if (dGVPrestamos.Columns["Id_Prestamo"] != null)
                 dGVPrestamos.Columns["Id_Prestamo"].HeaderText = "ID";
 
@@ -112,5 +112,10 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
             cargandoCombo = false;
         }
 
+        private void btnAgregarPrestamo_Click(object sender, EventArgs e)
+        {
+            FrmHacerprestamo frm = new FrmHacerprestamo();
+            frm.Show();
+        }
     }
 }

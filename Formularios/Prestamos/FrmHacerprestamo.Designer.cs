@@ -31,7 +31,7 @@
             panel2 = new Panel();
             tableLayoutPanel3 = new TableLayoutPanel();
             btnAgregar = new Button();
-            button2 = new Button();
+            btnRegresarPre = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
             textBox2 = new TextBox();
             cmbLectores = new ComboBox();
@@ -77,6 +77,7 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1034, 553);
             panel2.TabIndex = 3;
+            panel2.Paint += panel2_Paint;
             // 
             // tableLayoutPanel3
             // 
@@ -85,7 +86,7 @@
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.39759F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel3.Controls.Add(btnAgregar, 1, 0);
-            tableLayoutPanel3.Controls.Add(button2, 0, 0);
+            tableLayoutPanel3.Controls.Add(btnRegresarPre, 0, 0);
             tableLayoutPanel3.Location = new Point(556, 488);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 1;
@@ -106,18 +107,19 @@
             btnAgregar.Text = "Agregar prestamo";
             btnAgregar.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnRegresarPre
             // 
-            button2.AutoSize = true;
-            button2.BackColor = Color.FromArgb(32, 41, 64);
-            button2.BackgroundImageLayout = ImageLayout.None;
-            button2.ForeColor = SystemColors.Control;
-            button2.Location = new Point(3, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(181, 38);
-            button2.TabIndex = 24;
-            button2.Text = "cancelar prestamo";
-            button2.UseVisualStyleBackColor = false;
+            btnRegresarPre.AutoSize = true;
+            btnRegresarPre.BackColor = Color.FromArgb(32, 41, 64);
+            btnRegresarPre.BackgroundImageLayout = ImageLayout.None;
+            btnRegresarPre.ForeColor = SystemColors.Control;
+            btnRegresarPre.Location = new Point(3, 3);
+            btnRegresarPre.Name = "btnRegresarPre";
+            btnRegresarPre.Size = new Size(181, 38);
+            btnRegresarPre.TabIndex = 24;
+            btnRegresarPre.Text = "cancelar prestamo";
+            btnRegresarPre.UseVisualStyleBackColor = false;
+            btnRegresarPre.Click += btnRegresarPre_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -135,7 +137,6 @@
             tableLayoutPanel1.Controls.Add(textBox12, 1, 5);
             tableLayoutPanel1.Controls.Add(label7, 0, 5);
             tableLayoutPanel1.Controls.Add(textBox16, 1, 2);
-            tableLayoutPanel1.Controls.Add(textBox17, 1, 3);
             tableLayoutPanel1.Controls.Add(label4, 0, 4);
             tableLayoutPanel1.Controls.Add(textBox18, 1, 4);
             tableLayoutPanel1.Controls.Add(label3, 0, 3);
@@ -153,6 +154,7 @@
             tableLayoutPanel1.Controls.Add(textBox5, 4, 2);
             tableLayoutPanel1.Controls.Add(textBox6, 4, 3);
             tableLayoutPanel1.Controls.Add(textBox7, 4, 4);
+            tableLayoutPanel1.Controls.Add(textBox17, 1, 3);
             tableLayoutPanel1.Location = new Point(6, 94);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 7;
@@ -299,7 +301,8 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(237, 331);
+            textBox4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            textBox4.Location = new Point(237, 338);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(214, 34);
             textBox4.TabIndex = 32;
@@ -412,6 +415,7 @@
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "FrmHacerprestamo";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmRPrestamo";
             panel2.ResumeLayout(false);
             tableLayoutPanel3.ResumeLayout(false);
@@ -454,7 +458,7 @@
         private TextBox textBox7;
         private TableLayoutPanel tableLayoutPanel3;
         private Button btnAgregar;
-        private Button button2;
+        private Button btnRegresarPre;
         private ComboBox cmbLectores;
     }
 }

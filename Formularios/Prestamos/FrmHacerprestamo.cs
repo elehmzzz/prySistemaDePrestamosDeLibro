@@ -18,5 +18,18 @@ namespace prySistemaDePrestamosDeLibro.Clases
             InitializeComponent();
         }
 
+        private void btnRegresarPre_Click(object sender, EventArgs e)
+        {
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres cancelar el préstamo?", "Confirmar cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (resultado == DialogResult.Yes)
+            {
+                this.Close();
+            }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

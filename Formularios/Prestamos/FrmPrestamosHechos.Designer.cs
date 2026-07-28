@@ -82,6 +82,7 @@
             btnAgregarPrestamo.TabIndex = 23;
             btnAgregarPrestamo.Text = "Agregar Prestamo";
             btnAgregarPrestamo.UseVisualStyleBackColor = false;
+            btnAgregarPrestamo.Click += btnAgregarPrestamo_Click;
             // 
             // comboBoxFiltro
             // 
