@@ -31,8 +31,31 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            FrmAgregarAutor formulario = new FrmAgregarAutor(this);
-            formulario.ShowDialog();
+            if (txtNombre.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese el nombre del autor");
+                return;
+            }
+            if (txtAPaterno.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese el apellido Paterno del autor");
+                return;
+            }
+            if (txtNombre.Text.Trim() == "")
+            {
+                MessageBox.Show("Ingrese el apellido Materno del autor");
+                return;
+            }
+
+            objAutor.setNombre(txtNombre.Text.Trim());
+            objAutor.setAPaterno(txtAPaterno.Text.Trim());
+            objAutor.setAMaterno(txtAMaterno.Text.Trim());
+
+            if (objAutor.ActualizarAutor())
+            {
+                MessageBox.Show("Autor actualizado");
+                CargarAutores();
+            }
         }
 
         private void btnAgregarAutor_Click(object sender, EventArgs e)
@@ -109,33 +132,11 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
             }
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
+        private void btnAgregarAutor_Click_1(object sender, EventArgs e)
         {
-            if (txtNombre.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingrese el nombre del autor");
-                return;
-            }
-            if (txtAPaterno.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingrese el apellido Paterno del autor");
-                return;
-            }
-            if (txtNombre.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingrese el apellido Materno del autor");
-                return;
-            }
+            FrmAgregarAutor formulario = new FrmAgregarAutor(this);
+            formulario.ShowDialog();
 
-            objAutor.setNombre(txtNombre.Text.Trim());
-            objAutor.setAPaterno(txtAPaterno.Text.Trim());
-            objAutor.setAMaterno(txtAMaterno.Text.Trim());
-
-            if (objAutor.ActualizarAutor())
-            {
-                MessageBox.Show("Autor actualizado");
-                CargarAutores();
-            }
         }
     }
 }

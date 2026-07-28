@@ -105,6 +105,7 @@
             btnAgregarAutor.TabIndex = 24;
             btnAgregarAutor.Text = "Agregar autor";
             btnAgregarAutor.UseVisualStyleBackColor = false;
+            btnAgregarAutor.Click += btnAgregarAutor_Click_1;
             // 
             // label1
             // 

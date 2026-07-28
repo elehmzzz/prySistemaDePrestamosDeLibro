@@ -170,9 +170,10 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         //muestra el modulo de prestamos
         public void mostrarModuloPrestamos()
         {
+            lblTituloModulo.Text = "Préstamos";
             if (moduloPrestamos == null)
             {
-                moduloPrestamos = new FrmPrestamosHechos();
+                moduloPrestamos = new FrmPrestamosHechos(this);
             }
             mostrarContenido(moduloPrestamos);
         }
@@ -203,9 +204,5 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             mostrarContenido(moduloEmpleado);
         }
 
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

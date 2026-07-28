@@ -34,7 +34,7 @@
             txtNuevaCategoria = new TextBox();
             tableLayoutPanel1 = new TableLayoutPanel();
             btnCerrar = new Button();
-            button2 = new Button();
+            btnGuardar = new Button();
             panel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -87,7 +87,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             tableLayoutPanel1.Controls.Add(btnCerrar, 0, 0);
-            tableLayoutPanel1.Controls.Add(button2, 1, 0);
+            tableLayoutPanel1.Controls.Add(btnGuardar, 1, 0);
             tableLayoutPanel1.Location = new Point(210, 95);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
@@ -107,16 +107,16 @@
             btnCerrar.UseVisualStyleBackColor = true;
             btnCerrar.Click += btnCerrar_Click;
             // 
-            // button2
+            // btnGuardar
             // 
-            button2.AutoSize = true;
-            button2.Location = new Point(111, 3);
-            button2.Name = "button2";
-            button2.Size = new Size(94, 38);
-            button2.TabIndex = 1;
-            button2.Text = "Guardar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            btnGuardar.AutoSize = true;
+            btnGuardar.Location = new Point(111, 3);
+            btnGuardar.Name = "btnGuardar";
+            btnGuardar.Size = new Size(94, 38);
+            btnGuardar.TabIndex = 1;
+            btnGuardar.Text = "Guardar";
+            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // FrmAgregarCategoria
             // 
@@ -145,7 +145,7 @@
         private Label label1;
         private TableLayoutPanel tableLayoutPanel1;
         private Button btnCerrar;
-        private Button button2;
+        private Button btnGuardar;
         private TableLayoutPanel tableLayoutPanel2;
     }
 }

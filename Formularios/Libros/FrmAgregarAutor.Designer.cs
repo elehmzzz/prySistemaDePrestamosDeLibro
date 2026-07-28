@@ -165,8 +165,9 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FrmAgregarAutor";
+            ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmAgregarAutor";
+            Text = "Agregar autor";
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);

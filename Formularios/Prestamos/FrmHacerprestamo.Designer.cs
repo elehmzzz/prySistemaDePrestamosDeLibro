@@ -30,7 +30,7 @@
         {
             panel2 = new Panel();
             tableLayoutPanel3 = new TableLayoutPanel();
-            button1 = new Button();
+            btnAgregar = new Button();
             button2 = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
             textBox2 = new TextBox();
@@ -77,7 +77,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(1034, 553);
             panel2.TabIndex = 3;
-            panel2.Paint += panel2_Paint;
             // 
             // tableLayoutPanel3
             // 
@@ -85,7 +84,7 @@
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.60241F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.39759F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.Controls.Add(button1, 1, 0);
+            tableLayoutPanel3.Controls.Add(btnAgregar, 1, 0);
             tableLayoutPanel3.Controls.Add(button2, 0, 0);
             tableLayoutPanel3.Location = new Point(556, 488);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
@@ -94,18 +93,18 @@
             tableLayoutPanel3.Size = new Size(472, 45);
             tableLayoutPanel3.TabIndex = 44;
             // 
-            // button1
+            // btnAgregar
             // 
-            button1.AutoSize = true;
-            button1.BackColor = Color.FromArgb(32, 41, 64);
-            button1.BackgroundImageLayout = ImageLayout.None;
-            button1.ForeColor = SystemColors.Control;
-            button1.Location = new Point(241, 3);
-            button1.Name = "button1";
-            button1.Size = new Size(181, 38);
-            button1.TabIndex = 23;
-            button1.Text = "Agregar prestamo";
-            button1.UseVisualStyleBackColor = false;
+            btnAgregar.AutoSize = true;
+            btnAgregar.BackColor = Color.FromArgb(32, 41, 64);
+            btnAgregar.BackgroundImageLayout = ImageLayout.None;
+            btnAgregar.ForeColor = SystemColors.Control;
+            btnAgregar.Location = new Point(241, 3);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(181, 38);
+            btnAgregar.TabIndex = 23;
+            btnAgregar.Text = "Agregar prestamo";
+            btnAgregar.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
@@ -119,7 +118,6 @@
             button2.TabIndex = 24;
             button2.Text = "cancelar prestamo";
             button2.UseVisualStyleBackColor = false;
-            button2.Click += button2_Click;
             // 
             // tableLayoutPanel1
             // 
@@ -169,7 +167,6 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(1022, 375);
             tableLayoutPanel1.TabIndex = 43;
-            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint_1;
             // 
             // textBox2
             // 
@@ -394,7 +391,6 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel2.Size = new Size(644, 53);
             tableLayoutPanel2.TabIndex = 42;
-            tableLayoutPanel2.Paint += tableLayoutPanel2_Paint;
             // 
             // label5
             // 
@@ -457,7 +453,7 @@
         private TextBox textBox6;
         private TextBox textBox7;
         private TableLayoutPanel tableLayoutPanel3;
-        private Button button1;
+        private Button btnAgregar;
         private Button button2;
         private ComboBox cmbLectores;
     }

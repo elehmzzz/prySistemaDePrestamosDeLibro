@@ -96,15 +96,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
         {
             ventanaAgregarCategoria = new FrmAgregarCategoria(this);
             ventanaAgregarCategoria.ShowDialog();
-
-            CargarCategorias(); 
-            if (txtcategoriaSeleccioanda.Text.Trim() == "")
-            {
-                MessageBox.Show("Ingrese el nombre de la categoría");
-                txtcategoriaSeleccioanda.Text = objCategoria.getNombre();
-                return;
-            }
-
+            CargarCategorias();
         }
     }
 }
