@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
-    internal class ClsAutor
+    public class ClsAutor
     {
         private int IdAutor;
         private string Nombre="";

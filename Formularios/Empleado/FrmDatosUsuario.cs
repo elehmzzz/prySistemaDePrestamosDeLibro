@@ -34,7 +34,9 @@ namespace prySistemaDePrestamosDeLibro.Formularios
                 MessageBox.Show("Porfavor llena todo los campos");
                 return;
             }
+            
             registroPersonal.guardarDatosUsuario(usuario, confirmarContrasenia);
+            
             if (!registroPersonal.registrarUsuario())
             {
                 MessageBox.Show("No se realizo el registro");
