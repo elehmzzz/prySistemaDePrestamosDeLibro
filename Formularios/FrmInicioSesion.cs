@@ -15,6 +15,8 @@ namespace prySistemaDePrestamosDeLibro.Clases
 {
     public partial class FrmInicioSesion : Form
     {
+        private ClsBibliotecario objBibliotecario;
+        private FrmMenuPrincipal menuPrincipal;
 
         public FrmInicioSesion()
         {
@@ -36,76 +38,21 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 MessageBox.Show("El usuario o la contraseña no pueden \n ir vacios");
                 return;
             }
-            //se hace la conexion con la base de datos
-            ClsConexion conexion = new ClsConexion();
-            MySqlConnection conn = conexion.ObtenerConexion();
 
-            //
-            try
+            objBibliotecario = new ClsBibliotecario();
+            objBibliotecario.setUsuario(usuario);
+            objBibliotecario.setContrasenia(contrasenia);
+
+            if (objBibliotecario.buscarBibliotecario())
             {
-                //entra cuando el usuario coindice
-                string consultaUsuario = "select * from bibliotecario where Nombre_Usuario = @nombre";
-                //se crea el comando para ejecutar la consulta
-                MySqlCommand comando = new MySqlCommand(consultaUsuario, conn);
-                //se asigna el usuario al parametro
-                comando.Parameters.AddWithValue("@nombre", usuario);
-                //se ejecuta la consulta y se obtiene el resultado
-                MySqlDataReader reader = comando.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    //entra cuando el uusuario coincide - Aqui no se ocupa Ñ 
-                    string contraseniaAlmacenada = BCrypt.Net.BCrypt.HashPassword(reader["Contrasenia"].ToString());
-                    Boolean verifica = BCrypt.Net.BCrypt.Verify(contrasenia, contraseniaAlmacenada);
-                    if (verifica)
-                    {
-                        //si el usuario y contraseña es correcta
-                        string NombreCompleto=
-                            reader["Nombre"].ToString()+" "+
-                            reader["Apellido_Paterno"].ToString()+" "+
-                            reader["Apellido_Materno"].ToString();
-
-                        string UsuarioEmpleado = reader["Nombre_Usuario"].ToString();
-                        string Correo = reader["Correo"].ToString();
-                        string Telefono = reader["Telefono"].ToString();
-
-                        this.Hide();
-                        FrmMenuPrincipal menuPrincipal = new FrmMenuPrincipal(
-                            this,
-                            NombreCompleto,
-                            UsuarioEmpleado,
-                            Correo,
-                            Telefono);
-                        menuPrincipal.Show();
-                        txtUsuario.Clear();
-                        txtContrasenia.Clear();
-                        txtUsuario.Focus();
-                        
-                    }
-                    else
-                    {
-                        //cuando el usuario es correcto pero la contraseña es incorrecta
-                        conn.Close();
-                        MessageBox.Show("La contraseña es incorrecta\nintente de nuevo");
-                        txtContrasenia.Clear();
-                        txtContrasenia.Focus();
-                    }
-                }
-                else
-                {
-                    //ejecuta cuando el usuario no coincide
-                    MessageBox.Show("Usuario incorrecto\nIntente de nuevo");
-                    txtUsuario.Clear();
-                    txtUsuario.Focus();
-                }
-                conn.Close();
-
+                menuPrincipal = new FrmMenuPrincipal(this, objBibliotecario);
+                this.Hide();
+                menuPrincipal.Show();
+                txtUsuario.Clear();
+                txtContrasenia.Clear();
+                txtUsuario.Focus();
             }
-            catch (MySqlException ex)
-            {
-                MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
-                return;
-            }
+
         }
 
         private void llbRegistrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

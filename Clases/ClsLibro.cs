@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
-    internal class cls
+    internal class clsLibro
     {
 
 

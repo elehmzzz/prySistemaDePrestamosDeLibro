@@ -30,27 +30,17 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         private FrmCategorias apartadoCategorias;
         private FrmEditoriales apartadoEditoriales;
         private FrmAutores apartadoAutores;
-        private string NombreCompleto;
-        private string Usuario;
-        private string Correo;
-        private string Telefono;
+        private ClsBibliotecario objBibliotecario;
 
-        public FrmMenuPrincipal()
-        {
-            InitializeComponent();
-            mostrarModuloLibros();
 
-        }
+
         //construtor que recibe parametros
-        public FrmMenuPrincipal(FrmInicioSesion ventanaInicioSesion,string NombreCompleto,string Usuario, String Correo,string Telefono)
+        public FrmMenuPrincipal(FrmInicioSesion ventanaInicioSesion, ClsBibliotecario obj)
         {
             InitializeComponent();
             mostrarModuloLibros();
+            objBibliotecario = obj;
             this.ventanaInicioSesion = ventanaInicioSesion;
-            this.NombreCompleto = NombreCompleto;
-            this.Usuario = Usuario;
-            this.Correo = Correo;
-            this.Telefono = Telefono;
         }
         //cerrar sesion
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -193,12 +183,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             lblTituloModulo.Text = "Empleado";
             if (moduloEmpleado == null || moduloEmpleado.IsDisposed)
             {
-                moduloEmpleado = new FrmPerfilEmpleado(
-                    NombreCompleto,
-                    Usuario,
-                    Correo,
-                    Telefono
-                    );
+                moduloEmpleado = new FrmPerfilEmpleado(this, objBibliotecario);
                 //MessageBox.Show("Se creó un nuevo formulario empleado");
             }
             mostrarContenido(moduloEmpleado);
