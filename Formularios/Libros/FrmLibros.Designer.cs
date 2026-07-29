@@ -77,6 +77,7 @@
             comboBox1.Size = new Size(133, 29);
             comboBox1.TabIndex = 21;
             comboBox1.Text = "Organizar";
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // dataGridView1
             // 

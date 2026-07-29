@@ -21,13 +21,13 @@ namespace prySistemaDePrestamosDeLibro.Clases
         private FrmCategorias apartadoCategorias;
         private FrmAutores apartadoAutores;
         private ClsLibros objLibro;
-        
+
         public FrmLibros(FrmMenuPrincipal ventana)
         {
             InitializeComponent();
             this.ventanaPrincipal = ventana;
             objLibro = new ClsLibros();
-            
+
         }
         public FrmLibros()
         {
@@ -49,6 +49,14 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
 
             CargarLibros();
+            comboBox1.Items.Add("Título A-Z");
+            comboBox1.Items.Add("Título Z-A");
+            comboBox1.Items.Add("ISBN menor a mayor");
+            comboBox1.Items.Add("ISBN mayor a menor");
+            comboBox1.Items.Add("Fecha más reciente");
+            comboBox1.Items.Add("Fecha más antigua");
+
+            comboBox1.SelectedIndex = 0;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -112,6 +120,42 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
         private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tablaLibros == null)
+                return;
+            
+            switch (comboBox1.Text)
+            {
+                case "Título A-Z":
+                    tablaLibros.DefaultView.Sort = "Titulo ASC";
+                    break;
+
+                case "Título Z-A":
+                    tablaLibros.DefaultView.Sort = "Titulo DESC";
+                    break;
+
+                case "ISBN menor a mayor":
+                    tablaLibros.DefaultView.Sort = "ISBN ASC";
+                    break;
+
+                case "ISBN mayor a menor":
+                    tablaLibros.DefaultView.Sort = "ISBN DESC";
+                    break;
+
+                case "Fecha más reciente":
+                    tablaLibros.DefaultView.Sort = "Fecha_Adquisicion DESC";
+                    break;
+
+                case "Fecha más antigua":
+                    tablaLibros.DefaultView.Sort = "Fecha_Adquisicion ASC";
+                    break;
+            }
+
+            dataGridView1.DataSource = tablaLibros.DefaultView;
 
         }
     }
