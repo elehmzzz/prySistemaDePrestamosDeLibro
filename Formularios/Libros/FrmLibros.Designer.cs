@@ -227,6 +227,7 @@
             label7.Size = new Size(94, 35);
             label7.TabIndex = 35;
             label7.Text = " Ejemplares Disponbles:";
+            label7.Click += label7_Click;
             // 
             // tableLayoutPanel2
             // 
@@ -258,6 +259,7 @@
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel2.Size = new Size(900, 103);
             tableLayoutPanel2.TabIndex = 36;
+            tableLayoutPanel2.Paint += tableLayoutPanel2_Paint;
             // 
             // textBox4
             // 

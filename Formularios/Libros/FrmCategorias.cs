@@ -16,6 +16,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
         private FrmMenuPrincipal ventanaPrincipal;
         private FrmAgregarCategoria ventanaAgregarCategoria;
         private ClsCategoria objCategoria;
+        private DataColumn tablaCategoria;
         public FrmCategorias(FrmMenuPrincipal ventana)
         {
             InitializeComponent();
@@ -35,6 +36,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = dt;
             dataGridView1.Refresh();
+            
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -97,13 +99,18 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
             ventanaAgregarCategoria = new FrmAgregarCategoria(this);
             ventanaAgregarCategoria.ShowDialog();
 
-            CargarCategorias(); 
+            CargarCategorias();
             if (txtcategoriaSeleccioanda.Text.Trim() == "")
             {
                 MessageBox.Show("Ingrese el nombre de la categoría");
                 txtcategoriaSeleccioanda.Text = objCategoria.getNombre();
                 return;
             }
+
+        }
+
+        private void txtBuscador_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

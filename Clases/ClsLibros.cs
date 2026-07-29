@@ -13,7 +13,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
     internal class ClsLibros
     {
         private int Id_Libro;
-        private int ISBN;
+        private string ISBN =" ";
         private DateTime Fecha_Adquisicion;
         private string Titulo = " ";
         private int Id_Editorial;
@@ -27,11 +27,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
         {
             Id_Libro = id_libro;
         }
-        public int getISBN()
+        public string getISBN()
         {
             return ISBN;
         }
-        public void setISBN(int isbn)
+        public void setISBN(string isbn)
         {
             ISBN = isbn;
         }
