@@ -1,4 +1,5 @@
 ﻿using prySistemaDePrestamosDeLibro.Clases;
+using prySistemaDePrestamosDeLibro.Formularios.Prestamos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -114,8 +115,14 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
 
         private void btnAgregarPrestamo_Click(object sender, EventArgs e)
         {
-            FrmHacerprestamo frm = new FrmHacerprestamo();
+            FrmHacerprestamoLect frm = new FrmHacerprestamoLect();
             frm.Show();
+        }
+
+        private void btnDatosLectores_Click(object sender, EventArgs e)
+        {
+            FrmRPrestamo frm = new FrmRPrestamo();
+            frm.ShowDialog();
         }
     }
 }
