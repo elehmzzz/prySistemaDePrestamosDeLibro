@@ -158,7 +158,6 @@
             txtContrasenia.PasswordChar = '*';
             txtContrasenia.Size = new Size(289, 34);
             txtContrasenia.TabIndex = 8;
-            txtContrasenia.Text = "1234";
             txtContrasenia.UseWaitCursor = true;
             // 
             // txtUsuario
@@ -167,7 +166,6 @@
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(289, 34);
             txtUsuario.TabIndex = 7;
-            txtUsuario.Text = "alexaVi";
             txtUsuario.UseWaitCursor = true;
             // 
             // btnIniciarSesion
