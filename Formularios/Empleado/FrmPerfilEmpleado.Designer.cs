@@ -85,6 +85,7 @@
             // 
             // txtNombre
             // 
+            txtNombre.Enabled = false;
             txtNombre.Location = new Point(219, 8);
             txtNombre.Margin = new Padding(8);
             txtNombre.Name = "txtNombre";
@@ -103,6 +104,7 @@
             // 
             // txtUsuario
             // 
+            txtUsuario.Enabled = false;
             txtUsuario.Location = new Point(219, 69);
             txtUsuario.Margin = new Padding(8);
             txtUsuario.Name = "txtUsuario";
@@ -121,6 +123,7 @@
             // 
             // txtCorreo
             // 
+            txtCorreo.Enabled = false;
             txtCorreo.Location = new Point(219, 130);
             txtCorreo.Margin = new Padding(8);
             txtCorreo.Name = "txtCorreo";
@@ -139,6 +142,7 @@
             // 
             // txtTelefono
             // 
+            txtTelefono.Enabled = false;
             txtTelefono.Location = new Point(219, 191);
             txtTelefono.Margin = new Padding(8);
             txtTelefono.Name = "txtTelefono";

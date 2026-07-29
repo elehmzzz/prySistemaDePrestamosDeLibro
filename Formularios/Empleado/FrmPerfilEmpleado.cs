@@ -26,13 +26,14 @@ namespace prySistemaDePrestamosDeLibro.Clases
             cargarDatos();
         }
 
-        public void cargarDatos() {
-            txtNombre.Text =  objBibliotecario.getNombre() +" "+ objBibliotecario.getAPaterno() +" "+ objBibliotecario.getAMaterno();
+        public void cargarDatos()
+        {
+            txtNombre.Text = objBibliotecario.getNombre() + " " + objBibliotecario.getAPaterno() + " " + objBibliotecario.getAMaterno();
             txtUsuario.Text = objBibliotecario.getUsuario();
             txtCorreo.Text = objBibliotecario.getCorreo();
             txtTelefono.Text = objBibliotecario.getTelefono();
-        
+
         }
-        
+
     }
 }

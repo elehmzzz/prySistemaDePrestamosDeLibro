@@ -21,7 +21,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
         public FrmInicioSesion()
         {
             InitializeComponent();
-            
+
         }
         private void FrmInicioSesion_Load(object sender, EventArgs e)
         {
@@ -63,6 +63,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
             txtContrasenia.Clear();
             txtUsuario.Clear();
             txtUsuario.Focus();
+        }
+
+        private void llbSalir_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
         }
     }
 }

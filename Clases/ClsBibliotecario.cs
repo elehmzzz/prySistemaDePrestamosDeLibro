@@ -66,6 +66,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
                     Boolean verifica = BCrypt.Net.BCrypt.Verify(Contrasenia, contraseniaAlmacenada);
                     if (verifica)
                     {
+                        Usuario = reader["Nombre_Usuario"].ToString();
                         Nombre = reader["Nombre"].ToString();
                         aPaterno = reader["Apellido_Paterno"].ToString();
                         aMaterno = reader["Apellido_Materno"].ToString();
