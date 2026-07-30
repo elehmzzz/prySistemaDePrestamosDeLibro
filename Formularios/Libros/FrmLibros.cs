@@ -14,11 +14,13 @@ namespace prySistemaDePrestamosDeLibro.Clases
 {
     public partial class FrmLibros : Form
     {
+        ClsLibro objLibro;
         private FrmMenuPrincipal ventanaPrincipal;
 
         public FrmLibros(FrmMenuPrincipal ventana)
         {
             InitializeComponent();
+            objLibro = new ClsLibro();
             ventanaPrincipal = ventana;
         }
 
@@ -46,5 +48,27 @@ namespace prySistemaDePrestamosDeLibro.Clases
         {
 
         }
+
+        private void Load_FrmLibros(object sender, EventArgs e)
+        {
+            CargarLibros();
+        }
+
+        public void CargarLibros()
+        {
+            DataTable dt = objLibro.ObtenerLibros();
+            // LIMPIAR 
+            dGVLibros.DataSource = null;
+            dGVLibros.Columns.Clear();
+            // CONFIGURAR
+            dGVLibros.AutoGenerateColumns = true;
+            dGVLibros.AllowUserToAddRows = false;
+
+            dGVLibros.DataSource = dt;
+
+            dGVLibros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
     }
+
 }

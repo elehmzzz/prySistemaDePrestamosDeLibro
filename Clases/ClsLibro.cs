@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
-    internal class clsLibro
+    internal class ClsLibro
     {
         //ingresas las propiedas
         private int IdLibro;
@@ -111,7 +111,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
             try
             {
-                MySqlCommand cmd = new MySqlCommand("get_libros", con);
+                MySqlCommand cmd = new MySqlCommand("sp_get_libros", con);
                 cmd.CommandType = CommandType.StoredProcedure;
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 adapter.Fill(dt);

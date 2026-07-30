@@ -14,11 +14,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
 {
     public partial class FrmHacerprestamoLib : Form
     {
-        clsLibro objLibro; //instancia
+        ClsLibro objLibro; //instancia
         public FrmHacerprestamoLib(FrmHacerprestamoLect anterior)
         {
             InitializeComponent();
-            objLibro = new clsLibro();
+            objLibro = new ClsLibro();
         }
 
         private void btnRegresarPre_Click(object sender, EventArgs e)

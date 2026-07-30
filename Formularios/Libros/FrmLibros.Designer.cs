@@ -30,12 +30,7 @@
         {
             txtBuscador = new TextBox();
             comboBox1 = new ComboBox();
-            dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            Column4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
+            dGVLibros = new DataGridView();
             btnAgregar = new Button();
             btnCategorias = new Button();
             btnAutores = new Button();
@@ -55,7 +50,7 @@
             textBoxAutor = new TextBox();
             textBox3 = new TextBox();
             textBox5 = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dGVLibros).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -81,51 +76,16 @@
             comboBox1.TabIndex = 21;
             comboBox1.Text = "Organizar";
             // 
-            // dataGridView1
+            // dGVLibros
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2, Column3, Column4, Column5 });
-            dataGridView1.Location = new Point(11, 171);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1025, 215);
-            dataGridView1.TabIndex = 22;
-            // 
-            // Column1
-            // 
-            Column1.FillWeight = 94.62568F;
-            Column1.HeaderText = "ISBN";
-            Column1.MinimumWidth = 6;
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.FillWeight = 100.0257F;
-            Column2.HeaderText = "Título";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            Column3.FillWeight = 102.275726F;
-            Column3.HeaderText = "Autor";
-            Column3.MinimumWidth = 6;
-            Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            Column4.FillWeight = 102.968048F;
-            Column4.HeaderText = "Disponibles";
-            Column4.MinimumWidth = 6;
-            Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Fecha de registro";
-            Column5.MinimumWidth = 6;
-            Column5.Name = "Column5";
+            dGVLibros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dGVLibros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dGVLibros.Location = new Point(11, 171);
+            dGVLibros.Name = "dGVLibros";
+            dGVLibros.RowHeadersVisible = false;
+            dGVLibros.RowHeadersWidth = 51;
+            dGVLibros.Size = new Size(1025, 215);
+            dGVLibros.TabIndex = 22;
             // 
             // btnAgregar
             // 
@@ -279,7 +239,7 @@
             tableLayoutPanel2.Controls.Add(textBox3, 3, 0);
             tableLayoutPanel2.Controls.Add(textBox5, 3, 2);
             tableLayoutPanel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel2.Location = new Point(9, 411);
+            tableLayoutPanel2.Location = new Point(9, 385);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 3;
             tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
@@ -355,18 +315,19 @@
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
             BackColor = Color.FromArgb(236, 223, 204);
-            ClientSize = new Size(1051, 583);
+            ClientSize = new Size(1240, 530);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(panel1);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dGVLibros);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "FrmLibros";
             StartPosition = FormStartPosition.Manual;
             Text = "FrmEditConsultaLibros";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += Load_FrmLibros;
+            ((System.ComponentModel.ISupportInitialize)dGVLibros).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             panel1.ResumeLayout(false);
@@ -379,7 +340,7 @@
         #endregion
         private TextBox txtBuscador;
         private ComboBox comboBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dGVLibros;
         private Button btnAgregar;
         private Button btnCategorias;
         private Button btnAutores;
