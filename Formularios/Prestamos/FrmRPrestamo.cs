@@ -1,4 +1,5 @@
-﻿using System;
+﻿using prySistemaDePrestamosDeLibro.Formularios.FRMprestamos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -40,6 +41,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
         {
 
+        }
+
+        private void btRegresarPrHechos_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

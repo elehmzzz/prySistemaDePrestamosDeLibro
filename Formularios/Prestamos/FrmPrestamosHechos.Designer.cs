@@ -116,6 +116,7 @@
             btnDatosLectores.TabIndex = 32;
             btnDatosLectores.Text = "Datos del prestamo";
             btnDatosLectores.UseVisualStyleBackColor = false;
+            btnDatosLectores.Click += btnDatosLectores_Click;
             // 
             // textBoxnamelector
             // 

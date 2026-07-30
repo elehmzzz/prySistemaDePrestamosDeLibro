@@ -29,6 +29,44 @@
         private void InitializeComponent()
         {
             panel2 = new Panel();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            btRegresarPrHechos = new Button();
+            button3 = new Button();
+            tableLayoutPanel3 = new TableLayoutPanel();
+            textBox9 = new TextBox();
+            textBox5 = new TextBox();
+            label5 = new Label();
+            label11 = new Label();
+            dateTimePicker3 = new DateTimePicker();
+            textBox12 = new TextBox();
+            textBox4 = new TextBox();
+            label9 = new Label();
+            label10 = new Label();
+            textBox17 = new TextBox();
+            textBox18 = new TextBox();
+            label13 = new Label();
+            label14 = new Label();
+            label15 = new Label();
+            label16 = new Label();
+            label17 = new Label();
+            label18 = new Label();
+            label19 = new Label();
+            textBox6 = new TextBox();
+            label20 = new Label();
+            label21 = new Label();
+            label22 = new Label();
+            textBox7 = new TextBox();
+            textBox8 = new TextBox();
+            label23 = new Label();
+            textBox2 = new TextBox();
+            textBox3 = new TextBox();
+            textBox13 = new TextBox();
+            label12 = new Label();
+            dateTimePicker4 = new DateTimePicker();
+            dateTimePicker5 = new DateTimePicker();
+            tableLayoutPanel4 = new TableLayoutPanel();
+            textBox10 = new TextBox();
+            label24 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             labelRegistrodePrestamos = new Label();
             textBox1 = new TextBox();
@@ -47,45 +85,11 @@
             label2 = new Label();
             label6 = new Label();
             label1 = new Label();
-            tableLayoutPanel3 = new TableLayoutPanel();
-            textBox5 = new TextBox();
-            textBox2 = new TextBox();
-            label5 = new Label();
-            dateTimePicker3 = new DateTimePicker();
-            textBox12 = new TextBox();
-            textBox4 = new TextBox();
-            label9 = new Label();
-            label10 = new Label();
-            textBox17 = new TextBox();
-            label11 = new Label();
-            textBox18 = new TextBox();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
-            label15 = new Label();
-            label16 = new Label();
-            label17 = new Label();
-            label18 = new Label();
-            label19 = new Label();
-            textBox6 = new TextBox();
-            label20 = new Label();
-            label21 = new Label();
-            label22 = new Label();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            label23 = new Label();
-            textBox9 = new TextBox();
-            textBox3 = new TextBox();
-            button4 = new Button();
-            textBox13 = new TextBox();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            button3 = new Button();
-            dateTimePicker4 = new DateTimePicker();
-            dateTimePicker5 = new DateTimePicker();
             panel2.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
+            tableLayoutPanel3.SuspendLayout();
+            tableLayoutPanel4.SuspendLayout();
+            tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -93,12 +97,412 @@
             panel2.BackColor = Color.FromArgb(236, 223, 204);
             panel2.Controls.Add(tableLayoutPanel1);
             panel2.Controls.Add(tableLayoutPanel3);
+            panel2.Controls.Add(tableLayoutPanel4);
             panel2.Controls.Add(tableLayoutPanel2);
             panel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            panel2.Location = new Point(-22, -1);
+            panel2.Location = new Point(-22, -6);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1267, 717);
+            panel2.Size = new Size(1193, 722);
             panel2.TabIndex = 4;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 190F));
+            tableLayoutPanel1.Controls.Add(btRegresarPrHechos, 1, 1);
+            tableLayoutPanel1.Controls.Add(button3, 0, 1);
+            tableLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tableLayoutPanel1.Location = new Point(636, 485);
+            tableLayoutPanel1.Margin = new Padding(6);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 2;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.RowStyles.Add(new RowStyle());
+            tableLayoutPanel1.Size = new Size(408, 47);
+            tableLayoutPanel1.TabIndex = 64;
+            // 
+            // btRegresarPrHechos
+            // 
+            btRegresarPrHechos.AutoSize = true;
+            btRegresarPrHechos.BackColor = Color.FromArgb(32, 41, 64);
+            btRegresarPrHechos.BackgroundImageLayout = ImageLayout.None;
+            btRegresarPrHechos.ForeColor = SystemColors.Control;
+            btRegresarPrHechos.Location = new Point(221, 3);
+            btRegresarPrHechos.Name = "btRegresarPrHechos";
+            btRegresarPrHechos.Size = new Size(93, 38);
+            btRegresarPrHechos.TabIndex = 63;
+            btRegresarPrHechos.Text = "regresar";
+            btRegresarPrHechos.UseVisualStyleBackColor = false;
+            btRegresarPrHechos.Click += btRegresarPrHechos_Click;
+            // 
+            // button3
+            // 
+            button3.AutoSize = true;
+            button3.BackColor = Color.FromArgb(32, 41, 64);
+            button3.BackgroundImageLayout = ImageLayout.None;
+            button3.ForeColor = SystemColors.Control;
+            button3.Location = new Point(3, 3);
+            button3.Name = "button3";
+            button3.Size = new Size(126, 38);
+            button3.TabIndex = 65;
+            button3.Text = "Editar plazo";
+            button3.UseVisualStyleBackColor = false;
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.ColumnCount = 7;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.7368422F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.8479538F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.3508778F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 26.31579F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.748538F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 101F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 52F));
+            tableLayoutPanel3.Controls.Add(textBox9, 1, 0);
+            tableLayoutPanel3.Controls.Add(textBox5, 5, 0);
+            tableLayoutPanel3.Controls.Add(label5, 2, 4);
+            tableLayoutPanel3.Controls.Add(label11, 0, 3);
+            tableLayoutPanel3.Controls.Add(dateTimePicker3, 1, 1);
+            tableLayoutPanel3.Controls.Add(textBox12, 1, 5);
+            tableLayoutPanel3.Controls.Add(textBox4, 3, 0);
+            tableLayoutPanel3.Controls.Add(label9, 2, 0);
+            tableLayoutPanel3.Controls.Add(label10, 0, 5);
+            tableLayoutPanel3.Controls.Add(textBox17, 1, 3);
+            tableLayoutPanel3.Controls.Add(textBox18, 1, 4);
+            tableLayoutPanel3.Controls.Add(label13, 0, 1);
+            tableLayoutPanel3.Controls.Add(label14, 0, 2);
+            tableLayoutPanel3.Controls.Add(label15, 0, 0);
+            tableLayoutPanel3.Controls.Add(label16, 2, 1);
+            tableLayoutPanel3.Controls.Add(label17, 2, 2);
+            tableLayoutPanel3.Controls.Add(label18, 2, 3);
+            tableLayoutPanel3.Controls.Add(label19, 2, 5);
+            tableLayoutPanel3.Controls.Add(textBox6, 3, 1);
+            tableLayoutPanel3.Controls.Add(label20, 4, 0);
+            tableLayoutPanel3.Controls.Add(label21, 4, 1);
+            tableLayoutPanel3.Controls.Add(label22, 4, 2);
+            tableLayoutPanel3.Controls.Add(textBox7, 5, 1);
+            tableLayoutPanel3.Controls.Add(textBox8, 5, 2);
+            tableLayoutPanel3.Controls.Add(label23, 6, 2);
+            tableLayoutPanel3.Controls.Add(textBox2, 3, 2);
+            tableLayoutPanel3.Controls.Add(textBox3, 3, 3);
+            tableLayoutPanel3.Controls.Add(textBox13, 1, 2);
+            tableLayoutPanel3.Controls.Add(label12, 0, 4);
+            tableLayoutPanel3.Controls.Add(dateTimePicker4, 3, 4);
+            tableLayoutPanel3.Controls.Add(dateTimePicker5, 3, 5);
+            tableLayoutPanel3.Location = new Point(34, 121);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 6;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 19.4366188F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 18.3098583F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 17.746479F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 15.4929581F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 14.9295778F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 13.8028173F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.Size = new Size(1010, 355);
+            tableLayoutPanel3.TabIndex = 43;
+            // 
+            // textBox9
+            // 
+            textBox9.Enabled = false;
+            textBox9.Location = new Point(129, 3);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(214, 34);
+            textBox9.TabIndex = 58;
+            // 
+            // textBox5
+            // 
+            textBox5.Enabled = false;
+            textBox5.Location = new Point(858, 3);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(88, 34);
+            textBox5.TabIndex = 54;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(350, 252);
+            label5.Name = "label5";
+            label5.Size = new Size(154, 28);
+            label5.TabIndex = 47;
+            label5.Text = "Fecha prestamo:";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(3, 197);
+            label11.Name = "label11";
+            label11.Size = new Size(104, 28);
+            label11.TabIndex = 21;
+            label11.Text = "Municipio:";
+            // 
+            // dateTimePicker3
+            // 
+            dateTimePicker3.Enabled = false;
+            dateTimePicker3.Format = DateTimePickerFormat.Short;
+            dateTimePicker3.Location = new Point(129, 72);
+            dateTimePicker3.Name = "dateTimePicker3";
+            dateTimePicker3.Size = new Size(214, 34);
+            dateTimePicker3.TabIndex = 31;
+            // 
+            // textBox12
+            // 
+            textBox12.Enabled = false;
+            textBox12.Location = new Point(129, 308);
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(214, 34);
+            textBox12.TabIndex = 41;
+            // 
+            // textBox4
+            // 
+            textBox4.Enabled = false;
+            textBox4.Location = new Point(524, 3);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(214, 34);
+            textBox4.TabIndex = 32;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(350, 0);
+            label9.Name = "label9";
+            label9.Size = new Size(90, 28);
+            label9.TabIndex = 25;
+            label9.Text = "Telefono:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(3, 305);
+            label10.Name = "label10";
+            label10.Size = new Size(39, 28);
+            label10.TabIndex = 23;
+            label10.Text = "CP:";
+            // 
+            // textBox17
+            // 
+            textBox17.Enabled = false;
+            textBox17.Location = new Point(129, 200);
+            textBox17.Name = "textBox17";
+            textBox17.Size = new Size(214, 34);
+            textBox17.TabIndex = 22;
+            // 
+            // textBox18
+            // 
+            textBox18.Enabled = false;
+            textBox18.Location = new Point(129, 255);
+            textBox18.Name = "textBox18";
+            textBox18.Size = new Size(214, 34);
+            textBox18.TabIndex = 24;
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(3, 69);
+            label13.Name = "label13";
+            label13.Size = new Size(117, 56);
+            label13.TabIndex = 10;
+            label13.Text = "Fecha de Nacimiento:";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(3, 134);
+            label14.Name = "label14";
+            label14.Size = new Size(60, 28);
+            label14.TabIndex = 16;
+            label14.Text = "Edad:";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(3, 0);
+            label15.Name = "label15";
+            label15.Size = new Size(89, 28);
+            label15.TabIndex = 5;
+            label15.Text = "Nombre:";
+            // 
+            // label16
+            // 
+            label16.AutoSize = true;
+            label16.Location = new Point(350, 69);
+            label16.Name = "label16";
+            label16.Size = new Size(61, 28);
+            label16.TabIndex = 28;
+            label16.Text = "Libro:";
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(350, 134);
+            label17.Name = "label17";
+            label17.Size = new Size(58, 28);
+            label17.TabIndex = 43;
+            label17.Text = "ISBN:";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(350, 197);
+            label18.Name = "label18";
+            label18.Size = new Size(66, 28);
+            label18.TabIndex = 45;
+            label18.Text = "Autor:";
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(350, 305);
+            label19.Name = "label19";
+            label19.Size = new Size(168, 28);
+            label19.TabIndex = 48;
+            label19.Text = "Fecha devolucion:";
+            // 
+            // textBox6
+            // 
+            textBox6.Enabled = false;
+            textBox6.Location = new Point(524, 72);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(214, 34);
+            textBox6.TabIndex = 46;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(749, 0);
+            label20.Name = "label20";
+            label20.Size = new Size(94, 56);
+            label20.TabIndex = 51;
+            label20.Text = "Dias restantes:";
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(749, 69);
+            label21.Name = "label21";
+            label21.Size = new Size(81, 56);
+            label21.TabIndex = 52;
+            label21.Text = "Dias de retraso:";
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(749, 134);
+            label22.Name = "label22";
+            label22.Size = new Size(98, 56);
+            label22.TabIndex = 53;
+            label22.Text = "Multa generada:";
+            // 
+            // textBox7
+            // 
+            textBox7.Enabled = false;
+            textBox7.Location = new Point(858, 72);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(88, 34);
+            textBox7.TabIndex = 55;
+            // 
+            // textBox8
+            // 
+            textBox8.Enabled = false;
+            textBox8.Location = new Point(858, 137);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(88, 34);
+            textBox8.TabIndex = 56;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(959, 134);
+            label23.Name = "label23";
+            label23.Size = new Size(47, 28);
+            label23.TabIndex = 57;
+            label23.Text = "dias";
+            // 
+            // textBox2
+            // 
+            textBox2.Enabled = false;
+            textBox2.Location = new Point(524, 137);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(214, 34);
+            textBox2.TabIndex = 49;
+            // 
+            // textBox3
+            // 
+            textBox3.Enabled = false;
+            textBox3.Location = new Point(524, 200);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(214, 34);
+            textBox3.TabIndex = 60;
+            // 
+            // textBox13
+            // 
+            textBox13.Enabled = false;
+            textBox13.Location = new Point(129, 137);
+            textBox13.Name = "textBox13";
+            textBox13.Size = new Size(87, 34);
+            textBox13.TabIndex = 63;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(3, 252);
+            label12.Name = "label12";
+            label12.Size = new Size(96, 28);
+            label12.TabIndex = 20;
+            label12.Text = "localidad:";
+            // 
+            // dateTimePicker4
+            // 
+            dateTimePicker4.Enabled = false;
+            dateTimePicker4.Format = DateTimePickerFormat.Short;
+            dateTimePicker4.Location = new Point(524, 255);
+            dateTimePicker4.Name = "dateTimePicker4";
+            dateTimePicker4.Size = new Size(214, 34);
+            dateTimePicker4.TabIndex = 64;
+            // 
+            // dateTimePicker5
+            // 
+            dateTimePicker5.Enabled = false;
+            dateTimePicker5.Format = DateTimePickerFormat.Short;
+            dateTimePicker5.Location = new Point(524, 308);
+            dateTimePicker5.Name = "dateTimePicker5";
+            dateTimePicker5.Size = new Size(214, 34);
+            dateTimePicker5.TabIndex = 65;
+            // 
+            // tableLayoutPanel4
+            // 
+            tableLayoutPanel4.ColumnCount = 2;
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 228F));
+            tableLayoutPanel4.Controls.Add(textBox10, 1, 1);
+            tableLayoutPanel4.Controls.Add(label24, 0, 1);
+            tableLayoutPanel4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            tableLayoutPanel4.Location = new Point(558, 43);
+            tableLayoutPanel4.Margin = new Padding(6);
+            tableLayoutPanel4.Name = "tableLayoutPanel4";
+            tableLayoutPanel4.RowCount = 2;
+            tableLayoutPanel4.RowStyles.Add(new RowStyle());
+            tableLayoutPanel4.RowStyles.Add(new RowStyle());
+            tableLayoutPanel4.Size = new Size(464, 34);
+            tableLayoutPanel4.TabIndex = 66;
+            // 
+            // textBox10
+            // 
+            textBox10.Enabled = false;
+            textBox10.Location = new Point(239, 3);
+            textBox10.Name = "textBox10";
+            textBox10.Size = new Size(214, 34);
+            textBox10.TabIndex = 67;
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new Point(3, 0);
+            label24.Name = "label24";
+            label24.Size = new Size(230, 28);
+            label24.TabIndex = 67;
+            label24.Text = "prestamo registrado por:";
             // 
             // tableLayoutPanel2
             // 
@@ -106,13 +510,13 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Controls.Add(labelRegistrodePrestamos, 0, 1);
             tableLayoutPanel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel2.Location = new Point(157, 27);
+            tableLayoutPanel2.Location = new Point(34, 29);
             tableLayoutPanel2.Margin = new Padding(6);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
-            tableLayoutPanel2.Size = new Size(644, 50);
+            tableLayoutPanel2.Size = new Size(370, 48);
             tableLayoutPanel2.TabIndex = 42;
             // 
             // labelRegistrodePrestamos
@@ -282,355 +686,6 @@
             label1.TabIndex = 10;
             label1.Text = "Nombre del Libro:";
             // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.ColumnCount = 7;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.9805336F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.87007F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15.8932714F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 26.4327488F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 11.8128653F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 101F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 52F));
-            tableLayoutPanel3.Controls.Add(textBox9, 1, 0);
-            tableLayoutPanel3.Controls.Add(textBox5, 5, 0);
-            tableLayoutPanel3.Controls.Add(label5, 2, 4);
-            tableLayoutPanel3.Controls.Add(label11, 0, 3);
-            tableLayoutPanel3.Controls.Add(dateTimePicker3, 1, 1);
-            tableLayoutPanel3.Controls.Add(textBox12, 1, 5);
-            tableLayoutPanel3.Controls.Add(textBox4, 3, 0);
-            tableLayoutPanel3.Controls.Add(label9, 2, 0);
-            tableLayoutPanel3.Controls.Add(label10, 0, 5);
-            tableLayoutPanel3.Controls.Add(textBox17, 1, 3);
-            tableLayoutPanel3.Controls.Add(textBox18, 1, 4);
-            tableLayoutPanel3.Controls.Add(label13, 0, 1);
-            tableLayoutPanel3.Controls.Add(label14, 0, 2);
-            tableLayoutPanel3.Controls.Add(label15, 0, 0);
-            tableLayoutPanel3.Controls.Add(label16, 2, 1);
-            tableLayoutPanel3.Controls.Add(label17, 2, 2);
-            tableLayoutPanel3.Controls.Add(label18, 2, 3);
-            tableLayoutPanel3.Controls.Add(label19, 2, 5);
-            tableLayoutPanel3.Controls.Add(textBox6, 3, 1);
-            tableLayoutPanel3.Controls.Add(label20, 4, 0);
-            tableLayoutPanel3.Controls.Add(label21, 4, 1);
-            tableLayoutPanel3.Controls.Add(label22, 4, 2);
-            tableLayoutPanel3.Controls.Add(textBox7, 5, 1);
-            tableLayoutPanel3.Controls.Add(textBox8, 5, 2);
-            tableLayoutPanel3.Controls.Add(label23, 6, 2);
-            tableLayoutPanel3.Controls.Add(textBox2, 3, 2);
-            tableLayoutPanel3.Controls.Add(textBox3, 3, 3);
-            tableLayoutPanel3.Controls.Add(textBox13, 1, 2);
-            tableLayoutPanel3.Controls.Add(label12, 0, 4);
-            tableLayoutPanel3.Controls.Add(dateTimePicker4, 3, 4);
-            tableLayoutPanel3.Controls.Add(dateTimePicker5, 3, 5);
-            tableLayoutPanel3.Location = new Point(34, 98);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 6;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 16.8975067F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6204987F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 16.6204987F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 13.01939F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 18.5246029F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 17.6684246F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.Size = new Size(1010, 361);
-            tableLayoutPanel3.TabIndex = 43;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(858, 3);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(88, 34);
-            textBox5.TabIndex = 54;
-            // 
-            // textBox2
-            // 
-            textBox2.Location = new Point(531, 124);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(214, 34);
-            textBox2.TabIndex = 49;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(395, 228);
-            label5.Name = "label5";
-            label5.Size = new Size(99, 56);
-            label5.TabIndex = 47;
-            label5.Text = "Fecha prestamo:";
-            // 
-            // dateTimePicker3
-            // 
-            dateTimePicker3.Format = DateTimePickerFormat.Short;
-            dateTimePicker3.Location = new Point(174, 64);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new Size(214, 34);
-            dateTimePicker3.TabIndex = 31;
-            // 
-            // textBox12
-            // 
-            textBox12.Location = new Point(174, 298);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(214, 34);
-            textBox12.TabIndex = 41;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(531, 3);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(214, 34);
-            textBox4.TabIndex = 32;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(395, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(90, 28);
-            label9.TabIndex = 25;
-            label9.Text = "Telefono:";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(3, 295);
-            label10.Name = "label10";
-            label10.Size = new Size(39, 28);
-            label10.TabIndex = 23;
-            label10.Text = "CP:";
-            // 
-            // textBox17
-            // 
-            textBox17.Location = new Point(174, 184);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(214, 34);
-            textBox17.TabIndex = 22;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(3, 181);
-            label11.Name = "label11";
-            label11.Size = new Size(104, 28);
-            label11.TabIndex = 21;
-            label11.Text = "Municipio:";
-            // 
-            // textBox18
-            // 
-            textBox18.Location = new Point(174, 231);
-            textBox18.Name = "textBox18";
-            textBox18.Size = new Size(214, 34);
-            textBox18.TabIndex = 24;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(3, 228);
-            label12.Name = "label12";
-            label12.Size = new Size(96, 28);
-            label12.TabIndex = 20;
-            label12.Text = "localidad:";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(3, 61);
-            label13.Name = "label13";
-            label13.Size = new Size(117, 56);
-            label13.TabIndex = 10;
-            label13.Text = "Fecha de Nacimiento:";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(3, 121);
-            label14.Name = "label14";
-            label14.Size = new Size(60, 28);
-            label14.TabIndex = 16;
-            label14.Text = "Edad:";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(3, 0);
-            label15.Name = "label15";
-            label15.Size = new Size(89, 28);
-            label15.TabIndex = 5;
-            label15.Text = "Nombre:";
-            // 
-            // label16
-            // 
-            label16.AutoSize = true;
-            label16.Location = new Point(395, 61);
-            label16.Name = "label16";
-            label16.Size = new Size(61, 28);
-            label16.TabIndex = 28;
-            label16.Text = "Libro:";
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(395, 121);
-            label17.Name = "label17";
-            label17.Size = new Size(58, 28);
-            label17.TabIndex = 43;
-            label17.Text = "ISBN:";
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(395, 181);
-            label18.Name = "label18";
-            label18.Size = new Size(66, 28);
-            label18.TabIndex = 45;
-            label18.Text = "Autor:";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Location = new Point(395, 295);
-            label19.Name = "label19";
-            label19.Size = new Size(113, 56);
-            label19.TabIndex = 48;
-            label19.Text = "Fecha devolucion:";
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(531, 64);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(214, 34);
-            textBox6.TabIndex = 46;
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new Point(757, 0);
-            label20.Name = "label20";
-            label20.Size = new Size(94, 56);
-            label20.TabIndex = 51;
-            label20.Text = "Dias restantes:";
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Location = new Point(757, 61);
-            label21.Name = "label21";
-            label21.Size = new Size(81, 56);
-            label21.TabIndex = 52;
-            label21.Text = "Dias de retraso:";
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Location = new Point(757, 121);
-            label22.Name = "label22";
-            label22.Size = new Size(94, 60);
-            label22.TabIndex = 53;
-            label22.Text = "Multa generada:";
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(858, 64);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(88, 34);
-            textBox7.TabIndex = 55;
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(858, 124);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(88, 34);
-            textBox8.TabIndex = 56;
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(959, 121);
-            label23.Name = "label23";
-            label23.Size = new Size(47, 28);
-            label23.TabIndex = 57;
-            label23.Text = "dias";
-            // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(174, 3);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(214, 34);
-            textBox9.TabIndex = 58;
-            // 
-            // textBox3
-            // 
-            textBox3.Location = new Point(531, 184);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(214, 34);
-            textBox3.TabIndex = 60;
-            // 
-            // button4
-            // 
-            button4.AutoSize = true;
-            button4.BackColor = Color.FromArgb(32, 41, 64);
-            button4.BackgroundImageLayout = ImageLayout.None;
-            button4.ForeColor = SystemColors.Control;
-            button4.Location = new Point(221, 3);
-            button4.Name = "button4";
-            button4.Size = new Size(93, 38);
-            button4.TabIndex = 63;
-            button4.Text = "regresar";
-            button4.UseVisualStyleBackColor = false;
-            // 
-            // textBox13
-            // 
-            textBox13.Location = new Point(174, 124);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(87, 34);
-            textBox13.TabIndex = 63;
-            // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.ColumnCount = 2;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 190F));
-            tableLayoutPanel1.Controls.Add(button4, 1, 1);
-            tableLayoutPanel1.Controls.Add(button3, 0, 1);
-            tableLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel1.Location = new Point(636, 485);
-            tableLayoutPanel1.Margin = new Padding(6);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 2;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(408, 48);
-            tableLayoutPanel1.TabIndex = 64;
-            // 
-            // button3
-            // 
-            button3.AutoSize = true;
-            button3.BackColor = Color.FromArgb(32, 41, 64);
-            button3.BackgroundImageLayout = ImageLayout.None;
-            button3.ForeColor = SystemColors.Control;
-            button3.Location = new Point(3, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(126, 38);
-            button3.TabIndex = 65;
-            button3.Text = "Editar plazo";
-            button3.UseVisualStyleBackColor = false;
-            // 
-            // dateTimePicker4
-            // 
-            dateTimePicker4.Format = DateTimePickerFormat.Short;
-            dateTimePicker4.Location = new Point(531, 231);
-            dateTimePicker4.Name = "dateTimePicker4";
-            dateTimePicker4.Size = new Size(214, 34);
-            dateTimePicker4.TabIndex = 64;
-            // 
-            // dateTimePicker5
-            // 
-            dateTimePicker5.Format = DateTimePickerFormat.Short;
-            dateTimePicker5.Location = new Point(531, 298);
-            dateTimePicker5.Name = "dateTimePicker5";
-            dateTimePicker5.Size = new Size(214, 34);
-            dateTimePicker5.TabIndex = 65;
-            // 
             // FrmRPrestamo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -643,12 +698,14 @@
             Text = "FrmRPrestamo";
             Load += FrmRPrestamo_Load;
             panel2.ResumeLayout(false);
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel2.PerformLayout();
-            tableLayoutPanel3.ResumeLayout(false);
-            tableLayoutPanel3.PerformLayout();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
+            tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel3.PerformLayout();
+            tableLayoutPanel4.ResumeLayout(false);
+            tableLayoutPanel4.PerformLayout();
+            tableLayoutPanel2.ResumeLayout(false);
+            tableLayoutPanel2.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -705,9 +762,12 @@
         private TextBox textBox8;
         private Label label23;
         private TableLayoutPanel tableLayoutPanel1;
-        private Button button4;
+        private Button btRegresarPrHechos;
         private Button button3;
         private DateTimePicker dateTimePicker4;
         private DateTimePicker dateTimePicker5;
+        private TableLayoutPanel tableLayoutPanel4;
+        private TextBox textBox10;
+        private Label label24;
     }
 }

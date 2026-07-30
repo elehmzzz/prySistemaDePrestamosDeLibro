@@ -1,4 +1,5 @@
 ﻿using prySistemaDePrestamosDeLibro.Clases;
+using prySistemaDePrestamosDeLibro.Formularios.Prestamos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,13 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
 {
     public partial class FrmPrestamosHechos : Form
     {
+        ClsPrestamo objPrestamo;
         private FrmMenuPrincipal ventanaPrincipal;
-        private ClsPrestamoVista objPrestamo = new ClsPrestamoVista();
         bool cargandoCombo = false;
         public FrmPrestamosHechos(FrmMenuPrincipal ventana)
         {
             InitializeComponent();
+            objPrestamo= new ClsPrestamo();
             this.Load += FrmPrestamosHechos_Load;
             cmbxbuscarprestamo.TextChanged += cmbxbuscarprestamo_TextChanged;
             ventanaPrincipal = ventana;
@@ -50,17 +52,14 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
             dGVPrestamos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
             // CAMBIAR NOMBRES
-            if (dGVPrestamos.Columns["Id_Prestamo"] != null)
-                dGVPrestamos.Columns["Id_Prestamo"].HeaderText = "ID";
+            if (dGVPrestamos.Columns["ID"] != null)
+                dGVPrestamos.Columns["ID"].HeaderText = "ID";
 
-            if (dGVPrestamos.Columns["Nombres"] != null)
-                dGVPrestamos.Columns["Nombres"].HeaderText = "Nombre";
+            if (dGVPrestamos.Columns["Lector"] != null)
+                dGVPrestamos.Columns["Lector"].HeaderText = "Lector";
 
-            if (dGVPrestamos.Columns["Apellido_Paterno"] != null)
-                dGVPrestamos.Columns["Apellido_Paterno"].HeaderText = "Apellido";
-
-            if (dGVPrestamos.Columns["Titulo"] != null)
-                dGVPrestamos.Columns["Titulo"].HeaderText = "Libro";
+            if (dGVPrestamos.Columns["Libro"] != null)
+                dGVPrestamos.Columns["Libro"].HeaderText = "Libro";
 
             if (dGVPrestamos.Columns["Fecha_Prestamo"] != null)
                 dGVPrestamos.Columns["Fecha_Prestamo"].HeaderText = "Préstamo";
@@ -93,21 +92,21 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
 
             cargandoCombo = true;
 
-            DataTable dt = objPrestamo.BuscarLectores(texto);
+            //DataTable dt = objPrestamo.BuscarLectores(texto);
 
-            cmbxbuscarprestamo.DataSource = null;
-            cmbxbuscarprestamo.DataSource = dt;
-            cmbxbuscarprestamo.DisplayMember = "NombreCompleto";
-            cmbxbuscarprestamo.ValueMember = "Id_Lector";
+            //cmbxbuscarprestamo.DataSource = null;
+            //cmbxbuscarprestamo.DataSource = dt;
+            //cmbxbuscarprestamo.DisplayMember = "NombreCompleto";
+            //cmbxbuscarprestamo.ValueMember = "Id_Lector";
 
-            if (!cmbxbuscarprestamo.DroppedDown)
-                cmbxbuscarprestamo.DroppedDown = true;
+            //if (!cmbxbuscarprestamo.DroppedDown)
+            //    cmbxbuscarprestamo.DroppedDown = true;
 
-            cmbxbuscarprestamo.Focus();
+            //cmbxbuscarprestamo.Focus();
 
-            cmbxbuscarprestamo.Text = texto;
-            cmbxbuscarprestamo.SelectionStart = texto.Length;
-            cmbxbuscarprestamo.SelectionLength = 0;
+            //cmbxbuscarprestamo.Text = texto;
+            //cmbxbuscarprestamo.SelectionStart = texto.Length;
+            //cmbxbuscarprestamo.SelectionLength = 0;
 
             cargandoCombo = false;
         }
@@ -116,6 +115,12 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
         {
             FrmHacerprestamo frm = new FrmHacerprestamo();
             frm.Show();
+        }
+
+        private void btnDatosLectores_Click(object sender, EventArgs e)
+        {
+            FrmRPrestamo frm = new FrmRPrestamo();
+            frm.ShowDialog();
         }
     }
 }
