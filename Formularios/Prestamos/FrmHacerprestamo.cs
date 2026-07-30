@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
 {
-    public partial class FrmHacerprestamoLect : Form
+    public partial class FrmHacerprestamo : Form
     {
         ClsLectores objLectores; //instancia
-        public FrmHacerprestamoLect()
+        public FrmHacerprestamo()
         {
             InitializeComponent();
             objLectores = new ClsLectores();
@@ -61,6 +61,11 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
         }
 
         private void cmbLectores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tabPage1_Click(object sender, EventArgs e)
         {
 
         }

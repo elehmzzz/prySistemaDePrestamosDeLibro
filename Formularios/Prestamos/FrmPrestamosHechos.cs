@@ -113,7 +113,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
 
         private void btnAgregarPrestamo_Click(object sender, EventArgs e)
         {
-            FrmHacerprestamoLect frm = new FrmHacerprestamoLect();
+            FrmHacerprestamo frm = new FrmHacerprestamo();
             frm.Show();
         }
 
