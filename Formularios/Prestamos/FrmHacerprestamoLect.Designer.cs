@@ -101,6 +101,7 @@
             cmbLectores.Size = new Size(214, 28);
             cmbLectores.TabIndex = 22;
             cmbLectores.Text = "Organizar";
+            cmbLectores.SelectedIndexChanged += cmbLectores_SelectedIndexChanged;
             // 
             // btnAgregarCLector
             // 
@@ -305,6 +306,7 @@
             Name = "FrmHacerprestamoLect";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmHacerprestamop2Libro";
+            Load += load_FrmLector;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);

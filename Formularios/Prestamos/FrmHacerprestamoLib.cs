@@ -14,12 +14,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
 {
     public partial class FrmHacerprestamoLib : Form
     {
-        private FrmHacerprestamoLect formularioAnterior;
-
+        clsLibro objLibro; //instancia
         public FrmHacerprestamoLib(FrmHacerprestamoLect anterior)
         {
             InitializeComponent();
-            formularioAnterior = anterior;
+            objLibro = new clsLibro();
         }
 
         private void btnRegresarPre_Click(object sender, EventArgs e)
@@ -36,6 +35,32 @@ namespace prySistemaDePrestamosDeLibro.Clases
         private void label11_Click(object sender, EventArgs e)
         {
 
+        }
+        private void cmbLectores_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void load_FrmLibro(object sender, EventArgs e)
+        {
+            DataTable dtLibro = objLibro.ObtenerLibros(); //aqui consulto los libros
+            cmbLibros.DataSource = dtLibro;
+            cmbLibros.DisplayMember = "Titulo";
+            cmbLibros.ValueMember = "id_Libro";
+            cmbLibros.DropDownStyle = ComboBoxStyle.DropDown;
+            cmbLibros.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbLibros.AutoCompleteSource = AutoCompleteSource.ListItems;
+            cmbLibros.SelectedIndex = -1; // 👈 ESTO EVITA EL ERROR
+        }
+
+        private void on_selected(object sender, EventArgs e)
+        {
+            if (cmbLibros.SelectedItem != null)
+            {
+                DataRowView fila = (DataRowView)cmbLibros.SelectedItem;
+
+                txtISBN.Text = fila["ISBN"].ToString();
+               
+            }
         }
     }
 }

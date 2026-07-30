@@ -14,9 +14,11 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
 {
     public partial class FrmHacerprestamoLect : Form
     {
+        ClsLectores objLectores; //instancia
         public FrmHacerprestamoLect()
         {
             InitializeComponent();
+            objLectores = new ClsLectores();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -43,6 +45,22 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
         }
 
         private void btnAgregarCLector_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void load_FrmLector(object sender, EventArgs e)
+        {
+            DataTable dtLectores = objLectores.ObtenerLectores(); //aqui consulto los lectores
+            cmbLectores.DataSource = dtLectores;
+            cmbLectores.DisplayMember = "Nombres";
+            cmbLectores.ValueMember = "Id_Lector";
+            cmbLectores.DropDownStyle = ComboBoxStyle.DropDown;
+            cmbLectores.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbLectores.AutoCompleteSource = AutoCompleteSource.ListItems;
+        }
+
+        private void cmbLectores_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

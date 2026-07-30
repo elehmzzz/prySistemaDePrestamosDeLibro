@@ -34,19 +34,19 @@
             btnAgregar = new Button();
             btnvolverLector = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
-            label2 = new Label();
-            label6 = new Label();
+            dateTimePicker3 = new DateTimePicker();
+            dateTimePicker2 = new DateTimePicker();
+            cmbLibros = new ComboBox();
             label9 = new Label();
-            textBox4 = new TextBox();
             textBox17 = new TextBox();
-            panel2 = new Panel();
             label19 = new Label();
             label1 = new Label();
-            cmbLectores = new ComboBox();
+            txtISBN = new TextBox();
             label3 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            dateTimePicker3 = new DateTimePicker();
+            label6 = new Label();
+            label2 = new Label();
             textBox1 = new TextBox();
+            panel2 = new Panel();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -132,12 +132,12 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Controls.Add(dateTimePicker3, 1, 5);
             tableLayoutPanel1.Controls.Add(dateTimePicker2, 1, 4);
-            tableLayoutPanel1.Controls.Add(cmbLectores, 1, 0);
+            tableLayoutPanel1.Controls.Add(cmbLibros, 1, 0);
             tableLayoutPanel1.Controls.Add(label9, 0, 0);
             tableLayoutPanel1.Controls.Add(textBox17, 1, 3);
             tableLayoutPanel1.Controls.Add(label19, 0, 5);
             tableLayoutPanel1.Controls.Add(label1, 0, 4);
-            tableLayoutPanel1.Controls.Add(textBox4, 1, 1);
+            tableLayoutPanel1.Controls.Add(txtISBN, 1, 1);
             tableLayoutPanel1.Controls.Add(label3, 0, 1);
             tableLayoutPanel1.Controls.Add(label6, 0, 2);
             tableLayoutPanel1.Controls.Add(label2, 0, 3);
@@ -155,23 +155,31 @@
             tableLayoutPanel1.Size = new Size(630, 342);
             tableLayoutPanel1.TabIndex = 44;
             // 
-            // label2
+            // dateTimePicker3
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(3, 137);
-            label2.Name = "label2";
-            label2.Size = new Size(118, 28);
-            label2.TabIndex = 10;
-            label2.Text = "Disponibles:";
+            dateTimePicker3.Format = DateTimePickerFormat.Short;
+            dateTimePicker3.Location = new Point(213, 251);
+            dateTimePicker3.Name = "dateTimePicker3";
+            dateTimePicker3.Size = new Size(214, 34);
+            dateTimePicker3.TabIndex = 45;
             // 
-            // label6
+            // dateTimePicker2
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(3, 93);
-            label6.Name = "label6";
-            label6.Size = new Size(66, 28);
-            label6.TabIndex = 16;
-            label6.Text = "Autor:";
+            dateTimePicker2.Format = DateTimePickerFormat.Short;
+            dateTimePicker2.Location = new Point(213, 198);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(214, 34);
+            dateTimePicker2.TabIndex = 45;
+            // 
+            // cmbLibros
+            // 
+            cmbLibros.FormattingEnabled = true;
+            cmbLibros.Location = new Point(213, 3);
+            cmbLibros.Name = "cmbLibros";
+            cmbLibros.Size = new Size(214, 36);
+            cmbLibros.TabIndex = 51;
+            cmbLibros.SelectedIndexChanged += load_FrmLibro;
+            cmbLibros.SelectedValueChanged += on_selected;
             // 
             // label9
             // 
@@ -182,32 +190,12 @@
             label9.TabIndex = 5;
             label9.Text = "Libro:";
             // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(213, 50);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(214, 34);
-            textBox4.TabIndex = 32;
-            // 
             // textBox17
             // 
             textBox17.Location = new Point(213, 140);
             textBox17.Name = "textBox17";
             textBox17.Size = new Size(214, 34);
             textBox17.TabIndex = 22;
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(236, 223, 204);
-            panel2.Controls.Add(tableLayoutPanel1);
-            panel2.Controls.Add(tableLayoutPanel3);
-            panel2.Controls.Add(tableLayoutPanel2);
-            panel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            panel2.Location = new Point(0, -9);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1034, 553);
-            panel2.TabIndex = 3;
-            panel2.Paint += panel2_Paint;
             // 
             // label19
             // 
@@ -227,15 +215,12 @@
             label1.TabIndex = 50;
             label1.Text = "Fecha de Prestamo:";
             // 
-            // cmbLectores
+            // txtISBN
             // 
-            cmbLectores.FormattingEnabled = true;
-            cmbLectores.Items.AddRange(new object[] { "Vigentes", "Vencidos" });
-            cmbLectores.Location = new Point(213, 3);
-            cmbLectores.Name = "cmbLectores";
-            cmbLectores.Size = new Size(214, 36);
-            cmbLectores.TabIndex = 51;
-            cmbLectores.Text = "Organizar";
+            txtISBN.Location = new Point(213, 50);
+            txtISBN.Name = "txtISBN";
+            txtISBN.Size = new Size(214, 34);
+            txtISBN.TabIndex = 32;
             // 
             // label3
             // 
@@ -246,21 +231,23 @@
             label3.TabIndex = 52;
             label3.Text = "ISBN:";
             // 
-            // dateTimePicker2
+            // label6
             // 
-            dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(213, 198);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(214, 34);
-            dateTimePicker2.TabIndex = 45;
+            label6.AutoSize = true;
+            label6.Location = new Point(3, 93);
+            label6.Name = "label6";
+            label6.Size = new Size(66, 28);
+            label6.TabIndex = 16;
+            label6.Text = "Autor:";
             // 
-            // dateTimePicker3
+            // label2
             // 
-            dateTimePicker3.Format = DateTimePickerFormat.Short;
-            dateTimePicker3.Location = new Point(213, 251);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new Size(214, 34);
-            dateTimePicker3.TabIndex = 45;
+            label2.AutoSize = true;
+            label2.Location = new Point(3, 137);
+            label2.Name = "label2";
+            label2.Size = new Size(118, 28);
+            label2.TabIndex = 10;
+            label2.Text = "Disponibles:";
             // 
             // textBox1
             // 
@@ -269,7 +256,20 @@
             textBox1.Size = new Size(214, 34);
             textBox1.TabIndex = 53;
             // 
-            // FrmHacerprestamo
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(236, 223, 204);
+            panel2.Controls.Add(tableLayoutPanel1);
+            panel2.Controls.Add(tableLayoutPanel3);
+            panel2.Controls.Add(tableLayoutPanel2);
+            panel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            panel2.Location = new Point(0, -9);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1034, 553);
+            panel2.TabIndex = 3;
+            panel2.Paint += panel2_Paint;
+            // 
+            // FrmHacerprestamoLib
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -278,9 +278,10 @@
             Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
-            Name = "FrmHacerprestamo";
+            Name = "FrmHacerprestamoLib";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmRPrestamo";
+            Load += load_FrmLibro;
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
@@ -302,12 +303,12 @@
         private Label label2;
         private Label label6;
         private Label label9;
-        private TextBox textBox4;
+        private TextBox txtISBN;
         private TextBox textBox17;
         private Panel panel2;
         private Label label19;
         private Label label1;
-        private ComboBox cmbLectores;
+        private ComboBox cmbLibros;
         private Label label3;
         private DateTimePicker dateTimePicker3;
         private DateTimePicker dateTimePicker2;
