@@ -16,6 +16,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
         private FrmMenuPrincipal ventanaPrincipal;
         FrmAgregarEditorial ventanaAgregarEditorial;
         private ClsEditorial objEditorial;
+        private DataTable tablaeditorial;
         public FrmEditoriales(FrmMenuPrincipal ventana)
         {
             InitializeComponent();
@@ -31,9 +32,9 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
 
         public void CargarEditoriales()
         {
-            DataTable dt = objEditorial.ObtenerEditoriales();
+            tablaeditorial = objEditorial.ObtenerEditoriales();
             dtEditoriales.DataSource = null;
-            dtEditoriales.DataSource = dt;
+            dtEditoriales.DataSource = tablaeditorial;
             dtEditoriales.Refresh();
         }
 
@@ -66,6 +67,30 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             ventanaPrincipal.mostrarModuloLibros();
+        }
+
+        private void txtBuscador_TextChanged(object sender, EventArgs e)
+        {
+            if (tablaeditorial == null)
+                return;
+            
+            string texto = txtBuscador.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(texto))
+            {
+                
+                tablaeditorial.DefaultView.RowFilter = "";
+            }
+            else
+            {
+                texto = texto.Replace("'", "''");
+
+                tablaeditorial.DefaultView.RowFilter =
+                    $"Convert(id, 'System.String') LIKE '%{texto}%' OR " +
+                    $"nombre LIKE '%{texto}%'";
+            }
+
+            dtEditoriales.DataSource = tablaeditorial.DefaultView;
         }
     }
 }

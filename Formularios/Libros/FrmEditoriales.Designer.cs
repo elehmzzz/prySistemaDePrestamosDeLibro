@@ -46,9 +46,9 @@
             lblTitulo.Anchor = AnchorStyles.Left;
             lblTitulo.AutoSize = true;
             lblTitulo.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            lblTitulo.Location = new Point(14, 18);
+            lblTitulo.Location = new Point(14, 32);
             lblTitulo.Name = "lblTitulo";
-            lblTitulo.Size = new Size(174, 46);
+            lblTitulo.Size = new Size(141, 37);
             lblTitulo.TabIndex = 28;
             lblTitulo.Text = "Editoriales";
             // 
@@ -73,11 +73,12 @@
             txtBuscador.Anchor = AnchorStyles.Left;
             txtBuscador.BorderStyle = BorderStyle.None;
             txtBuscador.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBuscador.Location = new Point(282, 12);
+            txtBuscador.Location = new Point(282, 15);
             txtBuscador.Name = "txtBuscador";
             txtBuscador.PlaceholderText = "Buscar...";
-            txtBuscador.Size = new Size(316, 27);
+            txtBuscador.Size = new Size(316, 22);
             txtBuscador.TabIndex = 26;
+            txtBuscador.TextChanged += txtBuscador_TextChanged;
             // 
             // btnAgregarEditorial
             // 
@@ -96,9 +97,9 @@
             // 
             lblBuscar.Anchor = AnchorStyles.Left;
             lblBuscar.AutoSize = true;
-            lblBuscar.Location = new Point(3, 12);
+            lblBuscar.Location = new Point(3, 15);
             lblBuscar.Name = "lblBuscar";
-            lblBuscar.Size = new Size(170, 28);
+            lblBuscar.Size = new Size(136, 21);
             lblBuscar.TabIndex = 25;
             lblBuscar.Text = "Buscar la Editorial:";
             // 
@@ -146,10 +147,10 @@
             // 
             // FrmEditoriales
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
-            ClientSize = new Size(1052, 583);
+            ClientSize = new Size(1052, 610);
             Controls.Add(btnRegresar);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(dtEditoriales);

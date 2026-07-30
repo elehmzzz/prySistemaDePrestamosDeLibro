@@ -15,11 +15,8 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
     {
         private FrmAutores formularioPadre;
         ClsAutor objAutor;
-
-        public FrmAgregarAutor()
-        {
-        }
-
+        private bool esEdicion = false;
+        
         public FrmAgregarAutor(FrmAutores padre)
         {
             InitializeComponent();
@@ -44,7 +41,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
                 MessageBox.Show("Ingrese el apellido Paterno del autor");
                 return;
             }
-            if (txtNombre.Text.Trim() == "")
+            if (txtAMaterno.Text.Trim() == "")
             {
                 MessageBox.Show("Ingrese el apellido Materno del autor");
                 return;
@@ -63,6 +60,16 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
                 }
                 this.Close();
             }
+        }
+
+        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void FrmAgregarAutor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

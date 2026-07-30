@@ -16,13 +16,15 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
         private FrmMenuPrincipal ventanaPrincipal;
         private FrmAgregarCategoria ventanaAgregarCategoria;
         private ClsCategoria objCategoria;
-        private DataColumn tablaCategoria;
+
+        private DataTable tablaCategoria;
         public FrmCategorias(FrmMenuPrincipal ventana)
         {
             InitializeComponent();
             ventanaPrincipal = ventana;
             objCategoria = new ClsCategoria();
             dataGridView1.CellClick += dataGridView1_CellClick;
+
         }
 
         private void FrmCategorias_Load(object sender, EventArgs e)
@@ -32,11 +34,15 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
 
         public void CargarCategorias()
         {
+
+
             DataTable dt = objCategoria.ObtenerCategorias();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = dt;
             dataGridView1.Refresh();
-            
+            ClsCategoria clsCategoria = new ClsCategoria();
+
+            tablaCategoria = clsCategoria.ObtenerCategorias();
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -74,25 +80,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
             }
         }
 
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            if (objCategoria.getIdCategoria() > 0)
-            {
-                if (MessageBox.Show("Estás seguro de borrar esta categoría", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    if (objCategoria.BorrarCategoria())
-                    {
-                        MessageBox.Show("Categoria eliminada correctamente");
-                        CargarCategorias();
-                        txtcategoriaSeleccioanda.Clear();
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Selecciona una categoria para borrar");
-            }
-        }
+       
 
         private void btnAgregarCategoria_Click(object sender, EventArgs e)
         {
@@ -111,7 +99,48 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
 
         private void txtBuscador_TextChanged(object sender, EventArgs e)
         {
+            if (tablaCategoria == null)
+                return;
 
+            string texto = txtBuscador.Text.Trim();
+
+            if (string.IsNullOrWhiteSpace(texto))
+            {
+                tablaCategoria.DefaultView.RowFilter = "";
+            }
+            else
+            {
+                texto = texto.Replace("'", "''");
+
+                tablaCategoria.DefaultView.RowFilter =
+                     $"Convert(id, 'System.String') LIKE '%{texto}%' OR " +
+                     $"nombre LIKE '%{texto}%'";
+            }
+
+            dataGridView1.DataSource = tablaCategoria.DefaultView;
+
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            
+
+            if (objCategoria.getIdCategoria() > 0)
+            {
+                if (MessageBox.Show("¿Estás seguro de borrar esta categoría?", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    if (objCategoria.BorrarCategoria())
+                    {
+                        MessageBox.Show("Categoría eliminada correctamente");
+                        CargarCategorias();
+                        txtcategoriaSeleccioanda.Clear();
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecciona una categoría para borrar");
+            }
         }
     }
 }

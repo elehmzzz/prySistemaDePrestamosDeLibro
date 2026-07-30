@@ -47,7 +47,7 @@
             txtNombre.Location = new Point(194, 4);
             txtNombre.Margin = new Padding(4);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(185, 34);
+            txtNombre.Size = new Size(185, 29);
             txtNombre.TabIndex = 4;
             // 
             // label1
@@ -56,7 +56,7 @@
             label1.Location = new Point(4, 0);
             label1.Margin = new Padding(4, 0, 4, 0);
             label1.Name = "label1";
-            label1.Size = new Size(109, 28);
+            label1.Size = new Size(88, 21);
             label1.TabIndex = 3;
             label1.Text = "Nombre(s):";
             // 
@@ -79,13 +79,14 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.Size = new Size(403, 188);
             tableLayoutPanel1.TabIndex = 5;
+            tableLayoutPanel1.Paint += tableLayoutPanel1_Paint;
             // 
             // txtAMaterno
             // 
             txtAMaterno.Location = new Point(194, 128);
             txtAMaterno.Margin = new Padding(4);
             txtAMaterno.Name = "txtAMaterno";
-            txtAMaterno.Size = new Size(185, 34);
+            txtAMaterno.Size = new Size(185, 29);
             txtAMaterno.TabIndex = 8;
             // 
             // txtAPaterno
@@ -93,7 +94,7 @@
             txtAPaterno.Location = new Point(194, 66);
             txtAPaterno.Margin = new Padding(4);
             txtAPaterno.Name = "txtAPaterno";
-            txtAPaterno.Size = new Size(185, 34);
+            txtAPaterno.Size = new Size(185, 29);
             txtAPaterno.TabIndex = 7;
             // 
             // label2
@@ -102,7 +103,7 @@
             label2.Location = new Point(4, 62);
             label2.Margin = new Padding(4, 0, 4, 0);
             label2.Name = "label2";
-            label2.Size = new Size(164, 28);
+            label2.Size = new Size(128, 21);
             label2.TabIndex = 5;
             label2.Text = "Apellido paterno:";
             // 
@@ -112,7 +113,7 @@
             label3.Location = new Point(4, 124);
             label3.Margin = new Padding(4, 0, 4, 0);
             label3.Name = "label3";
-            label3.Size = new Size(169, 28);
+            label3.Size = new Size(133, 21);
             label3.TabIndex = 6;
             label3.Text = "Apellido materno:";
             // 
@@ -154,7 +155,7 @@
             // 
             // FrmAgregarAutor
             // 
-            AutoScaleDimensions = new SizeF(11F, 28F);
+            AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(427, 298);
@@ -167,6 +168,7 @@
             Name = "FrmAgregarAutor";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmAgregarAutor";
+            Load += FrmAgregarAutor_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);

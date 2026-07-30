@@ -16,6 +16,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
         private FrmMenuPrincipal ventanaPrincipal;
         private FrmAgregarAutor ventanaAgregarAutor;
         private ClsAutor objAutor;
+        private DataTable tablaAutores;
         public FrmAutores(FrmMenuPrincipal ventana)
         {
             InitializeComponent();
@@ -31,12 +32,27 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            FrmAgregarAutor formulario = new FrmAgregarAutor(this);
-            formulario.ShowDialog();
+            
+            if (objAutor.getIdAutor() == 0)
+            {
+                MessageBox.Show("Selecciona un autor primero");
+                return;
+            }
+
+            objAutor.setNombre(txtNombre.Text.Trim());
+            objAutor.setAPaterno(txtAPaterno.Text.Trim());
+            objAutor.setAMaterno(txtAMaterno.Text.Trim());
+
+            if (objAutor.ActualizarAutor())
+            {
+                MessageBox.Show("Autor actualizado");
+                CargarAutores();
+            }
         }
 
         private void btnAgregarAutor_Click(object sender, EventArgs e)
         {
+            
             ventanaAgregarAutor = new FrmAgregarAutor(this);
             ventanaAgregarAutor.ShowDialog();
 
@@ -49,9 +65,9 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
 
         public void CargarAutores()
         {
-            DataTable dt = objAutor.ObtenerAutores();
+            tablaAutores = objAutor.ObtenerAutores();
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = dt;
+            dataGridView1.DataSource = tablaAutores;
             dataGridView1.Refresh();
         }
 
@@ -89,6 +105,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
+
             if (objAutor.getIdAutor() > 0)
             {
                 if (MessageBox.Show("Estás seguro de borrar este autor", "Confirmar", MessageBoxButtons.YesNo) == DialogResult.Yes)
@@ -121,7 +138,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
                 MessageBox.Show("Ingrese el apellido Paterno del autor");
                 return;
             }
-            if (txtNombre.Text.Trim() == "")
+            if (txtAMaterno.Text.Trim() == "")
             {
                 MessageBox.Show("Ingrese el apellido Materno del autor");
                 return;
@@ -130,6 +147,12 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
             objAutor.setNombre(txtNombre.Text.Trim());
             objAutor.setAPaterno(txtAPaterno.Text.Trim());
             objAutor.setAMaterno(txtAMaterno.Text.Trim());
+
+            if (objAutor.getIdAutor() == 0)
+            {
+                MessageBox.Show("Selecciona un autor primero");
+                return;
+            }
 
             if (objAutor.ActualizarAutor())
             {
@@ -142,5 +165,34 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
         {
 
         }
+
+        private void txtBuscador_TextChanged(object sender, EventArgs e)
+        {
+
+            if (tablaAutores == null)
+                return;
+
+            string texto = txtBuscador.Text.Trim().Replace("'", "''");
+
+            if (string.IsNullOrWhiteSpace(texto))
+            {
+                tablaAutores.DefaultView.RowFilter = "";
+            }
+            else
+            {
+                tablaAutores.DefaultView.RowFilter =
+                    $"Convert(id_autor, 'System.String') LIKE '%{texto}%' OR " +
+                    $"nombres LIKE '%{texto}%' OR " +
+                    $"apellido_paterno LIKE '%{texto}%' OR " +
+                    $"apellido_materno LIKE '%{texto}%'";
+            }
+
+            dataGridView1.DataSource = tablaAutores.DefaultView;
+        }
+
+        
+
+        
     }
+
 }

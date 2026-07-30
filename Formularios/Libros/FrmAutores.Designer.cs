@@ -93,6 +93,7 @@
             txtBuscador.PlaceholderText = "Buscar";
             txtBuscador.Size = new Size(316, 22);
             txtBuscador.TabIndex = 26;
+            txtBuscador.TextChanged += txtBuscador_TextChanged;
             // 
             // btnAgregarAutor
             // 
@@ -105,6 +106,7 @@
             btnAgregarAutor.TabIndex = 24;
             btnAgregarAutor.Text = "Agregar autor";
             btnAgregarAutor.UseVisualStyleBackColor = false;
+            btnAgregarAutor.Click += btnAgregarAutor_Click;
             // 
             // label1
             // 
@@ -266,6 +268,7 @@
             btnEliminar.TabIndex = 39;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // tableLayoutPanel3
             // 

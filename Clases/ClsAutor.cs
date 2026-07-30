@@ -80,7 +80,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
             MySqlConnection con = conexion.ObtenerConexion();
             try
             {
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO autor (nombres, apellido_materno, apellido_paterno) VALUES (@nombre,@aPaterno, @aMaterno)", con);
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO autor (nombres, apellido_paterno, apellido_materno) VALUES (@nombre,@aPaterno, @aMaterno)", con);
                 cmd.Parameters.AddWithValue("@nombre", Nombre);
                 cmd.Parameters.AddWithValue("@aPaterno", A_Paterno);
                 cmd.Parameters.AddWithValue("@aMaterno", A_Materno);
