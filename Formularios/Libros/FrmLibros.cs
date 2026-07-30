@@ -15,6 +15,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
     public partial class FrmLibros : Form
     {
+        ClsLibro objLibro;
         private FrmMenuPrincipal ventanaPrincipal;
         private DataTable tablaLibros;
         private FrmRegistroLibro apartadoLibros;

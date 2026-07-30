@@ -50,7 +50,7 @@
             textBoxAutor = new TextBox();
             textBox3 = new TextBox();
             textBox5 = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dGVLibros).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
@@ -79,7 +79,7 @@
             comboBox1.Text = "Organizar";
             comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
-            // dataGridView1
+            // dGVLibros
             // 
             dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -333,7 +333,7 @@
             Controls.Add(tableLayoutPanel2);
             Controls.Add(panel1);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dGVLibros);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "FrmLibros";
@@ -353,7 +353,7 @@
         #endregion
         private TextBox txtBuscador;
         private ComboBox comboBox1;
-        private DataGridView dataGridView1;
+        private DataGridView dGVLibros;
         private Button btnAgregar;
         private Button btnCategorias;
         private Button btnAutores;
