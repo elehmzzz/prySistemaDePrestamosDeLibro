@@ -43,6 +43,7 @@
             label6 = new Label();
             label5 = new Label();
             label4 = new Label();
+            llbSalir = new LinkLabel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -111,6 +112,7 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(236, 223, 204);
+            panel2.Controls.Add(llbSalir);
             panel2.Controls.Add(llbRegistrar);
             panel2.Controls.Add(label7);
             panel2.Controls.Add(txtContrasenia);
@@ -211,6 +213,19 @@
             label4.Text = "Inicio de sesión";
             label4.UseWaitCursor = true;
             // 
+            // llbSalir
+            // 
+            llbSalir.AutoSize = true;
+            llbSalir.LinkColor = Color.FromArgb(32, 41, 64);
+            llbSalir.Location = new Point(414, 564);
+            llbSalir.Name = "llbSalir";
+            llbSalir.Size = new Size(50, 28);
+            llbSalir.TabIndex = 11;
+            llbSalir.TabStop = true;
+            llbSalir.Text = "Salir";
+            llbSalir.UseWaitCursor = true;
+            llbSalir.LinkClicked += llbSalir_LinkClicked;
+            // 
             // FrmInicioSesion
             // 
             AllowDrop = true;
@@ -251,5 +266,6 @@
         private Label label7;
         private PictureBox pictureBox1;
         private LinkLabel llbRegistrar;
+        private LinkLabel llbSalir;
     }
 }

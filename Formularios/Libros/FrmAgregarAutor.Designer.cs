@@ -166,6 +166,7 @@
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FrmAgregarAutor";
+            ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmAgregarAutor";
             Load += FrmAgregarAutor_Load;

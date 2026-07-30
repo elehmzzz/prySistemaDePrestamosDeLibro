@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
-    internal abstract class Persona
+    public abstract class Persona
     {
         protected private string Nombre;
         protected string aPaterno;

@@ -25,7 +25,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
             ventanaDatos = new FrmDatosPersonales(this);
             ventanaUsuario = new FrmDatosUsuario(this);
             abrirFormulario(ventanaDatos);
-            this.inicioSesion = formPadre;
+            inicioSesion = formPadre;
             objBibliotecario = new ClsBibliotecario();
         }
         //muestra el formulario de datos personales en el panel

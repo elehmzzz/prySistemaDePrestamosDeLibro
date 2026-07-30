@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Asn1.Mozilla;
+using prySistemaDePrestamosDeLibro.Formularios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,59 +15,25 @@ namespace prySistemaDePrestamosDeLibro.Clases
 {
     public partial class FrmPerfilEmpleado : Form
     {
+        private ClsBibliotecario objBibliotecario;
+        private FrmMenuPrincipal menuPrincipal;
 
-        public FrmPerfilEmpleado(
-
-            string NombreCompleto,
-            string Usuario,
-            string Correo,
-            string Telefono)
-
+        public FrmPerfilEmpleado(FrmMenuPrincipal padre, ClsBibliotecario obj)
         {
             InitializeComponent();
-            textBox1.Text = NombreCompleto;
-            textBox4.Text = Usuario;
-            textBox2.Text = Correo;
-            textBox3.Text = Telefono;
-
+            menuPrincipal = padre;
+            objBibliotecario = obj;
+            cargarDatos();
         }
 
-
-        public void mostrarDatos()
+        public void cargarDatos()
         {
-
-        }
-        private void FrmPerfilEmpleado_Load(object sender, EventArgs e)
-        {
-            mostrarDatos();
-        }
-
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
+            txtNombre.Text = objBibliotecario.getNombre() + " " + objBibliotecario.getAPaterno() + " " + objBibliotecario.getAMaterno();
+            txtUsuario.Text = objBibliotecario.getUsuario();
+            txtCorreo.Text = objBibliotecario.getCorreo();
+            txtTelefono.Text = objBibliotecario.getTelefono();
 
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FrmPerfilEmpleado_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FrmPerfilEmpleado_Load_2(object sender, EventArgs e)
-        {
-
-        }
     }
 }

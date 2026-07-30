@@ -7,10 +7,11 @@ using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
 using Mysqlx.Connection;
+using BCrypt.Net;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
-    internal class ClsBibliotecario : Persona
+    public class ClsBibliotecario : Persona
     {
         private int IdBibliotecario=0;
         private string Usuario="";
@@ -35,13 +36,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
         //constructor 
         public ClsBibliotecario() : base() {
         }
-        //constructor parametrizado con todos los datos, puede ayudar para eliminar un registro
-        public ClsBibliotecario(int id, string nombre, string aPaterno, string aMaterno, string telefono, string correo, string usuario, string contrasenia) : base(nombre, aPaterno, aMaterno, telefono, correo)
-        {
-            IdBibliotecario = id;
-            Usuario = usuario;
-            Contrasenia = contrasenia;
-        }
+
         //constructor sin id, sirve para cuando se necesite crear un registro
         public ClsBibliotecario(string nombre, string aPaterno, string aMaterno, string telefono, string correo, string usuario, string contrasenia) : base(nombre, aPaterno, aMaterno, telefono, correo)
         {
@@ -49,39 +44,80 @@ namespace prySistemaDePrestamosDeLibro.Clases
             Contrasenia = contrasenia;
         }
 
-        /*public DataTable obtenerBibliotecarios() {
-            DataTable dt = new DataTable();
-            MySqlConnection conn = crearConexion();
-            string consulta = "SELECT"
+        public bool buscarBibliotecario() 
+        {
+            ClsConexion conexion = new ClsConexion();
+            MySqlConnection conn = conexion.ObtenerConexion();
+
             try
             {
-                MySqlCommand comando = new MySqlCommand("")
-            }
-            catch (Exception ex) { 
-            
-            }
-            return dt;
-        }*/
+                string consultaUsuario = "SELECT * FROM bibliotecario WHERE Nombre_Usuario = @nombre";
+                //se crea el comando para ejecutar la consulta
+                MySqlCommand comando = new MySqlCommand(consultaUsuario, conn);
+                //se asigna el usuario al parametro
+                comando.Parameters.AddWithValue("@nombre", Usuario);
+                //se ejecuta la consulta y se obtiene el resultado
+                MySqlDataReader reader = comando.ExecuteReader();
 
-        public bool guardarBibliotecario() {
+                if (reader.Read())
+                {
+                    //entra cuando el uusuario coincide - Aqui no se ocupa Ñ 
+                    string contraseniaAlmacenada = reader["Contrasenia"].ToString();
+                    Boolean verifica = BCrypt.Net.BCrypt.Verify(Contrasenia, contraseniaAlmacenada);
+                    if (verifica)
+                    {
+                        Usuario = reader["Nombre_Usuario"].ToString();
+                        Nombre = reader["Nombre"].ToString();
+                        aPaterno = reader["Apellido_Paterno"].ToString();
+                        aMaterno = reader["Apellido_Materno"].ToString();
+                        telefono = reader["Telefono"].ToString();
+                        correo = reader["Correo"].ToString();
+                        conn.Close();
+                        return true;
+                    }
+                    else {
+                        MessageBox.Show("La contraseña es incorrecta\nintente de nuevo");
+                        conn.Close();
+                        return false;
+                    }
+                }
+                else {
+                    //entra cuando el usuario no coindice
+                    MessageBox.Show("Usuario incorrecto\nintente de nuevo");
+                    conn.Close();
+                    return false;
+                }
+            }
+            catch(MySqlException ex) 
+            {
+                MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
+                conn.Close();
+                return false;
+            }
+
+        }
+
+        public bool guardarBibliotecario()
+        {
             MySqlConnection conn = crearConexion();
             string consulta = "INSERT INTO bibliotecario (Nombre, Apellido_Paterno, Apellido_Materno, Telefono, Correo, Nombre_Usuario, Contrasenia) " +
                 "VALUES (@nombre, @apellidoPat, @apellidoMat, @telefono, @correo, @usuario, @contrasenia)";
-            try 
+            string hassContrasenia = BCrypt.Net.BCrypt.HashPassword(Contrasenia);
+            try
             {
-                MySqlCommand cmd = new MySqlCommand(consulta,conn );
+                MySqlCommand cmd = new MySqlCommand(consulta, conn);
                 cmd.Parameters.AddWithValue("@nombre", Nombre);
                 cmd.Parameters.AddWithValue("@apellidoPat", aPaterno);
                 cmd.Parameters.AddWithValue("@apellidoMat", aMaterno);
                 cmd.Parameters.AddWithValue("@telefono", telefono);
                 cmd.Parameters.AddWithValue("@correo", correo);
                 cmd.Parameters.AddWithValue("@usuario", Usuario);
-                cmd.Parameters.AddWithValue("@contrasenia", Contrasenia);
+                cmd.Parameters.AddWithValue("@contrasenia", hassContrasenia);
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 return true;
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
                 return false;

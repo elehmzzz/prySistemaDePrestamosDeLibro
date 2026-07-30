@@ -55,7 +55,6 @@
             contenedorBusquedayAgrPrestamo.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             contenedorBusquedayAgrPrestamo.Size = new Size(714, 40);
             contenedorBusquedayAgrPrestamo.TabIndex = 9;
-            contenedorBusquedayAgrPrestamo.Paint += tableLayoutPanel1_Paint;
             // 
             // cmbxbuscarprestamo
             // 
@@ -94,7 +93,6 @@
             comboBoxFiltro.Name = "comboBoxFiltro";
             comboBoxFiltro.Size = new Size(140, 28);
             comboBoxFiltro.TabIndex = 22;
-            comboBoxFiltro.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // dGVPrestamos
             // 
@@ -106,7 +104,6 @@
             dGVPrestamos.RowHeadersWidth = 51;
             dGVPrestamos.Size = new Size(987, 361);
             dGVPrestamos.TabIndex = 31;
-            dGVPrestamos.CellContentClick += dGVPrestamos_CellContentClick;
             // 
             // btnDatosLectores
             // 
@@ -119,6 +116,7 @@
             btnDatosLectores.TabIndex = 32;
             btnDatosLectores.Text = "Datos del prestamo";
             btnDatosLectores.UseVisualStyleBackColor = false;
+            btnDatosLectores.Click += btnDatosLectores_Click;
             // 
             // textBoxnamelector
             // 
@@ -127,7 +125,6 @@
             textBoxnamelector.Name = "textBoxnamelector";
             textBoxnamelector.Size = new Size(469, 27);
             textBoxnamelector.TabIndex = 59;
-            textBoxnamelector.TextChanged += textBoxnamelector_TextChanged;
             // 
             // FrmPrestamosHechos
             // 
@@ -143,7 +140,6 @@
             MaximizeBox = false;
             Name = "FrmPrestamosHechos";
             Text = "FrmPrestamosHechos";
-            Load += FrmPrestamosHechos_Load_1;
             contenedorBusquedayAgrPrestamo.ResumeLayout(false);
             contenedorBusquedayAgrPrestamo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dGVPrestamos).EndInit();

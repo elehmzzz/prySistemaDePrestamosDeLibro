@@ -28,7 +28,14 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
             if (txtNuevaCategoria.Text.Trim() == "")
             {
@@ -47,12 +54,6 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
                 }
                 this.Close();
             }
-
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
     }
 }

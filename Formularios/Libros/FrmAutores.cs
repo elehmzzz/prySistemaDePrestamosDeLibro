@@ -50,6 +50,17 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
             }
         }
 
+            objAutor.setNombre(txtNombre.Text.Trim());
+            objAutor.setAPaterno(txtAPaterno.Text.Trim());
+            objAutor.setAMaterno(txtAMaterno.Text.Trim());
+
+            if (objAutor.ActualizarAutor())
+            {
+                MessageBox.Show("Autor actualizado");
+                CargarAutores();
+            }
+        }
+
         private void btnAgregarAutor_Click(object sender, EventArgs e)
         {
             

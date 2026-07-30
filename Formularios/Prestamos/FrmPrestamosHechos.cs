@@ -1,4 +1,5 @@
 ﻿using prySistemaDePrestamosDeLibro.Clases;
+using prySistemaDePrestamosDeLibro.Formularios.Prestamos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,15 +14,15 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
 {
     public partial class FrmPrestamosHechos : Form
     {
-
-        ClsPrestamoVista objPrestamo = new ClsPrestamoVista();
+        private FrmMenuPrincipal ventanaPrincipal;
+        private ClsPrestamoVista objPrestamo = new ClsPrestamoVista();
         bool cargandoCombo = false;
-        public FrmPrestamosHechos()
+        public FrmPrestamosHechos(FrmMenuPrincipal ventana)
         {
             InitializeComponent();
             this.Load += FrmPrestamosHechos_Load;
             cmbxbuscarprestamo.TextChanged += cmbxbuscarprestamo_TextChanged;
-
+            ventanaPrincipal = ventana;
         }
 
         private void FrmPrestamosHechos_Load(object sender, EventArgs e)
@@ -30,7 +31,6 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
             cmbxbuscarprestamo.DropDownStyle = ComboBoxStyle.DropDown;
             cmbxbuscarprestamo.AutoCompleteMode = AutoCompleteMode.None;
         }
-
 
         public void CargarPrestamos()
         {
@@ -50,7 +50,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
             // AJUSTAR VISUAL
             dGVPrestamos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
-            // CAMBIAR NOMBRES (como tu compañero)
+            // CAMBIAR NOMBRES
             if (dGVPrestamos.Columns["Id_Prestamo"] != null)
                 dGVPrestamos.Columns["Id_Prestamo"].HeaderText = "ID";
 
@@ -69,39 +69,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
             if (dGVPrestamos.Columns["Fecha_Devolucion"] != null)
                 dGVPrestamos.Columns["Fecha_Devolucion"].HeaderText = "Devolución";
 
-
         }
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void btnAgregarPrestamo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dGVPrestamos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-
         //cositas del buscador
 
         private void cmbxbuscarprestamo_SelectedIndexChanged(object sender, EventArgs e)
@@ -145,13 +113,16 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
             cargandoCombo = false;
         }
 
-        private void textBoxnamelector_TextChanged(object sender, EventArgs e)
+        private void btnAgregarPrestamo_Click(object sender, EventArgs e)
         {
+            FrmHacerprestamoLect frm = new FrmHacerprestamoLect();
+            frm.Show();
         }
 
-        private void FrmPrestamosHechos_Load_1(object sender, EventArgs e)
+        private void btnDatosLectores_Click(object sender, EventArgs e)
         {
-
+            FrmRPrestamo frm = new FrmRPrestamo();
+            frm.ShowDialog();
         }
     }
 }
