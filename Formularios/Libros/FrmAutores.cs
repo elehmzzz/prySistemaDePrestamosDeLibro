@@ -161,10 +161,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
             }
         }
 
-        private void tableLayoutPanel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+       
 
         private void txtBuscador_TextChanged(object sender, EventArgs e)
         {
