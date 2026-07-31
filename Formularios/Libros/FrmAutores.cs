@@ -48,7 +48,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
                 MessageBox.Show("Autor actualizado");
                 CargarAutores();
             }
-        }
+        
 
             objAutor.setNombre(txtNombre.Text.Trim());
             objAutor.setAPaterno(txtAPaterno.Text.Trim());
@@ -59,17 +59,16 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
                 MessageBox.Show("Autor actualizado");
                 CargarAutores();
             }
-        }
 
+        }
         private void btnAgregarAutor_Click(object sender, EventArgs e)
         {
-            
+                        
             ventanaAgregarAutor = new FrmAgregarAutor(this);
             ventanaAgregarAutor.ShowDialog();
-
         }
-
-        private void FrmAutores_Load(object sender, EventArgs e)
+            
+         private void FrmAutores_Load(object sender, EventArgs e)
         {
             CargarAutores();
         }

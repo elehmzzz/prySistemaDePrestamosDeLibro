@@ -14,7 +14,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
 {
     public partial class FrmHacerprestamo : Form
     {
-        ClsLectores objLectores; //instancia
+        private ClsLectores objLectores; //instancia
         public FrmHacerprestamo()
         {
             InitializeComponent();
@@ -37,7 +37,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
 
         private void btnseguirprestamo_Click(object sender, EventArgs e)
         {
-            FrmHacerprestamoLib frm = new FrmHacerprestamoLib(this);
+            FrmHacerprestamo frm = new FrmHacerprestamo();
 
             this.Hide();        // ocultas (NO se pierde info)
             frm.ShowDialog();   // abres el siguiente paso

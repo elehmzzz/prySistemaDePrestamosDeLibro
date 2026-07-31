@@ -13,10 +13,10 @@ namespace prySistemaDePrestamosDeLibro.Clases
 {
     public class ClsBibliotecario : Persona
     {
-        private int IdBibliotecario=0;
-        private string Usuario="";
-        private string Contrasenia="";
- 
+        private int IdBibliotecario = 0;
+        private string Usuario = "";
+        private string Contrasenia = "";
+
         public int getIdBibliotecario()
         {
             return IdBibliotecario;
@@ -44,57 +44,43 @@ namespace prySistemaDePrestamosDeLibro.Clases
             Contrasenia = contrasenia;
         }
 
-        public bool buscarBibliotecario() 
+        public bool buscarBibliotecario()
         {
-            ClsConexion conexion = new ClsConexion();
-            MySqlConnection conn = conexion.ObtenerConexion();
-
-            try
+            ClsConexion conexion = new ClsConexion(); MySqlConnection conn = conexion.ObtenerConexion(); try
             {
-                string consultaUsuario = "SELECT * FROM bibliotecario WHERE Nombre_Usuario = @nombre";
-                //se crea el comando para ejecutar la consulta
-                MySqlCommand comando = new MySqlCommand(consultaUsuario, conn);
-                //se asigna el usuario al parametro
-                comando.Parameters.AddWithValue("@nombre", Usuario);
-                //se ejecuta la consulta y se obtiene el resultado
-                MySqlDataReader reader = comando.ExecuteReader();
-
-                if (reader.Read())
-                {
-                    //entra cuando el uusuario coincide - Aqui no se ocupa Ñ 
-                    string contraseniaAlmacenada = reader["Contrasenia"].ToString();
-                    Boolean verifica = BCrypt.Net.BCrypt.Verify(Contrasenia, contraseniaAlmacenada);
-                    if (verifica)
-                    {
-                        Usuario = reader["Nombre_Usuario"].ToString();
-                        Nombre = reader["Nombre"].ToString();
-                        aPaterno = reader["Apellido_Paterno"].ToString();
-                        aMaterno = reader["Apellido_Materno"].ToString();
-                        telefono = reader["Telefono"].ToString();
-                        correo = reader["Correo"].ToString();
-                        conn.Close();
-                        return true;
-                    }
-                    else {
+                string consultaUsuario = "SELECT * FROM bibliotecario WHERE Nombre_Usuario = @nombre"; //se crea el comando para ejecutar la consulta
+                MySqlCommand comando = new MySqlCommand(consultaUsuario, conn); //se asigna el usuario al parametro
+                comando.Parameters.AddWithValue("@nombre", Usuario); //se ejecuta la consulta y se obtiene el resultado
+                MySqlDataReader reader = comando.ExecuteReader(); if (reader.Read()) 
+                { //entra cuando el uusuario coincide - Aqui no se ocupa Ñ
+                string contraseniaAlmacenada = reader["Contrasenia"].ToString(); Boolean 
+                verifica = BCrypt.Net.BCrypt.Verify(Contrasenia, contraseniaAlmacenada);
+                if (verifica)
+                    { 
+                        Usuario = reader["Nombre_Usuario"].ToString(); 
+                        Nombre = reader["Nombre"].ToString(); 
+                        aPaterno = reader["Apellido_Paterno"].ToString(); 
+                        aMaterno = reader["Apellido_Materno"].ToString(); 
+                        telefono = reader["Telefono"].ToString(); 
+                        correo = reader["Correo"].ToString(); 
+                        conn.Close(); return true;
+                    } 
+                    else 
+                    { 
                         MessageBox.Show("La contraseña es incorrecta\nintente de nuevo");
-                        conn.Close();
-                        return false;
-                    }
-                }
-                else {
-                    //entra cuando el usuario no coindice
-                    MessageBox.Show("Usuario incorrecto\nintente de nuevo");
-                    conn.Close();
-                    return false;
-                }
-            }
-            catch(MySqlException ex) 
-            {
+                        conn.Close(); return false; 
+                    } 
+                } 
+                else 
+                { //entra cuando el usuario no coindice
+                  MessageBox.Show("Usuario incorrecto\nintente de nuevo"); 
+                  conn.Close(); return false;
+                } 
+            } 
+            catch(MySqlException ex)
+            { 
                 MessageBox.Show("Error al conectar con la base de datos: " + ex.Message);
-                conn.Close();
-                return false;
-            }
-
+                conn.Close(); return false; } 
         }
 
         public bool guardarBibliotecario()

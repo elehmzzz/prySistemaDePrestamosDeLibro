@@ -30,7 +30,7 @@
         {
             txtBuscador = new TextBox();
             comboBox1 = new ComboBox();
-            dataGridView1 = new DataGridView();
+            dGVLibros = new DataGridView();
             btnAgregar = new Button();
             btnCategorias = new Button();
             btnAutores = new Button();
@@ -81,16 +81,16 @@
             // 
             // dGVLibros
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(10, 128);
-            dataGridView1.Margin = new Padding(3, 2, 3, 2);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(897, 161);
-            dataGridView1.TabIndex = 22;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dGVLibros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dGVLibros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dGVLibros.Location = new Point(10, 128);
+            dGVLibros.Margin = new Padding(3, 2, 3, 2);
+            dGVLibros.Name = "dGVLibros";
+            dGVLibros.RowHeadersVisible = false;
+            dGVLibros.RowHeadersWidth = 51;
+            dGVLibros.Size = new Size(897, 161);
+            dGVLibros.TabIndex = 22;
+            dGVLibros.CellContentClick += dataGridView1_CellContentClick;
             // 
             // btnAgregar
             // 
@@ -340,7 +340,7 @@
             StartPosition = FormStartPosition.Manual;
             Text = "FrmEditConsultaLibros";
             Load += FrmLibro_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dGVLibros).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             panel1.ResumeLayout(false);

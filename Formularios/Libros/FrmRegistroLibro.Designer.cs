@@ -100,6 +100,8 @@
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.Size = new Size(1025, 215);
             dataGridView1.TabIndex = 23;
+            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.TabIndexChanged += FrmRegistroLibro_Load;
             // 
             // Column1
             // 

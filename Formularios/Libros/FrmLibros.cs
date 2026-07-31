@@ -15,7 +15,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
     public partial class FrmLibros : Form
     {
-        ClsLibro objLibro;
+        
         private FrmMenuPrincipal ventanaPrincipal;
         private DataTable tablaLibros;
         private FrmRegistroLibro apartadoLibros;
@@ -34,16 +34,17 @@ namespace prySistemaDePrestamosDeLibro.Clases
         {
             InitializeComponent();
             objLibro = new ClsLibros();
+
         }
         public void CargarLibros()
         {
             ClsLibros clsLibros = new ClsLibros();
-            DataTable dt = clsLibros.ObtenerLibros();
+            
             tablaLibros = clsLibros.ObtenerLibros();
 
 
-            dataGridView1.AutoGenerateColumns = true;
-            dataGridView1.DataSource = dt;
+            dGVLibros.AutoGenerateColumns = true;
+            dGVLibros.DataSource = tablaLibros;
         }
         private void FrmLibro_Load(object sender, EventArgs e)
         {
@@ -58,6 +59,8 @@ namespace prySistemaDePrestamosDeLibro.Clases
             comboBox1.Items.Add("Fecha más antigua");
 
             comboBox1.SelectedIndex = 0;
+            
+            CargarLibros();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -103,7 +106,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
                     $"Titulo LIKE '%{texto}%'";
             }
 
-            dataGridView1.DataSource = tablaLibros.DefaultView;
+            dGVLibros.DataSource = tablaLibros.DefaultView;
         }
 
 
@@ -156,7 +159,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
                     break;
             }
 
-            dataGridView1.DataSource = tablaLibros.DefaultView;
+            dGVLibros.DataSource = tablaLibros.DefaultView;
 
         }
     }
