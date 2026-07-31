@@ -15,22 +15,16 @@ namespace prySistemaDePrestamosDeLibro.Clases
     {
         private int idLectorSeleccionado;
         private FrmMenuPrincipal ventanaPrincipal;
-
-        public FrmEditarLectores(int idLector)
-        {
-
-            InitializeComponent();
-            idLectorSeleccionado = idLector;
-        }
-        public FrmEditarLectores(FrmMenuPrincipal padre)
+        public FrmEditarLectores(int id_lector, FrmMenuPrincipal padre)
         {
             InitializeComponent();
+            idLectorSeleccionado = id_lector;
             ventanaPrincipal = padre;
+            dtpFechaNacimiento.ValueChanged += dtpFechaNacimiento_ValueChanged;
         }
 
         private void FrmEditarLectores_Load(object sender, EventArgs e)
         {
-            idLectorSeleccionado = 1;
             CargarDatosLector();
         }
 
@@ -49,9 +43,12 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 txtMunicipio.Text = fila["Municipio"].ToString();
                 txtColonia.Text = fila["Colonia"].ToString();
                 txtCP.Text = fila["CP"].ToString();
-                dtpFechaNacimiento.Value = Convert.ToDateTime(fila["Fecha_Nacimiento"]);
                 txtEdad.Text = fila["Edad"] != DBNull.Value ? fila["Edad"].ToString() : "";
-                dtpFechaNacimiento.ValueChanged += dtpFechaNacimiento_ValueChanged;
+                
+                if (fila["Fecha_Nacimiento"] !=DBNull.Value)
+                {
+                    dtpFechaNacimiento.Value = Convert.ToDateTime(fila["Fecha_Nacimiento"]);
+                }
             }
 
         }

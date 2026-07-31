@@ -146,12 +146,9 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             }
             mostrarContenido(apartadoAgregarLectores);
         }
-        public void mostrarApartadoEditarLector()
+        public void mostrarApartadoEditarLector(int id_lector)
         {
-            if (apartadoEditarLector == null)
-            {
-                apartadoEditarLector = new FrmEditarLectores(this);
-            }
+            apartadoEditarLector = new FrmEditarLectores(id_lector, this);
             mostrarContenido(apartadoEditarLector);
         }
 
