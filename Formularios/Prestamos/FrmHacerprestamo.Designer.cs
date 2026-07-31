@@ -272,7 +272,6 @@
             btnvalidarprestamo.TabIndex = 23;
             btnvalidarprestamo.Text = "validar prestamo";
             btnvalidarprestamo.UseVisualStyleBackColor = false;
-            btnvalidarprestamo.Click += btnseguirprestamo_Click;
             // 
             // tbcprestamollenado
             // 

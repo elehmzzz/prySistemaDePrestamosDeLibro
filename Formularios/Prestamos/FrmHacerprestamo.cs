@@ -35,15 +35,6 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
             }
         }
 
-        private void btnseguirprestamo_Click(object sender, EventArgs e)
-        {
-            FrmHacerprestamoLib frm = new FrmHacerprestamoLib(this);
-
-            this.Hide();        // ocultas (NO se pierde info)
-            frm.ShowDialog();   // abres el siguiente paso
-            this.Show();        // cuando regrese, aparece igual
-        }
-
         private void btnAgregarCLector_Click(object sender, EventArgs e)
         {
 
