@@ -15,10 +15,12 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
     public partial class FrmHacerprestamo : Form
     {
         ClsLectores objLectores; //instancia
+        ClsLibro objLibro;
         public FrmHacerprestamo()
         {
             InitializeComponent();
             objLectores = new ClsLectores();
+            objLibro = new ClsLibro();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -49,11 +51,24 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
             cmbLectores.DropDownStyle = ComboBoxStyle.DropDown;
             cmbLectores.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbLectores.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+
+            DataTable dtLibros = objLibro.ObtenerLibros(); //aqui consulto los lectores
+            cmbLibros.DataSource = dtLibros;
+            cmbLibros.DisplayMember = "Titulo";
+            cmbLibros.ValueMember = "id_libro";
+            cmbLibros.DropDownStyle = ComboBoxStyle.DropDown;
+            cmbLibros.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbLibros.AutoCompleteSource = AutoCompleteSource.ListItems;
         }
 
         private void cmbLectores_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (cmbLectores.SelectedItem is DataRowView lector)
+            {
+                txtEdad.Text = lector["Edad"].ToString();
+                txtMunicipio.Text = lector["Municipio"].ToString();
+            }
         }
 
         private void tabPage1_Click(object sender, EventArgs e)

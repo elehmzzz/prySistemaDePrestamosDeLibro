@@ -108,11 +108,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
             }
         }
 
-        private void btnEditarLectores_Click(object sender, EventArgs e)
-        {
-            ventanaPrincipal.mostrarApartadoEditarLector();
+        private void btnEditarLectores_Click(object sender, EventArgs e)        { 
 
-            /*if (dataGridView1.CurrentRow == null)
+            if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.IsNewRow ||
+                dataGridView1.CurrentRow.Cells["Id_Lector"].Value==null ||
+                dataGridView1.CurrentRow.Cells["Id_Lector"].Value ==DBNull.Value)
             {
                 MessageBox.Show("Selecciona un lector de la tabla para editar.", "Aviso",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -120,13 +120,8 @@ namespace prySistemaDePrestamosDeLibro.Clases
             }
 
             int idLector = Convert.ToInt32(dataGridView1.CurrentRow.Cells["Id_Lector"].Value);
+            ventanaPrincipal.mostrarApartadoEditarLector(idLector);
 
-            FrmEditarLectores frmEditar = new FrmEditarLectores(idLector, ventanaPrincipal);
-            if (frmEditar.ShowDialog() == DialogResult.OK)
-            {
-                CargarLectores();
-            }
-            */
         }
     }
 }
