@@ -66,5 +66,10 @@ namespace prySistemaDePrestamosDeLibro.Clases
         {
 
         }
+
+        private void tableLayoutPanel1_Paint_2(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
