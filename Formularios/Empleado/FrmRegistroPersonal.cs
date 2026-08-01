@@ -60,9 +60,10 @@ namespace prySistemaDePrestamosDeLibro.Clases
             objBibliotecario.setTelefono(telefono);
             objBibliotecario.setCorreo(correo);
         }
-        public void guardarDatosUsuario(string usuario, string contrasenia) {
+        public void guardarDatosUsuario(string usuario, string contrasenia, int tipo_usuario) {
             objBibliotecario.setUsuario(usuario);
             objBibliotecario.setContrasenia(contrasenia);
+            objBibliotecario.setTipoUsuario(tipo_usuario);
         }
         public bool registrarUsuario() {
             return objBibliotecario.guardarBibliotecario();

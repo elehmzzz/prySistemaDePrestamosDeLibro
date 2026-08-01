@@ -42,6 +42,8 @@
             radioButton1 = new RadioButton();
             radioButton2 = new RadioButton();
             tableLayoutPanel2 = new TableLayoutPanel();
+            label3 = new Label();
+            txtTipoUsuario = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
@@ -51,14 +53,16 @@
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
-            tableLayoutPanel1.Controls.Add(label5, 0, 0);
-            tableLayoutPanel1.Controls.Add(txtNombre, 1, 0);
-            tableLayoutPanel1.Controls.Add(label6, 0, 1);
-            tableLayoutPanel1.Controls.Add(txtUsuario, 1, 1);
-            tableLayoutPanel1.Controls.Add(label1, 0, 2);
-            tableLayoutPanel1.Controls.Add(txtCorreo, 1, 2);
-            tableLayoutPanel1.Controls.Add(label2, 0, 3);
-            tableLayoutPanel1.Controls.Add(txtTelefono, 1, 3);
+            tableLayoutPanel1.Controls.Add(txtTipoUsuario, 1, 0);
+            tableLayoutPanel1.Controls.Add(label3, 0, 0);
+            tableLayoutPanel1.Controls.Add(label2, 0, 4);
+            tableLayoutPanel1.Controls.Add(txtTelefono, 1, 4);
+            tableLayoutPanel1.Controls.Add(label1, 0, 3);
+            tableLayoutPanel1.Controls.Add(txtCorreo, 1, 3);
+            tableLayoutPanel1.Controls.Add(label6, 0, 2);
+            tableLayoutPanel1.Controls.Add(txtUsuario, 1, 2);
+            tableLayoutPanel1.Controls.Add(label5, 0, 1);
+            tableLayoutPanel1.Controls.Add(txtNombre, 1, 1);
             tableLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tableLayoutPanel1.Location = new Point(17, 17);
             tableLayoutPanel1.Margin = new Padding(8);
@@ -76,7 +80,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(8, 0);
+            label5.Location = new Point(8, 61);
             label5.Margin = new Padding(8, 0, 8, 0);
             label5.Name = "label5";
             label5.Size = new Size(178, 28);
@@ -86,7 +90,7 @@
             // txtNombre
             // 
             txtNombre.Enabled = false;
-            txtNombre.Location = new Point(219, 8);
+            txtNombre.Location = new Point(219, 69);
             txtNombre.Margin = new Padding(8);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(301, 34);
@@ -95,7 +99,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(8, 61);
+            label6.Location = new Point(8, 122);
             label6.Margin = new Padding(8, 0, 8, 0);
             label6.Name = "label6";
             label6.Size = new Size(83, 28);
@@ -105,7 +109,7 @@
             // txtUsuario
             // 
             txtUsuario.Enabled = false;
-            txtUsuario.Location = new Point(219, 69);
+            txtUsuario.Location = new Point(219, 130);
             txtUsuario.Margin = new Padding(8);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.Size = new Size(301, 34);
@@ -114,7 +118,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(8, 122);
+            label1.Location = new Point(8, 183);
             label1.Margin = new Padding(8, 0, 8, 0);
             label1.Name = "label1";
             label1.Size = new Size(76, 28);
@@ -124,7 +128,7 @@
             // txtCorreo
             // 
             txtCorreo.Enabled = false;
-            txtCorreo.Location = new Point(219, 130);
+            txtCorreo.Location = new Point(219, 191);
             txtCorreo.Margin = new Padding(8);
             txtCorreo.Name = "txtCorreo";
             txtCorreo.Size = new Size(301, 34);
@@ -133,7 +137,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(8, 183);
+            label2.Location = new Point(8, 244);
             label2.Margin = new Padding(8, 0, 8, 0);
             label2.Name = "label2";
             label2.Size = new Size(90, 28);
@@ -143,7 +147,7 @@
             // txtTelefono
             // 
             txtTelefono.Enabled = false;
-            txtTelefono.Location = new Point(219, 191);
+            txtTelefono.Location = new Point(219, 252);
             txtTelefono.Margin = new Padding(8);
             txtTelefono.Name = "txtTelefono";
             txtTelefono.Size = new Size(301, 34);
@@ -211,6 +215,25 @@
             tableLayoutPanel2.Size = new Size(350, 156);
             tableLayoutPanel2.TabIndex = 39;
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(8, 0);
+            label3.Margin = new Padding(8, 0, 8, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(73, 28);
+            label3.TabIndex = 34;
+            label3.Text = "Sesión:";
+            // 
+            // txtTipoUsuario
+            // 
+            txtTipoUsuario.Enabled = false;
+            txtTipoUsuario.Location = new Point(219, 8);
+            txtTipoUsuario.Margin = new Padding(8);
+            txtTipoUsuario.Name = "txtTipoUsuario";
+            txtTipoUsuario.Size = new Size(301, 34);
+            txtTipoUsuario.TabIndex = 35;
+            // 
             // FrmPerfilEmpleado
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
@@ -249,5 +272,7 @@
         private RadioButton radioButton1;
         private RadioButton radioButton2;
         private TableLayoutPanel tableLayoutPanel2;
+        private TextBox txtTipoUsuario;
+        private Label label3;
     }
 }
