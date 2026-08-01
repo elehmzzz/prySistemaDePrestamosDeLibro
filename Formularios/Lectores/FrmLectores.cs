@@ -29,6 +29,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
             txtBuscador.Enter += txtBuscador_Enter;
             txtBuscador.Leave += txtBuscador_Leave;
             this.Load += FrmLectores_Load;
+            this.VisibleChanged += FrmLectores_VisibleChanged;
         }
         public void CargarLectores()
         {
@@ -56,10 +57,12 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 dataGridView1.Columns["Fecha_Nacimiento"].HeaderText = "Fecha de Nacimiento";
 
         }
-        private void btnAgregarLector_Click(object sender, EventArgs e)
+        private void FrmLectores_VisibleChanged(object? sender, EventArgs e)
         {
-            //FrmAgregarLectores ventanaAgregar = new FrmAgregarLectores();
-
+            if (this.Visible)
+            {
+                CargarLectores();
+            }
         }
 
         private void txtBuscador_TextChanged_1(object? sender, EventArgs? e)
