@@ -32,7 +32,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
             txtUsuario.Text = objBibliotecario.getUsuario();
             txtCorreo.Text = objBibliotecario.getCorreo();
             txtTelefono.Text = objBibliotecario.getTelefono();
-
+            txtTipoUsuario.Text = objBibliotecario.getNombreTipoUsuario();
         }
 
     }

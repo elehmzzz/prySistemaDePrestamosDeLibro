@@ -39,6 +39,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             mostrarModuloLibros();
             objBibliotecario = obj;
             this.ventanaInicioSesion = ventanaInicioSesion;
+            comprobarAcceso();
         }
         //cerrar sesion
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -175,13 +176,22 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         //muestra el modulo de empleado
         public void mostrarModuloEmpleado()
         {
-            lblTituloModulo.Text = "Empleado";
+            lblTituloModulo.Text = "Información personal";
             if (moduloEmpleado == null || moduloEmpleado.IsDisposed)
             {
                 moduloEmpleado = new FrmPerfilEmpleado(this, objBibliotecario);
                 //MessageBox.Show("Se creó un nuevo formulario empleado");
             }
             mostrarContenido(moduloEmpleado);
+        }
+
+        public void comprobarAcceso() {
+            if (objBibliotecario.getTipoUsuario() == 2) {
+                btnLibros.Enabled = false;
+                btnMultas.Enabled = false;
+                btnLibros.Text = "Libros  🔒";
+                btnMultas.Text = "Multas  🔒";
+            }
         }
     }
 }
