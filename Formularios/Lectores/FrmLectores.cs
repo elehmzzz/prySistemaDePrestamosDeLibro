@@ -56,11 +56,6 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 dataGridView1.Columns["Fecha_Nacimiento"].HeaderText = "Fecha de Nacimiento";
 
         }
-        private void btnAgregarLector_Click(object sender, EventArgs e)
-        {
-            //FrmAgregarLectores ventanaAgregar = new FrmAgregarLectores();
-
-        }
 
         private void txtBuscador_TextChanged_1(object? sender, EventArgs? e)
         {
