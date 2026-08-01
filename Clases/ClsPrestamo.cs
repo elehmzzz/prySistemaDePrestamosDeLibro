@@ -16,8 +16,6 @@ namespace prySistemaDePrestamosDeLibro.Clases
         private DateTime Fecha_Devolucion;
         private string Estado="";
         private int IdLector;
-        private interface IdEmpleado;
-
 
 
         private MySqlConnection EstableceConexion()
@@ -48,5 +46,56 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 con.Close();
             }
         }
+
+        //==================== PARA FECHAS DE PRESTAMO ====================
+        public DateTime getFechaPrestamo()
+        {
+            return Fecha_Prestamo;
+        }
+
+        public void setFechaPrestamo(DateTime fechaPrestamo)
+        {
+            Fecha_Prestamo = fechaPrestamo;
+        }
+
+        public DateTime getFechaDevolucion()
+        {
+            return Fecha_Devolucion;
+        }
+
+        public void setFechaDevolucion(DateTime fechaDevolucion)
+        {
+            Fecha_Devolucion = fechaDevolucion;
+        }
+        public DataTable RellenarFechasPrestamo(int idPrestamo)
+        {
+            MySqlConnection con = EstableceConexion();
+            DataTable dt = new();
+
+            try
+            {
+                string consulta = @"SELECT Fecha_Prestamo, Fecha_Devolucion 
+                            FROM Detalle_Prestamo 
+                            WHERE Id_Prestamo = @IdPrestamo";
+
+                MySqlCommand cmd = new MySqlCommand(consulta, con);
+                cmd.Parameters.AddWithValue("@IdPrestamo", idPrestamo);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(dt);
+
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener las fechas: " + ex.Message);
+                return dt;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        //==================== FIN PASE PARA FECHAS DE PRESTAMO ====================
     }
 }

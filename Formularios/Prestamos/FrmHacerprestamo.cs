@@ -96,7 +96,11 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
 
         private void btnvalidarprestamo_Click(object sender, EventArgs e)
         {
+            DateTime fechaPrestamo = dtpFechaprestamo.Value;
+            DateTime fechaDevolucion = dtpFechadevolucion.Value;
 
+            MessageBox.Show("Fecha préstamo: " + fechaPrestamo.ToString());
+            MessageBox.Show("Fecha devolución: " + fechaDevolucion.ToString());
         }
     }
 }

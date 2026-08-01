@@ -31,19 +31,19 @@
             panel2 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             btRegresarPrHechos = new Button();
-            button3 = new Button();
+            btnEditplazo = new Button();
             tableLayoutPanel3 = new TableLayoutPanel();
-            textBox9 = new TextBox();
-            textBox5 = new TextBox();
+            txtNombre = new TextBox();
+            txtDiasrestantes = new TextBox();
             label5 = new Label();
             label11 = new Label();
-            dateTimePicker3 = new DateTimePicker();
-            textBox12 = new TextBox();
-            textBox4 = new TextBox();
+            dtpFechaNac = new DateTimePicker();
+            txtCp = new TextBox();
+            txtTelefono = new TextBox();
             label9 = new Label();
             label10 = new Label();
-            textBox17 = new TextBox();
-            textBox18 = new TextBox();
+            txtMunicipio = new TextBox();
+            txtLocalidad = new TextBox();
             label13 = new Label();
             label14 = new Label();
             label15 = new Label();
@@ -51,21 +51,20 @@
             label17 = new Label();
             label18 = new Label();
             label19 = new Label();
-            textBox6 = new TextBox();
+            txtLibro = new TextBox();
             label20 = new Label();
             label21 = new Label();
             label22 = new Label();
-            textBox7 = new TextBox();
-            textBox8 = new TextBox();
-            label23 = new Label();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
-            textBox13 = new TextBox();
+            txtDiasretraso = new TextBox();
+            txtMulta = new TextBox();
+            txtISBN = new TextBox();
+            txtAutor = new TextBox();
+            txtEdad = new TextBox();
             label12 = new Label();
-            dateTimePicker4 = new DateTimePicker();
-            dateTimePicker5 = new DateTimePicker();
+            dtpFechprestamo = new DateTimePicker();
+            dtpFechdevolucion = new DateTimePicker();
             tableLayoutPanel4 = new TableLayoutPanel();
-            textBox10 = new TextBox();
+            txtprestatario = new TextBox();
             label24 = new Label();
             tableLayoutPanel2 = new TableLayoutPanel();
             labelRegistrodePrestamos = new Label();
@@ -111,7 +110,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 190F));
             tableLayoutPanel1.Controls.Add(btRegresarPrHechos, 1, 1);
-            tableLayoutPanel1.Controls.Add(button3, 0, 1);
+            tableLayoutPanel1.Controls.Add(btnEditplazo, 0, 1);
             tableLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tableLayoutPanel1.Location = new Point(636, 485);
             tableLayoutPanel1.Margin = new Padding(6);
@@ -136,40 +135,40 @@
             btRegresarPrHechos.UseVisualStyleBackColor = false;
             btRegresarPrHechos.Click += btRegresarPrHechos_Click;
             // 
-            // button3
+            // btnEditplazo
             // 
-            button3.AutoSize = true;
-            button3.BackColor = Color.FromArgb(32, 41, 64);
-            button3.BackgroundImageLayout = ImageLayout.None;
-            button3.ForeColor = SystemColors.Control;
-            button3.Location = new Point(3, 3);
-            button3.Name = "button3";
-            button3.Size = new Size(126, 38);
-            button3.TabIndex = 65;
-            button3.Text = "Editar plazo";
-            button3.UseVisualStyleBackColor = false;
+            btnEditplazo.AutoSize = true;
+            btnEditplazo.BackColor = Color.FromArgb(32, 41, 64);
+            btnEditplazo.BackgroundImageLayout = ImageLayout.None;
+            btnEditplazo.ForeColor = SystemColors.Control;
+            btnEditplazo.Location = new Point(3, 3);
+            btnEditplazo.Name = "btnEditplazo";
+            btnEditplazo.Size = new Size(126, 38);
+            btnEditplazo.TabIndex = 65;
+            btnEditplazo.Text = "Editar plazo";
+            btnEditplazo.UseVisualStyleBackColor = false;
             // 
             // tableLayoutPanel3
             // 
-            tableLayoutPanel3.ColumnCount = 7;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 14.7368422F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25.8479538F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20.3508778F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 26.31579F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.748538F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 101F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 52F));
-            tableLayoutPanel3.Controls.Add(textBox9, 1, 0);
-            tableLayoutPanel3.Controls.Add(textBox5, 5, 0);
+            tableLayoutPanel3.ColumnCount = 6;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.4133043F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.882225F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.08397F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.42748F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.19302F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 92F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.Controls.Add(txtNombre, 1, 0);
+            tableLayoutPanel3.Controls.Add(txtDiasrestantes, 5, 0);
             tableLayoutPanel3.Controls.Add(label5, 2, 4);
             tableLayoutPanel3.Controls.Add(label11, 0, 3);
-            tableLayoutPanel3.Controls.Add(dateTimePicker3, 1, 1);
-            tableLayoutPanel3.Controls.Add(textBox12, 1, 5);
-            tableLayoutPanel3.Controls.Add(textBox4, 3, 0);
+            tableLayoutPanel3.Controls.Add(dtpFechaNac, 1, 1);
+            tableLayoutPanel3.Controls.Add(txtCp, 1, 5);
+            tableLayoutPanel3.Controls.Add(txtTelefono, 3, 0);
             tableLayoutPanel3.Controls.Add(label9, 2, 0);
             tableLayoutPanel3.Controls.Add(label10, 0, 5);
-            tableLayoutPanel3.Controls.Add(textBox17, 1, 3);
-            tableLayoutPanel3.Controls.Add(textBox18, 1, 4);
+            tableLayoutPanel3.Controls.Add(txtMunicipio, 1, 3);
+            tableLayoutPanel3.Controls.Add(txtLocalidad, 1, 4);
             tableLayoutPanel3.Controls.Add(label13, 0, 1);
             tableLayoutPanel3.Controls.Add(label14, 0, 2);
             tableLayoutPanel3.Controls.Add(label15, 0, 0);
@@ -177,52 +176,48 @@
             tableLayoutPanel3.Controls.Add(label17, 2, 2);
             tableLayoutPanel3.Controls.Add(label18, 2, 3);
             tableLayoutPanel3.Controls.Add(label19, 2, 5);
-            tableLayoutPanel3.Controls.Add(textBox6, 3, 1);
+            tableLayoutPanel3.Controls.Add(txtLibro, 3, 1);
             tableLayoutPanel3.Controls.Add(label20, 4, 0);
             tableLayoutPanel3.Controls.Add(label21, 4, 1);
             tableLayoutPanel3.Controls.Add(label22, 4, 2);
-            tableLayoutPanel3.Controls.Add(textBox7, 5, 1);
-            tableLayoutPanel3.Controls.Add(textBox8, 5, 2);
-            tableLayoutPanel3.Controls.Add(label23, 6, 2);
-            tableLayoutPanel3.Controls.Add(textBox2, 3, 2);
-            tableLayoutPanel3.Controls.Add(textBox3, 3, 3);
-            tableLayoutPanel3.Controls.Add(textBox13, 1, 2);
+            tableLayoutPanel3.Controls.Add(txtDiasretraso, 5, 1);
+            tableLayoutPanel3.Controls.Add(txtMulta, 5, 2);
+            tableLayoutPanel3.Controls.Add(txtISBN, 3, 2);
+            tableLayoutPanel3.Controls.Add(txtAutor, 3, 3);
+            tableLayoutPanel3.Controls.Add(txtEdad, 1, 2);
             tableLayoutPanel3.Controls.Add(label12, 0, 4);
-            tableLayoutPanel3.Controls.Add(dateTimePicker4, 3, 4);
-            tableLayoutPanel3.Controls.Add(dateTimePicker5, 3, 5);
-            tableLayoutPanel3.Location = new Point(34, 121);
+            tableLayoutPanel3.Controls.Add(dtpFechprestamo, 3, 4);
+            tableLayoutPanel3.Controls.Add(dtpFechdevolucion, 3, 5);
+            tableLayoutPanel3.Location = new Point(34, 106);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 6;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 19.4366188F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 18.3098583F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 17.746479F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 15.4929581F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 14.9295778F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 13.8028173F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 19.4915237F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 18.36158F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 17.79661F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 15.5367222F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 14.9717512F));
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 13.8418074F));
             tableLayoutPanel3.Size = new Size(1010, 355);
             tableLayoutPanel3.TabIndex = 43;
             // 
-            // textBox9
+            // txtNombre
             // 
-            textBox9.Enabled = false;
-            textBox9.Location = new Point(129, 3);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(214, 34);
-            textBox9.TabIndex = 58;
+            txtNombre.Location = new Point(126, 3);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(213, 34);
+            txtNombre.TabIndex = 58;
             // 
-            // textBox5
+            // txtDiasrestantes
             // 
-            textBox5.Enabled = false;
-            textBox5.Location = new Point(858, 3);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(88, 34);
-            textBox5.TabIndex = 54;
+            txtDiasrestantes.Location = new Point(920, 3);
+            txtDiasrestantes.Name = "txtDiasrestantes";
+            txtDiasrestantes.Size = new Size(87, 34);
+            txtDiasrestantes.TabIndex = 54;
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(350, 252);
+            label5.Location = new Point(345, 252);
             label5.Name = "label5";
             label5.Size = new Size(154, 28);
             label5.TabIndex = 47;
@@ -237,35 +232,32 @@
             label11.TabIndex = 21;
             label11.Text = "Municipio:";
             // 
-            // dateTimePicker3
+            // dtpFechaNac
             // 
-            dateTimePicker3.Enabled = false;
-            dateTimePicker3.Format = DateTimePickerFormat.Short;
-            dateTimePicker3.Location = new Point(129, 72);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new Size(214, 34);
-            dateTimePicker3.TabIndex = 31;
+            dtpFechaNac.Format = DateTimePickerFormat.Short;
+            dtpFechaNac.Location = new Point(126, 72);
+            dtpFechaNac.Name = "dtpFechaNac";
+            dtpFechaNac.Size = new Size(213, 34);
+            dtpFechaNac.TabIndex = 31;
             // 
-            // textBox12
+            // txtCp
             // 
-            textBox12.Enabled = false;
-            textBox12.Location = new Point(129, 308);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(214, 34);
-            textBox12.TabIndex = 41;
+            txtCp.Location = new Point(126, 308);
+            txtCp.Name = "txtCp";
+            txtCp.Size = new Size(213, 34);
+            txtCp.TabIndex = 41;
             // 
-            // textBox4
+            // txtTelefono
             // 
-            textBox4.Enabled = false;
-            textBox4.Location = new Point(524, 3);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(214, 34);
-            textBox4.TabIndex = 32;
+            txtTelefono.Location = new Point(520, 3);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(214, 34);
+            txtTelefono.TabIndex = 32;
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(350, 0);
+            label9.Location = new Point(345, 0);
             label9.Name = "label9";
             label9.Size = new Size(90, 28);
             label9.TabIndex = 25;
@@ -280,21 +272,19 @@
             label10.TabIndex = 23;
             label10.Text = "CP:";
             // 
-            // textBox17
+            // txtMunicipio
             // 
-            textBox17.Enabled = false;
-            textBox17.Location = new Point(129, 200);
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(214, 34);
-            textBox17.TabIndex = 22;
+            txtMunicipio.Location = new Point(126, 200);
+            txtMunicipio.Name = "txtMunicipio";
+            txtMunicipio.Size = new Size(213, 34);
+            txtMunicipio.TabIndex = 22;
             // 
-            // textBox18
+            // txtLocalidad
             // 
-            textBox18.Enabled = false;
-            textBox18.Location = new Point(129, 255);
-            textBox18.Name = "textBox18";
-            textBox18.Size = new Size(214, 34);
-            textBox18.TabIndex = 24;
+            txtLocalidad.Location = new Point(126, 255);
+            txtLocalidad.Name = "txtLocalidad";
+            txtLocalidad.Size = new Size(213, 34);
+            txtLocalidad.TabIndex = 24;
             // 
             // label13
             // 
@@ -326,7 +316,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(350, 69);
+            label16.Location = new Point(345, 69);
             label16.Name = "label16";
             label16.Size = new Size(61, 28);
             label16.TabIndex = 28;
@@ -335,7 +325,7 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(350, 134);
+            label17.Location = new Point(345, 134);
             label17.Name = "label17";
             label17.Size = new Size(58, 28);
             label17.TabIndex = 43;
@@ -344,7 +334,7 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(350, 197);
+            label18.Location = new Point(345, 197);
             label18.Name = "label18";
             label18.Size = new Size(66, 28);
             label18.TabIndex = 45;
@@ -353,95 +343,80 @@
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(350, 305);
+            label19.Location = new Point(345, 305);
             label19.Name = "label19";
             label19.Size = new Size(168, 28);
             label19.TabIndex = 48;
             label19.Text = "Fecha devolucion:";
             // 
-            // textBox6
+            // txtLibro
             // 
-            textBox6.Enabled = false;
-            textBox6.Location = new Point(524, 72);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(214, 34);
-            textBox6.TabIndex = 46;
+            txtLibro.Location = new Point(520, 72);
+            txtLibro.Name = "txtLibro";
+            txtLibro.Size = new Size(214, 34);
+            txtLibro.TabIndex = 46;
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(749, 0);
+            label20.Location = new Point(744, 0);
             label20.Name = "label20";
-            label20.Size = new Size(94, 56);
+            label20.Size = new Size(136, 28);
             label20.TabIndex = 51;
             label20.Text = "Dias restantes:";
             // 
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(749, 69);
+            label21.Location = new Point(744, 69);
             label21.Name = "label21";
-            label21.Size = new Size(81, 56);
+            label21.Size = new Size(146, 28);
             label21.TabIndex = 52;
             label21.Text = "Dias de retraso:";
             // 
             // label22
             // 
             label22.AutoSize = true;
-            label22.Location = new Point(749, 134);
+            label22.Location = new Point(744, 134);
             label22.Name = "label22";
-            label22.Size = new Size(98, 56);
+            label22.Size = new Size(170, 28);
             label22.TabIndex = 53;
-            label22.Text = "Multa generada:";
+            label22.Text = "Multa generada: $";
             // 
-            // textBox7
+            // txtDiasretraso
             // 
-            textBox7.Enabled = false;
-            textBox7.Location = new Point(858, 72);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(88, 34);
-            textBox7.TabIndex = 55;
+            txtDiasretraso.Location = new Point(920, 72);
+            txtDiasretraso.Name = "txtDiasretraso";
+            txtDiasretraso.Size = new Size(87, 34);
+            txtDiasretraso.TabIndex = 55;
             // 
-            // textBox8
+            // txtMulta
             // 
-            textBox8.Enabled = false;
-            textBox8.Location = new Point(858, 137);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(88, 34);
-            textBox8.TabIndex = 56;
+            txtMulta.Location = new Point(920, 137);
+            txtMulta.Name = "txtMulta";
+            txtMulta.Size = new Size(87, 34);
+            txtMulta.TabIndex = 56;
             // 
-            // label23
+            // txtISBN
             // 
-            label23.AutoSize = true;
-            label23.Location = new Point(959, 134);
-            label23.Name = "label23";
-            label23.Size = new Size(47, 28);
-            label23.TabIndex = 57;
-            label23.Text = "dias";
+            txtISBN.Location = new Point(520, 137);
+            txtISBN.Name = "txtISBN";
+            txtISBN.Size = new Size(214, 34);
+            txtISBN.TabIndex = 49;
             // 
-            // textBox2
+            // txtAutor
             // 
-            textBox2.Enabled = false;
-            textBox2.Location = new Point(524, 137);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(214, 34);
-            textBox2.TabIndex = 49;
+            txtAutor.Location = new Point(520, 200);
+            txtAutor.Name = "txtAutor";
+            txtAutor.Size = new Size(214, 34);
+            txtAutor.TabIndex = 60;
             // 
-            // textBox3
+            // txtEdad
             // 
-            textBox3.Enabled = false;
-            textBox3.Location = new Point(524, 200);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(214, 34);
-            textBox3.TabIndex = 60;
-            // 
-            // textBox13
-            // 
-            textBox13.Enabled = false;
-            textBox13.Location = new Point(129, 137);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(87, 34);
-            textBox13.TabIndex = 63;
+            txtEdad.Location = new Point(126, 137);
+            txtEdad.Name = "txtEdad";
+            txtEdad.Size = new Size(87, 34);
+            txtEdad.TabIndex = 63;
             // 
             // label12
             // 
@@ -452,30 +427,28 @@
             label12.TabIndex = 20;
             label12.Text = "localidad:";
             // 
-            // dateTimePicker4
+            // dtpFechprestamo
             // 
-            dateTimePicker4.Enabled = false;
-            dateTimePicker4.Format = DateTimePickerFormat.Short;
-            dateTimePicker4.Location = new Point(524, 255);
-            dateTimePicker4.Name = "dateTimePicker4";
-            dateTimePicker4.Size = new Size(214, 34);
-            dateTimePicker4.TabIndex = 64;
+            dtpFechprestamo.Format = DateTimePickerFormat.Short;
+            dtpFechprestamo.Location = new Point(520, 255);
+            dtpFechprestamo.Name = "dtpFechprestamo";
+            dtpFechprestamo.Size = new Size(214, 34);
+            dtpFechprestamo.TabIndex = 64;
             // 
-            // dateTimePicker5
+            // dtpFechdevolucion
             // 
-            dateTimePicker5.Enabled = false;
-            dateTimePicker5.Format = DateTimePickerFormat.Short;
-            dateTimePicker5.Location = new Point(524, 308);
-            dateTimePicker5.Name = "dateTimePicker5";
-            dateTimePicker5.Size = new Size(214, 34);
-            dateTimePicker5.TabIndex = 65;
+            dtpFechdevolucion.Format = DateTimePickerFormat.Short;
+            dtpFechdevolucion.Location = new Point(520, 308);
+            dtpFechdevolucion.Name = "dtpFechdevolucion";
+            dtpFechdevolucion.Size = new Size(214, 34);
+            dtpFechdevolucion.TabIndex = 65;
             // 
             // tableLayoutPanel4
             // 
             tableLayoutPanel4.ColumnCount = 2;
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 228F));
-            tableLayoutPanel4.Controls.Add(textBox10, 1, 1);
+            tableLayoutPanel4.Controls.Add(txtprestatario, 1, 1);
             tableLayoutPanel4.Controls.Add(label24, 0, 1);
             tableLayoutPanel4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tableLayoutPanel4.Location = new Point(558, 43);
@@ -487,13 +460,12 @@
             tableLayoutPanel4.Size = new Size(464, 34);
             tableLayoutPanel4.TabIndex = 66;
             // 
-            // textBox10
+            // txtprestatario
             // 
-            textBox10.Enabled = false;
-            textBox10.Location = new Point(239, 3);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(214, 34);
-            textBox10.TabIndex = 67;
+            txtprestatario.Location = new Point(239, 3);
+            txtprestatario.Name = "txtprestatario";
+            txtprestatario.Size = new Size(214, 34);
+            txtprestatario.TabIndex = 67;
             // 
             // label24
             // 
@@ -728,24 +700,24 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Label labelRegistrodePrestamos;
         private Panel panel2;
-        private TextBox textBox13;
+        private TextBox txtEdad;
         private TextBox textBox14;
         private DateTimePicker dateTimePicker1;
-        private TextBox textBox3;
+        private TextBox txtAutor;
         private ListBox Buscador;
         private TableLayoutPanel tableLayoutPanel3;
-        private TextBox textBox9;
-        private TextBox textBox5;
-        private TextBox textBox2;
+        private TextBox txtNombre;
+        private TextBox txtDiasrestantes;
+        private TextBox txtISBN;
         private Label label5;
-        private DateTimePicker dateTimePicker3;
-        private TextBox textBox12;
-        private TextBox textBox4;
+        private DateTimePicker dtpFechaNac;
+        private TextBox txtCp;
+        private TextBox txtTelefono;
         private Label label9;
         private Label label10;
-        private TextBox textBox17;
+        private TextBox txtMunicipio;
         private Label label11;
-        private TextBox textBox18;
+        private TextBox txtLocalidad;
         private Label label12;
         private Label label13;
         private Label label14;
@@ -754,20 +726,19 @@
         private Label label17;
         private Label label18;
         private Label label19;
-        private TextBox textBox6;
+        private TextBox txtLibro;
         private Label label20;
         private Label label21;
         private Label label22;
-        private TextBox textBox7;
-        private TextBox textBox8;
-        private Label label23;
+        private TextBox txtDiasretraso;
+        private TextBox txtMulta;
         private TableLayoutPanel tableLayoutPanel1;
         private Button btRegresarPrHechos;
-        private Button button3;
-        private DateTimePicker dateTimePicker4;
-        private DateTimePicker dateTimePicker5;
+        private Button btnEditplazo;
+        private DateTimePicker dtpFechprestamo;
+        private DateTimePicker dtpFechdevolucion;
         private TableLayoutPanel tableLayoutPanel4;
-        private TextBox textBox10;
+        private TextBox txtprestatario;
         private Label label24;
     }
 }
