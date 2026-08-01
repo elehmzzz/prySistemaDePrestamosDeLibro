@@ -31,27 +31,26 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             cmbLectores = new ComboBox();
             btnAgregarCLector = new Button();
-            dateTimePicker1 = new DateTimePicker();
+            dtpFechanac = new DateTimePicker();
             txtcp = new TextBox();
             label7 = new Label();
             txtEdad = new TextBox();
-            txtMunicipio = new TextBox();
             label2 = new Label();
             label6 = new Label();
             label9 = new Label();
             label8 = new Label();
             txtTelefono = new TextBox();
-            txtColonia = new TextBox();
             label4 = new Label();
             label3 = new Label();
-            tableLayoutPanel3 = new TableLayoutPanel();
+            txtColonia = new TextBox();
+            txtMunicipio = new TextBox();
             btnvalidarprestamo = new Button();
             tbcprestamollenado = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
             tableLayoutPanel2 = new TableLayoutPanel();
-            dateTimePicker3 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            dtpFechadevolucion = new DateTimePicker();
+            dtpFechaprestamo = new DateTimePicker();
             cmbLibros = new ComboBox();
             label1 = new Label();
             txtDisponibles = new TextBox();
@@ -64,7 +63,6 @@
             txtAutor = new TextBox();
             label5 = new Label();
             tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
             tbcprestamollenado.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -82,7 +80,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Controls.Add(cmbLectores, 1, 0);
             tableLayoutPanel1.Controls.Add(btnAgregarCLector, 2, 0);
-            tableLayoutPanel1.Controls.Add(dateTimePicker1, 1, 1);
+            tableLayoutPanel1.Controls.Add(dtpFechanac, 1, 1);
             tableLayoutPanel1.Controls.Add(txtcp, 1, 5);
             tableLayoutPanel1.Controls.Add(label7, 0, 5);
             tableLayoutPanel1.Controls.Add(txtEdad, 1, 2);
@@ -133,17 +131,18 @@
             btnAgregarCLector.UseVisualStyleBackColor = false;
             btnAgregarCLector.Click += btnAgregarCLector_Click;
             // 
-            // dateTimePicker1
+            // dtpFechanac
             // 
-            dateTimePicker1.Enabled = false;
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(164, 50);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(214, 27);
-            dateTimePicker1.TabIndex = 31;
+            dtpFechanac.Enabled = false;
+            dtpFechanac.Format = DateTimePickerFormat.Short;
+            dtpFechanac.Location = new Point(164, 50);
+            dtpFechanac.Name = "dtpFechanac";
+            dtpFechanac.Size = new Size(214, 27);
+            dtpFechanac.TabIndex = 31;
             // 
             // txtcp
             // 
+            txtcp.AcceptsReturn = true;
             txtcp.Enabled = false;
             txtcp.Location = new Point(164, 251);
             txtcp.Name = "txtcp";
@@ -166,14 +165,6 @@
             txtEdad.Name = "txtEdad";
             txtEdad.Size = new Size(214, 27);
             txtEdad.TabIndex = 19;
-            // 
-            // txtMunicipio
-            // 
-            txtMunicipio.Enabled = false;
-            txtMunicipio.Location = new Point(164, 140);
-            txtMunicipio.Name = "txtMunicipio";
-            txtMunicipio.Size = new Size(214, 27);
-            txtMunicipio.TabIndex = 24;
             // 
             // label2
             // 
@@ -219,14 +210,6 @@
             txtTelefono.Size = new Size(214, 27);
             txtTelefono.TabIndex = 32;
             // 
-            // txtColonia
-            // 
-            txtColonia.Enabled = false;
-            txtColonia.Location = new Point(164, 198);
-            txtColonia.Name = "txtColonia";
-            txtColonia.Size = new Size(214, 27);
-            txtColonia.TabIndex = 22;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -245,20 +228,21 @@
             label3.TabIndex = 20;
             label3.Text = "Colonia:";
             // 
-            // tableLayoutPanel3
+            // txtColonia
             // 
-            tableLayoutPanel3.ColumnCount = 1;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.60241F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.39759F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.Controls.Add(btnvalidarprestamo, 1, 0);
-            tableLayoutPanel3.Enabled = false;
-            tableLayoutPanel3.Location = new Point(499, 442);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 1;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(136, 45);
-            tableLayoutPanel3.TabIndex = 47;
+            txtColonia.Enabled = false;
+            txtColonia.Location = new Point(164, 198);
+            txtColonia.Name = "txtColonia";
+            txtColonia.Size = new Size(214, 27);
+            txtColonia.TabIndex = 22;
+            // 
+            // txtMunicipio
+            // 
+            txtMunicipio.Enabled = false;
+            txtMunicipio.Location = new Point(164, 140);
+            txtMunicipio.Name = "txtMunicipio";
+            txtMunicipio.Size = new Size(214, 27);
+            txtMunicipio.TabIndex = 24;
             // 
             // btnvalidarprestamo
             // 
@@ -266,12 +250,13 @@
             btnvalidarprestamo.BackColor = Color.FromArgb(32, 41, 64);
             btnvalidarprestamo.BackgroundImageLayout = ImageLayout.None;
             btnvalidarprestamo.ForeColor = SystemColors.Control;
-            btnvalidarprestamo.Location = new Point(3, 3);
+            btnvalidarprestamo.Location = new Point(504, 451);
             btnvalidarprestamo.Name = "btnvalidarprestamo";
-            btnvalidarprestamo.Size = new Size(130, 38);
+            btnvalidarprestamo.Size = new Size(131, 38);
             btnvalidarprestamo.TabIndex = 23;
             btnvalidarprestamo.Text = "validar prestamo";
             btnvalidarprestamo.UseVisualStyleBackColor = false;
+            btnvalidarprestamo.Click += btnvalidarprestamo_Click;
             // 
             // tbcprestamollenado
             // 
@@ -314,8 +299,8 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 48.2837448F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 51.7162552F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Controls.Add(dateTimePicker3, 1, 5);
-            tableLayoutPanel2.Controls.Add(dateTimePicker2, 1, 4);
+            tableLayoutPanel2.Controls.Add(dtpFechadevolucion, 1, 5);
+            tableLayoutPanel2.Controls.Add(dtpFechaprestamo, 1, 4);
             tableLayoutPanel2.Controls.Add(cmbLibros, 1, 0);
             tableLayoutPanel2.Controls.Add(label1, 0, 0);
             tableLayoutPanel2.Controls.Add(txtDisponibles, 1, 3);
@@ -338,21 +323,22 @@
             tableLayoutPanel2.Size = new Size(435, 342);
             tableLayoutPanel2.TabIndex = 49;
             // 
-            // dateTimePicker3
+            // dtpFechadevolucion
             // 
-            dateTimePicker3.Format = DateTimePickerFormat.Short;
-            dateTimePicker3.Location = new Point(213, 284);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new Size(214, 27);
-            dateTimePicker3.TabIndex = 45;
+            dtpFechadevolucion.Format = DateTimePickerFormat.Short;
+            dtpFechadevolucion.Location = new Point(213, 284);
+            dtpFechadevolucion.Name = "dtpFechadevolucion";
+            dtpFechadevolucion.Size = new Size(214, 27);
+            dtpFechadevolucion.TabIndex = 45;
             // 
-            // dateTimePicker2
+            // dtpFechaprestamo
             // 
-            dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(213, 224);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(214, 27);
-            dateTimePicker2.TabIndex = 45;
+            dtpFechaprestamo.Enabled = false;
+            dtpFechaprestamo.Format = DateTimePickerFormat.Short;
+            dtpFechaprestamo.Location = new Point(213, 224);
+            dtpFechaprestamo.Name = "dtpFechaprestamo";
+            dtpFechaprestamo.Size = new Size(214, 27);
+            dtpFechaprestamo.TabIndex = 45;
             // 
             // cmbLibros
             // 
@@ -361,6 +347,7 @@
             cmbLibros.Name = "cmbLibros";
             cmbLibros.Size = new Size(214, 28);
             cmbLibros.TabIndex = 51;
+            cmbLibros.SelectedIndexChanged += cmbLibros_SelectedIndexChanged_1;
             // 
             // label1
             // 
@@ -457,10 +444,10 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(674, 489);
+            ClientSize = new Size(674, 501);
+            Controls.Add(btnvalidarprestamo);
             Controls.Add(label5);
             Controls.Add(tbcprestamollenado);
-            Controls.Add(tableLayoutPanel3);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "FrmHacerprestamo";
             StartPosition = FormStartPosition.CenterScreen;
@@ -468,8 +455,6 @@
             Load += load_FrmLector;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            tableLayoutPanel3.ResumeLayout(false);
-            tableLayoutPanel3.PerformLayout();
             tbcprestamollenado.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
@@ -484,7 +469,7 @@
         private TableLayoutPanel tableLayoutPanel1;
         private ComboBox cmbLectores;
         private Button btnAgregarCLector;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpFechanac;
         private TextBox txtcp;
         private Label label7;
         private TextBox txtEdad;
@@ -504,8 +489,8 @@
         private TabPage tabPage2;
         private Label label5;
         private TableLayoutPanel tableLayoutPanel2;
-        private DateTimePicker dateTimePicker3;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dtpFechadevolucion;
+        private DateTimePicker dtpFechaprestamo;
         private ComboBox cmbLibros;
         private Label label1;
         private TextBox txtDisponibles;

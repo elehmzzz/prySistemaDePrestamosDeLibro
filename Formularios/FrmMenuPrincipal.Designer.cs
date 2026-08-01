@@ -162,7 +162,7 @@
             btnEmpleado.Name = "btnEmpleado";
             btnEmpleado.Size = new Size(176, 47);
             btnEmpleado.TabIndex = 8;
-            btnEmpleado.Text = "Empleado";
+            btnEmpleado.Text = "Información";
             btnEmpleado.UseVisualStyleBackColor = true;
             btnEmpleado.Click += btnEmpleado_Click;
             // 

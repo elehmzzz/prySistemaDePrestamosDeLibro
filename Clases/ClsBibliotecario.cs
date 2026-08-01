@@ -16,7 +16,9 @@ namespace prySistemaDePrestamosDeLibro.Clases
         private int IdBibliotecario=0;
         private string Usuario="";
         private string Contrasenia="";
- 
+        private int tipo_usuario;
+        private string nombre_tipo_usuario;
+
         public int getIdBibliotecario()
         {
             return IdBibliotecario;
@@ -32,6 +34,15 @@ namespace prySistemaDePrestamosDeLibro.Clases
         }
         public void setContrasenia(string contrasenia) {
             Contrasenia = contrasenia;
+        }
+        public int getTipoUsuario() {
+            return tipo_usuario;
+        }
+        public void setTipoUsuario(int tipo) {
+            tipo_usuario = tipo;
+        }
+        public string getNombreTipoUsuario() {
+            return nombre_tipo_usuario;
         }
         //constructor 
         public ClsBibliotecario() : base() {
@@ -51,7 +62,8 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
             try
             {
-                string consultaUsuario = "SELECT * FROM bibliotecario WHERE Nombre_Usuario = @nombre";
+                //string consultaUsuario = "SELECT * FROM bibliotecario WHERE Nombre_Usuario = @nombre";
+                string consultaUsuario = @"SELECT b.Nombre_Usuario,b.Contrasenia,b.Nombre,b.Apellido_Paterno,b.Apellido_Materno,b.Telefono,b.Correo,b.Id_Tipo_Usuario,t.Nombre_Tipo FROM bibliotecario b INNER JOIN tipo_usuario t ON b.Id_Tipo_Usuario = t.Id_Tipo_Usuario WHERE b.Nombre_Usuario = @nombre";
                 //se crea el comando para ejecutar la consulta
                 MySqlCommand comando = new MySqlCommand(consultaUsuario, conn);
                 //se asigna el usuario al parametro
@@ -72,6 +84,8 @@ namespace prySistemaDePrestamosDeLibro.Clases
                         aMaterno = reader["Apellido_Materno"].ToString();
                         telefono = reader["Telefono"].ToString();
                         correo = reader["Correo"].ToString();
+                        tipo_usuario = reader.GetInt32("Id_Tipo_Usuario");
+                        nombre_tipo_usuario = reader["Nombre_Tipo"].ToString();
                         conn.Close();
                         return true;
                     }
@@ -100,8 +114,8 @@ namespace prySistemaDePrestamosDeLibro.Clases
         public bool guardarBibliotecario()
         {
             MySqlConnection conn = crearConexion();
-            string consulta = "INSERT INTO bibliotecario (Nombre, Apellido_Paterno, Apellido_Materno, Telefono, Correo, Nombre_Usuario, Contrasenia) " +
-                "VALUES (@nombre, @apellidoPat, @apellidoMat, @telefono, @correo, @usuario, @contrasenia)";
+            string consulta = "INSERT INTO bibliotecario (Nombre, Apellido_Paterno, Apellido_Materno, Telefono, Correo, Nombre_Usuario, Contrasenia, Id_Tipo_Usuario) " +
+                "VALUES (@nombre, @apellidoPat, @apellidoMat, @telefono, @correo, @usuario, @contrasenia, @id_tipo_usuario)";
             string hassContrasenia = BCrypt.Net.BCrypt.HashPassword(Contrasenia);
             try
             {
@@ -113,6 +127,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 cmd.Parameters.AddWithValue("@correo", correo);
                 cmd.Parameters.AddWithValue("@usuario", Usuario);
                 cmd.Parameters.AddWithValue("@contrasenia", hassContrasenia);
+                cmd.Parameters.AddWithValue("@id_tipo_usuario", tipo_usuario);
                 cmd.ExecuteNonQuery();
                 conn.Close();
                 return true;

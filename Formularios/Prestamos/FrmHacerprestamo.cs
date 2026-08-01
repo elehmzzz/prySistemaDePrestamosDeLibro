@@ -1,4 +1,5 @@
-﻿using prySistemaDePrestamosDeLibro.Clases;
+﻿using MySqlX.XDevAPI.Relational;
+using prySistemaDePrestamosDeLibro.Clases;
 using prySistemaDePrestamosDeLibro.Formularios.FRMprestamos;
 using System;
 using System.Collections.Generic;
@@ -44,9 +45,11 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
 
         private void load_FrmLector(object sender, EventArgs e)
         {
+
             DataTable dtLectores = objLectores.ObtenerLectores(); //aqui consulto los lectores
+            dtLectores.Columns.Add("NombreCompleto", typeof(string), "Nombres + ' ' + Apellido_Paterno + '  '+ Apellido_Materno");
             cmbLectores.DataSource = dtLectores;
-            cmbLectores.DisplayMember = "Nombres";
+            cmbLectores.DisplayMember = "NombreCompleto";
             cmbLectores.ValueMember = "Id_Lector";
             cmbLectores.DropDownStyle = ComboBoxStyle.DropDown;
             cmbLectores.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -66,12 +69,30 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
         {
             if (cmbLectores.SelectedItem is DataRowView lector)
             {
+                dtpFechanac.Value = Convert.ToDateTime(lector["Fecha_Nacimiento"]);
                 txtEdad.Text = lector["Edad"].ToString();
                 txtMunicipio.Text = lector["Municipio"].ToString();
+                txtColonia.Text = lector["Colonia"].ToString();
+                txtcp.Text = lector["CP"].ToString();
+                txtTelefono.Text = lector["Telefono"].ToString();
+            }
+        }
+        private void tabPage1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbLibros_SelectedIndexChanged_1(object sender, EventArgs e)
+        {
+            if (cmbLibros.SelectedItem is DataRowView libro)
+            {
+                txtISBN.Text = libro["ISBN"].ToString();
+                txtAutor.Text = libro["Nombres"].ToString();
+                txtDisponibles.Text = libro["Disponibles"].ToString();
             }
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
+        private void btnvalidarprestamo_Click(object sender, EventArgs e)
         {
 
         }

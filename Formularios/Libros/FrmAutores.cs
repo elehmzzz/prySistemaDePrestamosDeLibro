@@ -1,13 +1,6 @@
 ﻿using prySistemaDePrestamosDeLibro.Clases;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace prySistemaDePrestamosDeLibro.Formularios.Libros
 {
@@ -19,16 +12,78 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
         public FrmAutores(FrmMenuPrincipal ventana)
         {
             InitializeComponent();
-            ventanaPrincipal = ventana;
             objAutor = new ClsAutor();
-            dataGridView1.CellClick += dtAutores_Click;
+            ventanaPrincipal = ventana;
         }
+        private void FrmAutores_Load(object sender, EventArgs e)
+        {
+            CargarAutores();
+        }
+        public void CargarAutores()
+        {
+            DataTable dt = objAutor.ObtenerAutores();
+            dtAutores.DataSource = null;
+            dtAutores.Refresh();
 
+            // CONFIGURAR
+            dtAutores.AutoGenerateColumns = true;
+            dtAutores.AllowUserToAddRows = false;
+
+            // ASIGNAR DATOS
+            dtAutores.DataSource = dt;
+
+            // AJUSTAR VISUAL
+            dtAutores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // CAMBIAR NOMBRES
+            if (dtAutores.Columns["id_autor"] != null)
+                dtAutores.Columns["id_autor"].HeaderText = "ID";
+
+            if (dtAutores.Columns["nombres"] != null)
+                dtAutores.Columns["nombres"].HeaderText = "Nombre";
+
+            if (dtAutores.Columns["apellido_paterno"] != null)
+                dtAutores.Columns["apellido_paterno"].HeaderText = "Apellido Paterno";
+
+            if (dtAutores.Columns["apellido_materno"] != null)
+                dtAutores.Columns["apellido_materno"].HeaderText = "Apellido Materno";
+        }
+        private void btnAgregarAutor_Click(object sender, EventArgs e)
+        {
+            FrmAgregarAutor formulario = new FrmAgregarAutor(this);
+            formulario.ShowDialog();
+        }
+        private void dtAutores_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var fila = dtAutores.Rows[e.RowIndex];
+
+                objAutor.setIdAutor(Convert.ToInt32(fila.Cells[0].Value));
+
+                if (fila.Cells[1].Value != null)
+                {
+                    txtNombre.Text = fila.Cells[1].Value.ToString();
+                    objAutor.setNombre(fila.Cells[1].Value.ToString()!);
+                }
+
+                if (fila.Cells[2].Value != null)
+                {
+                    txtAPaterno.Text = fila.Cells[2].Value.ToString();
+                    objAutor.setAPaterno(fila.Cells[2].Value.ToString()!);
+                }
+
+                if (fila.Cells[3].Value != null)
+                {
+                    txtAMaterno.Text = fila.Cells[3].Value.ToString();
+                    objAutor.setAMaterno(fila.Cells[3].Value.ToString()!);
+                }
+            }
+        }
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             ventanaPrincipal.mostrarModuloLibros();
         }
-
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text.Trim() == "")
@@ -36,6 +91,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
                 MessageBox.Show("Ingrese el nombre del autor");
                 return;
             }
+
             if (txtAPaterno.Text.Trim() == "")
             {
                 MessageBox.Show("Ingrese el apellido Paterno del autor");
@@ -56,60 +112,9 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
                 MessageBox.Show("Autor actualizado");
                 CargarAutores();
             }
+
+            Clear();
         }
-
-        private void btnAgregarAutor_Click(object sender, EventArgs e)
-        {
-            ventanaAgregarAutor = new FrmAgregarAutor(this);
-            ventanaAgregarAutor.ShowDialog();
-
-        }
-
-        private void FrmAutores_Load(object sender, EventArgs e)
-        {
-            CargarAutores();
-        }
-
-        public void CargarAutores()
-        {
-            DataTable dt = objAutor.ObtenerAutores();
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = dt;
-            dataGridView1.Refresh();
-        }
-
-
-        private void dtAutores_Click(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                var fila = dataGridView1.Rows[e.RowIndex];
-
-                if (fila.Cells[0].Value != null)
-                {
-                    objAutor.setIdAutor(Convert.ToInt32(fila.Cells[0].Value));
-                }
-
-                if (fila.Cells[1].Value != null)
-                {
-                    objAutor.setNombre(fila.Cells[1].Value.ToString());
-                    txtNombre.Text = fila.Cells[1].Value.ToString();
-                }
-
-                if (fila.Cells[2].Value != null)
-                {
-                    objAutor.setAPaterno(fila.Cells[2].Value.ToString());
-                    txtAPaterno.Text = fila.Cells[2].Value.ToString();
-                }
-
-                if (fila.Cells[3].Value != null)
-                {
-                    objAutor.setAMaterno(fila.Cells[3].Value.ToString());
-                    txtAMaterno.Text = fila.Cells[3].Value.ToString();
-                }
-            }
-        }
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (objAutor.getIdAutor() > 0)
@@ -120,9 +125,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
                     {
                         MessageBox.Show("Autor eliminado correctamente");
                         CargarAutores();
-                        txtNombre.Clear();
-                        txtAPaterno.Clear();
-                        txtAMaterno.Clear();
+                        Clear();
                     }
                 }
             }
@@ -131,12 +134,23 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
                 MessageBox.Show("Selecciona un autor para borrar");
             }
         }
-
-        private void btnAgregarAutor_Click_1(object sender, EventArgs e)
+        private void Clear()
         {
-            FrmAgregarAutor formulario = new FrmAgregarAutor(this);
-            formulario.ShowDialog();
-
+            objAutor.setIdAutor(0);
+            objAutor.setNombre("");
+            objAutor.setAPaterno("");
+            objAutor.setAMaterno("");
+            txtNombre.Clear();
+            txtAPaterno.Clear();
+            txtAMaterno.Clear();
         }
+        private void txtBuscador_TextChanged(object sender, EventArgs e)
+        {
+            if (dtAutores.DataSource is DataTable dt)
+            {
+                string texto = txtBuscador.Text.Trim().Replace("'", "''");
+                dt.DefaultView.RowFilter = $"nombres LIKE '%{texto}%' OR apellido_paterno LIKE '%{texto}%' OR apellido_materno LIKE '%{texto}%'";
+            }
+        }       
     }
 }

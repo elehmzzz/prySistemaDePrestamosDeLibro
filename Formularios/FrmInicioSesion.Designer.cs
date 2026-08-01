@@ -35,18 +35,20 @@
             label2 = new Label();
             label1 = new Label();
             panel2 = new Panel();
-            llbRegistrar = new LinkLabel();
-            label7 = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            btnIniciarSesion = new Button();
+            label5 = new Label();
             txtContrasenia = new TextBox();
             txtUsuario = new TextBox();
-            btnIniciarSesion = new Button();
             label6 = new Label();
-            label5 = new Label();
-            label4 = new Label();
             llbSalir = new LinkLabel();
+            llbRegistrar = new LinkLabel();
+            label7 = new Label();
+            label4 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // panel1
@@ -112,14 +114,10 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(236, 223, 204);
+            panel2.Controls.Add(tableLayoutPanel1);
             panel2.Controls.Add(llbSalir);
             panel2.Controls.Add(llbRegistrar);
             panel2.Controls.Add(label7);
-            panel2.Controls.Add(txtContrasenia);
-            panel2.Controls.Add(txtUsuario);
-            panel2.Controls.Add(btnIniciarSesion);
-            panel2.Controls.Add(label6);
-            panel2.Controls.Add(label5);
             panel2.Controls.Add(label4);
             panel2.Dock = DockStyle.Right;
             panel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -128,6 +126,93 @@
             panel2.Size = new Size(560, 648);
             panel2.TabIndex = 1;
             panel2.UseWaitCursor = true;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 1;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
+            tableLayoutPanel1.Controls.Add(btnIniciarSesion, 0, 4);
+            tableLayoutPanel1.Controls.Add(label5, 0, 0);
+            tableLayoutPanel1.Controls.Add(txtContrasenia, 0, 3);
+            tableLayoutPanel1.Controls.Add(txtUsuario, 0, 1);
+            tableLayoutPanel1.Controls.Add(label6, 0, 2);
+            tableLayoutPanel1.Location = new Point(53, 234);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 5;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 20F));
+            tableLayoutPanel1.Size = new Size(382, 228);
+            tableLayoutPanel1.TabIndex = 12;
+            tableLayoutPanel1.UseWaitCursor = true;
+            // 
+            // btnIniciarSesion
+            // 
+            btnIniciarSesion.AutoSize = true;
+            btnIniciarSesion.BackColor = Color.FromArgb(32, 41, 64);
+            btnIniciarSesion.ForeColor = Color.White;
+            btnIniciarSesion.Location = new Point(3, 183);
+            btnIniciarSesion.Name = "btnIniciarSesion";
+            btnIniciarSesion.Size = new Size(243, 40);
+            btnIniciarSesion.TabIndex = 6;
+            btnIniciarSesion.Text = "Iniciar sesion";
+            btnIniciarSesion.UseVisualStyleBackColor = false;
+            btnIniciarSesion.UseWaitCursor = true;
+            btnIniciarSesion.Click += btnIniciarSesion_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(3, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(83, 28);
+            label5.TabIndex = 4;
+            label5.Text = "Usuario:";
+            label5.UseWaitCursor = true;
+            // 
+            // txtContrasenia
+            // 
+            txtContrasenia.Location = new Point(3, 138);
+            txtContrasenia.Name = "txtContrasenia";
+            txtContrasenia.PasswordChar = '*';
+            txtContrasenia.Size = new Size(289, 34);
+            txtContrasenia.TabIndex = 8;
+            txtContrasenia.Text = "1234";
+            txtContrasenia.UseWaitCursor = true;
+            // 
+            // txtUsuario
+            // 
+            txtUsuario.Location = new Point(3, 48);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(289, 34);
+            txtUsuario.TabIndex = 7;
+            txtUsuario.Text = "alexa";
+            txtUsuario.UseWaitCursor = true;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(3, 90);
+            label6.Name = "label6";
+            label6.Size = new Size(114, 28);
+            label6.TabIndex = 5;
+            label6.Text = "Contraseña:";
+            label6.UseWaitCursor = true;
+            // 
+            // llbSalir
+            // 
+            llbSalir.AutoSize = true;
+            llbSalir.LinkColor = Color.FromArgb(32, 41, 64);
+            llbSalir.Location = new Point(414, 564);
+            llbSalir.Name = "llbSalir";
+            llbSalir.Size = new Size(50, 28);
+            llbSalir.TabIndex = 11;
+            llbSalir.TabStop = true;
+            llbSalir.Text = "Salir";
+            llbSalir.UseWaitCursor = true;
+            llbSalir.LinkClicked += llbSalir_LinkClicked;
             // 
             // llbRegistrar
             // 
@@ -151,57 +236,6 @@
             label7.Text = "Bienvenido al Sistema de Préstamo de Libros. Inicia sesión con tu usuario y contraseña.";
             label7.UseWaitCursor = true;
             // 
-            // txtContrasenia
-            // 
-            txtContrasenia.Location = new Point(53, 350);
-            txtContrasenia.Name = "txtContrasenia";
-            txtContrasenia.PasswordChar = '*';
-            txtContrasenia.Size = new Size(289, 34);
-            txtContrasenia.TabIndex = 8;
-            txtContrasenia.UseWaitCursor = true;
-            // 
-            // txtUsuario
-            // 
-            txtUsuario.Location = new Point(53, 261);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(289, 34);
-            txtUsuario.TabIndex = 7;
-            txtUsuario.UseWaitCursor = true;
-            // 
-            // btnIniciarSesion
-            // 
-            btnIniciarSesion.AutoSize = true;
-            btnIniciarSesion.BackColor = Color.FromArgb(32, 41, 64);
-            btnIniciarSesion.ForeColor = Color.White;
-            btnIniciarSesion.Location = new Point(53, 404);
-            btnIniciarSesion.Name = "btnIniciarSesion";
-            btnIniciarSesion.Size = new Size(184, 38);
-            btnIniciarSesion.TabIndex = 6;
-            btnIniciarSesion.Text = "Iniciar sesion";
-            btnIniciarSesion.UseVisualStyleBackColor = false;
-            btnIniciarSesion.UseWaitCursor = true;
-            btnIniciarSesion.Click += btnIniciarSesion_Click;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(53, 319);
-            label6.Name = "label6";
-            label6.Size = new Size(114, 28);
-            label6.TabIndex = 5;
-            label6.Text = "Contraseña:";
-            label6.UseWaitCursor = true;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(53, 230);
-            label5.Name = "label5";
-            label5.Size = new Size(83, 28);
-            label5.TabIndex = 4;
-            label5.Text = "Usuario:";
-            label5.UseWaitCursor = true;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -212,19 +246,6 @@
             label4.TabIndex = 3;
             label4.Text = "Inicio de sesión";
             label4.UseWaitCursor = true;
-            // 
-            // llbSalir
-            // 
-            llbSalir.AutoSize = true;
-            llbSalir.LinkColor = Color.FromArgb(32, 41, 64);
-            llbSalir.Location = new Point(414, 564);
-            llbSalir.Name = "llbSalir";
-            llbSalir.Size = new Size(50, 28);
-            llbSalir.TabIndex = 11;
-            llbSalir.TabStop = true;
-            llbSalir.Text = "Salir";
-            llbSalir.UseWaitCursor = true;
-            llbSalir.LinkClicked += llbSalir_LinkClicked;
             // 
             // FrmInicioSesion
             // 
@@ -238,6 +259,7 @@
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             Name = "FrmInicioSesion";
+            ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicio de sesión";
             UseWaitCursor = true;
@@ -247,6 +269,8 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -267,5 +291,6 @@
         private PictureBox pictureBox1;
         private LinkLabel llbRegistrar;
         private LinkLabel llbSalir;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

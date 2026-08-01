@@ -18,12 +18,20 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         {
             InitializeComponent();
             this.registroPersonal = registroPersonal;
+            cbmTipoUsuario.SelectedIndex = 0;
+
         }
         private void btnSiguiente_Click(object sender, EventArgs e)
         {
             string usuario = txtUsuario.Text.Trim();
             string contraseña = txtContrasenia.Text.Trim();
             string confirmarContrasenia = txtConfirmarContrasenia.Text.Trim();
+            int tipoUsuario = cbmTipoUsuario.SelectedIndex;
+
+            if (tipoUsuario <= 0) {
+                MessageBox.Show("Porfavor selecciona un tipo de usuario");
+                return;
+            }
 
             if (contraseña != confirmarContrasenia) {
                 MessageBox.Show("La contraseña debe ser igual");
@@ -35,7 +43,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
                 return;
             }
             
-            registroPersonal.guardarDatosUsuario(usuario, confirmarContrasenia);
+            registroPersonal.guardarDatosUsuario(usuario, confirmarContrasenia, tipoUsuario);
             
             if (!registroPersonal.registrarUsuario())
             {

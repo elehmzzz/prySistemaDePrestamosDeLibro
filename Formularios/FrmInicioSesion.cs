@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BCrypt.Net;
+
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
@@ -38,6 +38,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 MessageBox.Show("El usuario o la contraseña no pueden \n ir vacios");
                 return;
             }
+
 
             objBibliotecario = new ClsBibliotecario();
             objBibliotecario.setUsuario(usuario);
