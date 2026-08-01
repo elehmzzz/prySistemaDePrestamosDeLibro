@@ -31,12 +31,9 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             lblEditorial = new Label();
             txtEditorial = new TextBox();
-            tableLayoutPanel2 = new TableLayoutPanel();
             btnCancelar = new Button();
             btnGuardar = new Button();
-            btnEliminar = new Button();
             tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -71,26 +68,11 @@
             txtEditorial.Size = new Size(283, 27);
             txtEditorial.TabIndex = 4;
             // 
-            // tableLayoutPanel2
-            // 
-            tableLayoutPanel2.ColumnCount = 3;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 83F));
-            tableLayoutPanel2.Controls.Add(btnCancelar, 0, 0);
-            tableLayoutPanel2.Controls.Add(btnGuardar, 1, 0);
-            tableLayoutPanel2.Controls.Add(btnEliminar, 2, 0);
-            tableLayoutPanel2.Location = new Point(156, 90);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 1;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Size = new Size(259, 66);
-            tableLayoutPanel2.TabIndex = 7;
-            // 
             // btnCancelar
             // 
+            btnCancelar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnCancelar.AutoSize = true;
-            btnCancelar.Location = new Point(3, 3);
+            btnCancelar.Location = new Point(261, 118);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new Size(76, 38);
             btnCancelar.TabIndex = 0;
@@ -100,8 +82,9 @@
             // 
             // btnGuardar
             // 
+            btnGuardar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnGuardar.AutoSize = true;
-            btnGuardar.Location = new Point(91, 3);
+            btnGuardar.Location = new Point(343, 118);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(72, 38);
             btnGuardar.TabIndex = 1;
@@ -109,22 +92,13 @@
             btnGuardar.UseVisualStyleBackColor = true;
             btnGuardar.Click += btnGuardar_Click;
             // 
-            // btnEliminar
-            // 
-            btnEliminar.Location = new Point(179, 3);
-            btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(72, 38);
-            btnEliminar.TabIndex = 8;
-            btnEliminar.Text = "Eliminar";
-            btnEliminar.UseVisualStyleBackColor = true;
-            btnEliminar.Click += btnEliminar_Click;
-            // 
             // FrmAgregarEditorial
             // 
             AutoScaleMode = AutoScaleMode.None;
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(439, 168);
-            Controls.Add(tableLayoutPanel2);
+            Controls.Add(btnGuardar);
+            Controls.Add(btnCancelar);
             Controls.Add(tableLayoutPanel1);
             Font = new Font("Segoe UI", 9F);
             Margin = new Padding(4);
@@ -136,9 +110,8 @@
             Load += FrmAgregarEditorial_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel2.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -146,10 +119,8 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Label lblEditorial;
         private TextBox txtEditorial;
-        private TableLayoutPanel tableLayoutPanel2;
         private Button btnCancelar;
         private Button button2;
         private Button btnGuardar;
-        private Button btnEliminar;
     }
 }

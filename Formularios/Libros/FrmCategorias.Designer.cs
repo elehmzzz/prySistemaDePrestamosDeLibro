@@ -129,7 +129,7 @@
             label2.Anchor = AnchorStyles.Left;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(14, 18);
+            label2.Location = new Point(14, 11);
             label2.Name = "label2";
             label2.Size = new Size(179, 46);
             label2.TabIndex = 27;
@@ -139,7 +139,7 @@
             // 
             label3.Anchor = AnchorStyles.Left;
             label3.AutoSize = true;
-            label3.Location = new Point(18, 425);
+            label3.Location = new Point(18, 418);
             label3.Name = "label3";
             label3.Size = new Size(266, 28);
             label3.TabIndex = 28;
@@ -149,7 +149,7 @@
             // 
             label4.Anchor = AnchorStyles.Left;
             label4.AutoSize = true;
-            label4.Location = new Point(18, 482);
+            label4.Location = new Point(18, 475);
             label4.Name = "label4";
             label4.Size = new Size(89, 28);
             label4.TabIndex = 29;
@@ -157,7 +157,7 @@
             // 
             // txtcategoriaSeleccioanda
             // 
-            txtcategoriaSeleccioanda.Location = new Point(134, 484);
+            txtcategoriaSeleccioanda.Location = new Point(134, 469);
             txtcategoriaSeleccioanda.Name = "txtcategoriaSeleccioanda";
             txtcategoriaSeleccioanda.Size = new Size(371, 34);
             txtcategoriaSeleccioanda.TabIndex = 30;
@@ -167,7 +167,7 @@
             btnActualizar.AutoSize = true;
             btnActualizar.BackColor = Color.FromArgb(32, 41, 64);
             btnActualizar.ForeColor = SystemColors.Control;
-            btnActualizar.Location = new Point(669, 482);
+            btnActualizar.Location = new Point(534, 415);
             btnActualizar.Name = "btnActualizar";
             btnActualizar.Size = new Size(129, 38);
             btnActualizar.TabIndex = 31;
@@ -180,7 +180,7 @@
             btnEliminar.AutoSize = true;
             btnEliminar.BackColor = Color.FromArgb(32, 41, 64);
             btnEliminar.ForeColor = SystemColors.Control;
-            btnEliminar.Location = new Point(825, 482);
+            btnEliminar.Location = new Point(669, 415);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(129, 38);
             btnEliminar.TabIndex = 32;
@@ -192,7 +192,7 @@
             btnRegresar.AutoSize = true;
             btnRegresar.BackColor = Color.FromArgb(32, 41, 64);
             btnRegresar.ForeColor = SystemColors.Control;
-            btnRegresar.Location = new Point(909, 26);
+            btnRegresar.Location = new Point(689, 18);
             btnRegresar.Name = "btnRegresar";
             btnRegresar.Size = new Size(109, 38);
             btnRegresar.TabIndex = 39;
@@ -205,7 +205,7 @@
             AutoScaleDimensions = new SizeF(11F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
-            ClientSize = new Size(1052, 583);
+            ClientSize = new Size(853, 569);
             Controls.Add(btnRegresar);
             Controls.Add(btnEliminar);
             Controls.Add(btnActualizar);

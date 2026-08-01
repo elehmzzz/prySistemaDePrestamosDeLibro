@@ -36,11 +36,11 @@
             label1 = new Label();
             panel2 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
+            btnIniciarSesion = new Button();
             label5 = new Label();
+            txtContrasenia = new TextBox();
             txtUsuario = new TextBox();
             label6 = new Label();
-            txtContrasenia = new TextBox();
-            btnIniciarSesion = new Button();
             llbSalir = new LinkLabel();
             llbRegistrar = new LinkLabel();
             label7 = new Label();
@@ -148,43 +148,6 @@
             tableLayoutPanel1.TabIndex = 12;
             tableLayoutPanel1.UseWaitCursor = true;
             // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(3, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(83, 28);
-            label5.TabIndex = 4;
-            label5.Text = "Usuario:";
-            label5.UseWaitCursor = true;
-            // 
-            // txtUsuario
-            // 
-            txtUsuario.Location = new Point(3, 48);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(289, 34);
-            txtUsuario.TabIndex = 7;
-            txtUsuario.UseWaitCursor = true;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(3, 90);
-            label6.Name = "label6";
-            label6.Size = new Size(114, 28);
-            label6.TabIndex = 5;
-            label6.Text = "Contraseña:";
-            label6.UseWaitCursor = true;
-            // 
-            // txtContrasenia
-            // 
-            txtContrasenia.Location = new Point(3, 138);
-            txtContrasenia.Name = "txtContrasenia";
-            txtContrasenia.PasswordChar = '*';
-            txtContrasenia.Size = new Size(289, 34);
-            txtContrasenia.TabIndex = 8;
-            txtContrasenia.UseWaitCursor = true;
-            // 
             // btnIniciarSesion
             // 
             btnIniciarSesion.AutoSize = true;
@@ -198,6 +161,45 @@
             btnIniciarSesion.UseVisualStyleBackColor = false;
             btnIniciarSesion.UseWaitCursor = true;
             btnIniciarSesion.Click += btnIniciarSesion_Click;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(3, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(83, 28);
+            label5.TabIndex = 4;
+            label5.Text = "Usuario:";
+            label5.UseWaitCursor = true;
+            // 
+            // txtContrasenia
+            // 
+            txtContrasenia.Location = new Point(3, 138);
+            txtContrasenia.Name = "txtContrasenia";
+            txtContrasenia.PasswordChar = '*';
+            txtContrasenia.Size = new Size(289, 34);
+            txtContrasenia.TabIndex = 8;
+            txtContrasenia.Text = "1234";
+            txtContrasenia.UseWaitCursor = true;
+            // 
+            // txtUsuario
+            // 
+            txtUsuario.Location = new Point(3, 48);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(289, 34);
+            txtUsuario.TabIndex = 7;
+            txtUsuario.Text = "alexa";
+            txtUsuario.UseWaitCursor = true;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(3, 90);
+            label6.Name = "label6";
+            label6.Size = new Size(114, 28);
+            label6.TabIndex = 5;
+            label6.Text = "Contraseña:";
+            label6.UseWaitCursor = true;
             // 
             // llbSalir
             // 
