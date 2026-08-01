@@ -62,6 +62,8 @@
             txtBuscador.Size = new Size(316, 27);
             txtBuscador.TabIndex = 1;
             txtBuscador.TextChanged += txtBuscador_TextChanged_1;
+            txtBuscador.Enter += txtBuscador_Enter;
+            txtBuscador.Leave += txtBuscador_Leave;
             // 
             // tableLayoutPanel1
             // 
@@ -175,6 +177,7 @@
             MaximizeBox = false;
             Name = "FrmLectores";
             Text = "FrmLectores";
+            Load += FrmLectores_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel2.ResumeLayout(false);
