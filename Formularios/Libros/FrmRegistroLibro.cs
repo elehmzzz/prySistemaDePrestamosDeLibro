@@ -27,13 +27,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
             objLibro= new ClsLibro();
             ventanaPrincipal = ventana;
         }
-
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             this.Close();
             ventanaPrincipal.mostrarModuloLibros();
         }
-
         private async void load_frmRegistroLibro(object sender, EventArgs e)
         {
             UseWaitCursor = true;
@@ -59,20 +57,19 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 UseWaitCursor = false;
             }
         }
-
         private void CargarCombos(DataTable dtAutores, DataTable dtCategorias, DataTable dtEditoriales)
         {
-            DataRow opcionAutores = dtAutores.NewRow();
-            opcionAutores["id_autor"] = 0;
-            opcionAutores["nombres"] = "Selecciona una opción";
-            dtAutores.Rows.InsertAt(opcionAutores, 0);
+      
             dtAutores.Columns.Add(
                 "NombreCompleto",
                 typeof(string),
                 "nombres + ' ' + apellido_paterno + ' ' + apellido_materno"
             );
+            DataRow opcionAutores = dtAutores.NewRow();
+            opcionAutores["id_autor"] = 0;
+            opcionAutores["NombreCompleto"] = "Selecciona una opción";
+            dtAutores.Rows.InsertAt(opcionAutores, 0);
 
-          
             cmbAutor.DataSource = dtAutores;
             cmbAutor.DisplayMember = "NombreCompleto";
             cmbAutor.ValueMember = "id_autor";
@@ -94,7 +91,6 @@ namespace prySistemaDePrestamosDeLibro.Clases
             cmbEditorial.DisplayMember = "nombre";
             cmbEditorial.ValueMember = "id";
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             string isbn = txtISBN.Text.Trim();
@@ -144,7 +140,6 @@ namespace prySistemaDePrestamosDeLibro.Clases
                
                 this.Close();
             }
-
         }
     }
 }

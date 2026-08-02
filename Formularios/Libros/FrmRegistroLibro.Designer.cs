@@ -196,6 +196,7 @@
             MinimizeBox = false;
             Name = "FrmRegistroLibro";
             ShowIcon = false;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Agregar Libro";
             Load += load_frmRegistroLibro;
             ResumeLayout(false);

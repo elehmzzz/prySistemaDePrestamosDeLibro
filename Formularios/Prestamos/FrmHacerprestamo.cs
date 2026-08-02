@@ -16,10 +16,12 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
     public partial class FrmHacerprestamo : Form
     {
         ClsLectores objLectores; //instancia
+        ClsBibliotecario objBibliotecario;
         ClsLibro objLibro;
-        public FrmHacerprestamo()
+        public FrmHacerprestamo(ClsBibliotecario objBibliotecario)
         {
             InitializeComponent();
+            this.objBibliotecario = objBibliotecario;
             objLectores = new ClsLectores();
             objLibro = new ClsLibro();
         }
