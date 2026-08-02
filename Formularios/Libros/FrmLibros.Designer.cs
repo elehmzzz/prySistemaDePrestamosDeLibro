@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             txtBuscador = new TextBox();
             comboBox1 = new ComboBox();
             dGVLibros = new DataGridView();
@@ -79,11 +80,22 @@
             // dGVLibros
             // 
             dGVLibros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Control;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dGVLibros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dGVLibros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dGVLibros.EnableHeadersVisualStyles = false;
             dGVLibros.Location = new Point(11, 171);
             dGVLibros.Name = "dGVLibros";
+            dGVLibros.ReadOnly = true;
             dGVLibros.RowHeadersVisible = false;
             dGVLibros.RowHeadersWidth = 51;
+            dGVLibros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dGVLibros.Size = new Size(1025, 215);
             dGVLibros.TabIndex = 22;
             // 

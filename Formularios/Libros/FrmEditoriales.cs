@@ -53,9 +53,12 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
             {
                 var fila = dtEditoriales.Rows[e.RowIndex];
 
-                objEditorial.SetId(Convert.ToInt32(fila.Cells[0].Value));
-
                 if (fila.Cells[0].Value != null)
+                {
+                    objEditorial.SetId(Convert.ToInt32(fila.Cells[0].Value));
+                }
+
+                if (fila.Cells[1].Value != null)
                 {
                     txtNombre.Text = fila.Cells[1].Value.ToString();
                     objEditorial.SetNombre(fila.Cells[1].Value.ToString()!);

@@ -91,11 +91,8 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         //muestra el apartado para agregar un libro del modulo libros
         public void mostrarApartadoLibro()
         {
-            if (apartadoLibros == null || apartadoLibros.IsDisposed)
-            {
-                apartadoLibros = new FrmRegistroLibro(this);
-            }
-            mostrarContenido(apartadoLibros);
+            using var formulario = new FrmRegistroLibro(this);
+            formulario.ShowDialog(this);
         }
 
         //muestra el apartado de categorias del modulo libros

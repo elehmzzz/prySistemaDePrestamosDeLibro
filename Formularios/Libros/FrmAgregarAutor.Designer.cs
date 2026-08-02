@@ -77,6 +77,7 @@
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 25F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Size = new Size(403, 188);
             tableLayoutPanel1.TabIndex = 5;
             // 
@@ -144,12 +145,14 @@
             // btnGuardar
             // 
             btnGuardar.AutoSize = true;
+            btnGuardar.BackColor = Color.FromArgb(32, 41, 64);
+            btnGuardar.ForeColor = SystemColors.Control;
             btnGuardar.Location = new Point(111, 3);
             btnGuardar.Name = "btnGuardar";
             btnGuardar.Size = new Size(94, 38);
             btnGuardar.TabIndex = 1;
             btnGuardar.Text = "Guardar";
-            btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.UseVisualStyleBackColor = false;
             btnGuardar.Click += btnGuardar_Click;
             // 
             // FrmAgregarAutor

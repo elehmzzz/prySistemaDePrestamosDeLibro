@@ -89,17 +89,20 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
             if (txtNombre.Text.Trim() == "")
             {
                 MessageBox.Show("Ingrese el nombre del autor");
+                txtNombre.Text = objAutor.getNombre();
                 return;
             }
 
             if (txtAPaterno.Text.Trim() == "")
             {
                 MessageBox.Show("Ingrese el apellido Paterno del autor");
+                txtAPaterno.Text = objAutor.getAPaterno();
                 return;
             }
-            if (txtNombre.Text.Trim() == "")
+            if (txtAMaterno.Text.Trim() == "")
             {
                 MessageBox.Show("Ingrese el apellido Materno del autor");
+                txtAMaterno.Text = objAutor.getAMaterno();
                 return;
             }
 

@@ -28,73 +28,69 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            Column1 = new DataGridViewTextBoxColumn();
-            Column2 = new DataGridViewTextBoxColumn();
-            btnAgregarCategoria = new Button();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            dtCategorias = new DataGridView();
+            btnAgregar = new Button();
             tableLayoutPanel1 = new TableLayoutPanel();
             txtBuscador = new TextBox();
             label1 = new Label();
-            label2 = new Label();
-            label3 = new Label();
-            label4 = new Label();
-            txtcategoriaSeleccioanda = new TextBox();
+            lblTitulo = new Label();
+            lblCategoria = new Label();
+            lblNombre = new Label();
+            txtNombre = new TextBox();
             btnActualizar = new Button();
             btnEliminar = new Button();
             btnRegresar = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtCategorias).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dtCategorias
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
-            dataGridView1.Location = new Point(14, 184);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(784, 215);
-            dataGridView1.TabIndex = 23;
+            dtCategorias.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dtCategorias.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.White;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = Color.White;
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dtCategorias.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dtCategorias.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtCategorias.EnableHeadersVisualStyles = false;
+            dtCategorias.Location = new Point(14, 184);
+            dtCategorias.Name = "dtCategorias";
+            dtCategorias.ReadOnly = true;
+            dtCategorias.RowHeadersVisible = false;
+            dtCategorias.RowHeadersWidth = 51;
+            dtCategorias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtCategorias.Size = new Size(784, 215);
+            dtCategorias.TabIndex = 23;
+            dtCategorias.CellDoubleClick += dtCategorias_CellDoubleClick;
             // 
-            // Column1
+            // btnAgregar
             // 
-            Column1.DataPropertyName = "id";
-            Column1.FillWeight = 94.62568F;
-            Column1.HeaderText = "id";
-            Column1.MinimumWidth = 3;
-            Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            Column2.DataPropertyName = "nombre";
-            Column2.FillWeight = 100.0257F;
-            Column2.HeaderText = "Categoria";
-            Column2.MinimumWidth = 6;
-            Column2.Name = "Column2";
-            // 
-            // btnAgregarCategoria
-            // 
-            btnAgregarCategoria.Anchor = AnchorStyles.Left;
-            btnAgregarCategoria.BackColor = Color.FromArgb(32, 41, 64);
-            btnAgregarCategoria.ForeColor = SystemColors.Control;
-            btnAgregarCategoria.Location = new Point(559, 3);
-            btnAgregarCategoria.Name = "btnAgregarCategoria";
-            btnAgregarCategoria.Size = new Size(221, 44);
-            btnAgregarCategoria.TabIndex = 24;
-            btnAgregarCategoria.Text = "Agregar categoria";
-            btnAgregarCategoria.UseVisualStyleBackColor = false;
-            btnAgregarCategoria.Click += btnAgregarCategoria_Click;
+            btnAgregar.Anchor = AnchorStyles.Left;
+            btnAgregar.BackColor = Color.FromArgb(32, 41, 64);
+            btnAgregar.ForeColor = SystemColors.Control;
+            btnAgregar.Location = new Point(559, 3);
+            btnAgregar.Name = "btnAgregar";
+            btnAgregar.Size = new Size(221, 44);
+            btnAgregar.TabIndex = 24;
+            btnAgregar.Text = "Agregar categoria";
+            btnAgregar.UseVisualStyleBackColor = false;
+            btnAgregar.Click += btnAgregarCategoria_Click;
             // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel1.ColumnCount = 3;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35.9712219F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 64.02878F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 226F));
             tableLayoutPanel1.Controls.Add(txtBuscador, 1, 0);
-            tableLayoutPanel1.Controls.Add(btnAgregarCategoria, 2, 0);
+            tableLayoutPanel1.Controls.Add(btnAgregar, 2, 0);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
             tableLayoutPanel1.Location = new Point(15, 89);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -113,6 +109,7 @@
             txtBuscador.PlaceholderText = "Buscar...";
             txtBuscador.Size = new Size(316, 27);
             txtBuscador.TabIndex = 26;
+            txtBuscador.TextChanged += txtBuscador_TextChanged;
             // 
             // label1
             // 
@@ -124,46 +121,47 @@
             label1.TabIndex = 25;
             label1.Text = "Buscar la categoría:";
             // 
-            // label2
+            // lblTitulo
             // 
-            label2.Anchor = AnchorStyles.Left;
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(14, 11);
-            label2.Name = "label2";
-            label2.Size = new Size(179, 46);
-            label2.TabIndex = 27;
-            label2.Text = "Categorías";
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lblTitulo.Location = new Point(14, 11);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(179, 46);
+            lblTitulo.TabIndex = 27;
+            lblTitulo.Text = "Categorías";
             // 
-            // label3
+            // lblCategoria
             // 
-            label3.Anchor = AnchorStyles.Left;
-            label3.AutoSize = true;
-            label3.Location = new Point(18, 418);
-            label3.Name = "label3";
-            label3.Size = new Size(266, 28);
-            label3.TabIndex = 28;
-            label3.Text = "Editar categoría seleccionada";
+            lblCategoria.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            lblCategoria.AutoSize = true;
+            lblCategoria.Location = new Point(18, 418);
+            lblCategoria.Name = "lblCategoria";
+            lblCategoria.Size = new Size(266, 28);
+            lblCategoria.TabIndex = 28;
+            lblCategoria.Text = "Editar categoría seleccionada";
             // 
-            // label4
+            // lblNombre
             // 
-            label4.Anchor = AnchorStyles.Left;
-            label4.AutoSize = true;
-            label4.Location = new Point(18, 475);
-            label4.Name = "label4";
-            label4.Size = new Size(89, 28);
-            label4.TabIndex = 29;
-            label4.Text = "Nombre:";
+            lblNombre.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            lblNombre.AutoSize = true;
+            lblNombre.Location = new Point(18, 475);
+            lblNombre.Name = "lblNombre";
+            lblNombre.Size = new Size(89, 28);
+            lblNombre.TabIndex = 29;
+            lblNombre.Text = "Nombre:";
             // 
-            // txtcategoriaSeleccioanda
+            // txtNombre
             // 
-            txtcategoriaSeleccioanda.Location = new Point(134, 469);
-            txtcategoriaSeleccioanda.Name = "txtcategoriaSeleccioanda";
-            txtcategoriaSeleccioanda.Size = new Size(371, 34);
-            txtcategoriaSeleccioanda.TabIndex = 30;
+            txtNombre.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            txtNombre.Location = new Point(130, 469);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(371, 34);
+            txtNombre.TabIndex = 30;
             // 
             // btnActualizar
             // 
+            btnActualizar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnActualizar.AutoSize = true;
             btnActualizar.BackColor = Color.FromArgb(32, 41, 64);
             btnActualizar.ForeColor = SystemColors.Control;
@@ -177,18 +175,21 @@
             // 
             // btnEliminar
             // 
+            btnEliminar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnEliminar.AutoSize = true;
             btnEliminar.BackColor = Color.FromArgb(32, 41, 64);
             btnEliminar.ForeColor = SystemColors.Control;
-            btnEliminar.Location = new Point(669, 415);
+            btnEliminar.Location = new Point(665, 415);
             btnEliminar.Name = "btnEliminar";
             btnEliminar.Size = new Size(129, 38);
             btnEliminar.TabIndex = 32;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
+            btnEliminar.Click += btnEliminar_Click;
             // 
             // btnRegresar
             // 
+            btnRegresar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnRegresar.AutoSize = true;
             btnRegresar.BackColor = Color.FromArgb(32, 41, 64);
             btnRegresar.ForeColor = SystemColors.Control;
@@ -209,19 +210,20 @@
             Controls.Add(btnRegresar);
             Controls.Add(btnEliminar);
             Controls.Add(btnActualizar);
-            Controls.Add(txtcategoriaSeleccioanda);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(label2);
+            Controls.Add(txtNombre);
+            Controls.Add(lblNombre);
+            Controls.Add(lblCategoria);
+            Controls.Add(lblTitulo);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dtCategorias);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "FrmCategorias";
+            StartPosition = FormStartPosition.Manual;
             Text = "FrmCategorias";
             Load += FrmCategorias_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtCategorias).EndInit();
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
@@ -230,17 +232,15 @@
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private Button btnAgregarCategoria;
+        private DataGridView dtCategorias;
+        private Button btnAgregar;
         private TableLayoutPanel tableLayoutPanel1;
         private Label label1;
         private TextBox txtBuscador;
-        private Label label2;
-        private Label label3;
-        private Label label4;
-        private TextBox txtcategoriaSeleccioanda;
+        private Label lblTitulo;
+        private Label lblCategoria;
+        private Label lblNombre;
+        private TextBox txtNombre;
         private Button buttonActualizar;
         private Button button3;
         private Button btnRegresar;

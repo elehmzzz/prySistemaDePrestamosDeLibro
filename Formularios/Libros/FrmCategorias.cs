@@ -1,13 +1,5 @@
 ﻿using prySistemaDePrestamosDeLibro.Clases;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace prySistemaDePrestamosDeLibro.Formularios.Libros
 {
@@ -19,9 +11,8 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
         public FrmCategorias(FrmMenuPrincipal ventana)
         {
             InitializeComponent();
-            ventanaPrincipal = ventana;
             objCategoria = new ClsCategoria();
-            dataGridView1.CellClick += dataGridView1_CellClick;
+            ventanaPrincipal = ventana;           
         }
 
         private void FrmCategorias_Load(object sender, EventArgs e)
@@ -32,16 +23,37 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
         public void CargarCategorias()
         {
             DataTable dt = objCategoria.ObtenerCategorias();
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = dt;
-            dataGridView1.Refresh();
-        }
+            dtCategorias.DataSource = null;
+            dtCategorias.Refresh();
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+            // CONFIGURAR
+            dtCategorias.AutoGenerateColumns = true;
+            dtCategorias.AllowUserToAddRows = false;
+
+            // ASIGNAR DATOS
+            dtCategorias.DataSource = dt;
+
+            // AJUSTAR VISUAL
+            dtCategorias.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // CAMBIAR NOMBRES
+            if (dtCategorias.Columns["id"] != null)
+                dtCategorias.Columns["id"].HeaderText = "ID";
+
+            if (dtCategorias.Columns["nombre"] != null)
+                dtCategorias.Columns["nombre"].HeaderText = "Nombre";
+        }
+        private void btnAgregarCategoria_Click(object sender, EventArgs e)
+        {
+            ventanaAgregarCategoria = new FrmAgregarCategoria(this);
+            ventanaAgregarCategoria.ShowDialog();
+            CargarCategorias();
+        }
+        private void dtCategorias_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                var fila = dataGridView1.Rows[e.RowIndex];
+                var fila = dtCategorias.Rows[e.RowIndex];
 
                 if (fila.Cells[0].Value != null)
                 {
@@ -50,26 +62,34 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
 
                 if (fila.Cells[1].Value != null)
                 {
-                    objCategoria.setNombre(fila.Cells[1].Value.ToString());
-                    txtcategoriaSeleccioanda.Text = fila.Cells[1].Value.ToString();
+                    txtNombre.Text = fila.Cells[1].Value.ToString();
+                    objCategoria.setNombre(fila.Cells[1].Value.ToString()!);
                 }
             }
         }
-
         private void btnRegresar_Click(object sender, EventArgs e)
         {
             ventanaPrincipal.mostrarModuloLibros();
         }
-
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            objCategoria.setNombre(txtcategoriaSeleccioanda.Text.Trim());
+            var nombre = txtNombre.Text.Trim();
+            if (nombre == "")
+            {
+                MessageBox.Show("Ingrese el nombre de la categoria");
+                txtNombre.Text = objCategoria.getNombre();
+                return;
+            }
+
+            objCategoria.setNombre(txtNombre.Text.Trim());
 
             if (objCategoria.ActualizarCategoria())
             {
                 MessageBox.Show("Categoria actualizada");
                 CargarCategorias();
             }
+
+            Clear();
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -82,7 +102,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
                     {
                         MessageBox.Show("Categoria eliminada correctamente");
                         CargarCategorias();
-                        txtcategoriaSeleccioanda.Clear();
+                        Clear();
                     }
                 }
             }
@@ -92,11 +112,19 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Libros
             }
         }
 
-        private void btnAgregarCategoria_Click(object sender, EventArgs e)
+        private void Clear()
         {
-            ventanaAgregarCategoria = new FrmAgregarCategoria(this);
-            ventanaAgregarCategoria.ShowDialog();
-            CargarCategorias();
+            objCategoria.setIdCategoria(0);
+            objCategoria.setNombre("");
+            txtNombre.Clear();
+        }
+        private void txtBuscador_TextChanged(object sender, EventArgs e)
+        {
+            if (dtCategorias.DataSource is DataTable dt)
+            {
+                string texto = txtBuscador.Text.Trim().Replace("'", "''");
+                dt.DefaultView.RowFilter = $"nombre LIKE '%{texto}%'";
+            }
         }
     }
 }

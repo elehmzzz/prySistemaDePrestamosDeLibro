@@ -1,10 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
@@ -12,33 +7,27 @@ namespace prySistemaDePrestamosDeLibro.Clases
     {
         private int Id;
         private string Nombre="";
-
         public int GetId()
         {
             return Id;
         }
-
         public void SetId(int id)
         {
             Id = id;
         }
-
         public string GetNombre()
         {
             return Nombre;
         }
-
         public void SetNombre(string nombre)
         {
             Nombre = nombre;
         }
-
         private MySqlConnection  EstableceConexion()
         {
             ClsConexion conexion = new ();
             return conexion.ObtenerConexion();
         }
-
         public DataTable ObtenerEditoriales()
         {
             MySqlConnection con =  EstableceConexion();
@@ -59,7 +48,6 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 con.Close();
             }
         }
-
         public bool GuardarEditorial()
         {
             MySqlConnection con = EstableceConexion();
@@ -77,7 +65,6 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 return false;
             }
         }
-
         public bool ActualizarEditorial()
         {
             MySqlConnection con = EstableceConexion();
@@ -96,7 +83,6 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 return false;
             }
         }
-
         public bool BorrarEditorial()
         {
             MySqlConnection con = EstableceConexion();
