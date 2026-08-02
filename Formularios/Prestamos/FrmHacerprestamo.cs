@@ -1,15 +1,7 @@
-﻿using MySqlX.XDevAPI.Relational;
-using prySistemaDePrestamosDeLibro.Clases;
-using prySistemaDePrestamosDeLibro.Formularios.FRMprestamos;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using prySistemaDePrestamosDeLibro.Clases;
+
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+
 
 namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
 {
@@ -56,7 +48,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
             cmbLectores.DropDownStyle = ComboBoxStyle.DropDown;
             cmbLectores.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbLectores.AutoCompleteSource = AutoCompleteSource.ListItems;
-
+            
 
             DataTable dtLibros = objLibro.ObtenerLibros(); //aqui consulto los lectores
             cmbLibros.DataSource = dtLibros;
@@ -65,6 +57,17 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
             cmbLibros.DropDownStyle = ComboBoxStyle.DropDown;
             cmbLibros.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbLibros.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+            cmbLectores.SelectedIndex = -1;
+            txtEdad.Clear();
+            txtMunicipio.Clear();
+            txtColonia.Clear();
+            txtcp.Clear();
+            txtTelefono.Clear();
+            cmbLibros.SelectedIndex = -1;
+            txtISBN.Clear();
+            txtAutor.Clear();
+            txtDisponibles.Clear();
         }
 
         private void cmbLectores_SelectedIndexChanged(object sender, EventArgs e)
@@ -90,17 +93,41 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
             {
                 txtISBN.Text = libro["ISBN"].ToString();
                 txtAutor.Text = libro["Nombres"].ToString();
-                txtDisponibles.Text = libro["Disponibles"].ToString();
+                //txtDisponibles.Text = libro["Disponibles"].ToString();
             }
         }
 
         private void btnvalidarprestamo_Click(object sender, EventArgs e)
         {
-            DateTime fechaPrestamo = dtpFechaprestamo.Value;
-            DateTime fechaDevolucion = dtpFechadevolucion.Value;
+            // Validar lector
+            if (cmbLectores.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un lector.");
+                cmbLectores.Focus();
+                return;
+            }
 
-            MessageBox.Show("Fecha préstamo: " + fechaPrestamo.ToString());
-            MessageBox.Show("Fecha devolución: " + fechaDevolucion.ToString());
+            // Validar libro
+            if (cmbLibros.SelectedIndex == -1)
+            {
+                MessageBox.Show("Seleccione un libro.");
+                cmbLibros.Focus();
+                return;
+            }
+
+            // Validar fechas
+            if (dtpFechadevolucion.Value.Date <= dtpFechaprestamo.Value.Date)
+            {
+                MessageBox.Show("La fecha de devolución debe ser posterior a la fecha de préstamo.");
+                dtpFechadevolucion.Focus();
+                return;
+            }
+
+            int idLibro=Convert.ToInt32(cmbLibros.SelectedValue);
+            int idLector = Convert.ToInt32(cmbLectores.SelectedValue);
+            int idUsuario = objBibliotecario.getIdBibliotecario();
+
+            MessageBox.Show("Préstamo registrado correctamente.");
         }
     }
 }

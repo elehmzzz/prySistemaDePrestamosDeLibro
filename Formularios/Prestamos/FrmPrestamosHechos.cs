@@ -64,6 +64,9 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
             if (dGVPrestamos.Columns["Libro"] != null)
                 dGVPrestamos.Columns["Libro"].HeaderText = "Libro";
 
+            if (dGVPrestamos.Columns["bibliotecario"] != null)
+                dGVPrestamos.Columns["bibliotecario"].HeaderText = "Bibliotecario";
+
             if (dGVPrestamos.Columns["Fecha_Prestamo"] != null)
                 dGVPrestamos.Columns["Fecha_Prestamo"].HeaderText = "Préstamo";
 

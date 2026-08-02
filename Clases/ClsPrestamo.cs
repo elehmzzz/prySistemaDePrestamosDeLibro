@@ -47,55 +47,37 @@ namespace prySistemaDePrestamosDeLibro.Clases
             }
         }
 
-        //==================== PARA FECHAS DE PRESTAMO ====================
-        public DateTime getFechaPrestamo()
+        // INSERTA EN TABLA PRESTAMO Y DEVUELVE EL ID GENERADO
+        public int InsertarPrestamo(int idLector, int idLibro, int idBibliotecario)
         {
-            return Fecha_Prestamo;
-        }
+            int idPrestamo = 0;
 
-        public void setFechaPrestamo(DateTime fechaPrestamo)
-        {
-            Fecha_Prestamo = fechaPrestamo;
-        }
-
-        public DateTime getFechaDevolucion()
-        {
-            return Fecha_Devolucion;
-        }
-
-        public void setFechaDevolucion(DateTime fechaDevolucion)
-        {
-            Fecha_Devolucion = fechaDevolucion;
-        }
-        public DataTable RellenarFechasPrestamo(int idPrestamo)
-        {
             MySqlConnection con = EstableceConexion();
-            DataTable dt = new();
 
             try
             {
-                string consulta = @"SELECT Fecha_Prestamo, Fecha_Devolucion 
-                            FROM Detalle_Prestamo 
-                            WHERE Id_Prestamo = @IdPrestamo";
+                string sql = @"INSERT INTO Prestamo (Id_Bibliotecario, Id_Lector, Id_Libro) VALUES (@bibliotecario, @lector, @libro); SELECT LAST_INSERT_ID();";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
 
-                MySqlCommand cmd = new MySqlCommand(consulta, con);
-                cmd.Parameters.AddWithValue("@IdPrestamo", idPrestamo);
+                cmd.Parameters.AddWithValue("@bibliotecario", idBibliotecario);
+                cmd.Parameters.AddWithValue("@lector", idLector);
+                cmd.Parameters.AddWithValue("@libro", idLibro);
 
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                adapter.Fill(dt);
 
-                return dt;
+                idPrestamo = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return idPrestamo;
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error al obtener las fechas: " + ex.Message);
-                return dt;
+                MessageBox.Show("Error al insertar préstamo: " + ex.Message);
+                return 0;
             }
             finally
             {
                 con.Close();
             }
         }
-        //==================== FIN PASE PARA FECHAS DE PRESTAMO ====================
+             
     }
 }

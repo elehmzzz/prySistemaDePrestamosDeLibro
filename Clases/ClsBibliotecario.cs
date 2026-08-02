@@ -10,6 +10,10 @@ namespace prySistemaDePrestamosDeLibro.Clases
         private int tipo_usuario;
         private string nombre_tipo_usuario;
 
+        public void setIdBibliotecario(int id)
+        {
+            IdBibliotecario = id;
+        }
         public int getIdBibliotecario()
         {
             return IdBibliotecario;

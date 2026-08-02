@@ -62,6 +62,8 @@
             label13 = new Label();
             txtAutor = new TextBox();
             label5 = new Label();
+            cmbxejemplares = new ComboBox();
+            label14 = new Label();
             tableLayoutPanel1.SuspendLayout();
             tbcprestamollenado.SuspendLayout();
             tabPage1.SuspendLayout();
@@ -250,7 +252,7 @@
             btnvalidarprestamo.BackColor = Color.FromArgb(32, 41, 64);
             btnvalidarprestamo.BackgroundImageLayout = ImageLayout.None;
             btnvalidarprestamo.ForeColor = SystemColors.Control;
-            btnvalidarprestamo.Location = new Point(504, 451);
+            btnvalidarprestamo.Location = new Point(504, 509);
             btnvalidarprestamo.Name = "btnvalidarprestamo";
             btnvalidarprestamo.Size = new Size(131, 38);
             btnvalidarprestamo.TabIndex = 23;
@@ -266,7 +268,7 @@
             tbcprestamollenado.Location = new Point(15, 57);
             tbcprestamollenado.Name = "tbcprestamollenado";
             tbcprestamollenado.SelectedIndex = 0;
-            tbcprestamollenado.Size = new Size(620, 383);
+            tbcprestamollenado.Size = new Size(620, 446);
             tbcprestamollenado.TabIndex = 48;
             // 
             // tabPage1
@@ -276,7 +278,7 @@
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(612, 350);
+            tabPage1.Size = new Size(612, 413);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Lector";
             tabPage1.Click += tabPage1_Click;
@@ -288,7 +290,7 @@
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(612, 350);
+            tabPage2.Size = new Size(612, 413);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Libro";
             // 
@@ -296,37 +298,40 @@
             // 
             tableLayoutPanel2.BackColor = Color.FromArgb(236, 223, 204);
             tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 48.2837448F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 51.7162552F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40.2298851F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 59.7701149F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Controls.Add(dtpFechadevolucion, 1, 5);
-            tableLayoutPanel2.Controls.Add(dtpFechaprestamo, 1, 4);
+            tableLayoutPanel2.Controls.Add(label14, 0, 3);
+            tableLayoutPanel2.Controls.Add(cmbxejemplares, 1, 3);
             tableLayoutPanel2.Controls.Add(cmbLibros, 1, 0);
             tableLayoutPanel2.Controls.Add(label1, 0, 0);
-            tableLayoutPanel2.Controls.Add(txtDisponibles, 1, 3);
-            tableLayoutPanel2.Controls.Add(label19, 0, 5);
-            tableLayoutPanel2.Controls.Add(label10, 0, 4);
             tableLayoutPanel2.Controls.Add(txtISBN, 1, 1);
             tableLayoutPanel2.Controls.Add(label11, 0, 1);
             tableLayoutPanel2.Controls.Add(label12, 0, 2);
-            tableLayoutPanel2.Controls.Add(label13, 0, 3);
             tableLayoutPanel2.Controls.Add(txtAutor, 1, 2);
+            tableLayoutPanel2.Controls.Add(label19, 0, 6);
+            tableLayoutPanel2.Controls.Add(dtpFechadevolucion, 1, 6);
+            tableLayoutPanel2.Controls.Add(label10, 0, 5);
+            tableLayoutPanel2.Controls.Add(dtpFechaprestamo, 1, 5);
+            tableLayoutPanel2.Controls.Add(label13, 0, 4);
+            tableLayoutPanel2.Controls.Add(txtDisponibles, 1, 4);
             tableLayoutPanel2.Location = new Point(6, 6);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 6;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 15.7295637F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 15.3827F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 14.7138853F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 19.3955784F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 17.7235451F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 17.0547333F));
-            tableLayoutPanel2.Size = new Size(435, 342);
+            tableLayoutPanel2.RowCount = 7;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 17.9824562F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 19.7368412F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 18.5897427F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 16.9871788F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 13.1410255F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 13.4615383F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel2.Size = new Size(435, 351);
             tableLayoutPanel2.TabIndex = 49;
             // 
             // dtpFechadevolucion
             // 
             dtpFechadevolucion.Format = DateTimePickerFormat.Short;
-            dtpFechadevolucion.Location = new Point(213, 284);
+            dtpFechadevolucion.Location = new Point(178, 315);
             dtpFechadevolucion.Name = "dtpFechadevolucion";
             dtpFechadevolucion.Size = new Size(214, 27);
             dtpFechadevolucion.TabIndex = 45;
@@ -335,7 +340,7 @@
             // 
             dtpFechaprestamo.Enabled = false;
             dtpFechaprestamo.Format = DateTimePickerFormat.Short;
-            dtpFechaprestamo.Location = new Point(213, 224);
+            dtpFechaprestamo.Location = new Point(178, 273);
             dtpFechaprestamo.Name = "dtpFechaprestamo";
             dtpFechaprestamo.Size = new Size(214, 27);
             dtpFechaprestamo.TabIndex = 45;
@@ -343,7 +348,7 @@
             // cmbLibros
             // 
             cmbLibros.FormattingEnabled = true;
-            cmbLibros.Location = new Point(213, 3);
+            cmbLibros.Location = new Point(178, 3);
             cmbLibros.Name = "cmbLibros";
             cmbLibros.Size = new Size(214, 28);
             cmbLibros.TabIndex = 51;
@@ -361,7 +366,7 @@
             // txtDisponibles
             // 
             txtDisponibles.Enabled = false;
-            txtDisponibles.Location = new Point(213, 158);
+            txtDisponibles.Location = new Point(178, 232);
             txtDisponibles.Name = "txtDisponibles";
             txtDisponibles.Size = new Size(214, 27);
             txtDisponibles.TabIndex = 22;
@@ -369,7 +374,7 @@
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(3, 281);
+            label19.Location = new Point(3, 312);
             label19.Name = "label19";
             label19.Size = new Size(148, 20);
             label19.TabIndex = 49;
@@ -378,7 +383,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(3, 221);
+            label10.Location = new Point(3, 270);
             label10.Name = "label10";
             label10.Size = new Size(137, 20);
             label10.TabIndex = 50;
@@ -387,7 +392,7 @@
             // txtISBN
             // 
             txtISBN.Enabled = false;
-            txtISBN.Location = new Point(213, 56);
+            txtISBN.Location = new Point(178, 59);
             txtISBN.Name = "txtISBN";
             txtISBN.Size = new Size(214, 27);
             txtISBN.TabIndex = 32;
@@ -395,7 +400,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(3, 53);
+            label11.Location = new Point(3, 56);
             label11.Name = "label11";
             label11.Size = new Size(44, 20);
             label11.TabIndex = 52;
@@ -404,7 +409,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(3, 105);
+            label12.Location = new Point(3, 118);
             label12.Name = "label12";
             label12.Size = new Size(49, 20);
             label12.TabIndex = 16;
@@ -413,7 +418,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(3, 155);
+            label13.Location = new Point(3, 229);
             label13.Name = "label13";
             label13.Size = new Size(90, 20);
             label13.TabIndex = 10;
@@ -422,7 +427,7 @@
             // txtAutor
             // 
             txtAutor.Enabled = false;
-            txtAutor.Location = new Point(213, 108);
+            txtAutor.Location = new Point(178, 121);
             txtAutor.Name = "txtAutor";
             txtAutor.Size = new Size(214, 27);
             txtAutor.TabIndex = 53;
@@ -438,13 +443,30 @@
             label5.TabIndex = 3;
             label5.Text = "Informacion del prestamo";
             // 
+            // cmbxejemplares
+            // 
+            cmbxejemplares.FormattingEnabled = true;
+            cmbxejemplares.Location = new Point(178, 179);
+            cmbxejemplares.Name = "cmbxejemplares";
+            cmbxejemplares.Size = new Size(214, 28);
+            cmbxejemplares.TabIndex = 52;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(3, 176);
+            label14.Name = "label14";
+            label14.Size = new Size(85, 20);
+            label14.TabIndex = 50;
+            label14.Text = "ejemplares:";
+            // 
             // FrmHacerprestamo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(674, 501);
+            ClientSize = new Size(664, 559);
             Controls.Add(btnvalidarprestamo);
             Controls.Add(label5);
             Controls.Add(tbcprestamollenado);
@@ -501,5 +523,7 @@
         private Label label12;
         private Label label13;
         private TextBox txtAutor;
+        private ComboBox cmbxejemplares;
+        private Label label14;
     }
 }
