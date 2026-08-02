@@ -10,12 +10,14 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
         ClsLectores objLectores; //instancia
         ClsBibliotecario objBibliotecario;
         ClsLibro objLibro;
+        ClsPrestamo objPrestamo;
         public FrmHacerprestamo(ClsBibliotecario objBibliotecario)
         {
             InitializeComponent();
             this.objBibliotecario = objBibliotecario;
             objLectores = new ClsLectores();
             objLibro = new ClsLibro();
+            objPrestamo = new ClsPrestamo();
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -99,6 +101,9 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
 
         private void btnvalidarprestamo_Click(object sender, EventArgs e)
         {
+            int idLibro = Convert.ToInt32(cmbLibros.SelectedValue);
+            int idLector = Convert.ToInt32(cmbLectores.SelectedValue);
+            int idUsuario = objBibliotecario.getIdBibliotecario();
             // Validar lector
             if (cmbLectores.SelectedIndex == -1)
             {
@@ -123,11 +128,20 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
                 return;
             }
 
-            int idLibro=Convert.ToInt32(cmbLibros.SelectedValue);
-            int idLector = Convert.ToInt32(cmbLectores.SelectedValue);
-            int idUsuario = objBibliotecario.getIdBibliotecario();
+            objPrestamo.setFecha_Prestamo(dtpFechadevolucion.Value.Date);
+            objPrestamo.setFecha_Devolucion(dtpFechadevolucion.Value.Date);
+            objPrestamo.setCodigo("jghkghkgkhg");
+            objPrestamo.setIdLector(idLector);
+            objPrestamo.setIdBibliotecario(idUsuario);
+            objPrestamo.setIdLibro(idLibro);
 
-            MessageBox.Show("Préstamo registrado correctamente.");
+            if (objPrestamo.GuardarPrestamo())
+            {
+                MessageBox.Show("Prestamo guardado");
+                this.Close();
+            }
+
+
         }
     }
 }
