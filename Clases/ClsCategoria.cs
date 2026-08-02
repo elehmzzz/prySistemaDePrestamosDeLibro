@@ -1,10 +1,5 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
@@ -13,34 +8,31 @@ namespace prySistemaDePrestamosDeLibro.Clases
         private int IdCategoria;
         private string Nombre = "";
 
-        //get set 
         public int getIdCategoria()
         {
             return IdCategoria;
         }
-
         public void setIdCategoria(int id)
         {
             IdCategoria = id;
         }
-
         public string getNombre()
         {
             return Nombre;
         }
-
         public void setNombre(string nombre)
         {
             Nombre = nombre;
         }
-
-        //metodos crud
+        private MySqlConnection EstableceConexion()
+        {
+            ClsConexion conexion = new();
+            return conexion.ObtenerConexion();
+        }
         public DataTable ObtenerCategorias()
         {
+            MySqlConnection con = EstableceConexion();
             DataTable dt = new DataTable();
-            ClsConexion conexion = new ClsConexion();
-            MySqlConnection con = conexion.ObtenerConexion();
-
             try
             {
                 MySqlCommand cmd = new MySqlCommand("SELECT id_categoria id, nombre_categoria nombre FROM categoria", con);
@@ -55,11 +47,9 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
             return dt;
         }
-
         public bool GuardarCategoria()
         {
-            ClsConexion conexion = new ClsConexion();
-            MySqlConnection con = conexion.ObtenerConexion();
+            MySqlConnection con = EstableceConexion();
             try {
                 MySqlCommand cmd = new MySqlCommand("INSERT INTO categoria (nombre_categoria) VALUES (@nombre)", con);
                 cmd.Parameters.AddWithValue("@nombre", Nombre);
@@ -71,11 +61,9 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 return false;
             }
         }
-
         public bool ActualizarCategoria()
         {
-            ClsConexion conexion = new ClsConexion();
-            MySqlConnection con = conexion.ObtenerConexion();
+            MySqlConnection con = EstableceConexion();
             try
             {
                 MySqlCommand cmd = new MySqlCommand("UPDATE categoria set nombre_categoria=@nombre WHERE id_categoria=@id" , con);
@@ -91,11 +79,9 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 return false;
             }
         }
-
         public bool BorrarCategoria()
         {
-            ClsConexion conexion = new ClsConexion();
-            MySqlConnection con = conexion.ObtenerConexion();
+            MySqlConnection con = EstableceConexion();
             try
             {
                 MySqlCommand cmd = new MySqlCommand("DELETE FROM categoria WHERE id_categoria=@id", con);

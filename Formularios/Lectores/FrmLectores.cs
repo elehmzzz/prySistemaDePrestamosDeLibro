@@ -24,6 +24,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
             objLector = new ClsLectores();
             ventanaPrincipal = padre;
             CargarLectores();
+
+            txtBuscador.TextChanged += txtBuscador_TextChanged_1;
+            txtBuscador.Enter += txtBuscador_Enter;
+            txtBuscador.Leave += txtBuscador_Leave;
+            this.Load += FrmLectores_Load;
         }
         public void CargarLectores()
         {
@@ -51,19 +56,14 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 dataGridView1.Columns["Fecha_Nacimiento"].HeaderText = "Fecha de Nacimiento";
 
         }
-        private void btnAgregarLector_Click(object sender, EventArgs e)
-        {
-            //FrmAgregarLectores ventanaAgregar = new FrmAgregarLectores();
-            
-        }
 
-        private void txtBuscador_TextChanged_1(object sender, EventArgs e)
+        private void txtBuscador_TextChanged_1(object? sender, EventArgs? e)
         {
-            if (dataGridView1.DataSource is DataTable dt)
+            dataGridView1.SuspendLayout();
+
+            if (dataGridView1.DataSource is DataView dv)
             {
-                DataView dv = dt.DefaultView;
                 string texto = txtBuscador.Text.Trim();
-
                 if (string.IsNullOrEmpty(texto) || texto == "Buscar")
                 {
                     dv.RowFilter = "";
@@ -71,13 +71,15 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 else
                 {
                     string textoSeguro = texto.Replace("'", "''");
-                    dv.RowFilter = string.Format(
-                        "Nombres LIKE '%{0}%' OR Apellido_Paterno LIKE '%{0}%' OR Apellido_Materno LIKE '%{0}%' OR Telefono LIKE '%{0}%' OR Colonia LIKE '%{0}%'",
-                        textoSeguro);
+                    dv.RowFilter = string.Format("Nombres LIKE '%{0}%' OR Apellido_Paterno LIKE '%{0}%' OR Apellido_Materno LIKE '%{0}%' OR Telefono LIKE '%{0}%' OR Colonia LIKE '%{0}%'",textoSeguro);
                 }
-
-                dataGridView1.DataSource = dv;
             }
+            else if (dataGridView1.DataSource is DataTable dt)
+            {
+                dataGridView1.DataSource = dt.DefaultView;
+            }
+
+            dataGridView1.ResumeLayout();
         }
 
         private void btnAgregarLectores_Click(object sender, EventArgs e)
@@ -108,11 +110,12 @@ namespace prySistemaDePrestamosDeLibro.Clases
             }
         }
 
-        private void btnEditarLectores_Click(object sender, EventArgs e)        { 
+        private void btnEditarLectores_Click(object sender, EventArgs e)
+        {
 
             if (dataGridView1.CurrentRow == null || dataGridView1.CurrentRow.IsNewRow ||
-                dataGridView1.CurrentRow.Cells["Id_Lector"].Value==null ||
-                dataGridView1.CurrentRow.Cells["Id_Lector"].Value ==DBNull.Value)
+                dataGridView1.CurrentRow.Cells["Id_Lector"].Value == null ||
+                dataGridView1.CurrentRow.Cells["Id_Lector"].Value == DBNull.Value)
             {
                 MessageBox.Show("Selecciona un lector de la tabla para editar.", "Aviso",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -122,6 +125,34 @@ namespace prySistemaDePrestamosDeLibro.Clases
             int idLector = Convert.ToInt32(dataGridView1.CurrentRow.Cells["Id_Lector"].Value);
             ventanaPrincipal.mostrarApartadoEditarLector(idLector);
 
+        }
+
+        private void txtBuscador_Enter(object? sender, EventArgs? e)
+        {
+            if (txtBuscador.Text == "Buscar")
+            {
+                txtBuscador.Text = "";
+                txtBuscador.ForeColor = Color.Black;
+            }
+        }
+
+        private void txtBuscador_Leave(object? sender, EventArgs? e)
+        {
+            if (string.IsNullOrWhiteSpace(txtBuscador.Text))
+            {
+                txtBuscador.Text = "Buscar";
+                txtBuscador.ForeColor = Color.Gray;
+            }
+            txtBuscador_TextChanged_1(sender, e);
+        }
+
+        private void FrmLectores_Load(object? sender, EventArgs? e)
+        {
+            txtBuscador.Text = "Buscar";
+            txtBuscador.ForeColor = Color.Gray;
+
+            this.Click += (s, ev) => this.ActiveControl = null;
+            dataGridView1.Click += (s, ev) => this.ActiveControl = null;
         }
     }
 }

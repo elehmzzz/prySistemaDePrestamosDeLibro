@@ -73,7 +73,6 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
             return dt;
         }
-
         public bool GuardarAutor()
         {
             ClsConexion conexion = new ClsConexion();
@@ -94,7 +93,6 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 return false;
             }
         }
-
         public bool ActualizarAutor()
         {
             ClsConexion conexion = new ClsConexion();

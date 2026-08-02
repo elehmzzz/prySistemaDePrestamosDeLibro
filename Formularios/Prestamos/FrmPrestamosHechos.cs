@@ -15,15 +15,18 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
     public partial class FrmPrestamosHechos : Form
     {
         ClsPrestamo objPrestamo;
+        ClsBibliotecario objBibliotecario;
         private FrmMenuPrincipal ventanaPrincipal;
         bool cargandoCombo = false;
-        public FrmPrestamosHechos(FrmMenuPrincipal ventana)
+        public FrmPrestamosHechos(FrmMenuPrincipal ventana, ClsBibliotecario objBibliotecario)
         {
             InitializeComponent();
-            objPrestamo= new ClsPrestamo();
+            objPrestamo = new ClsPrestamo();
+
             this.Load += FrmPrestamosHechos_Load;
             cmbxbuscarprestamo.TextChanged += cmbxbuscarprestamo_TextChanged;
             ventanaPrincipal = ventana;
+            this.objBibliotecario = objBibliotecario;
         }
 
         private void FrmPrestamosHechos_Load(object sender, EventArgs e)
@@ -60,6 +63,9 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
 
             if (dGVPrestamos.Columns["Libro"] != null)
                 dGVPrestamos.Columns["Libro"].HeaderText = "Libro";
+
+            if (dGVPrestamos.Columns["bibliotecario"] != null)
+                dGVPrestamos.Columns["bibliotecario"].HeaderText = "Bibliotecario";
 
             if (dGVPrestamos.Columns["Fecha_Prestamo"] != null)
                 dGVPrestamos.Columns["Fecha_Prestamo"].HeaderText = "Préstamo";
@@ -113,7 +119,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
 
         private void btnAgregarPrestamo_Click(object sender, EventArgs e)
         {
-            FrmHacerprestamo frm = new FrmHacerprestamo();
+            FrmHacerprestamo frm = new FrmHacerprestamo(this.objBibliotecario);
             frm.Show();
         }
 

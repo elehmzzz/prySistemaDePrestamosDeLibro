@@ -3,16 +3,6 @@ using prySistemaDePrestamosDeLibro.Formularios.FRMprestamos;
 using prySistemaDePrestamosDeLibro.Formularios.Lectores;
 using prySistemaDePrestamosDeLibro.Formularios.Libros;
 using prySistemaDePrestamosDeLibro.Formularios.Multas;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.DirectoryServices.ActiveDirectory;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
 
 namespace prySistemaDePrestamosDeLibro.Formularios
 {
@@ -39,6 +29,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             mostrarModuloLibros();
             objBibliotecario = obj;
             this.ventanaInicioSesion = ventanaInicioSesion;
+            comprobarAcceso();
         }
         //cerrar sesion
         private void btnCerrarSesion_Click(object sender, EventArgs e)
@@ -90,11 +81,8 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         //muestra el apartado para agregar un libro del modulo libros
         public void mostrarApartadoLibro()
         {
-            if (apartadoLibros == null || apartadoLibros.IsDisposed)
-            {
-                apartadoLibros = new FrmRegistroLibro(this);
-            }
-            mostrarContenido(apartadoLibros);
+            using var formulario = new FrmRegistroLibro(this);
+            formulario.ShowDialog(this);
         }
 
         //muestra el apartado de categorias del modulo libros
@@ -158,7 +146,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             lblTituloModulo.Text = "Préstamos";
             if (moduloPrestamos == null)
             {
-                moduloPrestamos = new FrmPrestamosHechos(this);
+                moduloPrestamos = new FrmPrestamosHechos(this, objBibliotecario);
             }
             mostrarContenido(moduloPrestamos);
         }
@@ -175,13 +163,22 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         //muestra el modulo de empleado
         public void mostrarModuloEmpleado()
         {
-            lblTituloModulo.Text = "Empleado";
+            lblTituloModulo.Text = "Información personal";
             if (moduloEmpleado == null || moduloEmpleado.IsDisposed)
             {
                 moduloEmpleado = new FrmPerfilEmpleado(this, objBibliotecario);
                 //MessageBox.Show("Se creó un nuevo formulario empleado");
             }
             mostrarContenido(moduloEmpleado);
+        }
+
+        public void comprobarAcceso() {
+            if (objBibliotecario.getTipoUsuario() == 2) {
+                btnLibros.Enabled = false;
+                btnMultas.Enabled = false;
+                btnLibros.Text = "Libros  🔒";
+                btnMultas.Text = "Multas  🔒";
+            }
         }
     }
 }

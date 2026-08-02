@@ -1,15 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using prySistemaDePrestamosDeLibro.Formularios;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using BCrypt.Net;
+﻿using prySistemaDePrestamosDeLibro.Formularios;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
@@ -21,11 +10,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
         public FrmInicioSesion()
         {
             InitializeComponent();
-
-        }
-        private void FrmInicioSesion_Load(object sender, EventArgs e)
-        {
-
+            objBibliotecario = new ClsBibliotecario();
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
@@ -38,8 +23,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 MessageBox.Show("El usuario o la contraseña no pueden \n ir vacios");
                 return;
             }
-
-            objBibliotecario = new ClsBibliotecario();
+  
             objBibliotecario.setUsuario(usuario);
             objBibliotecario.setContrasenia(contrasenia);
 
@@ -52,7 +36,6 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 txtContrasenia.Clear();
                 txtUsuario.Focus();
             }
-
         }
 
         private void llbRegistrar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)

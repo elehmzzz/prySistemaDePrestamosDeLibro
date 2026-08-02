@@ -16,8 +16,6 @@ namespace prySistemaDePrestamosDeLibro.Clases
         private DateTime Fecha_Devolucion;
         private string Estado="";
         private int IdLector;
-        private interface IdEmpleado;
-
 
 
         private MySqlConnection EstableceConexion()
@@ -48,5 +46,38 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 con.Close();
             }
         }
+
+        // INSERTA EN TABLA PRESTAMO Y DEVUELVE EL ID GENERADO
+        public int InsertarPrestamo(int idLector, int idLibro, int idBibliotecario)
+        {
+            int idPrestamo = 0;
+
+            MySqlConnection con = EstableceConexion();
+
+            try
+            {
+                string sql = @"INSERT INTO Prestamo (Id_Bibliotecario, Id_Lector, Id_Libro) VALUES (@bibliotecario, @lector, @libro); SELECT LAST_INSERT_ID();";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+
+                cmd.Parameters.AddWithValue("@bibliotecario", idBibliotecario);
+                cmd.Parameters.AddWithValue("@lector", idLector);
+                cmd.Parameters.AddWithValue("@libro", idLibro);
+
+
+                idPrestamo = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return idPrestamo;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al insertar préstamo: " + ex.Message);
+                return 0;
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+             
     }
 }

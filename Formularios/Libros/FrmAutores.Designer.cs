@@ -28,16 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label2 = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
             txtBuscador = new TextBox();
             btnAgregarAutor = new Button();
             label1 = new Label();
-            dataGridView1 = new DataGridView();
-            id = new DataGridViewTextBoxColumn();
-            Nombre = new DataGridViewTextBoxColumn();
-            aPaterno = new DataGridViewTextBoxColumn();
-            aMaterno = new DataGridViewTextBoxColumn();
+            dtAutores = new DataGridView();
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
@@ -45,23 +42,18 @@
             txtNombre = new TextBox();
             txtAPaterno = new TextBox();
             txtAMaterno = new TextBox();
-            tableLayoutPanel2 = new TableLayoutPanel();
             btnActualizar = new Button();
             btnEliminar = new Button();
-            tableLayoutPanel3 = new TableLayoutPanel();
             btnRegresar = new Button();
             tableLayoutPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            tableLayoutPanel2.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtAutores).BeginInit();
             SuspendLayout();
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.Left;
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 19.8000011F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(14, 18);
+            label2.Location = new Point(14, 4);
             label2.Name = "label2";
             label2.Size = new Size(108, 37);
             label2.TabIndex = 28;
@@ -69,6 +61,7 @@
             // 
             // tableLayoutPanel1
             // 
+            tableLayoutPanel1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             tableLayoutPanel1.ColumnCount = 3;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 31.6176472F));
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 68.3823547F));
@@ -76,7 +69,7 @@
             tableLayoutPanel1.Controls.Add(txtBuscador, 1, 0);
             tableLayoutPanel1.Controls.Add(btnAgregarAutor, 2, 0);
             tableLayoutPanel1.Controls.Add(label1, 0, 0);
-            tableLayoutPanel1.Location = new Point(14, 87);
+            tableLayoutPanel1.Location = new Point(15, 89);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 1;
             tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
@@ -102,7 +95,7 @@
             btnAgregarAutor.ForeColor = SystemColors.Control;
             btnAgregarAutor.Location = new Point(559, 3);
             btnAgregarAutor.Name = "btnAgregarAutor";
-            btnAgregarAutor.Size = new Size(148, 44);
+            btnAgregarAutor.Size = new Size(221, 45);
             btnAgregarAutor.TabIndex = 24;
             btnAgregarAutor.Text = "Agregar autor";
             btnAgregarAutor.UseVisualStyleBackColor = false;
@@ -118,52 +111,35 @@
             label1.TabIndex = 25;
             label1.Text = "Buscar el autor:";
             // 
-            // dataGridView1
+            // dtAutores
             // 
-            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { id, Nombre, aPaterno, aMaterno });
-            dataGridView1.Location = new Point(17, 171);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(780, 215);
-            dataGridView1.TabIndex = 30;
-            dataGridView1.CellClick += dtAutores_Click;
-            // 
-            // id
-            // 
-            id.DataPropertyName = "id_autor";
-            id.HeaderText = "Id";
-            id.MinimumWidth = 6;
-            id.Name = "id";
-            // 
-            // Nombre
-            // 
-            Nombre.DataPropertyName = "nombres";
-            Nombre.HeaderText = "Nombre";
-            Nombre.MinimumWidth = 6;
-            Nombre.Name = "Nombre";
-            // 
-            // aPaterno
-            // 
-            aPaterno.DataPropertyName = "apellido_paterno";
-            aPaterno.HeaderText = "Apellido paterno";
-            aPaterno.MinimumWidth = 6;
-            aPaterno.Name = "aPaterno";
-            // 
-            // aMaterno
-            // 
-            aMaterno.DataPropertyName = "apellido_materno";
-            aMaterno.HeaderText = "Apellido materno";
-            aMaterno.MinimumWidth = 6;
-            aMaterno.Name = "aMaterno";
+            dtAutores.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dtAutores.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dtAutores.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dtAutores.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtAutores.EnableHeadersVisualStyles = false;
+            dtAutores.Location = new Point(14, 184);
+            dtAutores.Name = "dtAutores";
+            dtAutores.ReadOnly = true;
+            dtAutores.RowHeadersVisible = false;
+            dtAutores.RowHeadersWidth = 51;
+            dtAutores.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtAutores.Size = new Size(784, 215);
+            dtAutores.TabIndex = 30;
+            dtAutores.CellDoubleClick += dtAutores_CellDoubleClick;
             // 
             // label3
             // 
-            label3.Anchor = AnchorStyles.Left;
+            label3.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label3.AutoSize = true;
-            label3.Location = new Point(20, 403);
+            label3.Location = new Point(18, 411);
             label3.Name = "label3";
             label3.Size = new Size(187, 21);
             label3.TabIndex = 31;
@@ -171,9 +147,9 @@
             // 
             // label4
             // 
-            label4.Anchor = AnchorStyles.Left;
+            label4.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label4.AutoSize = true;
-            label4.Location = new Point(3, 13);
+            label4.Location = new Point(18, 468);
             label4.Name = "label4";
             label4.Size = new Size(88, 21);
             label4.TabIndex = 32;
@@ -181,9 +157,9 @@
             // 
             // label5
             // 
-            label5.Anchor = AnchorStyles.Left;
+            label5.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             label5.AutoSize = true;
-            label5.Location = new Point(3, 60);
+            label5.Location = new Point(18, 521);
             label5.Name = "label5";
             label5.Size = new Size(83, 21);
             label5.TabIndex = 33;
@@ -191,9 +167,9 @@
             // 
             // label6
             // 
-            label6.Anchor = AnchorStyles.Left;
+            label6.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             label6.AutoSize = true;
-            label6.Location = new Point(348, 60);
+            label6.Location = new Point(442, 468);
             label6.Name = "label6";
             label6.Size = new Size(88, 21);
             label6.TabIndex = 34;
@@ -201,56 +177,37 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(97, 3);
+            txtNombre.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            txtNombre.Location = new Point(130, 469);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(245, 29);
             txtNombre.TabIndex = 35;
             // 
             // txtAPaterno
             // 
-            txtAPaterno.Location = new Point(97, 50);
+            txtAPaterno.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
+            txtAPaterno.Location = new Point(130, 522);
             txtAPaterno.Name = "txtAPaterno";
             txtAPaterno.Size = new Size(199, 29);
             txtAPaterno.TabIndex = 36;
             // 
             // txtAMaterno
             // 
-            txtAMaterno.Location = new Point(442, 50);
+            txtAMaterno.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            txtAMaterno.Location = new Point(561, 469);
             txtAMaterno.Name = "txtAMaterno";
             txtAMaterno.Size = new Size(194, 29);
             txtAMaterno.TabIndex = 37;
             // 
-            // tableLayoutPanel2
-            // 
-            tableLayoutPanel2.ColumnCount = 4;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle());
-            tableLayoutPanel2.Controls.Add(label4, 0, 0);
-            tableLayoutPanel2.Controls.Add(txtAMaterno, 3, 1);
-            tableLayoutPanel2.Controls.Add(label5, 0, 1);
-            tableLayoutPanel2.Controls.Add(label6, 2, 1);
-            tableLayoutPanel2.Controls.Add(txtAPaterno, 1, 1);
-            tableLayoutPanel2.Controls.Add(txtNombre, 1, 0);
-            tableLayoutPanel2.Location = new Point(17, 446);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 2;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            tableLayoutPanel2.Size = new Size(708, 95);
-            tableLayoutPanel2.TabIndex = 38;
-           
-            // 
             // btnActualizar
             // 
-            btnActualizar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnActualizar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnActualizar.AutoSize = true;
             btnActualizar.BackColor = Color.FromArgb(32, 41, 64);
             btnActualizar.ForeColor = SystemColors.Control;
-            btnActualizar.Location = new Point(113, 3);
+            btnActualizar.Location = new Point(534, 415);
             btnActualizar.Name = "btnActualizar";
-            btnActualizar.Size = new Size(107, 38);
+            btnActualizar.Size = new Size(129, 38);
             btnActualizar.TabIndex = 38;
             btnActualizar.Text = "Actualizar";
             btnActualizar.UseVisualStyleBackColor = false;
@@ -258,39 +215,25 @@
             // 
             // btnEliminar
             // 
-            btnEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            btnEliminar.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
             btnEliminar.AutoSize = true;
             btnEliminar.BackColor = Color.FromArgb(32, 41, 64);
             btnEliminar.ForeColor = SystemColors.Control;
-            btnEliminar.Location = new Point(5, 3);
+            btnEliminar.Location = new Point(665, 415);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(102, 38);
+            btnEliminar.Size = new Size(129, 38);
             btnEliminar.TabIndex = 39;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = false;
             btnEliminar.Click += btnEliminar_Click;
             // 
-            // tableLayoutPanel3
-            // 
-            tableLayoutPanel3.ColumnCount = 2;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 113F));
-            tableLayoutPanel3.Controls.Add(btnActualizar, 1, 0);
-            tableLayoutPanel3.Controls.Add(btnEliminar, 0, 0);
-            tableLayoutPanel3.Location = new Point(755, 490);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 1;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel3.Size = new Size(223, 51);
-            tableLayoutPanel3.TabIndex = 39;
-            // 
             // btnRegresar
             // 
+            btnRegresar.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnRegresar.AutoSize = true;
             btnRegresar.BackColor = Color.FromArgb(32, 41, 64);
             btnRegresar.ForeColor = SystemColors.Control;
-            btnRegresar.Location = new Point(931, 18);
+            btnRegresar.Location = new Point(685, 19);
             btnRegresar.Name = "btnRegresar";
             btnRegresar.Size = new Size(109, 38);
             btnRegresar.TabIndex = 40;
@@ -303,12 +246,18 @@
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
-            ClientSize = new Size(1052, 583);
+            ClientSize = new Size(853, 569);
+            Controls.Add(label4);
+            Controls.Add(btnActualizar);
+            Controls.Add(txtAMaterno);
             Controls.Add(btnRegresar);
-            Controls.Add(tableLayoutPanel3);
-            Controls.Add(tableLayoutPanel2);
+            Controls.Add(label5);
+            Controls.Add(btnEliminar);
+            Controls.Add(label6);
+            Controls.Add(txtAPaterno);
             Controls.Add(label3);
-            Controls.Add(dataGridView1);
+            Controls.Add(txtNombre);
+            Controls.Add(dtAutores);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(label2);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -321,11 +270,7 @@
             Load += FrmAutores_Load;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel2.PerformLayout();
-            tableLayoutPanel3.ResumeLayout(false);
-            tableLayoutPanel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dtAutores).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -337,7 +282,7 @@
         private TextBox txtBuscador;
         private Button btnAgregarAutor;
         private Label label1;
-        private DataGridView dataGridView1;
+        private DataGridView dtAutores;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn column3;
@@ -349,16 +294,10 @@
         private TextBox textBox1;
         private TextBox textBox2;
         private TextBox textBox3;
-        private TableLayoutPanel tableLayoutPanel2;
         private Button btnGuardar;
         private Button btnEliminar;
-        private TableLayoutPanel tableLayoutPanel3;
         private Button btnRegresar;
         private Button btnActualizar;
-        private DataGridViewTextBoxColumn id;
-        private DataGridViewTextBoxColumn Nombre;
-        private DataGridViewTextBoxColumn aPaterno;
-        private DataGridViewTextBoxColumn aMaterno;
         private TextBox txtNombre;
         private TextBox txtAPaterno;
         private TextBox txtAMaterno;

@@ -95,11 +95,9 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.80268F));
             tableLayoutPanel1.Controls.Add(label5, 0, 0);
             tableLayoutPanel1.Controls.Add(txtNombre, 1, 0);
-            tableLayoutPanel1.Controls.Add(label6, 0, 1);
-            tableLayoutPanel1.Controls.Add(txtApellidoMat, 1, 1);
-            tableLayoutPanel1.Controls.Add(label1, 0, 2);
-            tableLayoutPanel1.Controls.Add(txtApellidoPat, 1, 2);
+            tableLayoutPanel1.Controls.Add(txtApellidoPat, 1, 1);
             tableLayoutPanel1.Controls.Add(label2, 0, 3);
+            tableLayoutPanel1.Controls.Add(label1, 0, 1);
             tableLayoutPanel1.Controls.Add(btnRegresar, 2, 5);
             tableLayoutPanel1.Controls.Add(btnSiguiente, 3, 5);
             tableLayoutPanel1.Controls.Add(label3, 0, 4);
@@ -107,6 +105,8 @@
             tableLayoutPanel1.Controls.Add(txtCorreo, 1, 4);
             tableLayoutPanel1.Controls.Add(txtTelefono, 1, 5);
             tableLayoutPanel1.Controls.Add(dtpFechaNac, 1, 3);
+            tableLayoutPanel1.Controls.Add(label6, 0, 2);
+            tableLayoutPanel1.Controls.Add(txtApellidoMat, 1, 2);
             tableLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
             tableLayoutPanel1.Location = new Point(19, 161);
             tableLayoutPanel1.Margin = new Padding(6);
@@ -142,7 +142,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(6, 61);
+            label6.Location = new Point(6, 122);
             label6.Margin = new Padding(6, 0, 6, 0);
             label6.Name = "label6";
             label6.Size = new Size(169, 28);
@@ -151,7 +151,7 @@
             // 
             // txtApellidoMat
             // 
-            txtApellidoMat.Location = new Point(240, 67);
+            txtApellidoMat.Location = new Point(240, 128);
             txtApellidoMat.Margin = new Padding(6);
             txtApellidoMat.Name = "txtApellidoMat";
             txtApellidoMat.Size = new Size(232, 34);
@@ -160,7 +160,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(6, 122);
+            label1.Location = new Point(6, 61);
             label1.Margin = new Padding(6, 0, 6, 0);
             label1.Name = "label1";
             label1.Size = new Size(164, 28);
@@ -169,7 +169,7 @@
             // 
             // txtApellidoPat
             // 
-            txtApellidoPat.Location = new Point(240, 128);
+            txtApellidoPat.Location = new Point(240, 67);
             txtApellidoPat.Margin = new Padding(6);
             txtApellidoPat.Name = "txtApellidoPat";
             txtApellidoPat.Size = new Size(232, 34);

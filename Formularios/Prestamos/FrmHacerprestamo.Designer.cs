@@ -31,27 +31,26 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             cmbLectores = new ComboBox();
             btnAgregarCLector = new Button();
-            dateTimePicker1 = new DateTimePicker();
+            dtpFechanac = new DateTimePicker();
             txtcp = new TextBox();
             label7 = new Label();
             txtEdad = new TextBox();
-            txtMunicipio = new TextBox();
             label2 = new Label();
             label6 = new Label();
             label9 = new Label();
             label8 = new Label();
             txtTelefono = new TextBox();
-            txtColonia = new TextBox();
             label4 = new Label();
             label3 = new Label();
-            tableLayoutPanel3 = new TableLayoutPanel();
+            txtColonia = new TextBox();
+            txtMunicipio = new TextBox();
             btnvalidarprestamo = new Button();
             tbcprestamollenado = new TabControl();
             tabPage1 = new TabPage();
             tabPage2 = new TabPage();
             tableLayoutPanel2 = new TableLayoutPanel();
-            dateTimePicker3 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            dtpFechadevolucion = new DateTimePicker();
+            dtpFechaprestamo = new DateTimePicker();
             cmbLibros = new ComboBox();
             label1 = new Label();
             txtDisponibles = new TextBox();
@@ -63,8 +62,9 @@
             label13 = new Label();
             txtAutor = new TextBox();
             label5 = new Label();
+            cmbxejemplares = new ComboBox();
+            label14 = new Label();
             tableLayoutPanel1.SuspendLayout();
-            tableLayoutPanel3.SuspendLayout();
             tbcprestamollenado.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage2.SuspendLayout();
@@ -82,7 +82,7 @@
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel1.Controls.Add(cmbLectores, 1, 0);
             tableLayoutPanel1.Controls.Add(btnAgregarCLector, 2, 0);
-            tableLayoutPanel1.Controls.Add(dateTimePicker1, 1, 1);
+            tableLayoutPanel1.Controls.Add(dtpFechanac, 1, 1);
             tableLayoutPanel1.Controls.Add(txtcp, 1, 5);
             tableLayoutPanel1.Controls.Add(label7, 0, 5);
             tableLayoutPanel1.Controls.Add(txtEdad, 1, 2);
@@ -133,17 +133,18 @@
             btnAgregarCLector.UseVisualStyleBackColor = false;
             btnAgregarCLector.Click += btnAgregarCLector_Click;
             // 
-            // dateTimePicker1
+            // dtpFechanac
             // 
-            dateTimePicker1.Enabled = false;
-            dateTimePicker1.Format = DateTimePickerFormat.Short;
-            dateTimePicker1.Location = new Point(164, 50);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(214, 27);
-            dateTimePicker1.TabIndex = 31;
+            dtpFechanac.Enabled = false;
+            dtpFechanac.Format = DateTimePickerFormat.Short;
+            dtpFechanac.Location = new Point(164, 50);
+            dtpFechanac.Name = "dtpFechanac";
+            dtpFechanac.Size = new Size(214, 27);
+            dtpFechanac.TabIndex = 31;
             // 
             // txtcp
             // 
+            txtcp.AcceptsReturn = true;
             txtcp.Enabled = false;
             txtcp.Location = new Point(164, 251);
             txtcp.Name = "txtcp";
@@ -166,14 +167,6 @@
             txtEdad.Name = "txtEdad";
             txtEdad.Size = new Size(214, 27);
             txtEdad.TabIndex = 19;
-            // 
-            // txtMunicipio
-            // 
-            txtMunicipio.Enabled = false;
-            txtMunicipio.Location = new Point(164, 140);
-            txtMunicipio.Name = "txtMunicipio";
-            txtMunicipio.Size = new Size(214, 27);
-            txtMunicipio.TabIndex = 24;
             // 
             // label2
             // 
@@ -219,14 +212,6 @@
             txtTelefono.Size = new Size(214, 27);
             txtTelefono.TabIndex = 32;
             // 
-            // txtColonia
-            // 
-            txtColonia.Enabled = false;
-            txtColonia.Location = new Point(164, 198);
-            txtColonia.Name = "txtColonia";
-            txtColonia.Size = new Size(214, 27);
-            txtColonia.TabIndex = 22;
-            // 
             // label4
             // 
             label4.AutoSize = true;
@@ -245,20 +230,21 @@
             label3.TabIndex = 20;
             label3.Text = "Colonia:";
             // 
-            // tableLayoutPanel3
+            // txtColonia
             // 
-            tableLayoutPanel3.ColumnCount = 1;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50.60241F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 49.39759F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel3.Controls.Add(btnvalidarprestamo, 1, 0);
-            tableLayoutPanel3.Enabled = false;
-            tableLayoutPanel3.Location = new Point(499, 442);
-            tableLayoutPanel3.Name = "tableLayoutPanel3";
-            tableLayoutPanel3.RowCount = 1;
-            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel3.Size = new Size(136, 45);
-            tableLayoutPanel3.TabIndex = 47;
+            txtColonia.Enabled = false;
+            txtColonia.Location = new Point(164, 198);
+            txtColonia.Name = "txtColonia";
+            txtColonia.Size = new Size(214, 27);
+            txtColonia.TabIndex = 22;
+            // 
+            // txtMunicipio
+            // 
+            txtMunicipio.Enabled = false;
+            txtMunicipio.Location = new Point(164, 140);
+            txtMunicipio.Name = "txtMunicipio";
+            txtMunicipio.Size = new Size(214, 27);
+            txtMunicipio.TabIndex = 24;
             // 
             // btnvalidarprestamo
             // 
@@ -266,12 +252,13 @@
             btnvalidarprestamo.BackColor = Color.FromArgb(32, 41, 64);
             btnvalidarprestamo.BackgroundImageLayout = ImageLayout.None;
             btnvalidarprestamo.ForeColor = SystemColors.Control;
-            btnvalidarprestamo.Location = new Point(3, 3);
+            btnvalidarprestamo.Location = new Point(504, 509);
             btnvalidarprestamo.Name = "btnvalidarprestamo";
-            btnvalidarprestamo.Size = new Size(130, 38);
+            btnvalidarprestamo.Size = new Size(131, 38);
             btnvalidarprestamo.TabIndex = 23;
             btnvalidarprestamo.Text = "validar prestamo";
             btnvalidarprestamo.UseVisualStyleBackColor = false;
+            btnvalidarprestamo.Click += btnvalidarprestamo_Click;
             // 
             // tbcprestamollenado
             // 
@@ -281,7 +268,7 @@
             tbcprestamollenado.Location = new Point(15, 57);
             tbcprestamollenado.Name = "tbcprestamollenado";
             tbcprestamollenado.SelectedIndex = 0;
-            tbcprestamollenado.Size = new Size(620, 383);
+            tbcprestamollenado.Size = new Size(620, 446);
             tbcprestamollenado.TabIndex = 48;
             // 
             // tabPage1
@@ -291,7 +278,7 @@
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(612, 350);
+            tabPage1.Size = new Size(612, 413);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Lector";
             tabPage1.Click += tabPage1_Click;
@@ -303,7 +290,7 @@
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(612, 350);
+            tabPage2.Size = new Size(612, 413);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Libro";
             // 
@@ -311,56 +298,61 @@
             // 
             tableLayoutPanel2.BackColor = Color.FromArgb(236, 223, 204);
             tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 48.2837448F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 51.7162552F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40.2298851F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 59.7701149F));
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
-            tableLayoutPanel2.Controls.Add(dateTimePicker3, 1, 5);
-            tableLayoutPanel2.Controls.Add(dateTimePicker2, 1, 4);
+            tableLayoutPanel2.Controls.Add(label14, 0, 3);
+            tableLayoutPanel2.Controls.Add(cmbxejemplares, 1, 3);
             tableLayoutPanel2.Controls.Add(cmbLibros, 1, 0);
             tableLayoutPanel2.Controls.Add(label1, 0, 0);
-            tableLayoutPanel2.Controls.Add(txtDisponibles, 1, 3);
-            tableLayoutPanel2.Controls.Add(label19, 0, 5);
-            tableLayoutPanel2.Controls.Add(label10, 0, 4);
             tableLayoutPanel2.Controls.Add(txtISBN, 1, 1);
             tableLayoutPanel2.Controls.Add(label11, 0, 1);
             tableLayoutPanel2.Controls.Add(label12, 0, 2);
-            tableLayoutPanel2.Controls.Add(label13, 0, 3);
             tableLayoutPanel2.Controls.Add(txtAutor, 1, 2);
+            tableLayoutPanel2.Controls.Add(label19, 0, 6);
+            tableLayoutPanel2.Controls.Add(dtpFechadevolucion, 1, 6);
+            tableLayoutPanel2.Controls.Add(label10, 0, 5);
+            tableLayoutPanel2.Controls.Add(dtpFechaprestamo, 1, 5);
+            tableLayoutPanel2.Controls.Add(label13, 0, 4);
+            tableLayoutPanel2.Controls.Add(txtDisponibles, 1, 4);
             tableLayoutPanel2.Location = new Point(6, 6);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 6;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 15.7295637F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 15.3827F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 14.7138853F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 19.3955784F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 17.7235451F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 17.0547333F));
-            tableLayoutPanel2.Size = new Size(435, 342);
+            tableLayoutPanel2.RowCount = 7;
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 17.9824562F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 19.7368412F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 18.5897427F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 16.9871788F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 13.1410255F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 13.4615383F));
+            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Absolute, 35F));
+            tableLayoutPanel2.Size = new Size(435, 351);
             tableLayoutPanel2.TabIndex = 49;
             // 
-            // dateTimePicker3
+            // dtpFechadevolucion
             // 
-            dateTimePicker3.Format = DateTimePickerFormat.Short;
-            dateTimePicker3.Location = new Point(213, 284);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new Size(214, 27);
-            dateTimePicker3.TabIndex = 45;
+            dtpFechadevolucion.Format = DateTimePickerFormat.Short;
+            dtpFechadevolucion.Location = new Point(178, 315);
+            dtpFechadevolucion.Name = "dtpFechadevolucion";
+            dtpFechadevolucion.Size = new Size(214, 27);
+            dtpFechadevolucion.TabIndex = 45;
             // 
-            // dateTimePicker2
+            // dtpFechaprestamo
             // 
-            dateTimePicker2.Format = DateTimePickerFormat.Short;
-            dateTimePicker2.Location = new Point(213, 224);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(214, 27);
-            dateTimePicker2.TabIndex = 45;
+            dtpFechaprestamo.Enabled = false;
+            dtpFechaprestamo.Format = DateTimePickerFormat.Short;
+            dtpFechaprestamo.Location = new Point(178, 273);
+            dtpFechaprestamo.Name = "dtpFechaprestamo";
+            dtpFechaprestamo.Size = new Size(214, 27);
+            dtpFechaprestamo.TabIndex = 45;
             // 
             // cmbLibros
             // 
             cmbLibros.FormattingEnabled = true;
-            cmbLibros.Location = new Point(213, 3);
+            cmbLibros.Location = new Point(178, 3);
             cmbLibros.Name = "cmbLibros";
             cmbLibros.Size = new Size(214, 28);
             cmbLibros.TabIndex = 51;
+            cmbLibros.SelectedIndexChanged += cmbLibros_SelectedIndexChanged_1;
             // 
             // label1
             // 
@@ -374,7 +366,7 @@
             // txtDisponibles
             // 
             txtDisponibles.Enabled = false;
-            txtDisponibles.Location = new Point(213, 158);
+            txtDisponibles.Location = new Point(178, 232);
             txtDisponibles.Name = "txtDisponibles";
             txtDisponibles.Size = new Size(214, 27);
             txtDisponibles.TabIndex = 22;
@@ -382,7 +374,7 @@
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(3, 281);
+            label19.Location = new Point(3, 312);
             label19.Name = "label19";
             label19.Size = new Size(148, 20);
             label19.TabIndex = 49;
@@ -391,7 +383,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(3, 221);
+            label10.Location = new Point(3, 270);
             label10.Name = "label10";
             label10.Size = new Size(137, 20);
             label10.TabIndex = 50;
@@ -400,7 +392,7 @@
             // txtISBN
             // 
             txtISBN.Enabled = false;
-            txtISBN.Location = new Point(213, 56);
+            txtISBN.Location = new Point(178, 59);
             txtISBN.Name = "txtISBN";
             txtISBN.Size = new Size(214, 27);
             txtISBN.TabIndex = 32;
@@ -408,7 +400,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(3, 53);
+            label11.Location = new Point(3, 56);
             label11.Name = "label11";
             label11.Size = new Size(44, 20);
             label11.TabIndex = 52;
@@ -417,7 +409,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(3, 105);
+            label12.Location = new Point(3, 118);
             label12.Name = "label12";
             label12.Size = new Size(49, 20);
             label12.TabIndex = 16;
@@ -426,7 +418,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(3, 155);
+            label13.Location = new Point(3, 229);
             label13.Name = "label13";
             label13.Size = new Size(90, 20);
             label13.TabIndex = 10;
@@ -435,7 +427,7 @@
             // txtAutor
             // 
             txtAutor.Enabled = false;
-            txtAutor.Location = new Point(213, 108);
+            txtAutor.Location = new Point(178, 121);
             txtAutor.Name = "txtAutor";
             txtAutor.Size = new Size(214, 27);
             txtAutor.TabIndex = 53;
@@ -451,16 +443,33 @@
             label5.TabIndex = 3;
             label5.Text = "Informacion del prestamo";
             // 
+            // cmbxejemplares
+            // 
+            cmbxejemplares.FormattingEnabled = true;
+            cmbxejemplares.Location = new Point(178, 179);
+            cmbxejemplares.Name = "cmbxejemplares";
+            cmbxejemplares.Size = new Size(214, 28);
+            cmbxejemplares.TabIndex = 52;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(3, 176);
+            label14.Name = "label14";
+            label14.Size = new Size(85, 20);
+            label14.TabIndex = 50;
+            label14.Text = "ejemplares:";
+            // 
             // FrmHacerprestamo
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             BackgroundImageLayout = ImageLayout.None;
-            ClientSize = new Size(674, 489);
+            ClientSize = new Size(664, 559);
+            Controls.Add(btnvalidarprestamo);
             Controls.Add(label5);
             Controls.Add(tbcprestamollenado);
-            Controls.Add(tableLayoutPanel3);
             FormBorderStyle = FormBorderStyle.FixedToolWindow;
             Name = "FrmHacerprestamo";
             StartPosition = FormStartPosition.CenterScreen;
@@ -468,8 +477,6 @@
             Load += load_FrmLector;
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            tableLayoutPanel3.ResumeLayout(false);
-            tableLayoutPanel3.PerformLayout();
             tbcprestamollenado.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
@@ -484,7 +491,7 @@
         private TableLayoutPanel tableLayoutPanel1;
         private ComboBox cmbLectores;
         private Button btnAgregarCLector;
-        private DateTimePicker dateTimePicker1;
+        private DateTimePicker dtpFechanac;
         private TextBox txtcp;
         private Label label7;
         private TextBox txtEdad;
@@ -504,8 +511,8 @@
         private TabPage tabPage2;
         private Label label5;
         private TableLayoutPanel tableLayoutPanel2;
-        private DateTimePicker dateTimePicker3;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dtpFechadevolucion;
+        private DateTimePicker dtpFechaprestamo;
         private ComboBox cmbLibros;
         private Label label1;
         private TextBox txtDisponibles;
@@ -516,5 +523,7 @@
         private Label label12;
         private Label label13;
         private TextBox txtAutor;
+        private ComboBox cmbxejemplares;
+        private Label label14;
     }
 }
