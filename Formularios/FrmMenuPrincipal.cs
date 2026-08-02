@@ -146,7 +146,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             lblTituloModulo.Text = "Préstamos";
             if (moduloPrestamos == null)
             {
-                moduloPrestamos = new FrmPrestamosHechos(this);
+                moduloPrestamos = new FrmPrestamosHechos(this, objBibliotecario);
             }
             mostrarContenido(moduloPrestamos);
         }
