@@ -31,38 +31,32 @@
             panel2 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             btRegresarPrHechos = new Button();
-            btnEditplazo = new Button();
+            btnFinalizarprestamo = new Button();
             tableLayoutPanel3 = new TableLayoutPanel();
             txtNombre = new TextBox();
-            txtDiasrestantes = new TextBox();
-            label5 = new Label();
-            label11 = new Label();
-            dtpFechaNac = new DateTimePicker();
-            txtCp = new TextBox();
-            txtTelefono = new TextBox();
-            label9 = new Label();
-            label10 = new Label();
-            txtMunicipio = new TextBox();
-            txtLocalidad = new TextBox();
-            label13 = new Label();
-            label14 = new Label();
             label15 = new Label();
-            label16 = new Label();
-            label17 = new Label();
-            label18 = new Label();
-            label19 = new Label();
-            txtLibro = new TextBox();
-            label20 = new Label();
-            label21 = new Label();
-            label22 = new Label();
-            txtDiasretraso = new TextBox();
-            txtMulta = new TextBox();
-            txtISBN = new TextBox();
-            txtAutor = new TextBox();
-            txtEdad = new TextBox();
+            label9 = new Label();
+            txtTelefono = new TextBox();
+            label11 = new Label();
+            txtMunicipio = new TextBox();
             label12 = new Label();
+            txtColonia = new TextBox();
+            label10 = new Label();
+            txtCp = new TextBox();
+            label16 = new Label();
+            txtLibro = new TextBox();
+            label17 = new Label();
+            txtISBN = new TextBox();
+            label22 = new Label();
+            label21 = new Label();
+            txtMulta = new TextBox();
+            txtDiasretraso = new TextBox();
+            label19 = new Label();
+            label5 = new Label();
             dtpFechprestamo = new DateTimePicker();
             dtpFechdevolucion = new DateTimePicker();
+            label18 = new Label();
+            txtAutor = new TextBox();
             tableLayoutPanel4 = new TableLayoutPanel();
             txtprestatario = new TextBox();
             label24 = new Label();
@@ -108,17 +102,17 @@
             // 
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 190F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 99F));
             tableLayoutPanel1.Controls.Add(btRegresarPrHechos, 1, 1);
-            tableLayoutPanel1.Controls.Add(btnEditplazo, 0, 1);
+            tableLayoutPanel1.Controls.Add(btnFinalizarprestamo, 0, 1);
             tableLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel1.Location = new Point(636, 485);
+            tableLayoutPanel1.Location = new Point(661, 485);
             tableLayoutPanel1.Margin = new Padding(6);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(408, 47);
+            tableLayoutPanel1.Size = new Size(351, 42);
             tableLayoutPanel1.TabIndex = 64;
             // 
             // btRegresarPrHechos
@@ -127,7 +121,7 @@
             btRegresarPrHechos.BackColor = Color.FromArgb(32, 41, 64);
             btRegresarPrHechos.BackgroundImageLayout = ImageLayout.None;
             btRegresarPrHechos.ForeColor = SystemColors.Control;
-            btRegresarPrHechos.Location = new Point(221, 3);
+            btRegresarPrHechos.Location = new Point(255, 3);
             btRegresarPrHechos.Name = "btRegresarPrHechos";
             btRegresarPrHechos.Size = new Size(93, 38);
             btRegresarPrHechos.TabIndex = 63;
@@ -135,60 +129,55 @@
             btRegresarPrHechos.UseVisualStyleBackColor = false;
             btRegresarPrHechos.Click += btRegresarPrHechos_Click;
             // 
-            // btnEditplazo
+            // btnFinalizarprestamo
             // 
-            btnEditplazo.AutoSize = true;
-            btnEditplazo.BackColor = Color.FromArgb(32, 41, 64);
-            btnEditplazo.BackgroundImageLayout = ImageLayout.None;
-            btnEditplazo.ForeColor = SystemColors.Control;
-            btnEditplazo.Location = new Point(3, 3);
-            btnEditplazo.Name = "btnEditplazo";
-            btnEditplazo.Size = new Size(126, 38);
-            btnEditplazo.TabIndex = 65;
-            btnEditplazo.Text = "Editar plazo";
-            btnEditplazo.UseVisualStyleBackColor = false;
+            btnFinalizarprestamo.AutoSize = true;
+            btnFinalizarprestamo.BackColor = Color.FromArgb(32, 41, 64);
+            btnFinalizarprestamo.BackgroundImageLayout = ImageLayout.None;
+            btnFinalizarprestamo.ForeColor = SystemColors.Control;
+            btnFinalizarprestamo.Location = new Point(3, 3);
+            btnFinalizarprestamo.Name = "btnFinalizarprestamo";
+            btnFinalizarprestamo.Size = new Size(181, 38);
+            btnFinalizarprestamo.TabIndex = 65;
+            btnFinalizarprestamo.Text = "Finalizar Prestamo";
+            btnFinalizarprestamo.UseVisualStyleBackColor = false;
+            btnFinalizarprestamo.Click += btn_finalizar_Click;
             // 
             // tableLayoutPanel3
             // 
             tableLayoutPanel3.ColumnCount = 6;
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.4133043F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.882225F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.08397F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.42748F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 19.19302F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 92F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.9064474F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 26.9279385F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.102402F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 27.8128948F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.2503166F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 216F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             tableLayoutPanel3.Controls.Add(txtNombre, 1, 0);
-            tableLayoutPanel3.Controls.Add(txtDiasrestantes, 5, 0);
-            tableLayoutPanel3.Controls.Add(label5, 2, 4);
-            tableLayoutPanel3.Controls.Add(label11, 0, 3);
-            tableLayoutPanel3.Controls.Add(dtpFechaNac, 1, 1);
-            tableLayoutPanel3.Controls.Add(txtCp, 1, 5);
-            tableLayoutPanel3.Controls.Add(txtTelefono, 3, 0);
-            tableLayoutPanel3.Controls.Add(label9, 2, 0);
-            tableLayoutPanel3.Controls.Add(label10, 0, 5);
-            tableLayoutPanel3.Controls.Add(txtMunicipio, 1, 3);
-            tableLayoutPanel3.Controls.Add(txtLocalidad, 1, 4);
-            tableLayoutPanel3.Controls.Add(label13, 0, 1);
-            tableLayoutPanel3.Controls.Add(label14, 0, 2);
             tableLayoutPanel3.Controls.Add(label15, 0, 0);
-            tableLayoutPanel3.Controls.Add(label16, 2, 1);
-            tableLayoutPanel3.Controls.Add(label17, 2, 2);
-            tableLayoutPanel3.Controls.Add(label18, 2, 3);
-            tableLayoutPanel3.Controls.Add(label19, 2, 5);
-            tableLayoutPanel3.Controls.Add(txtLibro, 3, 1);
-            tableLayoutPanel3.Controls.Add(label20, 4, 0);
-            tableLayoutPanel3.Controls.Add(label21, 4, 1);
-            tableLayoutPanel3.Controls.Add(label22, 4, 2);
-            tableLayoutPanel3.Controls.Add(txtDiasretraso, 5, 1);
-            tableLayoutPanel3.Controls.Add(txtMulta, 5, 2);
-            tableLayoutPanel3.Controls.Add(txtISBN, 3, 2);
-            tableLayoutPanel3.Controls.Add(txtAutor, 3, 3);
-            tableLayoutPanel3.Controls.Add(txtEdad, 1, 2);
-            tableLayoutPanel3.Controls.Add(label12, 0, 4);
-            tableLayoutPanel3.Controls.Add(dtpFechprestamo, 3, 4);
-            tableLayoutPanel3.Controls.Add(dtpFechdevolucion, 3, 5);
-            tableLayoutPanel3.Location = new Point(34, 106);
+            tableLayoutPanel3.Controls.Add(label9, 0, 1);
+            tableLayoutPanel3.Controls.Add(txtTelefono, 1, 1);
+            tableLayoutPanel3.Controls.Add(label11, 0, 2);
+            tableLayoutPanel3.Controls.Add(txtMunicipio, 1, 2);
+            tableLayoutPanel3.Controls.Add(label12, 0, 3);
+            tableLayoutPanel3.Controls.Add(txtColonia, 1, 3);
+            tableLayoutPanel3.Controls.Add(label10, 0, 4);
+            tableLayoutPanel3.Controls.Add(txtCp, 1, 4);
+            tableLayoutPanel3.Controls.Add(label16, 2, 0);
+            tableLayoutPanel3.Controls.Add(txtLibro, 3, 0);
+            tableLayoutPanel3.Controls.Add(label17, 2, 1);
+            tableLayoutPanel3.Controls.Add(txtISBN, 3, 1);
+            tableLayoutPanel3.Controls.Add(label22, 4, 3);
+            tableLayoutPanel3.Controls.Add(label21, 4, 2);
+            tableLayoutPanel3.Controls.Add(txtMulta, 5, 3);
+            tableLayoutPanel3.Controls.Add(txtDiasretraso, 5, 2);
+            tableLayoutPanel3.Controls.Add(label19, 4, 1);
+            tableLayoutPanel3.Controls.Add(label5, 4, 0);
+            tableLayoutPanel3.Controls.Add(dtpFechprestamo, 5, 0);
+            tableLayoutPanel3.Controls.Add(dtpFechdevolucion, 5, 1);
+            tableLayoutPanel3.Controls.Add(label18, 2, 2);
+            tableLayoutPanel3.Controls.Add(txtAutor, 3, 2);
+            tableLayoutPanel3.Location = new Point(34, 107);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 6;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 19.4915237F));
@@ -202,107 +191,10 @@
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(126, 3);
+            txtNombre.Location = new Point(113, 3);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(213, 34);
+            txtNombre.Size = new Size(207, 34);
             txtNombre.TabIndex = 58;
-            // 
-            // txtDiasrestantes
-            // 
-            txtDiasrestantes.Location = new Point(920, 3);
-            txtDiasrestantes.Name = "txtDiasrestantes";
-            txtDiasrestantes.Size = new Size(87, 34);
-            txtDiasrestantes.TabIndex = 54;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(345, 252);
-            label5.Name = "label5";
-            label5.Size = new Size(154, 28);
-            label5.TabIndex = 47;
-            label5.Text = "Fecha prestamo:";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(3, 197);
-            label11.Name = "label11";
-            label11.Size = new Size(104, 28);
-            label11.TabIndex = 21;
-            label11.Text = "Municipio:";
-            // 
-            // dtpFechaNac
-            // 
-            dtpFechaNac.Format = DateTimePickerFormat.Short;
-            dtpFechaNac.Location = new Point(126, 72);
-            dtpFechaNac.Name = "dtpFechaNac";
-            dtpFechaNac.Size = new Size(213, 34);
-            dtpFechaNac.TabIndex = 31;
-            // 
-            // txtCp
-            // 
-            txtCp.Location = new Point(126, 308);
-            txtCp.Name = "txtCp";
-            txtCp.Size = new Size(213, 34);
-            txtCp.TabIndex = 41;
-            // 
-            // txtTelefono
-            // 
-            txtTelefono.Location = new Point(520, 3);
-            txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(214, 34);
-            txtTelefono.TabIndex = 32;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(345, 0);
-            label9.Name = "label9";
-            label9.Size = new Size(90, 28);
-            label9.TabIndex = 25;
-            label9.Text = "Telefono:";
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(3, 305);
-            label10.Name = "label10";
-            label10.Size = new Size(39, 28);
-            label10.TabIndex = 23;
-            label10.Text = "CP:";
-            // 
-            // txtMunicipio
-            // 
-            txtMunicipio.Location = new Point(126, 200);
-            txtMunicipio.Name = "txtMunicipio";
-            txtMunicipio.Size = new Size(213, 34);
-            txtMunicipio.TabIndex = 22;
-            // 
-            // txtLocalidad
-            // 
-            txtLocalidad.Location = new Point(126, 255);
-            txtLocalidad.Name = "txtLocalidad";
-            txtLocalidad.Size = new Size(213, 34);
-            txtLocalidad.TabIndex = 24;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(3, 69);
-            label13.Name = "label13";
-            label13.Size = new Size(117, 56);
-            label13.TabIndex = 10;
-            label13.Text = "Fecha de Nacimiento:";
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(3, 134);
-            label14.Name = "label14";
-            label14.Size = new Size(60, 28);
-            label14.TabIndex = 16;
-            label14.Text = "Edad:";
             // 
             // label15
             // 
@@ -313,156 +205,204 @@
             label15.TabIndex = 5;
             label15.Text = "Nombre:";
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(3, 69);
+            label9.Name = "label9";
+            label9.Size = new Size(90, 28);
+            label9.TabIndex = 25;
+            label9.Text = "Telefono:";
+            // 
+            // txtTelefono
+            // 
+            txtTelefono.Location = new Point(113, 72);
+            txtTelefono.Name = "txtTelefono";
+            txtTelefono.Size = new Size(207, 34);
+            txtTelefono.TabIndex = 32;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(3, 134);
+            label11.Name = "label11";
+            label11.Size = new Size(104, 28);
+            label11.TabIndex = 21;
+            label11.Text = "Municipio:";
+            // 
+            // txtMunicipio
+            // 
+            txtMunicipio.Location = new Point(113, 137);
+            txtMunicipio.Name = "txtMunicipio";
+            txtMunicipio.Size = new Size(207, 34);
+            txtMunicipio.TabIndex = 22;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(3, 197);
+            label12.Name = "label12";
+            label12.Size = new Size(80, 28);
+            label12.TabIndex = 20;
+            label12.Text = "colonia:";
+            // 
+            // txtColonia
+            // 
+            txtColonia.Location = new Point(113, 200);
+            txtColonia.Name = "txtColonia";
+            txtColonia.Size = new Size(207, 34);
+            txtColonia.TabIndex = 24;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(3, 252);
+            label10.Name = "label10";
+            label10.Size = new Size(39, 28);
+            label10.TabIndex = 23;
+            label10.Text = "CP:";
+            // 
+            // txtCp
+            // 
+            txtCp.Location = new Point(113, 255);
+            txtCp.Name = "txtCp";
+            txtCp.Size = new Size(207, 34);
+            txtCp.TabIndex = 41;
+            // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(345, 69);
+            label16.Location = new Point(326, 0);
             label16.Name = "label16";
             label16.Size = new Size(61, 28);
             label16.TabIndex = 28;
             label16.Text = "Libro:";
             // 
+            // txtLibro
+            // 
+            txtLibro.Location = new Point(398, 3);
+            txtLibro.Name = "txtLibro";
+            txtLibro.Size = new Size(214, 34);
+            txtLibro.TabIndex = 46;
+            // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(345, 134);
+            label17.Location = new Point(326, 69);
             label17.Name = "label17";
             label17.Size = new Size(58, 28);
             label17.TabIndex = 43;
             label17.Text = "ISBN:";
             // 
-            // label18
+            // txtISBN
             // 
-            label18.AutoSize = true;
-            label18.Location = new Point(345, 197);
-            label18.Name = "label18";
-            label18.Size = new Size(66, 28);
-            label18.TabIndex = 45;
-            label18.Text = "Autor:";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Location = new Point(345, 305);
-            label19.Name = "label19";
-            label19.Size = new Size(168, 28);
-            label19.TabIndex = 48;
-            label19.Text = "Fecha devolucion:";
-            // 
-            // txtLibro
-            // 
-            txtLibro.Location = new Point(520, 72);
-            txtLibro.Name = "txtLibro";
-            txtLibro.Size = new Size(214, 34);
-            txtLibro.TabIndex = 46;
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new Point(744, 0);
-            label20.Name = "label20";
-            label20.Size = new Size(136, 28);
-            label20.TabIndex = 51;
-            label20.Text = "Dias restantes:";
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Location = new Point(744, 69);
-            label21.Name = "label21";
-            label21.Size = new Size(146, 28);
-            label21.TabIndex = 52;
-            label21.Text = "Dias de retraso:";
+            txtISBN.Location = new Point(398, 72);
+            txtISBN.Name = "txtISBN";
+            txtISBN.Size = new Size(214, 34);
+            txtISBN.TabIndex = 49;
             // 
             // label22
             // 
             label22.AutoSize = true;
-            label22.Location = new Point(744, 134);
+            label22.Location = new Point(618, 197);
             label22.Name = "label22";
             label22.Size = new Size(170, 28);
             label22.TabIndex = 53;
             label22.Text = "Multa generada: $";
             // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(618, 134);
+            label21.Name = "label21";
+            label21.Size = new Size(146, 28);
+            label21.TabIndex = 52;
+            label21.Text = "Dias de retraso:";
+            // 
+            // txtMulta
+            // 
+            txtMulta.Location = new Point(794, 200);
+            txtMulta.Name = "txtMulta";
+            txtMulta.Size = new Size(112, 34);
+            txtMulta.TabIndex = 56;
+            // 
             // txtDiasretraso
             // 
-            txtDiasretraso.Location = new Point(920, 72);
+            txtDiasretraso.Location = new Point(794, 137);
             txtDiasretraso.Name = "txtDiasretraso";
             txtDiasretraso.Size = new Size(87, 34);
             txtDiasretraso.TabIndex = 55;
             // 
-            // txtMulta
+            // label19
             // 
-            txtMulta.Location = new Point(920, 137);
-            txtMulta.Name = "txtMulta";
-            txtMulta.Size = new Size(87, 34);
-            txtMulta.TabIndex = 56;
+            label19.AutoSize = true;
+            label19.Location = new Point(618, 69);
+            label19.Name = "label19";
+            label19.Size = new Size(168, 28);
+            label19.TabIndex = 48;
+            label19.Text = "Fecha devolucion:";
             // 
-            // txtISBN
+            // label5
             // 
-            txtISBN.Location = new Point(520, 137);
-            txtISBN.Name = "txtISBN";
-            txtISBN.Size = new Size(214, 34);
-            txtISBN.TabIndex = 49;
-            // 
-            // txtAutor
-            // 
-            txtAutor.Location = new Point(520, 200);
-            txtAutor.Name = "txtAutor";
-            txtAutor.Size = new Size(214, 34);
-            txtAutor.TabIndex = 60;
-            // 
-            // txtEdad
-            // 
-            txtEdad.Location = new Point(126, 137);
-            txtEdad.Name = "txtEdad";
-            txtEdad.Size = new Size(87, 34);
-            txtEdad.TabIndex = 63;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(3, 252);
-            label12.Name = "label12";
-            label12.Size = new Size(96, 28);
-            label12.TabIndex = 20;
-            label12.Text = "localidad:";
+            label5.AutoSize = true;
+            label5.Location = new Point(618, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(154, 28);
+            label5.TabIndex = 47;
+            label5.Text = "Fecha prestamo:";
             // 
             // dtpFechprestamo
             // 
             dtpFechprestamo.Format = DateTimePickerFormat.Short;
-            dtpFechprestamo.Location = new Point(520, 255);
+            dtpFechprestamo.Location = new Point(794, 3);
             dtpFechprestamo.Name = "dtpFechprestamo";
-            dtpFechprestamo.Size = new Size(214, 34);
+            dtpFechprestamo.Size = new Size(213, 34);
             dtpFechprestamo.TabIndex = 64;
             // 
             // dtpFechdevolucion
             // 
             dtpFechdevolucion.Format = DateTimePickerFormat.Short;
-            dtpFechdevolucion.Location = new Point(520, 308);
+            dtpFechdevolucion.Location = new Point(794, 72);
             dtpFechdevolucion.Name = "dtpFechdevolucion";
-            dtpFechdevolucion.Size = new Size(214, 34);
+            dtpFechdevolucion.Size = new Size(213, 34);
             dtpFechdevolucion.TabIndex = 65;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(326, 134);
+            label18.Name = "label18";
+            label18.Size = new Size(66, 28);
+            label18.TabIndex = 45;
+            label18.Text = "Autor:";
+            // 
+            // txtAutor
+            // 
+            txtAutor.Location = new Point(398, 137);
+            txtAutor.Name = "txtAutor";
+            txtAutor.Size = new Size(214, 34);
+            txtAutor.TabIndex = 60;
             // 
             // tableLayoutPanel4
             // 
             tableLayoutPanel4.ColumnCount = 2;
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 228F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 222F));
             tableLayoutPanel4.Controls.Add(txtprestatario, 1, 1);
             tableLayoutPanel4.Controls.Add(label24, 0, 1);
             tableLayoutPanel4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel4.Location = new Point(558, 43);
+            tableLayoutPanel4.Location = new Point(529, 35);
             tableLayoutPanel4.Margin = new Padding(6);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 2;
             tableLayoutPanel4.RowStyles.Add(new RowStyle());
             tableLayoutPanel4.RowStyles.Add(new RowStyle());
-            tableLayoutPanel4.Size = new Size(464, 34);
+            tableLayoutPanel4.Size = new Size(463, 40);
             tableLayoutPanel4.TabIndex = 66;
             // 
             // txtprestatario
             // 
-            txtprestatario.Location = new Point(239, 3);
+            txtprestatario.Location = new Point(244, 3);
             txtprestatario.Name = "txtprestatario";
             txtprestatario.Size = new Size(214, 34);
             txtprestatario.TabIndex = 67;
@@ -488,7 +428,7 @@
             tableLayoutPanel2.RowCount = 2;
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
-            tableLayoutPanel2.Size = new Size(370, 48);
+            tableLayoutPanel2.Size = new Size(287, 48);
             tableLayoutPanel2.TabIndex = 42;
             // 
             // labelRegistrodePrestamos
@@ -499,9 +439,9 @@
             labelRegistrodePrestamos.ForeColor = Color.Black;
             labelRegistrodePrestamos.Location = new Point(3, 0);
             labelRegistrodePrestamos.Name = "labelRegistrodePrestamos";
-            labelRegistrodePrestamos.Size = new Size(355, 46);
+            labelRegistrodePrestamos.Size = new Size(276, 46);
             labelRegistrodePrestamos.TabIndex = 3;
-            labelRegistrodePrestamos.Text = "Registro de préstamos";
+            labelRegistrodePrestamos.Text = "Detalle prestamo";
             // 
             // textBox1
             // 
@@ -700,7 +640,6 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Label labelRegistrodePrestamos;
         private Panel panel2;
-        private TextBox txtEdad;
         private TextBox textBox14;
         private DateTimePicker dateTimePicker1;
         private TextBox txtAutor;
@@ -710,17 +649,14 @@
         private TextBox txtDiasrestantes;
         private TextBox txtISBN;
         private Label label5;
-        private DateTimePicker dtpFechaNac;
         private TextBox txtCp;
         private TextBox txtTelefono;
         private Label label9;
         private Label label10;
         private TextBox txtMunicipio;
         private Label label11;
-        private TextBox txtLocalidad;
+        private TextBox txtColonia;
         private Label label12;
-        private Label label13;
-        private Label label14;
         private Label label15;
         private Label label16;
         private Label label17;
@@ -734,11 +670,12 @@
         private TextBox txtMulta;
         private TableLayoutPanel tableLayoutPanel1;
         private Button btRegresarPrHechos;
-        private Button btnEditplazo;
+        private Button btnFinalizarprestamo;
         private DateTimePicker dtpFechprestamo;
         private DateTimePicker dtpFechdevolucion;
         private TableLayoutPanel tableLayoutPanel4;
         private TextBox txtprestatario;
         private Label label24;
+        private TableLayoutPanel tableLayoutPanel5;
     }
 }

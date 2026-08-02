@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
-    internal class ClsPrestamo
+    public class ClsPrestamo
     {
         private int IdPrestamo;
         private DateTime Fecha_Prestamo;
@@ -17,6 +17,23 @@ namespace prySistemaDePrestamosDeLibro.Clases
         private int IdLector;
         private int IdBibliotecario;
         private int IdLibro;
+
+        private string Lector;
+        private string Telefono;
+        private string Municipio;
+        private string Colonia;
+        private string CP;
+        private string Libro;
+        private string ISBN;
+        private string Autor;
+        private DateTime FechaPrestamo;
+        private DateTime FechaDevolucion;
+        private int DiasAtraso;
+        private decimal Multa;
+        private string bibliotecario;
+
+
+
 
         public int getIdPrestamo()
         {
@@ -93,6 +110,137 @@ namespace prySistemaDePrestamosDeLibro.Clases
             return conexion.ObtenerConexion();
         }
 
+        public string getLector()
+        {
+            return Lector;
+        }
+
+        public void setLector(string lector)
+        {
+            Lector = lector;
+        }
+
+        //
+        public string getTelefono()
+        {
+            return Telefono;
+        }
+
+        public void setTelefono(string telefono)
+        {
+            Telefono = telefono;
+        }
+
+        public string getMunicipio()
+        {
+            return Municipio;
+        }
+
+        public void setMunicipio(string municipio)
+        {
+            Municipio = municipio;
+        }
+
+        public string getColonia()
+        {
+            return Colonia;
+        }
+
+        public void setColonia(string colonia)
+        {
+            Colonia = colonia;
+        }
+
+        public string getCP()
+        {
+            return CP;
+        }
+
+        public void setCP(string cp)
+        {
+            CP = cp;
+        }
+
+        public string getLibro()
+        {
+            return Libro;
+        }
+
+        public void setLibro(string libro)
+        {
+            Libro = libro;
+        }
+
+        public string getISBN()
+        {
+            return ISBN;
+        }
+
+        public void setISBN(string isbn)
+        {
+            ISBN = isbn;
+        }
+
+        public string getAutor()
+        {
+            return Autor;
+        }
+
+        public void setAutor(string autor)
+        {
+            Autor = autor;
+        }
+
+        public DateTime getFechaPrestamo()
+        {
+            return FechaPrestamo;
+        }
+
+        public void setFechaPrestamo(DateTime fechaPrestamo)
+        {
+            FechaPrestamo = fechaPrestamo;
+        }
+
+        public DateTime getFechaDevolucion()
+        {
+            return FechaDevolucion;
+        }
+
+        public void setFechaDevolucion(DateTime fechaDevolucion)
+        {
+            FechaDevolucion = fechaDevolucion;
+        }
+
+        public int getDiasAtraso()
+        {
+            return DiasAtraso;
+        }
+
+        public void setDiasAtraso(int diasAtraso)
+        {
+            DiasAtraso = diasAtraso;
+        }
+
+        public decimal getMulta()
+        {
+            return Multa;
+        }
+
+        public void setMulta(decimal multa)
+        {
+            Multa = multa;
+        }
+
+        public string getBibliotecario()
+        {
+            return bibliotecario;
+        }
+
+        public void setBibliotecario(string bibliotecario)
+        {
+            this.bibliotecario = bibliotecario;
+        }
+
         public DataTable ObtenerPrestamos()
         {
             MySqlConnection con = EstableceConexion();
@@ -113,6 +261,51 @@ namespace prySistemaDePrestamosDeLibro.Clases
             finally
             {
                 con.Close();
+            }
+        }
+
+        public bool ObtenerDetalle()
+        {
+            MySqlConnection con = EstableceConexion();
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(
+                    "SELECT * FROM vista_prestamo_detalle WHERE Id_Prestamo=@id", con);
+
+                cmd.Parameters.AddWithValue("@id", IdPrestamo);
+
+                MySqlDataReader dr = cmd.ExecuteReader();
+
+                if (dr.Read())
+                {
+                    Lector = dr["lector"].ToString()!;
+                    Telefono = dr["Telefono"].ToString()!;
+                    Municipio = dr["Municipio"].ToString()!;
+                    Colonia = dr["Colonia"].ToString()!;
+                    CP = dr["CP"].ToString()!;
+                    Libro = dr["libro"].ToString()!;
+                    ISBN = dr["ISBN"].ToString()!;
+                    Autor = dr["autor"].ToString()!;
+                    FechaPrestamo = Convert.ToDateTime(dr["Fecha_Prestamo"]);
+                    FechaDevolucion = Convert.ToDateTime(dr["Fecha_Devolucion"]);
+                    DiasAtraso = Convert.ToInt32(dr["dias_atraso"]);
+                    Multa = Convert.ToDecimal(dr["multa"]);
+                    bibliotecario = dr["bibliotecario"].ToString()!;
+
+                    dr.Close();
+                    con.Close();
+                    return true;
+                }
+
+                dr.Close();
+                con.Close();
+                return false;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al obtener detalle: " + ex.Message);
+                return false;
             }
         }
 
@@ -143,6 +336,28 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 return false;
             }
         }
-             
+        public bool FinalizarPrestamo()
+        {
+            MySqlConnection con = EstableceConexion();
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("sp_finalizar_prestamo", con);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@p_id_prestamo", IdPrestamo);
+                cmd.Parameters.AddWithValue("@p_status_prestamo", 0);
+
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al insertar préstamo: " + ex.Message);
+                return false;
+            }
+        }
+
     }
 }

@@ -13,9 +13,32 @@ namespace prySistemaDePrestamosDeLibro.Clases
 {
     public partial class FrmRPrestamo : Form
     {
-        public FrmRPrestamo()
+        ClsPrestamo objPrestamo;
+        public FrmRPrestamo(ClsPrestamo objPrestamo)
         {
             InitializeComponent();
+            this.objPrestamo = objPrestamo;
+            this.objPrestamo.ObtenerDetalle();
+            if (this.objPrestamo.ObtenerDetalle())
+            {
+                txtprestatario.Text = this.objPrestamo.getBibliotecario();
+                txtNombre.Text = this.objPrestamo.getLector();
+                txtTelefono.Text = this.objPrestamo.getTelefono();
+                txtMunicipio.Text = this.objPrestamo.getMunicipio();
+                txtColonia.Text = this.objPrestamo.getColonia();
+                txtCp.Text = this.objPrestamo.getColonia();
+                txtLibro.Text = this.objPrestamo.getLibro();
+                txtISBN.Text = this.objPrestamo.getISBN();
+                txtAutor.Text = this.objPrestamo.getAutor();
+                dtpFechprestamo.Value = this.objPrestamo.getFechaPrestamo();
+                dtpFechdevolucion.Value = this.objPrestamo.getFechaDevolucion();
+                txtDiasretraso.Text = this.objPrestamo.getDiasAtraso().ToString();
+                txtMulta.Text = this.objPrestamo.getMulta().ToString();
+            }
+            else
+            {
+                MessageBox.Show("No se encontró el préstamo.");
+            }
         }
 
         private void FrmRPrestamo_Load(object sender, EventArgs e)
@@ -46,6 +69,15 @@ namespace prySistemaDePrestamosDeLibro.Clases
         private void btRegresarPrHechos_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btn_finalizar_Click(object sender, EventArgs e)
+        {
+            if (objPrestamo.FinalizarPrestamo())
+            {
+                MessageBox.Show("Prestamo Finalizado");
+                this.Close();
+            }
         }
     }
 }

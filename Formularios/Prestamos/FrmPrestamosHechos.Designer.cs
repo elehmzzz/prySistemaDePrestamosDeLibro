@@ -28,13 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             contenedorBusquedayAgrPrestamo = new TableLayoutPanel();
             cmbxbuscarprestamo = new ComboBox();
             btnAgregarPrestamo = new Button();
             comboBoxFiltro = new ComboBox();
             dGVPrestamos = new DataGridView();
             btnDatosLectores = new Button();
-            textBoxnamelector = new TextBox();
+            txtNombre = new TextBox();
             contenedorBusquedayAgrPrestamo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dGVPrestamos).BeginInit();
             SuspendLayout();
@@ -97,13 +99,34 @@
             // dGVPrestamos
             // 
             dGVPrestamos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Control;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dGVPrestamos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dGVPrestamos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dGVPrestamos.EnableHeadersVisualStyles = false;
             dGVPrestamos.Location = new Point(23, 79);
             dGVPrestamos.Name = "dGVPrestamos";
+            dGVPrestamos.ReadOnly = true;
+            dGVPrestamos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.Control;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dGVPrestamos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dGVPrestamos.RowHeadersVisible = false;
             dGVPrestamos.RowHeadersWidth = 51;
+            dGVPrestamos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dGVPrestamos.Size = new Size(987, 361);
             dGVPrestamos.TabIndex = 31;
+            dGVPrestamos.CellDoubleClick += dtPrestamos_CellDoubleClick;
             // 
             // btnDatosLectores
             // 
@@ -118,13 +141,13 @@
             btnDatosLectores.UseVisualStyleBackColor = false;
             btnDatosLectores.Click += btnDatosLectores_Click;
             // 
-            // textBoxnamelector
+            // txtNombre
             // 
-            textBoxnamelector.Enabled = false;
-            textBoxnamelector.Location = new Point(23, 467);
-            textBoxnamelector.Name = "textBoxnamelector";
-            textBoxnamelector.Size = new Size(469, 27);
-            textBoxnamelector.TabIndex = 59;
+            txtNombre.Enabled = false;
+            txtNombre.Location = new Point(23, 467);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(469, 27);
+            txtNombre.TabIndex = 59;
             // 
             // FrmPrestamosHechos
             // 
@@ -132,7 +155,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1034, 536);
-            Controls.Add(textBoxnamelector);
+            Controls.Add(txtNombre);
             Controls.Add(btnDatosLectores);
             Controls.Add(dGVPrestamos);
             Controls.Add(contenedorBusquedayAgrPrestamo);
@@ -152,7 +175,7 @@
         private Button btnAgregarPrestamo;
         private ComboBox comboBoxFiltro;
         private Button btnDatosLectores;
-        private TextBox textBoxnamelector;
+        private TextBox txtNombre;
         private ComboBox cmbxbuscarprestamo;
         private DataGridView dGVPrestamos;
         private TableLayoutPanel tableLayoutPanel1;

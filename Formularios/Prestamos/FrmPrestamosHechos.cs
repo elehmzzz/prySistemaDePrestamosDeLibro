@@ -81,7 +81,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
             if (cmbxbuscarprestamo.SelectedItem != null)
             {
                 DataRowView row = (DataRowView)cmbxbuscarprestamo.SelectedItem;
-                textBoxnamelector.Text = row["NombreCompleto"].ToString();
+                txtNombre.Text = row["NombreCompleto"].ToString();
             }
         }
         private void cmbxbuscarprestamo_TextChanged(object sender, EventArgs e)
@@ -123,9 +123,27 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
             frm.Show();
         }
 
+        private void dtPrestamos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var fila = dGVPrestamos.Rows[e.RowIndex];
+
+                if (fila.Cells[0].Value != null)
+                {
+                    objPrestamo.setIdPrestamo(Convert.ToInt32(fila.Cells[0].Value));
+                }
+
+                if (fila.Cells[1].Value != null)
+                {
+                    txtNombre.Text = fila.Cells[1].Value.ToString();
+                }
+            }
+
+        }
         private void btnDatosLectores_Click(object sender, EventArgs e)
         {
-            FrmRPrestamo frm = new FrmRPrestamo();
+            FrmRPrestamo frm = new FrmRPrestamo(objPrestamo);
             frm.ShowDialog();
         }
     }
