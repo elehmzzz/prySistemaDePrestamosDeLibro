@@ -29,21 +29,20 @@
         private void InitializeComponent()
         {
             tableLayoutPanel1 = new TableLayoutPanel();
-            label5 = new Label();
-            txtNombre = new TextBox();
-            label6 = new Label();
-            txtUsuario = new TextBox();
-            label1 = new Label();
-            txtCorreo = new TextBox();
+            txtTipoUsuario = new TextBox();
+            label3 = new Label();
             label2 = new Label();
             txtTelefono = new TextBox();
-            btnEditar = new Button();
+            label1 = new Label();
+            txtCorreo = new TextBox();
+            label6 = new Label();
+            txtUsuario = new TextBox();
+            label5 = new Label();
+            txtNombre = new TextBox();
             label4 = new Label();
-            radioButton1 = new RadioButton();
-            radioButton2 = new RadioButton();
+            rdbActivado = new RadioButton();
+            rdbDesactivado = new RadioButton();
             tableLayoutPanel2 = new TableLayoutPanel();
-            label3 = new Label();
-            txtTipoUsuario = new TextBox();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
@@ -77,62 +76,24 @@
             tableLayoutPanel1.Size = new Size(528, 369);
             tableLayoutPanel1.TabIndex = 28;
             // 
-            // label5
+            // txtTipoUsuario
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(8, 61);
-            label5.Margin = new Padding(8, 0, 8, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(178, 28);
-            label5.TabIndex = 4;
-            label5.Text = "Nombre completo:";
+            txtTipoUsuario.Enabled = false;
+            txtTipoUsuario.Location = new Point(219, 8);
+            txtTipoUsuario.Margin = new Padding(8);
+            txtTipoUsuario.Name = "txtTipoUsuario";
+            txtTipoUsuario.Size = new Size(301, 34);
+            txtTipoUsuario.TabIndex = 35;
             // 
-            // txtNombre
+            // label3
             // 
-            txtNombre.Enabled = false;
-            txtNombre.Location = new Point(219, 69);
-            txtNombre.Margin = new Padding(8);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(301, 34);
-            txtNombre.TabIndex = 7;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(8, 122);
-            label6.Margin = new Padding(8, 0, 8, 0);
-            label6.Name = "label6";
-            label6.Size = new Size(83, 28);
-            label6.TabIndex = 5;
-            label6.Text = "Usuario:";
-            // 
-            // txtUsuario
-            // 
-            txtUsuario.Enabled = false;
-            txtUsuario.Location = new Point(219, 130);
-            txtUsuario.Margin = new Padding(8);
-            txtUsuario.Name = "txtUsuario";
-            txtUsuario.Size = new Size(301, 34);
-            txtUsuario.TabIndex = 12;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(8, 183);
-            label1.Margin = new Padding(8, 0, 8, 0);
-            label1.Name = "label1";
-            label1.Size = new Size(76, 28);
-            label1.TabIndex = 28;
-            label1.Text = "Correo:";
-            // 
-            // txtCorreo
-            // 
-            txtCorreo.Enabled = false;
-            txtCorreo.Location = new Point(219, 191);
-            txtCorreo.Margin = new Padding(8);
-            txtCorreo.Name = "txtCorreo";
-            txtCorreo.Size = new Size(301, 34);
-            txtCorreo.TabIndex = 29;
+            label3.AutoSize = true;
+            label3.Location = new Point(8, 0);
+            label3.Margin = new Padding(8, 0, 8, 0);
+            label3.Name = "label3";
+            label3.Size = new Size(73, 28);
+            label3.TabIndex = 34;
+            label3.Text = "Sesión:";
             // 
             // label2
             // 
@@ -153,18 +114,62 @@
             txtTelefono.Size = new Size(301, 34);
             txtTelefono.TabIndex = 33;
             // 
-            // btnEditar
+            // label1
             // 
-            btnEditar.AutoSize = true;
-            btnEditar.BackColor = Color.FromArgb(32, 41, 64);
-            btnEditar.ForeColor = Color.White;
-            btnEditar.Location = new Point(836, 491);
-            btnEditar.Margin = new Padding(8);
-            btnEditar.Name = "btnEditar";
-            btnEditar.Size = new Size(175, 53);
-            btnEditar.TabIndex = 6;
-            btnEditar.Text = "Editar datos";
-            btnEditar.UseVisualStyleBackColor = false;
+            label1.AutoSize = true;
+            label1.Location = new Point(8, 183);
+            label1.Margin = new Padding(8, 0, 8, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(76, 28);
+            label1.TabIndex = 28;
+            label1.Text = "Correo:";
+            // 
+            // txtCorreo
+            // 
+            txtCorreo.Enabled = false;
+            txtCorreo.Location = new Point(219, 191);
+            txtCorreo.Margin = new Padding(8);
+            txtCorreo.Name = "txtCorreo";
+            txtCorreo.Size = new Size(301, 34);
+            txtCorreo.TabIndex = 29;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(8, 122);
+            label6.Margin = new Padding(8, 0, 8, 0);
+            label6.Name = "label6";
+            label6.Size = new Size(83, 28);
+            label6.TabIndex = 5;
+            label6.Text = "Usuario:";
+            // 
+            // txtUsuario
+            // 
+            txtUsuario.Enabled = false;
+            txtUsuario.Location = new Point(219, 130);
+            txtUsuario.Margin = new Padding(8);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.Size = new Size(301, 34);
+            txtUsuario.TabIndex = 12;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Location = new Point(8, 61);
+            label5.Margin = new Padding(8, 0, 8, 0);
+            label5.Name = "label5";
+            label5.Size = new Size(178, 28);
+            label5.TabIndex = 4;
+            label5.Text = "Nombre completo:";
+            // 
+            // txtNombre
+            // 
+            txtNombre.Enabled = false;
+            txtNombre.Location = new Point(219, 69);
+            txtNombre.Margin = new Padding(8);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(301, 34);
+            txtNombre.TabIndex = 7;
             // 
             // label4
             // 
@@ -176,36 +181,37 @@
             label4.TabIndex = 36;
             label4.Text = "Alto contraste:";
             // 
-            // radioButton1
+            // rdbActivado
             // 
-            radioButton1.AutoSize = true;
-            radioButton1.Location = new Point(3, 107);
-            radioButton1.Name = "radioButton1";
-            radioButton1.Size = new Size(89, 32);
-            radioButton1.TabIndex = 37;
-            radioButton1.TabStop = true;
-            radioButton1.Text = "Activo";
-            radioButton1.UseVisualStyleBackColor = true;
+            rdbActivado.AutoSize = true;
+            rdbActivado.Location = new Point(3, 107);
+            rdbActivado.Name = "rdbActivado";
+            rdbActivado.Size = new Size(111, 32);
+            rdbActivado.TabIndex = 37;
+            rdbActivado.TabStop = true;
+            rdbActivado.Text = "Activado";
+            rdbActivado.UseVisualStyleBackColor = true;
+            rdbActivado.CheckedChanged += rdbActivado_CheckedChanged;
             // 
-            // radioButton2
+            // rdbDesactivado
             // 
-            radioButton2.AutoSize = true;
-            radioButton2.Location = new Point(3, 55);
-            radioButton2.Name = "radioButton2";
-            radioButton2.Size = new Size(140, 32);
-            radioButton2.TabIndex = 38;
-            radioButton2.TabStop = true;
-            radioButton2.Text = "Desactivado";
-            radioButton2.UseVisualStyleBackColor = true;
+            rdbDesactivado.AutoSize = true;
+            rdbDesactivado.Location = new Point(3, 55);
+            rdbDesactivado.Name = "rdbDesactivado";
+            rdbDesactivado.Size = new Size(140, 32);
+            rdbDesactivado.TabIndex = 38;
+            rdbDesactivado.TabStop = true;
+            rdbDesactivado.Text = "Desactivado";
+            rdbDesactivado.UseVisualStyleBackColor = true;
+            rdbDesactivado.CheckedChanged += rdbDesactivado_CheckedChanged;
             // 
             // tableLayoutPanel2
             // 
-            tableLayoutPanel2.ColumnCount = 2;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
+            tableLayoutPanel2.ColumnCount = 1;
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 33.3333359F));
             tableLayoutPanel2.Controls.Add(label4, 0, 0);
-            tableLayoutPanel2.Controls.Add(radioButton2, 0, 1);
-            tableLayoutPanel2.Controls.Add(radioButton1, 0, 2);
+            tableLayoutPanel2.Controls.Add(rdbDesactivado, 0, 1);
+            tableLayoutPanel2.Controls.Add(rdbActivado, 0, 2);
             tableLayoutPanel2.Location = new Point(614, 25);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 3;
@@ -215,25 +221,6 @@
             tableLayoutPanel2.Size = new Size(350, 156);
             tableLayoutPanel2.TabIndex = 39;
             // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(8, 0);
-            label3.Margin = new Padding(8, 0, 8, 0);
-            label3.Name = "label3";
-            label3.Size = new Size(73, 28);
-            label3.TabIndex = 34;
-            label3.Text = "Sesión:";
-            // 
-            // txtTipoUsuario
-            // 
-            txtTipoUsuario.Enabled = false;
-            txtTipoUsuario.Location = new Point(219, 8);
-            txtTipoUsuario.Margin = new Padding(8);
-            txtTipoUsuario.Name = "txtTipoUsuario";
-            txtTipoUsuario.Size = new Size(301, 34);
-            txtTipoUsuario.TabIndex = 35;
-            // 
             // FrmPerfilEmpleado
             // 
             AutoScaleDimensions = new SizeF(11F, 28F);
@@ -242,8 +229,8 @@
             ClientSize = new Size(1052, 583);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(tableLayoutPanel1);
-            Controls.Add(btnEditar);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            ForeColor = SystemColors.ControlText;
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4);
             Name = "FrmPerfilEmpleado";
@@ -253,7 +240,6 @@
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -267,10 +253,9 @@
         private TextBox txtCorreo;
         private Label label2;
         private TextBox txtTelefono;
-        private Button btnEditar;
         private Label label4;
-        private RadioButton radioButton1;
-        private RadioButton radioButton2;
+        private RadioButton rdbActivado;
+        private RadioButton rdbDesactivado;
         private TableLayoutPanel tableLayoutPanel2;
         private TextBox txtTipoUsuario;
         private Label label3;

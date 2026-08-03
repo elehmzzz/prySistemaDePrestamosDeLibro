@@ -21,6 +21,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         private FrmEditoriales apartadoEditoriales;
         private FrmAutores apartadoAutores;
         private ClsBibliotecario objBibliotecario;
+        private bool altoContraste = false;
 
         //construtor que recibe parametros
         public FrmMenuPrincipal(FrmInicioSesion ventanaInicioSesion, ClsBibliotecario obj)
@@ -73,10 +74,12 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         public void mostrarModuloLibros()
         {
             lblTituloModulo.Text = "Libros";
-            if (moduloLibros == null || moduloLibros.IsDisposed) {
+            if (moduloLibros == null || moduloLibros.IsDisposed)
+            {
                 moduloLibros = new FrmLibros(this);
             }
             mostrarContenido(moduloLibros);
+            //aplicarTema(moduloLibros);
         }
         //muestra el apartado para agregar un libro del modulo libros
         public void mostrarApartadoLibro()
@@ -159,6 +162,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
                 moduloMultas = new FrmMultas();
             }
             mostrarContenido(moduloMultas);
+            aplicarTema(moduloMultas);
         }
         //muestra el modulo de empleado
         public void mostrarModuloEmpleado()
@@ -172,13 +176,44 @@ namespace prySistemaDePrestamosDeLibro.Formularios
             mostrarContenido(moduloEmpleado);
         }
 
-        public void comprobarAcceso() {
-            if (objBibliotecario.getTipoUsuario() == 2) {
+        public void comprobarAcceso()
+        {
+            if (objBibliotecario.getTipoUsuario() == 2)
+            {
                 btnLibros.Enabled = false;
                 btnMultas.Enabled = false;
                 btnLibros.Text = "Libros  🔒";
                 btnMultas.Text = "Multas  🔒";
             }
+        }
+
+        public void aplicarTema(Form formulario)
+        {
+            if (altoContraste)
+            {
+                //fondo oscuro y letras blancas
+                formulario.BackColor = Color.FromArgb(64, 64, 64);
+                formulario.ForeColor = Color.FromArgb(255, 255, 255);
+                altoContraste = true;
+            }
+            else
+            {
+                //fondo crema y letras negras
+                formulario.BackColor = Color.FromArgb(236, 223, 204);
+                formulario.ForeColor = Color.FromName("ControlText");
+            }
+        }
+
+        public void activarAltoContraste(Form formulario)
+        {
+            altoContraste = true;
+            aplicarTema(formulario);
+        }
+
+        public void desactivarAltoContraste(Form formulario)
+        {
+            altoContraste = false;
+            aplicarTema(formulario);
         }
     }
 }
