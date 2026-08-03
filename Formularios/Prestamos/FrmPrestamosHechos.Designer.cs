@@ -33,7 +33,6 @@
             contenedorBusquedayAgrPrestamo = new TableLayoutPanel();
             cmbxbuscarprestamo = new ComboBox();
             btnAgregarPrestamo = new Button();
-            comboBoxFiltro = new ComboBox();
             dGVPrestamos = new DataGridView();
             btnDatosLectores = new Button();
             txtNombre = new TextBox();
@@ -44,12 +43,11 @@
             // contenedorBusquedayAgrPrestamo
             // 
             contenedorBusquedayAgrPrestamo.ColumnCount = 3;
-            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 53.5014F));
-            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.5294113F));
+            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 71.42857F));
+            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 5.462185F));
             contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.9691868F));
             contenedorBusquedayAgrPrestamo.Controls.Add(cmbxbuscarprestamo, 0, 0);
             contenedorBusquedayAgrPrestamo.Controls.Add(btnAgregarPrestamo, 2, 0);
-            contenedorBusquedayAgrPrestamo.Controls.Add(comboBoxFiltro, 1, 0);
             contenedorBusquedayAgrPrestamo.Location = new Point(23, 33);
             contenedorBusquedayAgrPrestamo.Name = "contenedorBusquedayAgrPrestamo";
             contenedorBusquedayAgrPrestamo.RowCount = 1;
@@ -66,7 +64,7 @@
             cmbxbuscarprestamo.FormattingEnabled = true;
             cmbxbuscarprestamo.Location = new Point(3, 3);
             cmbxbuscarprestamo.Name = "cmbxbuscarprestamo";
-            cmbxbuscarprestamo.Size = new Size(376, 28);
+            cmbxbuscarprestamo.Size = new Size(494, 28);
             cmbxbuscarprestamo.TabIndex = 24;
             cmbxbuscarprestamo.Text = "busca a tu lector y sus prestamos";
             cmbxbuscarprestamo.SelectedIndexChanged += cmbxbuscarprestamo_SelectedIndexChanged;
@@ -78,23 +76,13 @@
             btnAgregarPrestamo.BackColor = Color.FromArgb(32, 41, 64);
             btnAgregarPrestamo.BackgroundImageLayout = ImageLayout.None;
             btnAgregarPrestamo.ForeColor = SystemColors.Control;
-            btnAgregarPrestamo.Location = new Point(553, 3);
+            btnAgregarPrestamo.Location = new Point(552, 3);
             btnAgregarPrestamo.Name = "btnAgregarPrestamo";
             btnAgregarPrestamo.Size = new Size(139, 30);
             btnAgregarPrestamo.TabIndex = 23;
             btnAgregarPrestamo.Text = "Agregar Prestamo";
             btnAgregarPrestamo.UseVisualStyleBackColor = false;
             btnAgregarPrestamo.Click += btnAgregarPrestamo_Click;
-            // 
-            // comboBoxFiltro
-            // 
-            comboBoxFiltro.DropDownStyle = ComboBoxStyle.DropDownList;
-            comboBoxFiltro.FormattingEnabled = true;
-            comboBoxFiltro.Items.AddRange(new object[] { "Todos", "Vigentes", "Vencidos" });
-            comboBoxFiltro.Location = new Point(385, 3);
-            comboBoxFiltro.Name = "comboBoxFiltro";
-            comboBoxFiltro.Size = new Size(140, 28);
-            comboBoxFiltro.TabIndex = 22;
             // 
             // dGVPrestamos
             // 
@@ -144,7 +132,7 @@
             // txtNombre
             // 
             txtNombre.Enabled = false;
-            txtNombre.Location = new Point(23, 467);
+            txtNombre.Location = new Point(23, 477);
             txtNombre.Name = "txtNombre";
             txtNombre.Size = new Size(469, 27);
             txtNombre.TabIndex = 59;
@@ -163,6 +151,7 @@
             MaximizeBox = false;
             Name = "FrmPrestamosHechos";
             Text = "FrmPrestamosHechos";
+            Load += FrmPrestamosHechos_Load;
             contenedorBusquedayAgrPrestamo.ResumeLayout(false);
             contenedorBusquedayAgrPrestamo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dGVPrestamos).EndInit();
@@ -173,7 +162,6 @@
         #endregion
         private TableLayoutPanel contenedorBusquedayAgrPrestamo;
         private Button btnAgregarPrestamo;
-        private ComboBox comboBoxFiltro;
         private Button btnDatosLectores;
         private TextBox txtNombre;
         private ComboBox cmbxbuscarprestamo;

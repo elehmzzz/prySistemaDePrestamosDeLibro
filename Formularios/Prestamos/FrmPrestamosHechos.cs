@@ -10,19 +10,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
 {
     public partial class FrmPrestamosHechos : Form
     {
         ClsPrestamo objPrestamo;
         ClsBibliotecario objBibliotecario;
+        ClsLectores objLectores; // <-- NUEVO
         private FrmMenuPrincipal ventanaPrincipal;
         bool cargandoCombo = false;
         public FrmPrestamosHechos(FrmMenuPrincipal ventana, ClsBibliotecario objBibliotecario)
         {
             InitializeComponent();
             objPrestamo = new ClsPrestamo();
-
+            objLectores = new ClsLectores(); // <-- NUEVO
             this.Load += FrmPrestamosHechos_Load;
             cmbxbuscarprestamo.TextChanged += cmbxbuscarprestamo_TextChanged;
             ventanaPrincipal = ventana;
@@ -32,8 +34,20 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
         private void FrmPrestamosHechos_Load(object sender, EventArgs e)
         {
             CargarPrestamos();
+
+            // Cargar combo de búsqueda por lector
+            DataTable dtLectores = objLectores.ObtenerLectores();
+            dtLectores.Columns.Add("NombreCompleto", typeof(string), "Nombres + ' ' + Apellido_Paterno + ' ' + Apellido_Materno");
+            cmbxbuscarprestamo.DataSource = dtLectores;
+            cmbxbuscarprestamo.DisplayMember = "NombreCompleto";
+            cmbxbuscarprestamo.ValueMember = "Id_Lector";
             cmbxbuscarprestamo.DropDownStyle = ComboBoxStyle.DropDown;
-            cmbxbuscarprestamo.AutoCompleteMode = AutoCompleteMode.None;
+            cmbxbuscarprestamo.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            cmbxbuscarprestamo.AutoCompleteSource = AutoCompleteSource.ListItems;
+
+            cmbxbuscarprestamo.SelectedIndex = -1;
+
+
         }
 
         public void CargarPrestamos()
@@ -78,48 +92,31 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
 
         private void cmbxbuscarprestamo_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbxbuscarprestamo.SelectedItem != null)
+            if (cmbxbuscarprestamo.SelectedItem is DataRowView lector)
             {
-                DataRowView row = (DataRowView)cmbxbuscarprestamo.SelectedItem;
-                txtNombre.Text = row["NombreCompleto"].ToString();
+                string nombreCompleto = lector["NombreCompleto"].ToString()!;
+
+                foreach (DataGridViewRow fila in dGVPrestamos.Rows)
+                {
+                    if (fila.Cells["Lector"].Value?.ToString() == nombreCompleto)
+                    {
+                        dGVPrestamos.ClearSelection();
+                        fila.Selected = true;
+                        dGVPrestamos.FirstDisplayedScrollingRowIndex = fila.Index; // sube esa fila hasta arriba
+                        dGVPrestamos.CurrentCell = fila.Cells[0];
+                        break;
+                    }
+                }
             }
         }
         private void cmbxbuscarprestamo_TextChanged(object sender, EventArgs e)
         {
-            if (cargandoCombo) return;
 
-            string texto = cmbxbuscarprestamo.Text;
-
-            if (string.IsNullOrWhiteSpace(texto))
-            {
-                cmbxbuscarprestamo.DataSource = null;
-                return;
-            }
-
-            cargandoCombo = true;
-
-            //DataTable dt = objPrestamo.BuscarLectores(texto);
-
-            //cmbxbuscarprestamo.DataSource = null;
-            //cmbxbuscarprestamo.DataSource = dt;
-            //cmbxbuscarprestamo.DisplayMember = "NombreCompleto";
-            //cmbxbuscarprestamo.ValueMember = "Id_Lector";
-
-            //if (!cmbxbuscarprestamo.DroppedDown)
-            //    cmbxbuscarprestamo.DroppedDown = true;
-
-            //cmbxbuscarprestamo.Focus();
-
-            //cmbxbuscarprestamo.Text = texto;
-            //cmbxbuscarprestamo.SelectionStart = texto.Length;
-            //cmbxbuscarprestamo.SelectionLength = 0;
-
-            cargandoCombo = false;
         }
 
         private void btnAgregarPrestamo_Click(object sender, EventArgs e)
         {
-            FrmHacerprestamo frm = new FrmHacerprestamo(this.objBibliotecario);
+            FrmHacerprestamo frm = new FrmHacerprestamo(this.objBibliotecario, this); // <-- se agregó "this"
             frm.Show();
         }
 
@@ -143,7 +140,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
         }
         private void btnDatosLectores_Click(object sender, EventArgs e)
         {
-            FrmRPrestamo frm = new FrmRPrestamo(objPrestamo);
+            FrmRPrestamo frm = new FrmRPrestamo(objPrestamo, this);
             frm.ShowDialog();
         }
     }

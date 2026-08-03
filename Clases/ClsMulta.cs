@@ -66,5 +66,30 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
             return dt.Rows.Count > 0 ? dt.Rows[0] : null;
         }
+
+        public bool ActualizarMulta()
+        {
+            ClsConexion conexion = new ClsConexion();
+            MySqlConnection con = conexion.ObtenerConexion();
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(
+                    "UPDATE multa SET Penalizacion = @penalizacion, Dias_tolerancia = @diast WHERE Id_Multa = @id", con);
+
+                cmd.Parameters.AddWithValue("@penalizacion", Penalizacion);
+                cmd.Parameters.AddWithValue("@diast", Dias_tolerancia);
+                cmd.Parameters.AddWithValue("@id", IdMulta);
+
+                cmd.ExecuteNonQuery();
+                con.Close();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al actualizar la multa: " + ex.Message);
+                return false;
+            }
+        }      
     }
 }

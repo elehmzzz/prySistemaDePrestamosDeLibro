@@ -37,6 +37,7 @@
             label5 = new Label();
             txtPenalizacion = new TextBox();
             label1 = new Label();
+            btnGuardarCambios = new Button();
             tableLayoutPanel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -53,6 +54,7 @@
             btnEditarMulta.TabIndex = 27;
             btnEditarMulta.Text = "Editar Datos";
             btnEditarMulta.UseVisualStyleBackColor = false;
+            btnEditarMulta.Click += btnEditarMulta_Click;
             // 
             // tableLayoutPanel2
             // 
@@ -153,12 +155,28 @@
             label1.TabIndex = 85;
             label1.Text = "por los dias de retraso";
             // 
+            // btnGuardarCambios
+            // 
+            btnGuardarCambios.AutoSize = true;
+            btnGuardarCambios.BackColor = Color.FromArgb(32, 41, 64);
+            btnGuardarCambios.Enabled = false;
+            btnGuardarCambios.ForeColor = Color.White;
+            btnGuardarCambios.Location = new Point(645, 474);
+            btnGuardarCambios.Margin = new Padding(6);
+            btnGuardarCambios.Name = "btnGuardarCambios";
+            btnGuardarCambios.Size = new Size(144, 38);
+            btnGuardarCambios.TabIndex = 38;
+            btnGuardarCambios.Text = "Guardar Cambios";
+            btnGuardarCambios.UseVisualStyleBackColor = false;
+            btnGuardarCambios.Click += btnGuardarCambios_Click;
+            // 
             // FrmMultas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
             ClientSize = new Size(1034, 536);
+            Controls.Add(btnGuardarCambios);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(tableLayoutPanel2);
             Controls.Add(btnEditarMulta);
@@ -188,5 +206,6 @@
         private Label label4;
         private Label label1;
         private TextBox txtPenalizacion;
+        private Button btnGuardarCambios;
     }
 }

@@ -14,11 +14,14 @@ namespace prySistemaDePrestamosDeLibro.Clases
     public partial class FrmRPrestamo : Form
     {
         ClsPrestamo objPrestamo;
-        public FrmRPrestamo(ClsPrestamo objPrestamo)
+        private FrmPrestamosHechos ventanaPrestamos; // <-- NUEVO
+        public FrmRPrestamo(ClsPrestamo objPrestamo, FrmPrestamosHechos ventanaPrestamos)
         {
             InitializeComponent();
             this.objPrestamo = objPrestamo;
             this.objPrestamo.ObtenerDetalle();
+            this.ventanaPrestamos = ventanaPrestamos; // <-- NUEVO
+
             if (this.objPrestamo.ObtenerDetalle())
             {
                 txtprestatario.Text = this.objPrestamo.getBibliotecario();
@@ -76,9 +79,9 @@ namespace prySistemaDePrestamosDeLibro.Clases
             if (objPrestamo.FinalizarPrestamo())
             {
                 MessageBox.Show("Prestamo Finalizado");
+                ventanaPrestamos.CargarPrestamos(); // <-- NUEVO: refresca el dgv
                 this.Close();
             }
         }
     }
 }
-

@@ -1,5 +1,5 @@
 ﻿using prySistemaDePrestamosDeLibro.Clases;
-
+using prySistemaDePrestamosDeLibro.Formularios.FRMprestamos; // <-- NUEVO
 using System.Data;
 
 
@@ -11,13 +11,17 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
         ClsBibliotecario objBibliotecario;
         ClsLibro objLibro;
         ClsPrestamo objPrestamo;
-        public FrmHacerprestamo(ClsBibliotecario objBibliotecario)
+        private FrmPrestamosHechos ventanaPrestamos; // <-- NUEVO
+
+        public FrmHacerprestamo(ClsBibliotecario objBibliotecario, FrmPrestamosHechos ventanaPrestamos)
         {
             InitializeComponent();
             this.objBibliotecario = objBibliotecario;
+            this.ventanaPrestamos = ventanaPrestamos; // <-- NUEVO
             objLectores = new ClsLectores();
             objLibro = new ClsLibro();
             objPrestamo = new ClsPrestamo();
+
         }
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
@@ -95,7 +99,6 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
             {
                 txtISBN.Text = libro["ISBN"].ToString();
                 txtAutor.Text = libro["Nombres"].ToString();
-                //txtDisponibles.Text = libro["Disponibles"].ToString();
             }
         }
 
@@ -128,9 +131,8 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
                 return;
             }
 
-            objPrestamo.setFecha_Prestamo(dtpFechadevolucion.Value.Date);
+            objPrestamo.setFecha_Prestamo(dtpFechaprestamo.Value.Date);
             objPrestamo.setFecha_Devolucion(dtpFechadevolucion.Value.Date);
-            objPrestamo.setCodigo("jghkghkgkhg");
             objPrestamo.setIdLector(idLector);
             objPrestamo.setIdBibliotecario(idUsuario);
             objPrestamo.setIdLibro(idLibro);
@@ -138,6 +140,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
             if (objPrestamo.GuardarPrestamo())
             {
                 MessageBox.Show("Prestamo guardado");
+                ventanaPrestamos.CargarPrestamos(); // <-- NUEVO: refresca el dgv
                 this.Close();
             }
 
