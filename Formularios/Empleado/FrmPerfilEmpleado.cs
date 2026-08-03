@@ -24,6 +24,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
             menuPrincipal = padre;
             objBibliotecario = obj;
             cargarDatos();
+            rdbDesactivado.Checked = true;
         }
 
         public void cargarDatos()
@@ -35,5 +36,20 @@ namespace prySistemaDePrestamosDeLibro.Clases
             txtTipoUsuario.Text = objBibliotecario.getNombreTipoUsuario();
         }
 
+        private void rdbActivado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbActivado.Checked) {
+                rdbDesactivado.Checked = false;
+                menuPrincipal.activarAltoContraste(this);
+            }
+        }
+
+        private void rdbDesactivado_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdbDesactivado.Checked) {
+                rdbActivado.Checked = false;
+                menuPrincipal.desactivarAltoContraste(this);
+            }
+        }
     }
 }
