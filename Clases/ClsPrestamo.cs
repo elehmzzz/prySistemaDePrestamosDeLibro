@@ -1,10 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace prySistemaDePrestamosDeLibro.Clases
 {
@@ -17,6 +13,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
         private int IdLector;
         private int IdBibliotecario;
         private int IdLibro;
+        private int IdEjemplar;
 
         private string Lector;
         private string Telefono;
@@ -31,45 +28,34 @@ namespace prySistemaDePrestamosDeLibro.Clases
         private int DiasAtraso;
         private decimal Multa;
         private string bibliotecario;
-
-
-
-
         public int getIdPrestamo()
         {
             return IdPrestamo;
         }
-
         public void setIdPrestamo(int id)
         {
             IdPrestamo = id;
         }
-
         public DateTime getFecha_Prestamo()
         {
             return Fecha_Prestamo;
         }
-
         public void setFecha_Prestamo(DateTime fecha)
         {
             Fecha_Prestamo = fecha;
         }
-
         public DateTime getFecha_Devolucion()
         {
             return Fecha_Devolucion;
         }
-
         public void setFecha_Devolucion(DateTime fecha)
         {
             Fecha_Devolucion = fecha;
         }
-
         public string getCodigo()
         {
             return Codigo;
         }
-
         public void setCodigo(string codigo)
         {
             Codigo = codigo;
@@ -78,169 +64,144 @@ namespace prySistemaDePrestamosDeLibro.Clases
         {
             return IdLector;
         }
-
         public void setIdLector(int id)
         {
             IdLector = id;
         }
-
         public int getIdBibliotecario()
         {
             return IdBibliotecario;
         }
-
         public void setIdBibliotecario(int id)
         {
             IdBibliotecario = id;
         }
-
         public int getIdLibro()
         {
             return IdLibro;
         }
-
         public void setIdLibro(int id)
         {
             IdLibro = id;
-        }
-
-        private MySqlConnection EstableceConexion()
-        {
-            ClsConexion conexion = new();
-            return conexion.ObtenerConexion();
-        }
-
+        }       
         public string getLector()
         {
             return Lector;
         }
-
         public void setLector(string lector)
         {
             Lector = lector;
         }
-
         //
         public string getTelefono()
         {
             return Telefono;
         }
-
         public void setTelefono(string telefono)
         {
             Telefono = telefono;
         }
-
         public string getMunicipio()
         {
             return Municipio;
         }
-
         public void setMunicipio(string municipio)
         {
             Municipio = municipio;
         }
-
         public string getColonia()
         {
             return Colonia;
         }
-
         public void setColonia(string colonia)
         {
             Colonia = colonia;
         }
-
         public string getCP()
         {
             return CP;
         }
-
         public void setCP(string cp)
         {
             CP = cp;
         }
-
         public string getLibro()
         {
             return Libro;
         }
-
+        public void setIdEjemplar(int id)
+        {
+            IdEjemplar = id;
+        }
+        public int getIdEjemplar()
+        {
+            return IdEjemplar;
+        }
         public void setLibro(string libro)
         {
             Libro = libro;
         }
-
         public string getISBN()
         {
             return ISBN;
         }
-
         public void setISBN(string isbn)
         {
             ISBN = isbn;
         }
-
         public string getAutor()
         {
             return Autor;
         }
-
         public void setAutor(string autor)
         {
             Autor = autor;
         }
-
         public DateTime getFechaPrestamo()
         {
             return FechaPrestamo;
         }
-
         public void setFechaPrestamo(DateTime fechaPrestamo)
         {
             FechaPrestamo = fechaPrestamo;
         }
-
         public DateTime getFechaDevolucion()
         {
             return FechaDevolucion;
         }
-
         public void setFechaDevolucion(DateTime fechaDevolucion)
         {
             FechaDevolucion = fechaDevolucion;
         }
-
         public int getDiasAtraso()
         {
             return DiasAtraso;
         }
-
         public void setDiasAtraso(int diasAtraso)
         {
             DiasAtraso = diasAtraso;
         }
-
         public decimal getMulta()
         {
             return Multa;
         }
-
         public void setMulta(decimal multa)
         {
             Multa = multa;
         }
-
         public string getBibliotecario()
         {
             return bibliotecario;
         }
-
         public void setBibliotecario(string bibliotecario)
         {
             this.bibliotecario = bibliotecario;
         }
-
+        private MySqlConnection EstableceConexion()
+        {
+            ClsConexion conexion = new();
+            return conexion.ObtenerConexion();
+        }
         public DataTable ObtenerPrestamos()
         {
             MySqlConnection con = EstableceConexion();
@@ -292,6 +253,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
                     DiasAtraso = Convert.ToInt32(dr["dias_atraso"]);
                     Multa = Convert.ToDecimal(dr["multa"]);
                     bibliotecario = dr["bibliotecario"].ToString()!;
+                    Codigo = dr["folio"].ToString()!;
 
                     dr.Close();
                     con.Close();
@@ -324,7 +286,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 cmd.Parameters.AddWithValue("@Id_Lector", IdLector);
                 cmd.Parameters.AddWithValue("@Fecha_Prestamo", Fecha_Prestamo);
                 cmd.Parameters.AddWithValue("@Fecha_Devolucion", Fecha_Devolucion);
-                cmd.Parameters.AddWithValue("@codigo", Codigo);
+                cmd.Parameters.AddWithValue("@Id_Ejemplar", IdEjemplar);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -359,5 +321,25 @@ namespace prySistemaDePrestamosDeLibro.Clases
             }
         }
 
+        public DataTable ObtenerEjemplares()
+        {
+            DataTable dt = new DataTable();
+            MySqlConnection con = EstableceConexion();
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM ejemplar where id_libro = @id_libro and disponible=1", con);
+                cmd.Parameters.AddWithValue("@id_libro", IdLibro);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+
+            return dt;
+        }
     }
 }
