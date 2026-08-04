@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel2 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             btRegresarPrHechos = new Button();
             btnFinalizarprestamo = new Button();
@@ -78,25 +77,11 @@
             label2 = new Label();
             label6 = new Label();
             label1 = new Label();
-            panel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(236, 223, 204);
-            panel2.Controls.Add(tableLayoutPanel1);
-            panel2.Controls.Add(tableLayoutPanel3);
-            panel2.Controls.Add(tableLayoutPanel4);
-            panel2.Controls.Add(tableLayoutPanel2);
-            panel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            panel2.Location = new Point(-22, -6);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(1193, 722);
-            panel2.TabIndex = 4;
             // 
             // tableLayoutPanel1
             // 
@@ -106,7 +91,7 @@
             tableLayoutPanel1.Controls.Add(btRegresarPrHechos, 1, 1);
             tableLayoutPanel1.Controls.Add(btnFinalizarprestamo, 0, 1);
             tableLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel1.Location = new Point(661, 485);
+            tableLayoutPanel1.Location = new Point(658, 486);
             tableLayoutPanel1.Margin = new Padding(6);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
@@ -177,7 +162,8 @@
             tableLayoutPanel3.Controls.Add(dtpFechdevolucion, 5, 1);
             tableLayoutPanel3.Controls.Add(label18, 2, 2);
             tableLayoutPanel3.Controls.Add(txtAutor, 3, 2);
-            tableLayoutPanel3.Location = new Point(34, 107);
+            tableLayoutPanel3.Font = new Font("Segoe UI", 12F);
+            tableLayoutPanel3.Location = new Point(18, 100);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 6;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 19.4915237F));
@@ -391,7 +377,7 @@
             tableLayoutPanel4.Controls.Add(txtprestatario, 1, 1);
             tableLayoutPanel4.Controls.Add(label24, 0, 1);
             tableLayoutPanel4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel4.Location = new Point(529, 35);
+            tableLayoutPanel4.Location = new Point(489, 23);
             tableLayoutPanel4.Margin = new Padding(6);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 2;
@@ -422,7 +408,7 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Controls.Add(labelRegistrodePrestamos, 0, 1);
             tableLayoutPanel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel2.Location = new Point(34, 29);
+            tableLayoutPanel2.Location = new Point(15, 15);
             tableLayoutPanel2.Margin = new Padding(6);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
@@ -602,14 +588,17 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1034, 536);
-            Controls.Add(panel2);
+            BackColor = Color.FromArgb(236, 223, 204);
+            ClientSize = new Size(1034, 586);
+            Controls.Add(tableLayoutPanel3);
+            Controls.Add(tableLayoutPanel1);
+            Controls.Add(tableLayoutPanel4);
+            Controls.Add(tableLayoutPanel2);
             FormBorderStyle = FormBorderStyle.None;
             MaximizeBox = false;
             Name = "FrmRPrestamo";
             Text = "FrmRPrestamo";
             Load += FrmRPrestamo_Load;
-            panel2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
@@ -639,7 +628,6 @@
         private TextBox textBox1;
         private TableLayoutPanel tableLayoutPanel2;
         private Label labelRegistrodePrestamos;
-        private Panel panel2;
         private TextBox textBox14;
         private DateTimePicker dateTimePicker1;
         private TextBox txtAutor;

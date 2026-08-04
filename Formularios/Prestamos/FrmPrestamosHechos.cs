@@ -141,7 +141,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
         private void btnDatosLectores_Click(object sender, EventArgs e)
         {
             FrmRPrestamo frm = new FrmRPrestamo(objPrestamo, this);
-            frm.ShowDialog();
+            frm.Show();
         }
     }
 }
