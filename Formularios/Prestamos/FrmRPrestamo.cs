@@ -37,6 +37,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 dtpFechdevolucion.Value = this.objPrestamo.getFechaDevolucion();
                 txtDiasretraso.Text = this.objPrestamo.getDiasAtraso().ToString();
                 txtMulta.Text = this.objPrestamo.getMulta().ToString();
+                txtEjemplar.Text = this.objPrestamo.getCodigo().ToString();
             }
             else
             {

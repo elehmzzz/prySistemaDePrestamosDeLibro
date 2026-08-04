@@ -7,28 +7,22 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
 {
     public partial class FrmHacerprestamo : Form
     {
-        ClsLectores objLectores; //instancia
+        ClsLectores objLectores;
         ClsBibliotecario objBibliotecario;
         ClsLibro objLibro;
         ClsPrestamo objPrestamo;
-        private FrmPrestamosHechos ventanaPrestamos; // <-- NUEVO
+        private FrmPrestamosHechos ventanaPrestamos;
 
         public FrmHacerprestamo(ClsBibliotecario objBibliotecario, FrmPrestamosHechos ventanaPrestamos)
         {
             InitializeComponent();
             this.objBibliotecario = objBibliotecario;
-            this.ventanaPrestamos = ventanaPrestamos; // <-- NUEVO
+            this.ventanaPrestamos = ventanaPrestamos;
             objLectores = new ClsLectores();
             objLibro = new ClsLibro();
             objPrestamo = new ClsPrestamo();
 
         }
-
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void btnRegresarPre_Click(object sender, EventArgs e)
         {
             DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres cancelar el préstamo?", "Confirmar cancelación", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
@@ -37,7 +31,6 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
                 this.Close();
             }
         }
-
         private void btnAgregarCLector_Click(object sender, EventArgs e)
         {
 
@@ -54,9 +47,12 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
             cmbLectores.DropDownStyle = ComboBoxStyle.DropDown;
             cmbLectores.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             cmbLectores.AutoCompleteSource = AutoCompleteSource.ListItems;
-            
 
             DataTable dtLibros = objLibro.ObtenerLibros(); //aqui consulto los lectores
+            DataRow filaLirbos = dtLibros.NewRow();
+            filaLirbos["id_libro"] = 0;
+            filaLirbos["Titulo"] = "-- Seleccione un libro --";
+            dtLibros.Rows.InsertAt(filaLirbos, 0);
             cmbLibros.DataSource = dtLibros;
             cmbLibros.DisplayMember = "Titulo";
             cmbLibros.ValueMember = "id_libro";
@@ -88,24 +84,34 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
                 txtTelefono.Text = lector["Telefono"].ToString();
             }
         }
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void cmbLibros_SelectedIndexChanged_1(object sender, EventArgs e)
         {
-            if (cmbLibros.SelectedItem is DataRowView libro)
-            {
-                txtISBN.Text = libro["ISBN"].ToString();
-                txtAutor.Text = libro["Nombres"].ToString();
-            }
+          
+            if (!(cmbLibros.SelectedItem is DataRowView libro))
+                return;
+            txtISBN.Text = libro["ISBN"].ToString();
+            txtAutor.Text = libro["Nombres"].ToString();
+
+            objPrestamo.setIdLibro(Convert.ToInt32(libro["id_libro"]));
+
+            DataTable dtEjemplares = objPrestamo.ObtenerEjemplares();
+            DataRow fila = dtEjemplares.NewRow();
+            fila["Id_Ejemplar"] = 0;
+            fila["folio"] = "-- Seleccione un ejemplar --";
+            dtEjemplares.Rows.InsertAt(fila, 0);
+            cmbEjemplar.DataSource = dtEjemplares;
+            cmbEjemplar.DisplayMember = "folio";
+            cmbEjemplar.ValueMember = "Id_Ejemplar";
+            txtDisponibles.Text = (dtEjemplares.Rows.Count - 1).ToString();
+
         }
 
         private void btnvalidarprestamo_Click(object sender, EventArgs e)
         {
             int idLibro = Convert.ToInt32(cmbLibros.SelectedValue);
             int idLector = Convert.ToInt32(cmbLectores.SelectedValue);
+            int idEjemplar = Convert.ToInt32(cmbEjemplar.SelectedValue);
             int idUsuario = objBibliotecario.getIdBibliotecario();
             // Validar lector
             if (cmbLectores.SelectedIndex == -1)
@@ -131,11 +137,18 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
                 return;
             }
 
+            if (idEjemplar == 0) {
+                MessageBox.Show("Seleccione un ejemplar");
+                cmbEjemplar.Focus();
+                return;
+            }
+
             objPrestamo.setFecha_Prestamo(dtpFechaprestamo.Value.Date);
             objPrestamo.setFecha_Devolucion(dtpFechadevolucion.Value.Date);
             objPrestamo.setIdLector(idLector);
             objPrestamo.setIdBibliotecario(idUsuario);
             objPrestamo.setIdLibro(idLibro);
+            objPrestamo.setIdEjemplar(idEjemplar);
 
             if (objPrestamo.GuardarPrestamo())
             {
@@ -143,8 +156,6 @@ namespace prySistemaDePrestamosDeLibro.Formularios.Prestamos
                 ventanaPrestamos.CargarPrestamos(); // <-- NUEVO: refresca el dgv
                 this.Close();
             }
-
-
         }
     }
 }

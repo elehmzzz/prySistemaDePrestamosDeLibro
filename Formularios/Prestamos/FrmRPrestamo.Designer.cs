@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            panel2 = new Panel();
             tableLayoutPanel1 = new TableLayoutPanel();
             btRegresarPrHechos = new Button();
             btnFinalizarprestamo = new Button();
@@ -77,27 +78,44 @@
             label2 = new Label();
             label6 = new Label();
             label1 = new Label();
+            lblEjemplar = new Label();
+            txtEjemplar = new TextBox();
+            panel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
             tableLayoutPanel4.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             SuspendLayout();
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(236, 223, 204);
+            panel2.Controls.Add(tableLayoutPanel1);
+            panel2.Controls.Add(tableLayoutPanel3);
+            panel2.Controls.Add(tableLayoutPanel4);
+            panel2.Controls.Add(tableLayoutPanel2);
+            panel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            panel2.Location = new Point(-19, -4);
+            panel2.Margin = new Padding(3, 2, 3, 2);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(1044, 542);
+            panel2.TabIndex = 4;
+            // 
             // tableLayoutPanel1
             // 
             tableLayoutPanel1.ColumnCount = 2;
             tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 99F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 87F));
             tableLayoutPanel1.Controls.Add(btRegresarPrHechos, 1, 1);
             tableLayoutPanel1.Controls.Add(btnFinalizarprestamo, 0, 1);
             tableLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel1.Location = new Point(658, 486);
-            tableLayoutPanel1.Margin = new Padding(6);
+            tableLayoutPanel1.Location = new Point(578, 364);
+            tableLayoutPanel1.Margin = new Padding(5, 4, 5, 4);
             tableLayoutPanel1.Name = "tableLayoutPanel1";
             tableLayoutPanel1.RowCount = 2;
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
             tableLayoutPanel1.RowStyles.Add(new RowStyle());
-            tableLayoutPanel1.Size = new Size(351, 42);
+            tableLayoutPanel1.Size = new Size(307, 32);
             tableLayoutPanel1.TabIndex = 64;
             // 
             // btRegresarPrHechos
@@ -106,9 +124,10 @@
             btRegresarPrHechos.BackColor = Color.FromArgb(32, 41, 64);
             btRegresarPrHechos.BackgroundImageLayout = ImageLayout.None;
             btRegresarPrHechos.ForeColor = SystemColors.Control;
-            btRegresarPrHechos.Location = new Point(255, 3);
+            btRegresarPrHechos.Location = new Point(223, 2);
+            btRegresarPrHechos.Margin = new Padding(3, 2, 3, 2);
             btRegresarPrHechos.Name = "btRegresarPrHechos";
-            btRegresarPrHechos.Size = new Size(93, 38);
+            btRegresarPrHechos.Size = new Size(81, 31);
             btRegresarPrHechos.TabIndex = 63;
             btRegresarPrHechos.Text = "regresar";
             btRegresarPrHechos.UseVisualStyleBackColor = false;
@@ -120,9 +139,10 @@
             btnFinalizarprestamo.BackColor = Color.FromArgb(32, 41, 64);
             btnFinalizarprestamo.BackgroundImageLayout = ImageLayout.None;
             btnFinalizarprestamo.ForeColor = SystemColors.Control;
-            btnFinalizarprestamo.Location = new Point(3, 3);
+            btnFinalizarprestamo.Location = new Point(3, 2);
+            btnFinalizarprestamo.Margin = new Padding(3, 2, 3, 2);
             btnFinalizarprestamo.Name = "btnFinalizarprestamo";
-            btnFinalizarprestamo.Size = new Size(181, 38);
+            btnFinalizarprestamo.Size = new Size(158, 31);
             btnFinalizarprestamo.TabIndex = 65;
             btnFinalizarprestamo.Text = "Finalizar Prestamo";
             btnFinalizarprestamo.UseVisualStyleBackColor = false;
@@ -133,11 +153,13 @@
             tableLayoutPanel3.ColumnCount = 6;
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 13.9064474F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 26.9279385F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 9.102402F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 27.8128948F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 12.463768F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.347826F));
             tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.2503166F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 216F));
-            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 192F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 18F));
+            tableLayoutPanel3.Controls.Add(txtEjemplar, 3, 3);
+            tableLayoutPanel3.Controls.Add(lblEjemplar, 2, 3);
             tableLayoutPanel3.Controls.Add(txtNombre, 1, 0);
             tableLayoutPanel3.Controls.Add(label15, 0, 0);
             tableLayoutPanel3.Controls.Add(label9, 0, 1);
@@ -160,10 +182,10 @@
             tableLayoutPanel3.Controls.Add(label5, 4, 0);
             tableLayoutPanel3.Controls.Add(dtpFechprestamo, 5, 0);
             tableLayoutPanel3.Controls.Add(dtpFechdevolucion, 5, 1);
-            tableLayoutPanel3.Controls.Add(label18, 2, 2);
             tableLayoutPanel3.Controls.Add(txtAutor, 3, 2);
-            tableLayoutPanel3.Font = new Font("Segoe UI", 12F);
-            tableLayoutPanel3.Location = new Point(18, 100);
+            tableLayoutPanel3.Controls.Add(label18, 2, 2);
+            tableLayoutPanel3.Location = new Point(30, 80);
+            tableLayoutPanel3.Margin = new Padding(3, 2, 3, 2);
             tableLayoutPanel3.Name = "tableLayoutPanel3";
             tableLayoutPanel3.RowCount = 6;
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 19.4915237F));
@@ -172,14 +194,17 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 15.5367222F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 14.9717512F));
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 13.8418074F));
-            tableLayoutPanel3.Size = new Size(1010, 355);
+            tableLayoutPanel3.Size = new Size(884, 266);
             tableLayoutPanel3.TabIndex = 43;
             // 
             // txtNombre
             // 
-            txtNombre.Location = new Point(113, 3);
+            txtNombre.Enabled = false;
+            txtNombre.Location = new Point(99, 2);
+            txtNombre.Margin = new Padding(3, 2, 3, 2);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(207, 34);
+            txtNombre.ReadOnly = true;
+            txtNombre.Size = new Size(180, 29);
             txtNombre.TabIndex = 58;
             // 
             // label15
@@ -187,210 +212,244 @@
             label15.AutoSize = true;
             label15.Location = new Point(3, 0);
             label15.Name = "label15";
-            label15.Size = new Size(89, 28);
+            label15.Size = new Size(71, 21);
             label15.TabIndex = 5;
             label15.Text = "Nombre:";
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(3, 69);
+            label9.Location = new Point(3, 51);
             label9.Name = "label9";
-            label9.Size = new Size(90, 28);
+            label9.Size = new Size(71, 21);
             label9.TabIndex = 25;
             label9.Text = "Telefono:";
             // 
             // txtTelefono
             // 
-            txtTelefono.Location = new Point(113, 72);
+            txtTelefono.Enabled = false;
+            txtTelefono.Location = new Point(99, 53);
+            txtTelefono.Margin = new Padding(3, 2, 3, 2);
             txtTelefono.Name = "txtTelefono";
-            txtTelefono.Size = new Size(207, 34);
+            txtTelefono.ReadOnly = true;
+            txtTelefono.Size = new Size(180, 29);
             txtTelefono.TabIndex = 32;
             // 
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(3, 134);
+            label11.Location = new Point(3, 99);
             label11.Name = "label11";
-            label11.Size = new Size(104, 28);
+            label11.Size = new Size(82, 21);
             label11.TabIndex = 21;
             label11.Text = "Municipio:";
             // 
             // txtMunicipio
             // 
-            txtMunicipio.Location = new Point(113, 137);
+            txtMunicipio.Enabled = false;
+            txtMunicipio.Location = new Point(99, 101);
+            txtMunicipio.Margin = new Padding(3, 2, 3, 2);
             txtMunicipio.Name = "txtMunicipio";
-            txtMunicipio.Size = new Size(207, 34);
+            txtMunicipio.ReadOnly = true;
+            txtMunicipio.Size = new Size(180, 29);
             txtMunicipio.TabIndex = 22;
             // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(3, 197);
+            label12.Location = new Point(3, 146);
             label12.Name = "label12";
-            label12.Size = new Size(80, 28);
+            label12.Size = new Size(63, 21);
             label12.TabIndex = 20;
             label12.Text = "colonia:";
             // 
             // txtColonia
             // 
-            txtColonia.Location = new Point(113, 200);
+            txtColonia.Enabled = false;
+            txtColonia.Location = new Point(99, 148);
+            txtColonia.Margin = new Padding(3, 2, 3, 2);
             txtColonia.Name = "txtColonia";
-            txtColonia.Size = new Size(207, 34);
+            txtColonia.ReadOnly = true;
+            txtColonia.Size = new Size(180, 29);
             txtColonia.TabIndex = 24;
             // 
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(3, 252);
+            label10.Location = new Point(3, 187);
             label10.Name = "label10";
-            label10.Size = new Size(39, 28);
+            label10.Size = new Size(32, 21);
             label10.TabIndex = 23;
             label10.Text = "CP:";
             // 
             // txtCp
             // 
-            txtCp.Location = new Point(113, 255);
+            txtCp.Enabled = false;
+            txtCp.Location = new Point(99, 189);
+            txtCp.Margin = new Padding(3, 2, 3, 2);
             txtCp.Name = "txtCp";
-            txtCp.Size = new Size(207, 34);
+            txtCp.ReadOnly = true;
+            txtCp.Size = new Size(180, 29);
             txtCp.TabIndex = 41;
             // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(326, 0);
+            label16.Location = new Point(285, 0);
             label16.Name = "label16";
-            label16.Size = new Size(61, 28);
+            label16.Size = new Size(49, 21);
             label16.TabIndex = 28;
             label16.Text = "Libro:";
             // 
             // txtLibro
             // 
-            txtLibro.Location = new Point(398, 3);
+            txtLibro.Enabled = false;
+            txtLibro.Location = new Point(371, 2);
+            txtLibro.Margin = new Padding(3, 2, 3, 2);
             txtLibro.Name = "txtLibro";
-            txtLibro.Size = new Size(214, 34);
+            txtLibro.ReadOnly = true;
+            txtLibro.Size = new Size(162, 29);
             txtLibro.TabIndex = 46;
             // 
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(326, 69);
+            label17.Location = new Point(285, 51);
             label17.Name = "label17";
-            label17.Size = new Size(58, 28);
+            label17.Size = new Size(47, 21);
             label17.TabIndex = 43;
             label17.Text = "ISBN:";
             // 
             // txtISBN
             // 
-            txtISBN.Location = new Point(398, 72);
+            txtISBN.Enabled = false;
+            txtISBN.Location = new Point(371, 53);
+            txtISBN.Margin = new Padding(3, 2, 3, 2);
             txtISBN.Name = "txtISBN";
-            txtISBN.Size = new Size(214, 34);
+            txtISBN.ReadOnly = true;
+            txtISBN.Size = new Size(162, 29);
             txtISBN.TabIndex = 49;
             // 
             // label22
             // 
             label22.AutoSize = true;
-            label22.Location = new Point(618, 197);
+            label22.Location = new Point(539, 146);
             label22.Name = "label22";
-            label22.Size = new Size(170, 28);
+            label22.Size = new Size(135, 21);
             label22.TabIndex = 53;
             label22.Text = "Multa generada: $";
             // 
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(618, 134);
+            label21.Location = new Point(539, 99);
             label21.Name = "label21";
-            label21.Size = new Size(146, 28);
+            label21.Size = new Size(117, 21);
             label21.TabIndex = 52;
             label21.Text = "Dias de retraso:";
             // 
             // txtMulta
             // 
-            txtMulta.Location = new Point(794, 200);
+            txtMulta.Enabled = false;
+            txtMulta.Location = new Point(693, 148);
+            txtMulta.Margin = new Padding(3, 2, 3, 2);
             txtMulta.Name = "txtMulta";
-            txtMulta.Size = new Size(112, 34);
+            txtMulta.ReadOnly = true;
+            txtMulta.Size = new Size(98, 29);
             txtMulta.TabIndex = 56;
             // 
             // txtDiasretraso
             // 
-            txtDiasretraso.Location = new Point(794, 137);
+            txtDiasretraso.Enabled = false;
+            txtDiasretraso.Location = new Point(693, 101);
+            txtDiasretraso.Margin = new Padding(3, 2, 3, 2);
             txtDiasretraso.Name = "txtDiasretraso";
-            txtDiasretraso.Size = new Size(87, 34);
+            txtDiasretraso.ReadOnly = true;
+            txtDiasretraso.Size = new Size(77, 29);
             txtDiasretraso.TabIndex = 55;
             // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(618, 69);
+            label19.Location = new Point(539, 51);
             label19.Name = "label19";
-            label19.Size = new Size(168, 28);
+            label19.Size = new Size(133, 21);
             label19.TabIndex = 48;
             label19.Text = "Fecha devolucion:";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(618, 0);
+            label5.Location = new Point(539, 0);
             label5.Name = "label5";
-            label5.Size = new Size(154, 28);
+            label5.Size = new Size(123, 21);
             label5.TabIndex = 47;
             label5.Text = "Fecha prestamo:";
             // 
             // dtpFechprestamo
             // 
+            dtpFechprestamo.Enabled = false;
             dtpFechprestamo.Format = DateTimePickerFormat.Short;
-            dtpFechprestamo.Location = new Point(794, 3);
+            dtpFechprestamo.Location = new Point(693, 2);
+            dtpFechprestamo.Margin = new Padding(3, 2, 3, 2);
             dtpFechprestamo.Name = "dtpFechprestamo";
-            dtpFechprestamo.Size = new Size(213, 34);
+            dtpFechprestamo.Size = new Size(187, 29);
             dtpFechprestamo.TabIndex = 64;
             // 
             // dtpFechdevolucion
             // 
+            dtpFechdevolucion.Enabled = false;
             dtpFechdevolucion.Format = DateTimePickerFormat.Short;
-            dtpFechdevolucion.Location = new Point(794, 72);
+            dtpFechdevolucion.Location = new Point(693, 53);
+            dtpFechdevolucion.Margin = new Padding(3, 2, 3, 2);
             dtpFechdevolucion.Name = "dtpFechdevolucion";
-            dtpFechdevolucion.Size = new Size(213, 34);
+            dtpFechdevolucion.Size = new Size(187, 29);
             dtpFechdevolucion.TabIndex = 65;
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(326, 134);
+            label18.Location = new Point(285, 99);
             label18.Name = "label18";
-            label18.Size = new Size(66, 28);
+            label18.Size = new Size(52, 21);
             label18.TabIndex = 45;
             label18.Text = "Autor:";
             // 
             // txtAutor
             // 
-            txtAutor.Location = new Point(398, 137);
+            txtAutor.Enabled = false;
+            txtAutor.Location = new Point(371, 101);
+            txtAutor.Margin = new Padding(3, 2, 3, 2);
             txtAutor.Name = "txtAutor";
-            txtAutor.Size = new Size(214, 34);
+            txtAutor.ReadOnly = true;
+            txtAutor.Size = new Size(162, 29);
             txtAutor.TabIndex = 60;
             // 
             // tableLayoutPanel4
             // 
             tableLayoutPanel4.ColumnCount = 2;
             tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
-            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 222F));
+            tableLayoutPanel4.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 194F));
             tableLayoutPanel4.Controls.Add(txtprestatario, 1, 1);
             tableLayoutPanel4.Controls.Add(label24, 0, 1);
             tableLayoutPanel4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel4.Location = new Point(489, 23);
-            tableLayoutPanel4.Margin = new Padding(6);
+            tableLayoutPanel4.Location = new Point(463, 26);
+            tableLayoutPanel4.Margin = new Padding(5, 4, 5, 4);
             tableLayoutPanel4.Name = "tableLayoutPanel4";
             tableLayoutPanel4.RowCount = 2;
             tableLayoutPanel4.RowStyles.Add(new RowStyle());
             tableLayoutPanel4.RowStyles.Add(new RowStyle());
-            tableLayoutPanel4.Size = new Size(463, 40);
+            tableLayoutPanel4.Size = new Size(405, 30);
             tableLayoutPanel4.TabIndex = 66;
             // 
             // txtprestatario
             // 
-            txtprestatario.Location = new Point(244, 3);
+            txtprestatario.Enabled = false;
+            txtprestatario.Location = new Point(214, 2);
+            txtprestatario.Margin = new Padding(3, 2, 3, 2);
             txtprestatario.Name = "txtprestatario";
-            txtprestatario.Size = new Size(214, 34);
+            txtprestatario.ReadOnly = true;
+            txtprestatario.Size = new Size(188, 29);
             txtprestatario.TabIndex = 67;
             // 
             // label24
@@ -398,7 +457,7 @@
             label24.AutoSize = true;
             label24.Location = new Point(3, 0);
             label24.Name = "label24";
-            label24.Size = new Size(230, 28);
+            label24.Size = new Size(182, 21);
             label24.TabIndex = 67;
             label24.Text = "prestamo registrado por:";
             // 
@@ -408,13 +467,13 @@
             tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 100F));
             tableLayoutPanel2.Controls.Add(labelRegistrodePrestamos, 0, 1);
             tableLayoutPanel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel2.Location = new Point(15, 15);
-            tableLayoutPanel2.Margin = new Padding(6);
+            tableLayoutPanel2.Location = new Point(30, 22);
+            tableLayoutPanel2.Margin = new Padding(5, 4, 5, 4);
             tableLayoutPanel2.Name = "tableLayoutPanel2";
             tableLayoutPanel2.RowCount = 2;
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
             tableLayoutPanel2.RowStyles.Add(new RowStyle());
-            tableLayoutPanel2.Size = new Size(287, 48);
+            tableLayoutPanel2.Size = new Size(251, 36);
             tableLayoutPanel2.TabIndex = 42;
             // 
             // labelRegistrodePrestamos
@@ -425,7 +484,7 @@
             labelRegistrodePrestamos.ForeColor = Color.Black;
             labelRegistrodePrestamos.Location = new Point(3, 0);
             labelRegistrodePrestamos.Name = "labelRegistrodePrestamos";
-            labelRegistrodePrestamos.Size = new Size(276, 46);
+            labelRegistrodePrestamos.Size = new Size(220, 37);
             labelRegistrodePrestamos.TabIndex = 3;
             labelRegistrodePrestamos.Text = "Detalle prestamo";
             // 
@@ -433,7 +492,7 @@
             // 
             textBox1.Location = new Point(207, 3);
             textBox1.Name = "textBox1";
-            textBox1.Size = new Size(383, 27);
+            textBox1.Size = new Size(383, 23);
             textBox1.TabIndex = 39;
             // 
             // Buscador
@@ -451,7 +510,7 @@
             dateTimePicker2.Format = DateTimePickerFormat.Short;
             dateTimePicker2.Location = new Point(207, 241);
             dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(215, 27);
+            dateTimePicker2.Size = new Size(215, 23);
             dateTimePicker2.TabIndex = 36;
             // 
             // radioButton3
@@ -492,7 +551,7 @@
             dateTimePicker1.Format = DateTimePickerFormat.Short;
             dateTimePicker1.Location = new Point(207, 288);
             dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(215, 27);
+            dateTimePicker1.Size = new Size(215, 23);
             dateTimePicker1.TabIndex = 44;
             dateTimePicker1.TabStop = false;
             dateTimePicker1.Value = new DateTime(2026, 7, 10, 7, 49, 49, 0);
@@ -584,21 +643,39 @@
             label1.TabIndex = 10;
             label1.Text = "Nombre del Libro:";
             // 
+            // lblEjemplar
+            // 
+            lblEjemplar.AutoSize = true;
+            lblEjemplar.Location = new Point(285, 146);
+            lblEjemplar.Name = "lblEjemplar";
+            lblEjemplar.Size = new Size(74, 21);
+            lblEjemplar.TabIndex = 66;
+            lblEjemplar.Text = "Ejemplar:";
+            // 
+            // txtEjemplar
+            // 
+            txtEjemplar.Enabled = false;
+            txtEjemplar.Location = new Point(371, 148);
+            txtEjemplar.Margin = new Padding(3, 2, 3, 2);
+            txtEjemplar.Name = "txtEjemplar";
+            txtEjemplar.ReadOnly = true;
+            txtEjemplar.Size = new Size(162, 29);
+            txtEjemplar.TabIndex = 67;
+            // 
             // FrmRPrestamo
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(236, 223, 204);
-            ClientSize = new Size(1034, 586);
-            Controls.Add(tableLayoutPanel3);
-            Controls.Add(tableLayoutPanel1);
-            Controls.Add(tableLayoutPanel4);
-            Controls.Add(tableLayoutPanel2);
+            ClientSize = new Size(905, 402);
+            Controls.Add(panel2);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "FrmRPrestamo";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmRPrestamo";
             Load += FrmRPrestamo_Load;
+            panel2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             tableLayoutPanel3.ResumeLayout(false);
@@ -628,6 +705,7 @@
         private TextBox textBox1;
         private TableLayoutPanel tableLayoutPanel2;
         private Label labelRegistrodePrestamos;
+        private Panel panel2;
         private TextBox textBox14;
         private DateTimePicker dateTimePicker1;
         private TextBox txtAutor;
@@ -665,5 +743,7 @@
         private TextBox txtprestatario;
         private Label label24;
         private TableLayoutPanel tableLayoutPanel5;
+        private TextBox txtEjemplar;
+        private Label lblEjemplar;
     }
 }

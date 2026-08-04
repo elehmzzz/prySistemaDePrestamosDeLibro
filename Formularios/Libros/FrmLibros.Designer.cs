@@ -28,354 +28,362 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            dtLibros = new DataGridView();
+            tableLayoutPanel3 = new TableLayoutPanel();
             txtBuscador = new TextBox();
-            comboBox1 = new ComboBox();
-            dGVLibros = new DataGridView();
             btnAgregar = new Button();
+            lblBuscar = new Label();
+            txtTitulo = new TextBox();
+            lblTitulo = new Label();
+            label4 = new Label();
+            txtISBN = new TextBox();
+            lblAutor = new Label();
+            btnEliminar = new Button();
+            btnActualizar = new Button();
+            lblLibro = new Label();
+            cmbEditorial = new ComboBox();
+            cmbCategoria = new ComboBox();
+            lblEditorial = new Label();
+            lblCategoria = new Label();
+            cmbAutor = new ComboBox();
             btnCategorias = new Button();
             btnAutores = new Button();
             Editoriales = new Button();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            panel1 = new Panel();
-            label4 = new Label();
-            label5 = new Label();
-            label2 = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            tableLayoutPanel2 = new TableLayoutPanel();
-            textBox4 = new TextBox();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
-            label3 = new Label();
-            textBoxAutor = new TextBox();
-            textBox3 = new TextBox();
-            textBox5 = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dGVLibros).BeginInit();
-            tableLayoutPanel1.SuspendLayout();
-            panel1.SuspendLayout();
-            tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dtLibros).BeginInit();
+            tableLayoutPanel3.SuspendLayout();
             SuspendLayout();
+            // 
+            // dtLibros
+            // 
+            dtLibros.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            dtLibros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.Control;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dtLibros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dtLibros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtLibros.EnableHeadersVisualStyles = false;
+            dtLibros.Location = new Point(10, 128);
+            dtLibros.Margin = new Padding(3, 2, 3, 2);
+            dtLibros.Name = "dtLibros";
+            dtLibros.ReadOnly = true;
+            dtLibros.RowHeadersVisible = false;
+            dtLibros.RowHeadersWidth = 51;
+            dtLibros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtLibros.Size = new Size(686, 161);
+            dtLibros.TabIndex = 22;
+            // 
+            // tableLayoutPanel3
+            // 
+            tableLayoutPanel3.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            tableLayoutPanel3.ColumnCount = 3;
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35.9712219F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 64.02878F));
+            tableLayoutPanel3.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 199F));
+            tableLayoutPanel3.Controls.Add(txtBuscador, 1, 0);
+            tableLayoutPanel3.Controls.Add(btnAgregar, 2, 0);
+            tableLayoutPanel3.Controls.Add(lblBuscar, 0, 0);
+            tableLayoutPanel3.Location = new Point(13, 67);
+            tableLayoutPanel3.Margin = new Padding(3, 2, 3, 2);
+            tableLayoutPanel3.Name = "tableLayoutPanel3";
+            tableLayoutPanel3.RowCount = 1;
+            tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel3.Size = new Size(685, 38);
+            tableLayoutPanel3.TabIndex = 37;
             // 
             // txtBuscador
             // 
+            txtBuscador.Anchor = AnchorStyles.Left;
             txtBuscador.BorderStyle = BorderStyle.None;
             txtBuscador.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            txtBuscador.Location = new Point(3, 4);
+            txtBuscador.Location = new Point(177, 8);
+            txtBuscador.Margin = new Padding(3, 2, 3, 2);
             txtBuscador.Name = "txtBuscador";
             txtBuscador.PlaceholderText = "Buscar...";
-            txtBuscador.Size = new Size(315, 27);
-            txtBuscador.TabIndex = 20;
-            txtBuscador.TextChanged += txtBuscador_TextChanged;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(400, 4);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 36);
-            comboBox1.TabIndex = 21;
-            comboBox1.Text = "Organizar";
-            // 
-            // dGVLibros
-            // 
-            dGVLibros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Control;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Control;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dGVLibros.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dGVLibros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dGVLibros.EnableHeadersVisualStyles = false;
-            dGVLibros.Location = new Point(11, 171);
-            dGVLibros.Name = "dGVLibros";
-            dGVLibros.ReadOnly = true;
-            dGVLibros.RowHeadersVisible = false;
-            dGVLibros.RowHeadersWidth = 51;
-            dGVLibros.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dGVLibros.Size = new Size(1025, 215);
-            dGVLibros.TabIndex = 22;
+            txtBuscador.Size = new Size(276, 22);
+            txtBuscador.TabIndex = 26;
             // 
             // btnAgregar
             // 
-            btnAgregar.AutoSize = true;
+            btnAgregar.Anchor = AnchorStyles.Left;
             btnAgregar.BackColor = Color.FromArgb(32, 41, 64);
-            btnAgregar.BackgroundImageLayout = ImageLayout.None;
             btnAgregar.ForeColor = SystemColors.Control;
-            btnAgregar.Location = new Point(3, 3);
+            btnAgregar.Location = new Point(488, 2);
+            btnAgregar.Margin = new Padding(3, 2, 3, 2);
             btnAgregar.Name = "btnAgregar";
-            btnAgregar.Size = new Size(155, 47);
-            btnAgregar.TabIndex = 23;
-            btnAgregar.Text = "Agregar";
+            btnAgregar.Size = new Size(193, 34);
+            btnAgregar.TabIndex = 24;
+            btnAgregar.Text = "Agregar Libro";
             btnAgregar.UseVisualStyleBackColor = false;
             btnAgregar.Click += btnAgregar_Click;
             // 
+            // lblBuscar
+            // 
+            lblBuscar.Anchor = AnchorStyles.Left;
+            lblBuscar.AutoSize = true;
+            lblBuscar.Location = new Point(3, 11);
+            lblBuscar.Name = "lblBuscar";
+            lblBuscar.Size = new Size(75, 15);
+            lblBuscar.TabIndex = 25;
+            lblBuscar.Text = "Buscar  libro:";
+            // 
+            // txtTitulo
+            // 
+            txtTitulo.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            txtTitulo.Enabled = false;
+            txtTitulo.Location = new Point(78, 381);
+            txtTitulo.Margin = new Padding(3, 2, 3, 2);
+            txtTitulo.Name = "txtTitulo";
+            txtTitulo.Size = new Size(179, 23);
+            txtTitulo.TabIndex = 53;
+            // 
+            // lblTitulo
+            // 
+            lblTitulo.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            lblTitulo.AutoSize = true;
+            lblTitulo.Font = new Font("Segoe UI", 12F);
+            lblTitulo.Location = new Point(16, 381);
+            lblTitulo.Name = "lblTitulo";
+            lblTitulo.Size = new Size(52, 21);
+            lblTitulo.TabIndex = 49;
+            lblTitulo.Text = "Titulo:";
+            // 
+            // label4
+            // 
+            label4.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F);
+            label4.Location = new Point(16, 351);
+            label4.Name = "label4";
+            label4.Size = new Size(47, 21);
+            label4.TabIndex = 47;
+            label4.Text = "ISBN:";
+            // 
+            // txtISBN
+            // 
+            txtISBN.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            txtISBN.Enabled = false;
+            txtISBN.Location = new Point(78, 351);
+            txtISBN.Margin = new Padding(3, 2, 3, 2);
+            txtISBN.Name = "txtISBN";
+            txtISBN.Size = new Size(179, 23);
+            txtISBN.TabIndex = 52;
+            // 
+            // lblAutor
+            // 
+            lblAutor.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            lblAutor.AutoSize = true;
+            lblAutor.Font = new Font("Segoe UI", 12F);
+            lblAutor.Location = new Point(16, 411);
+            lblAutor.Name = "lblAutor";
+            lblAutor.Size = new Size(52, 21);
+            lblAutor.TabIndex = 55;
+            lblAutor.Text = "Autor:";
+            // 
+            // btnEliminar
+            // 
+            btnEliminar.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            btnEliminar.AutoSize = true;
+            btnEliminar.BackColor = Color.FromArgb(32, 41, 64);
+            btnEliminar.ForeColor = SystemColors.Control;
+            btnEliminar.Location = new Point(582, 311);
+            btnEliminar.Margin = new Padding(3, 2, 3, 2);
+            btnEliminar.Name = "btnEliminar";
+            btnEliminar.Size = new Size(113, 28);
+            btnEliminar.TabIndex = 60;
+            btnEliminar.Text = "Eliminar";
+            btnEliminar.UseVisualStyleBackColor = false;
+            // 
+            // btnActualizar
+            // 
+            btnActualizar.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            btnActualizar.AutoSize = true;
+            btnActualizar.BackColor = Color.FromArgb(32, 41, 64);
+            btnActualizar.ForeColor = SystemColors.Control;
+            btnActualizar.Location = new Point(467, 311);
+            btnActualizar.Margin = new Padding(3, 2, 3, 2);
+            btnActualizar.Name = "btnActualizar";
+            btnActualizar.Size = new Size(113, 28);
+            btnActualizar.TabIndex = 59;
+            btnActualizar.Text = "Actualizar";
+            btnActualizar.UseVisualStyleBackColor = false;
+            // 
+            // lblLibro
+            // 
+            lblLibro.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            lblLibro.AutoSize = true;
+            lblLibro.Font = new Font("Segoe UI", 12F);
+            lblLibro.Location = new Point(16, 314);
+            lblLibro.Name = "lblLibro";
+            lblLibro.Size = new Size(210, 21);
+            lblLibro.TabIndex = 58;
+            lblLibro.Text = "Editar categoría seleccionada";
+            // 
+            // cmbEditorial
+            // 
+            cmbEditorial.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            cmbEditorial.FormattingEnabled = true;
+            cmbEditorial.Location = new Point(516, 380);
+            cmbEditorial.Margin = new Padding(3, 2, 3, 2);
+            cmbEditorial.Name = "cmbEditorial";
+            cmbEditorial.Size = new Size(179, 23);
+            cmbEditorial.TabIndex = 64;
+            // 
+            // cmbCategoria
+            // 
+            cmbCategoria.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            cmbCategoria.FormattingEnabled = true;
+            cmbCategoria.Location = new Point(516, 350);
+            cmbCategoria.Margin = new Padding(3, 2, 3, 2);
+            cmbCategoria.Name = "cmbCategoria";
+            cmbCategoria.Size = new Size(179, 23);
+            cmbCategoria.TabIndex = 63;
+            // 
+            // lblEditorial
+            // 
+            lblEditorial.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            lblEditorial.AutoSize = true;
+            lblEditorial.Font = new Font("Segoe UI", 12F);
+            lblEditorial.Location = new Point(424, 380);
+            lblEditorial.Name = "lblEditorial";
+            lblEditorial.Size = new Size(70, 21);
+            lblEditorial.TabIndex = 62;
+            lblEditorial.Text = "Editorial:";
+            // 
+            // lblCategoria
+            // 
+            lblCategoria.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            lblCategoria.AutoSize = true;
+            lblCategoria.Font = new Font("Segoe UI", 12F);
+            lblCategoria.Location = new Point(424, 350);
+            lblCategoria.Name = "lblCategoria";
+            lblCategoria.Size = new Size(80, 21);
+            lblCategoria.TabIndex = 61;
+            lblCategoria.Text = "Categoria:";
+            // 
+            // cmbAutor
+            // 
+            cmbAutor.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            cmbAutor.FormattingEnabled = true;
+            cmbAutor.Location = new Point(78, 411);
+            cmbAutor.Margin = new Padding(3, 2, 3, 2);
+            cmbAutor.Name = "cmbAutor";
+            cmbAutor.Size = new Size(179, 23);
+            cmbAutor.TabIndex = 65;
+            // 
             // btnCategorias
             // 
+            btnCategorias.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnCategorias.AutoSize = true;
             btnCategorias.BackColor = Color.FromArgb(32, 41, 64);
             btnCategorias.ForeColor = SystemColors.Control;
-            btnCategorias.Location = new Point(208, 3);
+            btnCategorias.Location = new Point(220, 11);
+            btnCategorias.Margin = new Padding(3, 2, 3, 2);
             btnCategorias.Name = "btnCategorias";
-            btnCategorias.Size = new Size(155, 47);
-            btnCategorias.TabIndex = 26;
+            btnCategorias.Size = new Size(136, 34);
+            btnCategorias.TabIndex = 66;
             btnCategorias.Text = "Categorias";
             btnCategorias.UseVisualStyleBackColor = false;
             btnCategorias.Click += btnCategorias_Click;
             // 
             // btnAutores
             // 
+            btnAutores.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             btnAutores.AutoSize = true;
             btnAutores.BackColor = Color.FromArgb(32, 41, 64);
             btnAutores.ForeColor = SystemColors.Control;
-            btnAutores.Location = new Point(413, 3);
+            btnAutores.Location = new Point(386, 11);
+            btnAutores.Margin = new Padding(3, 2, 3, 2);
             btnAutores.Name = "btnAutores";
-            btnAutores.Size = new Size(155, 47);
-            btnAutores.TabIndex = 27;
+            btnAutores.Size = new Size(136, 34);
+            btnAutores.TabIndex = 67;
             btnAutores.Text = "Autores";
             btnAutores.UseVisualStyleBackColor = false;
             btnAutores.Click += btnAutores_Click;
             // 
             // Editoriales
             // 
+            Editoriales.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             Editoriales.AutoSize = true;
             Editoriales.BackColor = Color.FromArgb(32, 41, 64);
             Editoriales.ForeColor = SystemColors.Control;
-            Editoriales.Location = new Point(618, 3);
+            Editoriales.Location = new Point(557, 11);
+            Editoriales.Margin = new Padding(3, 2, 3, 2);
             Editoriales.Name = "Editoriales";
-            Editoriales.Size = new Size(158, 47);
-            Editoriales.TabIndex = 28;
+            Editoriales.Size = new Size(138, 34);
+            Editoriales.TabIndex = 68;
             Editoriales.Text = "Editoriales";
             Editoriales.UseVisualStyleBackColor = false;
             Editoriales.Click += Editoriales_Click;
             // 
-            // tableLayoutPanel1
-            // 
-            tableLayoutPanel1.AccessibleRole = AccessibleRole.MenuBar;
-            tableLayoutPanel1.ColumnCount = 5;
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666718F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.6666679F));
-            tableLayoutPanel1.Controls.Add(btnAgregar, 0, 0);
-            tableLayoutPanel1.Controls.Add(btnCategorias, 1, 0);
-            tableLayoutPanel1.Controls.Add(btnAutores, 2, 0);
-            tableLayoutPanel1.Controls.Add(Editoriales, 3, 0);
-            tableLayoutPanel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel1.Location = new Point(11, 12);
-            tableLayoutPanel1.Name = "tableLayoutPanel1";
-            tableLayoutPanel1.RowCount = 1;
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Absolute, 53F));
-            tableLayoutPanel1.Size = new Size(1029, 53);
-            tableLayoutPanel1.TabIndex = 29;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(comboBox1);
-            panel1.Controls.Add(txtBuscador);
-            panel1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            panel1.Location = new Point(15, 89);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(896, 51);
-            panel1.TabIndex = 30;
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(3, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(58, 28);
-            label4.TabIndex = 31;
-            label4.Text = "ISBN:";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(383, 0);
-            label5.Name = "label5";
-            label5.Size = new Size(101, 28);
-            label5.TabIndex = 32;
-            label5.Text = "Categoria:";
-            // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 12F);
-            label2.Location = new Point(3, 45);
-            label2.Name = "label2";
-            label2.Size = new Size(66, 28);
-            label2.TabIndex = 33;
-            label2.Text = "Titulo:";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(383, 45);
-            label6.Name = "label6";
-            label6.Size = new Size(175, 28);
-            label6.TabIndex = 34;
-            label6.Text = "Ejemplares Totales:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(383, 90);
-            label7.Name = "label7";
-            label7.Size = new Size(116, 47);
-            label7.TabIndex = 35;
-            label7.Text = " Ejemplares Disponbles:";
-            // 
-            // tableLayoutPanel2
-            // 
-            tableLayoutPanel2.Anchor = AnchorStyles.Left;
-            tableLayoutPanel2.ColumnCount = 4;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.45509F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 77.54491F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 199F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 449F));
-            tableLayoutPanel2.Controls.Add(textBox4, 3, 1);
-            tableLayoutPanel2.Controls.Add(label5, 2, 0);
-            tableLayoutPanel2.Controls.Add(textBox2, 1, 1);
-            tableLayoutPanel2.Controls.Add(label7, 2, 2);
-            tableLayoutPanel2.Controls.Add(label2, 0, 1);
-            tableLayoutPanel2.Controls.Add(label6, 2, 1);
-            tableLayoutPanel2.Controls.Add(label4, 0, 0);
-            tableLayoutPanel2.Controls.Add(textBox1, 1, 0);
-            tableLayoutPanel2.Controls.Add(label3, 0, 2);
-            tableLayoutPanel2.Controls.Add(textBoxAutor, 1, 2);
-            tableLayoutPanel2.Controls.Add(textBox3, 3, 0);
-            tableLayoutPanel2.Controls.Add(textBox5, 3, 2);
-            tableLayoutPanel2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            tableLayoutPanel2.Location = new Point(9, 385);
-            tableLayoutPanel2.Name = "tableLayoutPanel2";
-            tableLayoutPanel2.RowCount = 3;
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel2.RowStyles.Add(new RowStyle(SizeType.Percent, 33.3333359F));
-            tableLayoutPanel2.Size = new Size(1029, 137);
-            tableLayoutPanel2.TabIndex = 36;
-            // 
-            // textBox4
-            // 
-            textBox4.Enabled = false;
-            textBox4.Location = new Point(582, 48);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(138, 34);
-            textBox4.TabIndex = 39;
-            // 
-            // textBox2
-            // 
-            textBox2.Enabled = false;
-            textBox2.Location = new Point(88, 48);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(204, 34);
-            textBox2.TabIndex = 37;
-            // 
-            // textBox1
-            // 
-            textBox1.Enabled = false;
-            textBox1.Location = new Point(88, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(204, 34);
-            textBox1.TabIndex = 36;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F);
-            label3.Location = new Point(3, 90);
-            label3.Name = "label3";
-            label3.Size = new Size(66, 28);
-            label3.TabIndex = 40;
-            label3.Text = "Autor:";
-            // 
-            // textBoxAutor
-            // 
-            textBoxAutor.Enabled = false;
-            textBoxAutor.Location = new Point(88, 94);
-            textBoxAutor.Margin = new Padding(3, 4, 3, 4);
-            textBoxAutor.Name = "textBoxAutor";
-            textBoxAutor.Size = new Size(204, 34);
-            textBoxAutor.TabIndex = 44;
-            // 
-            // textBox3
-            // 
-            textBox3.Enabled = false;
-            textBox3.Location = new Point(582, 4);
-            textBox3.Margin = new Padding(3, 4, 3, 4);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(195, 34);
-            textBox3.TabIndex = 45;
-            // 
-            // textBox5
-            // 
-            textBox5.Enabled = false;
-            textBox5.Location = new Point(582, 94);
-            textBox5.Margin = new Padding(3, 4, 3, 4);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(138, 34);
-            textBox5.TabIndex = 46;
-            // 
             // FrmLibros
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            AutoScroll = true;
             BackColor = Color.FromArgb(236, 223, 204);
-            ClientSize = new Size(1240, 530);
-            Controls.Add(tableLayoutPanel2);
-            Controls.Add(panel1);
-            Controls.Add(tableLayoutPanel1);
-            Controls.Add(dGVLibros);
+            ClientSize = new Size(746, 465);
+            Controls.Add(btnCategorias);
+            Controls.Add(btnAutores);
+            Controls.Add(Editoriales);
+            Controls.Add(cmbAutor);
+            Controls.Add(cmbEditorial);
+            Controls.Add(cmbCategoria);
+            Controls.Add(lblEditorial);
+            Controls.Add(lblCategoria);
+            Controls.Add(btnEliminar);
+            Controls.Add(btnActualizar);
+            Controls.Add(lblLibro);
+            Controls.Add(txtTitulo);
+            Controls.Add(lblTitulo);
+            Controls.Add(label4);
+            Controls.Add(txtISBN);
+            Controls.Add(lblAutor);
+            Controls.Add(tableLayoutPanel3);
+            Controls.Add(dtLibros);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             Name = "FrmLibros";
-            StartPosition = FormStartPosition.Manual;
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmEditConsultaLibros";
             Load += Load_FrmLibros;
-            ((System.ComponentModel.ISupportInitialize)dGVLibros).EndInit();
-            tableLayoutPanel1.ResumeLayout(false);
-            tableLayoutPanel1.PerformLayout();
-            panel1.ResumeLayout(false);
-            panel1.PerformLayout();
-            tableLayoutPanel2.ResumeLayout(false);
-            tableLayoutPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dtLibros).EndInit();
+            tableLayoutPanel3.ResumeLayout(false);
+            tableLayoutPanel3.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
-        private TextBox txtBuscador;
-        private ComboBox comboBox1;
-        private DataGridView dGVLibros;
-        private Button btnAgregar;
-        private Button btnCategorias;
-        private Button btnAutores;
-        private Button Editoriales;
-        private TableLayoutPanel tableLayoutPanel1;
-        private Panel panel1;
-        private Label label4;
-        private Label label5;
-        private Label label2;
-        private Label label6;
-        private Label label7;
-        private TableLayoutPanel tableLayoutPanel2;
-        private TextBox textBox4;
-        private TextBox textBox2;
-        private TextBox textBox1;
-        private Label label3;
+        private DataGridView dtLibros;
         private DataGridViewTextBoxColumn Column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column3;
         private DataGridViewTextBoxColumn Column4;
         private DataGridViewTextBoxColumn Column5;
-        private TextBox textBoxAutor;
-        private TextBox textBox3;
-        private TextBox textBox5;
+        private TableLayoutPanel tableLayoutPanel3;
+        private TextBox txtBuscador;
+        private Button btnAgregar;
+        private Label lblBuscar;
+        private TextBox txtTitulo;
+        private Label lblTitulo;
+        private Label label4;
+        private TextBox txtISBN;
+        private Label lblAutor;
+        private Button btnEliminar;
+        private Button btnActualizar;
+        private Label lblLibro;
+        private ComboBox cmbEditorial;
+        private ComboBox cmbCategoria;
+        private Label lblEditorial;
+        private Label lblCategoria;
+        private ComboBox cmbAutor;
+        private Button btnCategorias;
+        private Button btnAutores;
+        private Button Editoriales;
     }
 }
