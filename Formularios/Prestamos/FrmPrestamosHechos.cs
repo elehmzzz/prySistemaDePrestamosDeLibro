@@ -25,29 +25,9 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
             InitializeComponent();
             objPrestamo = new ClsPrestamo();
             objLectores = new ClsLectores(); // <-- NUEVO
-            this.Load += FrmPrestamosHechos_Load;
-            cmbxbuscarprestamo.TextChanged += cmbxbuscarprestamo_TextChanged;
             ventanaPrincipal = ventana;
             this.objBibliotecario = objBibliotecario;
-        }
-
-        private void FrmPrestamosHechos_Load(object sender, EventArgs e)
-        {
             CargarPrestamos();
-
-            // Cargar combo de búsqueda por lector
-            DataTable dtLectores = objLectores.ObtenerLectores();
-            dtLectores.Columns.Add("NombreCompleto", typeof(string), "Nombres + ' ' + Apellido_Paterno + ' ' + Apellido_Materno");
-            cmbxbuscarprestamo.DataSource = dtLectores;
-            cmbxbuscarprestamo.DisplayMember = "NombreCompleto";
-            cmbxbuscarprestamo.ValueMember = "Id_Lector";
-            cmbxbuscarprestamo.DropDownStyle = ComboBoxStyle.DropDown;
-            cmbxbuscarprestamo.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
-            cmbxbuscarprestamo.AutoCompleteSource = AutoCompleteSource.ListItems;
-
-            cmbxbuscarprestamo.SelectedIndex = -1;
-
-
         }
 
         public void CargarPrestamos()
@@ -88,31 +68,6 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
                 dGVPrestamos.Columns["Fecha_Devolucion"].HeaderText = "Devolución";
 
         }
-        //cositas del buscador
-
-        private void cmbxbuscarprestamo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbxbuscarprestamo.SelectedItem is DataRowView lector)
-            {
-                string nombreCompleto = lector["NombreCompleto"].ToString()!;
-
-                foreach (DataGridViewRow fila in dGVPrestamos.Rows)
-                {
-                    if (fila.Cells["Lector"].Value?.ToString() == nombreCompleto)
-                    {
-                        dGVPrestamos.ClearSelection();
-                        fila.Selected = true;
-                        dGVPrestamos.FirstDisplayedScrollingRowIndex = fila.Index; // sube esa fila hasta arriba
-                        dGVPrestamos.CurrentCell = fila.Cells[0];
-                        break;
-                    }
-                }
-            }
-        }
-        private void cmbxbuscarprestamo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void btnAgregarPrestamo_Click(object sender, EventArgs e)
         {
@@ -142,6 +97,12 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
         {
             FrmRPrestamo frm = new FrmRPrestamo(objPrestamo, this);
             frm.Show();
+        }
+       
+
+        private void onLoad(object sender, EventArgs e)
+        {
+            CargarPrestamos();
         }
     }
 }

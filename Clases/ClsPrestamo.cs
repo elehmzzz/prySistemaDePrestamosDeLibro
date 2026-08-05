@@ -281,12 +281,12 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 MySqlCommand cmd = new MySqlCommand("sp_insert_prestamo", con);
                 cmd.CommandType = CommandType.StoredProcedure;
 
-                cmd.Parameters.AddWithValue("@Id_Bibliotecario", IdBibliotecario);
-                cmd.Parameters.AddWithValue("@Id_Libro", IdLibro);
-                cmd.Parameters.AddWithValue("@Id_Lector", IdLector);
-                cmd.Parameters.AddWithValue("@Fecha_Prestamo", Fecha_Prestamo);
-                cmd.Parameters.AddWithValue("@Fecha_Devolucion", Fecha_Devolucion);
-                cmd.Parameters.AddWithValue("@Id_Ejemplar", IdEjemplar);
+                cmd.Parameters.AddWithValue("@pId_Bibliotecario", IdBibliotecario);
+                cmd.Parameters.AddWithValue("@pId_Libro", IdLibro);
+                cmd.Parameters.AddWithValue("@pId_Lector", IdLector);
+                cmd.Parameters.AddWithValue("@pFecha_Prestamo", Fecha_Prestamo);
+                cmd.Parameters.AddWithValue("@pFecha_Devolucion", Fecha_Devolucion);
+                cmd.Parameters.AddWithValue("@pId_Ejemplar", IdEjemplar);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
@@ -308,7 +308,8 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 cmd.CommandType = CommandType.StoredProcedure;
 
                 cmd.Parameters.AddWithValue("@p_id_prestamo", IdPrestamo);
-                cmd.Parameters.AddWithValue("@p_status_prestamo", 0);
+                cmd.Parameters.AddWithValue("@p_multa", Multa);
+                cmd.Parameters.AddWithValue("@p_retraso", DiasAtraso);
 
                 cmd.ExecuteNonQuery();
                 con.Close();
