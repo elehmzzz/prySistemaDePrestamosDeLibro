@@ -1,15 +1,6 @@
 ﻿using prySistemaDePrestamosDeLibro.Clases;
 using prySistemaDePrestamosDeLibro.Formularios.Prestamos;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
 
 namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
 {
@@ -17,22 +8,18 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
     {
         ClsPrestamo objPrestamo;
         ClsBibliotecario objBibliotecario;
-        ClsLectores objLectores; // <-- NUEVO
+
         private FrmMenuPrincipal ventanaPrincipal;
-        bool cargandoCombo = false;
+
         public FrmPrestamosHechos(FrmMenuPrincipal ventana, ClsBibliotecario objBibliotecario)
         {
             InitializeComponent();
             objPrestamo = new ClsPrestamo();
-            objLectores = new ClsLectores(); // <-- NUEVO
             ventanaPrincipal = ventana;
             this.objBibliotecario = objBibliotecario;
             CargarPrestamos();
             cmbVistasPrestamos.SelectedIndex = 0;
-            dtpFecha.ValueChanged += dtpFecha_ValueChanged;
-
         }
-
         public void CargarPrestamos()
         {
             DataTable dt = objPrestamo.ObtenerPrestamos();
@@ -71,13 +58,11 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
                 dGVPrestamos.Columns["Fecha_Devolucion"].HeaderText = "Devolución";
 
         }
-
         private void btnAgregarPrestamo_Click(object sender, EventArgs e)
         {
             FrmHacerprestamo frm = new FrmHacerprestamo(this.objBibliotecario, this); // <-- se agregó "this"
             frm.Show();
         }
-
         private void dtPrestamos_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -94,7 +79,6 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
                     txtNombre.Text = fila.Cells[1].Value.ToString();
                 }
             }
-
         }
         private void btnDatosLectores_Click(object sender, EventArgs e)
         {
@@ -108,18 +92,23 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
             }
 
         }
-
-
         private void onLoad(object sender, EventArgs e)
         {
             CargarPrestamos();
         }
 
-        private void cmbVistasPrestamos_SelectedIndexChanged(object sender, EventArgs e)
+        public void configurarDgv(DataTable dt)
         {
-            cmbVistaSeleccionada();
+            dGVPrestamos.DataSource = null;
+            dGVPrestamos.Columns.Clear();
+            // CONFIGURAR
+            dGVPrestamos.AutoGenerateColumns = true;
+            dGVPrestamos.AllowUserToAddRows = false;
+            // ASIGNAR DATOS
+            dGVPrestamos.DataSource = dt;
         }
-        public void cmbVistaSeleccionada()
+
+        private void on_Consultar(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
             DateTime fechaBusqueda = dtpFecha.Value;
@@ -135,6 +124,21 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
                     //ver prestamos totales por dia
                     dtpFecha.Enabled = true;
                     dt = objPrestamo.obtenerTotalPrestamos(fechaBusqueda);
+                    txtNombre.Text = $"Total de préstamos del día {fechaBusqueda.ToShortDateString()}: {dt.Rows.Count}";
+                    configurarDgv(dt);
+                    break;
+                case 3:
+                    //ver prestamos con multa
+                    dtpFecha.Enabled = false;
+                    dt = objPrestamo.obtenerPrestamosConMulta(fechaBusqueda);
+                    txtNombre.Text = $"Préstamos con multa: {dt.Rows.Count}";
+                    configurarDgv(dt);
+                    break;
+                case 4:
+                    //ver prestamos retrasados
+                    dtpFecha.Enabled = false;
+                    dt = objPrestamo.obtenerTotalDePrestamosRetrasados();
+                    txtNombre.Text = $"Préstamos retrasados: {dt.Rows.Count}";
                     configurarDgv(dt);
                     break;
 
@@ -143,20 +147,22 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
                     break;
             }
         }
-        public void configurarDgv(DataTable dt)
-        {
-            dGVPrestamos.DataSource = null;
-            dGVPrestamos.Columns.Clear();
-            // CONFIGURAR
-            dGVPrestamos.AutoGenerateColumns = true;
-            dGVPrestamos.AllowUserToAddRows = false;
-            // ASIGNAR DATOS
-            dGVPrestamos.DataSource = dt;
-        }
 
-        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        private void on_changed(object sender, EventArgs e)
         {
-            cmbVistaSeleccionada();
+            switch (cmbVistasPrestamos.SelectedIndex)
+            {
+                case 2:
+                    // Ver préstamos totales por día
+                    dtpFecha.Visible = true;
+                    dtpFecha.Enabled = true;
+                    break;
+
+                default:
+                    dtpFecha.Visible = false;
+                    dtpFecha.Enabled = false;
+                    break;
+            }
         }
     }
 }

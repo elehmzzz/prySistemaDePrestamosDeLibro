@@ -35,6 +35,7 @@
             label1 = new Label();
             btnAgregarPrestamo = new Button();
             cmbVistasPrestamos = new ComboBox();
+            btnConsultar = new Button();
             dGVPrestamos = new DataGridView();
             btnDatosLectores = new Button();
             txtNombre = new TextBox();
@@ -44,51 +45,57 @@
             // 
             // contenedorBusquedayAgrPrestamo
             // 
-            contenedorBusquedayAgrPrestamo.ColumnCount = 4;
-            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
-            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            contenedorBusquedayAgrPrestamo.ColumnCount = 5;
+            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
+            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 20F));
             contenedorBusquedayAgrPrestamo.Controls.Add(dtpFecha, 2, 0);
             contenedorBusquedayAgrPrestamo.Controls.Add(label1, 0, 0);
-            contenedorBusquedayAgrPrestamo.Controls.Add(btnAgregarPrestamo, 3, 0);
+            contenedorBusquedayAgrPrestamo.Controls.Add(btnAgregarPrestamo, 4, 0);
             contenedorBusquedayAgrPrestamo.Controls.Add(cmbVistasPrestamos, 1, 0);
-            contenedorBusquedayAgrPrestamo.Location = new Point(23, 33);
+            contenedorBusquedayAgrPrestamo.Controls.Add(btnConsultar, 3, 0);
+            contenedorBusquedayAgrPrestamo.Location = new Point(20, 25);
+            contenedorBusquedayAgrPrestamo.Margin = new Padding(3, 2, 3, 2);
             contenedorBusquedayAgrPrestamo.Name = "contenedorBusquedayAgrPrestamo";
             contenedorBusquedayAgrPrestamo.RowCount = 1;
             contenedorBusquedayAgrPrestamo.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            contenedorBusquedayAgrPrestamo.Size = new Size(987, 40);
+            contenedorBusquedayAgrPrestamo.Size = new Size(864, 30);
             contenedorBusquedayAgrPrestamo.TabIndex = 9;
             // 
             // dtpFecha
             // 
             dtpFecha.Enabled = false;
             dtpFecha.Format = DateTimePickerFormat.Short;
-            dtpFecha.Location = new Point(495, 3);
+            dtpFecha.Location = new Point(347, 2);
+            dtpFecha.Margin = new Padding(3, 2, 3, 2);
             dtpFecha.Name = "dtpFecha";
-            dtpFecha.Size = new Size(233, 27);
+            dtpFecha.Size = new Size(166, 23);
             dtpFecha.TabIndex = 33;
-            dtpFecha.ValueChanged += dtpFecha_ValueChanged;
+            dtpFecha.Visible = false;
             // 
             // label1
             // 
             label1.Anchor = AnchorStyles.Left;
             label1.AutoSize = true;
-            label1.Location = new Point(3, 10);
+            label1.Location = new Point(3, 7);
             label1.Name = "label1";
-            label1.Size = new Size(180, 20);
+            label1.Size = new Size(143, 15);
             label1.TabIndex = 28;
             label1.Text = "Ver opciones de informes:";
             // 
             // btnAgregarPrestamo
             // 
+            btnAgregarPrestamo.Anchor = AnchorStyles.Right;
             btnAgregarPrestamo.AutoSize = true;
             btnAgregarPrestamo.BackColor = Color.FromArgb(32, 41, 64);
             btnAgregarPrestamo.BackgroundImageLayout = ImageLayout.None;
             btnAgregarPrestamo.ForeColor = SystemColors.Control;
-            btnAgregarPrestamo.Location = new Point(741, 3);
+            btnAgregarPrestamo.Location = new Point(739, 2);
+            btnAgregarPrestamo.Margin = new Padding(3, 2, 3, 2);
             btnAgregarPrestamo.Name = "btnAgregarPrestamo";
-            btnAgregarPrestamo.Size = new Size(139, 34);
+            btnAgregarPrestamo.Size = new Size(122, 26);
             btnAgregarPrestamo.TabIndex = 23;
             btnAgregarPrestamo.Text = "Agregar Prestamo";
             btnAgregarPrestamo.UseVisualStyleBackColor = false;
@@ -98,13 +105,28 @@
             // 
             cmbVistasPrestamos.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbVistasPrestamos.FormattingEnabled = true;
-            cmbVistasPrestamos.Items.AddRange(new object[] { "[Selecciona una opción]", "Ver préstamos", "Ver préstamos por día" });
-            cmbVistasPrestamos.Location = new Point(249, 4);
-            cmbVistasPrestamos.Margin = new Padding(3, 4, 3, 4);
+            cmbVistasPrestamos.Items.AddRange(new object[] { "[Selecciona una opción]", "Todos los Péstamos", "Préstamos por día", "Préstamos con multa", "Prestamos retrasados" });
+            cmbVistasPrestamos.Location = new Point(175, 3);
             cmbVistasPrestamos.Name = "cmbVistasPrestamos";
-            cmbVistasPrestamos.Size = new Size(240, 28);
+            cmbVistasPrestamos.Size = new Size(166, 23);
             cmbVistasPrestamos.TabIndex = 29;
-            cmbVistasPrestamos.SelectedIndexChanged += cmbVistasPrestamos_SelectedIndexChanged;
+            cmbVistasPrestamos.SelectedValueChanged += on_changed;
+            // 
+            // btnConsultar
+            // 
+            btnConsultar.Anchor = AnchorStyles.Right;
+            btnConsultar.AutoSize = true;
+            btnConsultar.BackColor = Color.FromArgb(32, 41, 64);
+            btnConsultar.BackgroundImageLayout = ImageLayout.None;
+            btnConsultar.ForeColor = SystemColors.Control;
+            btnConsultar.Location = new Point(563, 2);
+            btnConsultar.Margin = new Padding(3, 2, 3, 2);
+            btnConsultar.Name = "btnConsultar";
+            btnConsultar.Size = new Size(122, 26);
+            btnConsultar.TabIndex = 34;
+            btnConsultar.Text = "Consultar";
+            btnConsultar.UseVisualStyleBackColor = false;
+            btnConsultar.Click += on_Consultar;
             // 
             // dGVPrestamos
             // 
@@ -119,7 +141,8 @@
             dGVPrestamos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dGVPrestamos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dGVPrestamos.EnableHeadersVisualStyles = false;
-            dGVPrestamos.Location = new Point(23, 79);
+            dGVPrestamos.Location = new Point(20, 59);
+            dGVPrestamos.Margin = new Padding(3, 2, 3, 2);
             dGVPrestamos.Name = "dGVPrestamos";
             dGVPrestamos.ReadOnly = true;
             dGVPrestamos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
@@ -134,7 +157,7 @@
             dGVPrestamos.RowHeadersVisible = false;
             dGVPrestamos.RowHeadersWidth = 51;
             dGVPrestamos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dGVPrestamos.Size = new Size(987, 361);
+            dGVPrestamos.Size = new Size(864, 271);
             dGVPrestamos.TabIndex = 31;
             dGVPrestamos.CellDoubleClick += dtPrestamos_CellDoubleClick;
             // 
@@ -143,9 +166,10 @@
             btnDatosLectores.AutoSize = true;
             btnDatosLectores.BackColor = Color.FromArgb(32, 41, 64);
             btnDatosLectores.ForeColor = SystemColors.Control;
-            btnDatosLectores.Location = new Point(846, 467);
+            btnDatosLectores.Location = new Point(740, 350);
+            btnDatosLectores.Margin = new Padding(3, 2, 3, 2);
             btnDatosLectores.Name = "btnDatosLectores";
-            btnDatosLectores.Size = new Size(165, 47);
+            btnDatosLectores.Size = new Size(144, 35);
             btnDatosLectores.TabIndex = 32;
             btnDatosLectores.Text = "Datos del prestamo";
             btnDatosLectores.UseVisualStyleBackColor = false;
@@ -154,22 +178,24 @@
             // txtNombre
             // 
             txtNombre.Enabled = false;
-            txtNombre.Location = new Point(23, 477);
+            txtNombre.Location = new Point(20, 358);
+            txtNombre.Margin = new Padding(3, 2, 3, 2);
             txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(469, 27);
+            txtNombre.Size = new Size(411, 23);
             txtNombre.TabIndex = 59;
             // 
             // FrmPrestamosHechos
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(236, 223, 204);
-            ClientSize = new Size(1034, 536);
+            ClientSize = new Size(905, 402);
             Controls.Add(txtNombre);
             Controls.Add(btnDatosLectores);
             Controls.Add(dGVPrestamos);
             Controls.Add(contenedorBusquedayAgrPrestamo);
             FormBorderStyle = FormBorderStyle.None;
+            Margin = new Padding(3, 2, 3, 2);
             MaximizeBox = false;
             Name = "FrmPrestamosHechos";
             Text = "FrmPrestamosHechos";
@@ -191,5 +217,6 @@
         private Label label1;
         private ComboBox cmbVistasPrestamos;
         private DateTimePicker dtpFecha;
+        private Button btnConsultar;
     }
 }
