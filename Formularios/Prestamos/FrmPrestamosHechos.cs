@@ -129,7 +129,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
                 case 4:
                     //ver prestamos retrasados
                     dtpFecha.Enabled = false;
-                    dt = objPrestamo.obtenerTotalDePrestamosRetrasados();
+                    dt = objPrestamo.obtenerTotalDePrestamosRetrasados(fechaBusqueda);
                     txtNombre.Text = $"Préstamos retrasados: {dt.Rows.Count}";
                     configurarDgv(dt);
                     break;
@@ -146,6 +146,16 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
             {
                 case 2:
                     // Ver préstamos totales por día
+                    dtpFecha.Visible = true;
+                    dtpFecha.Enabled = true;
+                    break;
+                case 3:
+                    // Ver préstamos con multa
+                    dtpFecha.Visible = true;
+                    dtpFecha.Enabled = true;
+                    break;
+                case 4:
+                    // Ver préstamos retrasados
                     dtpFecha.Visible = true;
                     dtpFecha.Enabled = true;
                     break;

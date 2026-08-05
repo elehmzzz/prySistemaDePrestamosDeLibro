@@ -1,5 +1,6 @@
 ﻿using MySql.Data.MySqlClient;
 using System.Data;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 
 namespace prySistemaDePrestamosDeLibro.Clases
@@ -368,12 +369,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
         public DataTable obtenerPrestamosConMulta(DateTime fecha)
         {
-
             DataTable dt = new DataTable();
             MySqlConnection con = EstableceConexion();
-            string consulta = @"SELECT *
-                            FROM vista_prestamos
-                            WHERE DATE(Fecha_Prestamo) = @fecha";
+            string consulta = @"SELECT Id_Prestamo, lector, Libro, bibliotecario, Fecha_Prestamo, Multa
+                            FROM vista_prestamo_detalle
+                            WHERE DATE(Fecha_Prestamo) = @fecha and multa > 0";
             try
             {
                 MySqlCommand cmd = new MySqlCommand(consulta, con);
@@ -388,38 +388,21 @@ namespace prySistemaDePrestamosDeLibro.Clases
             }
             return dt;
         }
-
-
-        public DataTable obtenerPrestamosPorDia()
+     
+        public DataTable obtenerTotalDePrestamosRetrasados(DateTime fecha)
         {
             DataTable dt = new DataTable();
             MySqlConnection con = EstableceConexion();
-            string consulta = "SELECT * FROM vista_prestamo_dia";
+            string consulta = @"SELECT Id_Prestamo, lector, Libro, bibliotecario, Fecha_Prestamo, dias_atraso
+                            FROM vista_prestamo_detalle
+                            WHERE DATE(Fecha_Prestamo) = @fecha and dias_atraso > 0";
             try
             {
                 MySqlCommand cmd = new MySqlCommand(consulta, con);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                adapter.Fill(dt);
-                con.Close();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            return dt;
-        }
+                cmd.Parameters.AddWithValue("@fecha", fecha.Date);
 
-        public DataTable obtenerTotalDePrestamosRetrasados()
-        {
-            DataTable dt = new DataTable();
-            MySqlConnection con = EstableceConexion();
-            string consulta = "SELECT * FROM vista_prestamo_retraso";
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand(consulta, con);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 adapter.Fill(dt);
-                con.Close();
             }
             catch (Exception ex)
             {
