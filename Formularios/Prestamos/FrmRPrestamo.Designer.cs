@@ -33,6 +33,8 @@
             btRegresarPrHechos = new Button();
             btnFinalizarprestamo = new Button();
             tableLayoutPanel3 = new TableLayoutPanel();
+            txtEjemplar = new TextBox();
+            lblEjemplar = new Label();
             txtNombre = new TextBox();
             label15 = new Label();
             label9 = new Label();
@@ -55,8 +57,8 @@
             label5 = new Label();
             dtpFechprestamo = new DateTimePicker();
             dtpFechdevolucion = new DateTimePicker();
-            label18 = new Label();
             txtAutor = new TextBox();
+            label18 = new Label();
             tableLayoutPanel4 = new TableLayoutPanel();
             txtprestatario = new TextBox();
             label24 = new Label();
@@ -78,8 +80,6 @@
             label2 = new Label();
             label6 = new Label();
             label1 = new Label();
-            lblEjemplar = new Label();
-            txtEjemplar = new TextBox();
             panel2.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
             tableLayoutPanel3.SuspendLayout();
@@ -196,6 +196,25 @@
             tableLayoutPanel3.RowStyles.Add(new RowStyle(SizeType.Percent, 13.8418074F));
             tableLayoutPanel3.Size = new Size(884, 266);
             tableLayoutPanel3.TabIndex = 43;
+            // 
+            // txtEjemplar
+            // 
+            txtEjemplar.Enabled = false;
+            txtEjemplar.Location = new Point(371, 148);
+            txtEjemplar.Margin = new Padding(3, 2, 3, 2);
+            txtEjemplar.Name = "txtEjemplar";
+            txtEjemplar.ReadOnly = true;
+            txtEjemplar.Size = new Size(162, 29);
+            txtEjemplar.TabIndex = 67;
+            // 
+            // lblEjemplar
+            // 
+            lblEjemplar.AutoSize = true;
+            lblEjemplar.Location = new Point(285, 146);
+            lblEjemplar.Name = "lblEjemplar";
+            lblEjemplar.Size = new Size(74, 21);
+            lblEjemplar.TabIndex = 66;
+            lblEjemplar.Text = "Ejemplar:";
             // 
             // txtNombre
             // 
@@ -406,15 +425,6 @@
             dtpFechdevolucion.Size = new Size(187, 29);
             dtpFechdevolucion.TabIndex = 65;
             // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(285, 99);
-            label18.Name = "label18";
-            label18.Size = new Size(52, 21);
-            label18.TabIndex = 45;
-            label18.Text = "Autor:";
-            // 
             // txtAutor
             // 
             txtAutor.Enabled = false;
@@ -424,6 +434,15 @@
             txtAutor.ReadOnly = true;
             txtAutor.Size = new Size(162, 29);
             txtAutor.TabIndex = 60;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(285, 99);
+            label18.Name = "label18";
+            label18.Size = new Size(52, 21);
+            label18.TabIndex = 45;
+            label18.Text = "Autor:";
             // 
             // tableLayoutPanel4
             // 
@@ -503,7 +522,6 @@
             Buscador.Name = "Buscador";
             Buscador.Size = new Size(385, 200);
             Buscador.TabIndex = 38;
-            Buscador.SelectedIndexChanged += Buscador_SelectedIndexChanged;
             // 
             // dateTimePicker2
             // 
@@ -643,25 +661,6 @@
             label1.TabIndex = 10;
             label1.Text = "Nombre del Libro:";
             // 
-            // lblEjemplar
-            // 
-            lblEjemplar.AutoSize = true;
-            lblEjemplar.Location = new Point(285, 146);
-            lblEjemplar.Name = "lblEjemplar";
-            lblEjemplar.Size = new Size(74, 21);
-            lblEjemplar.TabIndex = 66;
-            lblEjemplar.Text = "Ejemplar:";
-            // 
-            // txtEjemplar
-            // 
-            txtEjemplar.Enabled = false;
-            txtEjemplar.Location = new Point(371, 148);
-            txtEjemplar.Margin = new Padding(3, 2, 3, 2);
-            txtEjemplar.Name = "txtEjemplar";
-            txtEjemplar.ReadOnly = true;
-            txtEjemplar.Size = new Size(162, 29);
-            txtEjemplar.TabIndex = 67;
-            // 
             // FrmRPrestamo
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -674,7 +673,6 @@
             Name = "FrmRPrestamo";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmRPrestamo";
-            Load += FrmRPrestamo_Load;
             panel2.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();

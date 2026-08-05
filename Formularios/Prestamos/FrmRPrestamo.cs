@@ -45,31 +45,6 @@ namespace prySistemaDePrestamosDeLibro.Clases
             }
         }
 
-        private void FrmRPrestamo_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-        private void Buscador_SelectedIndexChanged(object sender, EventArgs e)
-
-        {
-
-        }
-
         private void btRegresarPrHechos_Click(object sender, EventArgs e)
         {
             this.Close();
