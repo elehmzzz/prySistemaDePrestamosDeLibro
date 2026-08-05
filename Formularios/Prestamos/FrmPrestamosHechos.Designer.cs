@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             contenedorBusquedayAgrPrestamo = new TableLayoutPanel();
+            dtpFecha = new DateTimePicker();
             label1 = new Label();
             btnAgregarPrestamo = new Button();
             cmbVistasPrestamos = new ComboBox();
@@ -43,20 +44,31 @@
             // 
             // contenedorBusquedayAgrPrestamo
             // 
-            contenedorBusquedayAgrPrestamo.ColumnCount = 3;
-            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 23.04F));
-            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 53.92F));
-            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 22.9691868F));
+            contenedorBusquedayAgrPrestamo.ColumnCount = 4;
+            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            contenedorBusquedayAgrPrestamo.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 25F));
+            contenedorBusquedayAgrPrestamo.Controls.Add(dtpFecha, 2, 0);
             contenedorBusquedayAgrPrestamo.Controls.Add(label1, 0, 0);
-            contenedorBusquedayAgrPrestamo.Controls.Add(btnAgregarPrestamo, 2, 0);
+            contenedorBusquedayAgrPrestamo.Controls.Add(btnAgregarPrestamo, 3, 0);
             contenedorBusquedayAgrPrestamo.Controls.Add(cmbVistasPrestamos, 1, 0);
             contenedorBusquedayAgrPrestamo.Location = new Point(23, 33);
             contenedorBusquedayAgrPrestamo.Name = "contenedorBusquedayAgrPrestamo";
             contenedorBusquedayAgrPrestamo.RowCount = 1;
             contenedorBusquedayAgrPrestamo.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            contenedorBusquedayAgrPrestamo.RowStyles.Add(new RowStyle(SizeType.Absolute, 40F));
             contenedorBusquedayAgrPrestamo.Size = new Size(987, 40);
             contenedorBusquedayAgrPrestamo.TabIndex = 9;
+            // 
+            // dtpFecha
+            // 
+            dtpFecha.Enabled = false;
+            dtpFecha.Format = DateTimePickerFormat.Short;
+            dtpFecha.Location = new Point(495, 3);
+            dtpFecha.Name = "dtpFecha";
+            dtpFecha.Size = new Size(233, 27);
+            dtpFecha.TabIndex = 33;
+            dtpFecha.ValueChanged += dtpFecha_ValueChanged;
             // 
             // label1
             // 
@@ -74,9 +86,9 @@
             btnAgregarPrestamo.BackColor = Color.FromArgb(32, 41, 64);
             btnAgregarPrestamo.BackgroundImageLayout = ImageLayout.None;
             btnAgregarPrestamo.ForeColor = SystemColors.Control;
-            btnAgregarPrestamo.Location = new Point(762, 3);
+            btnAgregarPrestamo.Location = new Point(741, 3);
             btnAgregarPrestamo.Name = "btnAgregarPrestamo";
-            btnAgregarPrestamo.Size = new Size(159, 34);
+            btnAgregarPrestamo.Size = new Size(139, 34);
             btnAgregarPrestamo.TabIndex = 23;
             btnAgregarPrestamo.Text = "Agregar Prestamo";
             btnAgregarPrestamo.UseVisualStyleBackColor = false;
@@ -86,39 +98,39 @@
             // 
             cmbVistasPrestamos.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbVistasPrestamos.FormattingEnabled = true;
-            cmbVistasPrestamos.Items.AddRange(new object[] { "[Selecciona una opción]", "Ver préstamos", "Ver total de préstamos", "Ver total de multas", "Ver préstamos por día", "Ver total de préstamos retrasados" });
-            cmbVistasPrestamos.Location = new Point(230, 4);
+            cmbVistasPrestamos.Items.AddRange(new object[] { "[Selecciona una opción]", "Ver préstamos", "Ver préstamos por día" });
+            cmbVistasPrestamos.Location = new Point(249, 4);
             cmbVistasPrestamos.Margin = new Padding(3, 4, 3, 4);
             cmbVistasPrestamos.Name = "cmbVistasPrestamos";
-            cmbVistasPrestamos.Size = new Size(338, 28);
+            cmbVistasPrestamos.Size = new Size(240, 28);
             cmbVistasPrestamos.TabIndex = 29;
             cmbVistasPrestamos.SelectedIndexChanged += cmbVistasPrestamos_SelectedIndexChanged;
             // 
             // dGVPrestamos
             // 
             dGVPrestamos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = SystemColors.Control;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle3.SelectionForeColor = SystemColors.Control;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dGVPrestamos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.Control;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dGVPrestamos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dGVPrestamos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dGVPrestamos.EnableHeadersVisualStyles = false;
             dGVPrestamos.Location = new Point(23, 79);
             dGVPrestamos.Name = "dGVPrestamos";
             dGVPrestamos.ReadOnly = true;
             dGVPrestamos.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.Control;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dGVPrestamos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.Control;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dGVPrestamos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dGVPrestamos.RowHeadersVisible = false;
             dGVPrestamos.RowHeadersWidth = 51;
             dGVPrestamos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -178,5 +190,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private Label label1;
         private ComboBox cmbVistasPrestamos;
+        private DateTimePicker dtpFecha;
     }
 }

@@ -29,6 +29,8 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
             this.objBibliotecario = objBibliotecario;
             CargarPrestamos();
             cmbVistasPrestamos.SelectedIndex = 0;
+            dtpFecha.ValueChanged += dtpFecha_ValueChanged;
+
         }
 
         public void CargarPrestamos()
@@ -100,7 +102,8 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
             {
                 ventanaPrincipal.mostrarDetallesPrestamo(objPrestamo, ventanaPrincipal);
             }
-            else {
+            else
+            {
                 MessageBox.Show("Seleccione la opción 'Ver préstamos' para ver los datos de los lectores.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
@@ -116,39 +119,32 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
         {
             cmbVistaSeleccionada();
         }
-        /*[Selecciona una opción]
-        Ver préstamos
-        Ver cantidad de préstamos
-        Cantidad Multas*/
         public void cmbVistaSeleccionada()
         {
             DataTable dt = new DataTable();
+            DateTime fechaBusqueda = dtpFecha.Value;
             int opc = cmbVistasPrestamos.SelectedIndex;
-            switch (opc) {
+            switch (opc)
+            {
                 case 1:
+                    //ver prestamos
+                    dtpFecha.Enabled = false;
                     CargarPrestamos();
                     break;
                 case 2:
-                    dt = objPrestamo.obtenerTotalPrestamos();
+                    //ver prestamos totales por dia
+                    dtpFecha.Enabled = true;
+                    dt = objPrestamo.obtenerTotalPrestamos(fechaBusqueda);
                     configurarDgv(dt);
                     break;
-                case 3:
-                    dt = objPrestamo.obtenerTotalMultas();
-                    configurarDgv(dt);
-                    break;
-                case 4:
-                    dt = objPrestamo.obtenerPrestamosPorDia();
-                    configurarDgv(dt);
-                    break;
-                case 5:
-                    dt = objPrestamo.obtenerTotalDePrestamosRetrasados();
-                    configurarDgv(dt);
+
+                default:
+                    dtpFecha.Enabled = false;
                     break;
             }
-
         }
-
-        public void configurarDgv(DataTable dt) {
+        public void configurarDgv(DataTable dt)
+        {
             dGVPrestamos.DataSource = null;
             dGVPrestamos.Columns.Clear();
             // CONFIGURAR
@@ -156,6 +152,11 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
             dGVPrestamos.AllowUserToAddRows = false;
             // ASIGNAR DATOS
             dGVPrestamos.DataSource = dt;
+        }
+
+        private void dtpFecha_ValueChanged(object sender, EventArgs e)
+        {
+            cmbVistaSeleccionada();
         }
     }
 }

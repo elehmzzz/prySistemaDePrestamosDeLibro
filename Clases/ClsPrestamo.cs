@@ -343,25 +343,26 @@ namespace prySistemaDePrestamosDeLibro.Clases
             return dt;
         }
 
-        public DataTable obtenerTotalPrestamos()
-        {
+            public DataTable obtenerTotalPrestamos(DateTime fecha)
+            {
 
-            DataTable dt = new DataTable();
-            MySqlConnection con = EstableceConexion();
-            string consulta = "SELECT * FROM vista_total_prestamos";
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand(consulta, con);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                adapter.Fill(dt);
-                con.Close();
+                DataTable dt = new DataTable();
+                MySqlConnection con = EstableceConexion();
+                string consulta = "SELECT * FROM vista_total_prestamos WHERE Fecha_Prestamo = @fecha";
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand(consulta, con);
+                    cmd.Parameters.AddWithValue("@fecha", fecha);
+                    MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                    adapter.Fill(dt);
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+                return dt;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-            }
-            return dt;
-        }
 
         public DataTable obtenerTotalMultas() {
             DataTable dt = new DataTable();
