@@ -14,6 +14,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios
         private FrmAgregarLectores2 apartadoAgregarLectores;
         private FrmEditarLectores apartadoEditarLector;
         private FrmPrestamosHechos moduloPrestamos;
+        private FrmRPrestamo apartadoDetallePrestamo;
         private FrmMultas moduloMultas;
         private FrmLibros moduloLibros;
         private FrmRegistroLibro apartadoLibros;
@@ -152,6 +153,12 @@ namespace prySistemaDePrestamosDeLibro.Formularios
                 moduloPrestamos = new FrmPrestamosHechos(this, objBibliotecario);
             }
             mostrarContenido(moduloPrestamos);
+        }
+        //mostrar detalles del prestamo
+        public void mostrarDetallesPrestamo(ClsPrestamo obj, FrmMenuPrincipal menu)
+        {
+            apartadoDetallePrestamo = new FrmRPrestamo(obj, menu);
+            mostrarContenido(apartadoDetallePrestamo);
         }
         //mostrar modulo de multas
         public void mostrarModuloMultas()

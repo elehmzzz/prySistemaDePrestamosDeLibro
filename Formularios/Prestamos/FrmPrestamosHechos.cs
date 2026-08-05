@@ -28,6 +28,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
             ventanaPrincipal = ventana;
             this.objBibliotecario = objBibliotecario;
             CargarPrestamos();
+            cmbVistasPrestamos.SelectedIndex = 0;
         }
 
         public void CargarPrestamos()
@@ -95,14 +96,66 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
         }
         private void btnDatosLectores_Click(object sender, EventArgs e)
         {
-            FrmRPrestamo frm = new FrmRPrestamo(objPrestamo, this);
-            frm.Show();
+            if (cmbVistasPrestamos.SelectedIndex == 1)
+            {
+                ventanaPrincipal.mostrarDetallesPrestamo(objPrestamo, ventanaPrincipal);
+            }
+            else {
+                MessageBox.Show("Seleccione la opción 'Ver préstamos' para ver los datos de los lectores.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
         }
-       
+
 
         private void onLoad(object sender, EventArgs e)
         {
             CargarPrestamos();
+        }
+
+        private void cmbVistasPrestamos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            cmbVistaSeleccionada();
+        }
+        /*[Selecciona una opción]
+        Ver préstamos
+        Ver cantidad de préstamos
+        Cantidad Multas*/
+        public void cmbVistaSeleccionada()
+        {
+            DataTable dt = new DataTable();
+            int opc = cmbVistasPrestamos.SelectedIndex;
+            switch (opc) {
+                case 1:
+                    CargarPrestamos();
+                    break;
+                case 2:
+                    dt = objPrestamo.obtenerTotalPrestamos();
+                    configurarDgv(dt);
+                    break;
+                case 3:
+                    dt = objPrestamo.obtenerTotalMultas();
+                    configurarDgv(dt);
+                    break;
+                case 4:
+                    dt = objPrestamo.obtenerPrestamosPorDia();
+                    configurarDgv(dt);
+                    break;
+                case 5:
+                    dt = objPrestamo.obtenerTotalDePrestamosRetrasados();
+                    configurarDgv(dt);
+                    break;
+            }
+
+        }
+
+        public void configurarDgv(DataTable dt) {
+            dGVPrestamos.DataSource = null;
+            dGVPrestamos.Columns.Clear();
+            // CONFIGURAR
+            dGVPrestamos.AutoGenerateColumns = true;
+            dGVPrestamos.AllowUserToAddRows = false;
+            // ASIGNAR DATOS
+            dGVPrestamos.DataSource = dt;
         }
     }
 }

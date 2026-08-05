@@ -83,7 +83,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
         public void setIdLibro(int id)
         {
             IdLibro = id;
-        }       
+        }
         public string getLector()
         {
             return Lector;
@@ -340,6 +340,80 @@ namespace prySistemaDePrestamosDeLibro.Clases
                 MessageBox.Show("Error: " + ex.Message);
             }
 
+            return dt;
+        }
+
+        public DataTable obtenerTotalPrestamos()
+        {
+
+            DataTable dt = new DataTable();
+            MySqlConnection con = EstableceConexion();
+            string consulta = "SELECT * FROM vista_total_prestamos";
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(consulta, con);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            return dt;
+        }
+
+        public DataTable obtenerTotalMultas() {
+            DataTable dt = new DataTable();
+            MySqlConnection con = EstableceConexion();
+            string consulta = "SELECT * FROM vista_reporte_multas";
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(consulta, con);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            return dt;
+        }
+
+        public DataTable obtenerPrestamosPorDia() {
+            DataTable dt = new DataTable();
+            MySqlConnection con = EstableceConexion();
+            string consulta = "SELECT * FROM vista_prestamo_dia";
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(consulta, con);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            return dt;
+        }
+
+        public DataTable obtenerTotalDePrestamosRetrasados() {
+            DataTable dt = new DataTable();
+            MySqlConnection con = EstableceConexion();
+            string consulta = "SELECT * FROM vista_prestamo_retraso";
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(consulta, con);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(dt);
+                con.Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
             return dt;
         }
     }

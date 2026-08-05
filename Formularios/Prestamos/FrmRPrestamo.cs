@@ -1,4 +1,5 @@
-﻿using prySistemaDePrestamosDeLibro.Formularios.FRMprestamos;
+﻿using prySistemaDePrestamosDeLibro.Formularios;
+using prySistemaDePrestamosDeLibro.Formularios.FRMprestamos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,13 +15,13 @@ namespace prySistemaDePrestamosDeLibro.Clases
     public partial class FrmRPrestamo : Form
     {
         ClsPrestamo objPrestamo;
-        private FrmPrestamosHechos ventanaPrestamos; // <-- NUEVO
-        public FrmRPrestamo(ClsPrestamo objPrestamo, FrmPrestamosHechos ventanaPrestamos)
+        private FrmMenuPrincipal menuPrincipal; // <-- NUEVO
+        public FrmRPrestamo(ClsPrestamo objPrestamo, FrmMenuPrincipal padre)
         {
             InitializeComponent();
             this.objPrestamo = objPrestamo;
             this.objPrestamo.ObtenerDetalle();
-            this.ventanaPrestamos = ventanaPrestamos; // <-- NUEVO
+            menuPrincipal = padre; // <-- NUEVO
 
             if (this.objPrestamo.ObtenerDetalle())
             {
@@ -47,6 +48,7 @@ namespace prySistemaDePrestamosDeLibro.Clases
 
         private void btRegresarPrHechos_Click(object sender, EventArgs e)
         {
+            menuPrincipal.mostrarModuloPrestamos();
             this.Close();
         }
 
@@ -55,8 +57,11 @@ namespace prySistemaDePrestamosDeLibro.Clases
             if (objPrestamo.FinalizarPrestamo())
             {
                 MessageBox.Show("Prestamo Finalizado");
-                ventanaPrestamos.CargarPrestamos(); // <-- NUEVO: refresca el dgv
+                menuPrincipal.mostrarModuloPrestamos();
                 this.Close();
+            }
+            else {
+                MessageBox.Show("Error al finalizar el prestamo");
             }
         }
     }
