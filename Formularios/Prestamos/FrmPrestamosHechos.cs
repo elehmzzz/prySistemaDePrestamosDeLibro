@@ -82,15 +82,7 @@ namespace prySistemaDePrestamosDeLibro.Formularios.FRMprestamos
         }
         private void btnDatosLectores_Click(object sender, EventArgs e)
         {
-            if (cmbVistasPrestamos.SelectedIndex == 1)
-            {
-                ventanaPrincipal.mostrarDetallesPrestamo(objPrestamo, ventanaPrincipal);
-            }
-            else
-            {
-                MessageBox.Show("Seleccione la opción 'Ver préstamos' para ver los datos de los lectores.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-
+            ventanaPrincipal.mostrarDetallesPrestamo(objPrestamo, ventanaPrincipal);
         }
         private void onLoad(object sender, EventArgs e)
         {
